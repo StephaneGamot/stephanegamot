@@ -1,26 +1,274 @@
 @import "tailwindcss";
 
+
+/* ──────────────────────────────────────────────────────────────
+   Variables de thème (sobriété luxe + accent émeraude)
+   ────────────────────────────────────────────────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    /* Couleurs de base */
+    --bg-page: #0B0C10;       /* charbon bleuté premium */
+    --fg-base: #ffffff;       /* texte principal */
+    --fg-muted: rgba(255,255,255,0.7);
+    --fg-subtle: rgba(255,255,255,0.55);
+
+    /* polices d'écritures */
+        --font-heading: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+        --font-body: "montserrat", sans-serif;
+
+
+    /* Accents */
+    --accent: #10B981;        /* émeraude (Tailwind emerald-500) */
+    --accent-muted: rgba(16,185,129,0.16);
+
+    /* Bordures & surfaces */
+    --surface-1: rgba(255,255,255,0.04);   /* panneaux soft */
+    --surface-2: rgba(255,255,255,0.06);
+    --border: rgba(255,255,255,0.10);
+
+    /* Focus & sélection */
+    --focus: #22D3EE;         /* cyan focus visible */
+    --selection-bg: rgba(16,185,129,0.30);
+    --selection-fg: #ECFEFF;
+
+    /* Ombres douces */
+    --shadow-soft: 0 8px 30px rgba(0,0,0,0.25);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ──────────────────────────────────────────────────────────────
+   Base HTML — dark par défaut, typographie et lisibilité
+   ────────────────────────────────────────────────────────────── */
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    scroll-behavior: smooth;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html, body, #__next {
+    height: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg-page);
+    color: var(--fg-base);
+    @apply antialiased;
+}
+
+/* Sélection de texte agréable */
+::selection {
+    background: var(--selection-bg);
+    color: var(--selection-fg);
+}
+
+/* Liens sobres, soulignement au survol */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* Images & médias fluides */
+img, svg, video {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Tables sobres (si jamais tu en affiches) */
+table {
+    border-collapse: collapse;
+}
+th, td {
+    border-bottom: 1px solid var(--border);
+    padding: 0.5rem 0.75rem;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   Accessibilité : focus visible, motion reduce, skiplink
+   ────────────────────────────────────────────────────────────── */
+:focus {
+    outline: none;
+}
+:focus-visible {
+    outline-offset: 3px;
+    border-radius: 0.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Lien d’évitement (à placer en tout début de layout) */
+.skip-to-content {
+    position: fixed;
+    top: 0.75rem;
+    left: 0.75rem;
+    z-index: 50;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    background: #000;
+    color: #fff;
+    border: 1px solid var(--border);
+    transform: translateY(-120%);
+    transition: transform .2s ease;
+}
+.skip-to-content:focus-visible {
+    transform: translateY(0);
+}
+
+/* ──────────────────────────────────────────────────────────────
+   Typographie de base (sans plugin)
+   ────────────────────────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading), serif;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    font-weight: 600;
+}
+h1 { font-size: clamp(2rem, 4vw, 3.5rem); margin: 0 0 0.6em; }
+h2 { font-size: clamp(1.5rem, 3vw, 2.25rem); margin: 2rem 0 0.6em; }
+h3 { font-size: clamp(1.25rem, 2.2vw, 1.5rem); margin: 1.5rem 0 0.5em; }
+p  { color: var(--fg-muted); line-height: 1.75; margin: 0.85em 0; font-family: var(--font-body), sans-serif; }
+small, .text-muted { color: var(--fg-subtle); }
+
+nav, .mobile-menu {
+    font-family: var(--font-heading), serif;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    font-weight: 600;
+    font-size: 20px!important;
+
+}
+
+/* Listes aérées */
+ul, ol { padding-left: 1.25rem; }
+li { margin: 0.25rem 0; }
+
+/* Blocs code inline lisibles */
+code, kbd, samp {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid var(--border);
+    padding: 0.1rem 0.35rem;
+    border-radius: 0.375rem;
+    color: #E2E8F0;
+}
+
+/* Blockquotes sobres */
+blockquote {
+    border-left: 3px solid var(--accent);
+    padding-left: 0.9rem;
+    margin: 1rem 0;
+    color: var(--fg-muted);
+}
+
+/* ──────────────────────────────────────────────────────────────
+   Scrollbar (WebKit) — discret
+   ────────────────────────────────────────────────────────────── */
+*::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+*::-webkit-scrollbar-track {
+    background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.18);
+    border-radius: 999px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+}
+*::-webkit-scrollbar-thumb:hover {
+    background: rgba(255,255,255,0.28);
+}
+
+/* ──────────────────────────────────────────────────────────────
+   Composants utilitaires en @layer (faciles à @apply)
+   ────────────────────────────────────────────────────────────── */
+@layer components {
+    /* Conteneur max-width cohérent */
+    .container-page {
+        @apply mx-auto max-w-7xl px-6;
+    }
+
+    /* Cartes “verre” premium */
+    .card {
+        background: var(--surface-1);
+        border: 1px solid var(--border);
+        border-radius: 1rem; /* 2xl */
+        box-shadow: var(--shadow-soft);
+    }
+    .card-hover {
+        transition: transform .2s ease, background .2s ease, border-color .2s ease;
+    }
+    .card-hover:hover {
+        background: var(--surface-2);
+        transform: translateY(-2px);
+        border-color: rgba(255,255,255,0.16);
+    }
+
+    /* Boutons élégants (tu peux aussi rester full Tailwind utilitaires) */
+    .btn {
+        @apply inline-flex items-center justify-center px-4 py-2 rounded-xl text-sm font-medium;
+        transition: transform .06s ease, box-shadow .2s ease, background .2s ease;
+    }
+    .btn:active { transform: translateY(1px); }
+    .btn-primary {
+        background: #fff; color: #000;
+        box-shadow: 0 10px 30px rgba(16,185,129,0.22);
+    }
+    .btn-primary:hover { filter: brightness(0.96); }
+    .btn-outline {
+        border: 1px solid var(--border);
+        background: transparent;
+        color: var(--fg-base);
+    }
+    .btn-outline:hover { background: rgba(255,255,255,0.08); }
+
+    /* Badges / Pills */
+    .pill {
+        @apply inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs;
+        background: var(--surface-1);
+        border: 1px solid var(--border);
+        color: var(--fg-subtle);
+    }
+
+    /* Sections vertical rhythm */
+    .section {
+        @apply py-16 md:py-20;
+    }
+    .section-tight {
+        @apply py-10 md:py-14;
+    }
+    .section-spacious {
+        @apply py-20 md:py-28;
+    }
+
+    /* Barre de confiance / logo cloud fond subtil */
+    .surface-bleed {
+        background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+    }
+
+    /* Focus ring utilitaire (si besoin en plus de :focus-visible) */
+    .focus-ring {
+        outline: 2px solid var(--focus) !important;
+        outline-offset: 3px !important;
+        border-radius: 0.5rem;
+    }
+}
+
+/* ──────────────────────────────────────────────────────────────
+   Animations légères (utiles si tu veux)
+   ────────────────────────────────────────────────────────────── */
+@keyframes fade-in-up {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up {
+    animation: fade-in-up .35s cubic-bezier(.2,.65,.2,1) both;
 }
