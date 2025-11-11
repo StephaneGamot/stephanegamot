@@ -262,6 +262,20 @@ blockquote {
     }
 }
 
+
+
+@media (max-width: 480px) {
+    .eyebrow {
+        font-size: 11px;
+    }
+
+}
+@media (max-width: 390px) {
+    .eyebrow {
+        font-size: 10px;
+
+    }
+}
 /* ──────────────────────────────────────────────────────────────
    Animations légères (utiles si tu veux)
    ────────────────────────────────────────────────────────────── */
@@ -271,4 +285,21 @@ blockquote {
 }
 .animate-fade-in-up {
     animation: fade-in-up .35s cubic-bezier(.2,.65,.2,1) both;
+}
+
+/* ──────────────────────────────────────────────────────────────
+   Animations hero
+   ────────────────────────────────────────────────────────────── */
+
+@keyframes float-y-slow {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-140px); /* monte de 10px au milieu */
+    }
+}
+
+.animate-float-y-slow {
+    animation: float-y-slow 17s ease-in-out infinite;
 }

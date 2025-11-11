@@ -178,37 +178,37 @@ export default function Example() {
                     </Popover>
 
                     <Link
-                        href="#"
+                        href="/portfolio"
                         className="text-lg font-semibold text-gray-900 dark:text-white"
                     >
                         Portfolio
                     </Link>
                     <Link
-                        href="#"
+                        href="/idees"
                         className="text-lg font-semibold text-gray-900 dark:text-white"
                     >
                         Idées
                     </Link>
                     <Link
-                        href="#"
+                        href="blog"
                         className="text-lg font-semibold text-gray-900 dark:text-white"
                     >
                         Blog
                     </Link>
                     <Link
-                        href="#"
+                        href="faq"
                         className="text-lg font-semibold text-gray-900 dark:text-white"
                     >
                         FAQ
                     </Link>
                     <Link
-                        href="#"
+                        href="/me"
                         className="text-lg font-semibold text-gray-900 dark:text-white"
                     >
                         A Propos
                     </Link>
                     <Link
-                        href="#"
+                        href="/contact"
                         className="text-lg font-semibold text-gray-900 dark:text-white"
                     >
                         Contact
@@ -276,7 +276,7 @@ export default function Example() {
                                 {/* Liens classiques mobile */}
                                 <div className="space-y-2 py-6">
                                     <Link
-                                        href="#"
+                                        href="/portfolio"
                                         className="group -mx-3 flex items-center gap-x-6 rounded-lg p-3 text-base/7 font-semibold text-gray-900 hover:bg-gray-800 dark:text-white dark:hover:bg-white/5"
                                         onClick={() => setMobileMenuOpen(false)}
                                     >
@@ -290,7 +290,7 @@ export default function Example() {
                                     </Link>
 
                                     <Link
-                                        href="#"
+                                        href="idees"
                                         className="group -mx-3 flex items-center gap-x-6 rounded-lg p-3 text-base/7 font-semibold text-gray-900 hover:bg-gray-800 dark:text-white dark:hover:bg-white/5"
                                         onClick={() => setMobileMenuOpen(false)}
                                     >
@@ -304,7 +304,7 @@ export default function Example() {
                                     </Link>
 
                                     <Link
-                                        href="#"
+                                        href="blog"
                                         className="group -mx-3 flex items-center gap-x-6 rounded-lg p-3 text-base/7 font-semibold text-gray-900 hover:bg-gray-800 dark:text-white dark:hover:bg-white/5"
                                         onClick={() => setMobileMenuOpen(false)}
                                     >
@@ -318,7 +318,7 @@ export default function Example() {
                                     </Link>
 
                                     <Link
-                                        href="#"
+                                        href="/faq"
                                         className="group -mx-3 flex items-center gap-x-6 rounded-lg p-3 text-base/7 font-semibold text-gray-900 hover:bg-gray-800 dark:text-white dark:hover:bg-white/5"
                                         onClick={() => setMobileMenuOpen(false)}
                                     >
@@ -332,7 +332,7 @@ export default function Example() {
                                     </Link>
 
                                     <Link
-                                        href="#"
+                                        href="/me"
                                         className="group -mx-3 flex items-center gap-x-6 rounded-lg p-3 text-base/7 font-semibold text-gray-900 hover:bg-gray-800 dark:text-white dark:hover:bg-white/5"
                                         onClick={() => setMobileMenuOpen(false)}
                                     >
@@ -346,7 +346,7 @@ export default function Example() {
                                     </Link>
 
                                     <Link
-                                        href="#"
+                                        href="/contact"
                                         className="group -mx-3 flex items-center gap-x-6 rounded-lg p-3 text-base/7 font-semibold text-gray-900 hover:bg-gray-800 dark:text-white dark:hover:bg-white/5"
                                         onClick={() => setMobileMenuOpen(false)}
                                     >

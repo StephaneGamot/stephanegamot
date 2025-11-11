@@ -13,7 +13,7 @@ export default function HeaderLogo() {
                 fetchPriority="high"
                 loading="eager"
                 quality={90}
-                className="h-10 w-auto"
+               
             />
         </div>
     );
