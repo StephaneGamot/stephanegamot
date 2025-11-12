@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Test from "./../../public/Images/test4.jpg"
-import Logo from "@/public/Images/logo-stephanegamot114.webp";
+import Test from "./../../public/Images/imgHeroApp.webp"
+
 export default function HeroHomePage() {
 
     return (
