@@ -3,17 +3,7 @@
 import Link from "next/link";
 
 const navigation = {
-    main: [
-        { name: "Site Next", href: "/services/site-web-react-next" },
-        { name: "Portfolio", href: "/portfolio" },
-        { name: "Idées", href: "/idees" },
-        { name: "Blog", href: "/blog" },
-        { name: "Faq", href: "/faq" },
-        { name: "Site WordPress", href: "/services/site-internet-wordpress" },
-        { name: "À propos", href: "/me" },
-        { name: "Contact", href: "/contact" },
-    ],
-    social: [
+       social: [
         {
             name: "Facebook",
             href: "https://www.facebook.com/profile.php?id=61560283102227",
@@ -86,22 +76,9 @@ export default function Footer() {
             className="bg-white dark:bg-gray-900"
             aria-label="Pied de page du site"
         >
-            <div className="mx-auto max-w-7xl overflow-hidden px-6 py-16! sm:py-20 lg:px-8">
+            <div className="mx-auto max-w-7xl overflow-hidden px-6 py-6! sm:py-10 lg:px-8">
                 {/* Navigation de pied de page */}
-                <nav
-                    aria-label="Navigation de pied de page"
-                    className="mb-6 flex flex-wrap justify-center gap-x-12 gap-y-3 text-sm/6"
-                >
-                    {navigation.main.map((item) => (
-                        <Link
-                            key={item.name}
-                            href={item.href}
-                            className="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
-                        >
-                            {item.name}
-                        </Link>
-                    ))}
-                </nav>
+
 
                 {/* Réseaux sociaux */}
                 <div className="my-10 flex justify-center gap-x-10">
