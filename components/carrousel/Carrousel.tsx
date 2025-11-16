@@ -280,6 +280,7 @@ export default function Carrousel() {
                                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                                         className="object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.012] will-change-transform"
                                         placeholder="blur"
+                                        loading="lazy"
                                         priority={visualIdx === CLONES || visualIdx === CLONES + 1}
                                     />
                                 </div>

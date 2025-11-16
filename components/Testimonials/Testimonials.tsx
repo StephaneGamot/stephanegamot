@@ -172,6 +172,7 @@ export default function TestimonialsSection() {
                                         alt={`Avatar de ${r.name}`}
                                         width={48}
                                         height={48}
+                                        loading="lazy"
                                         className="size-12 rounded-full object-cover"
                                     />
                                     <div>

@@ -11,6 +11,10 @@ export const metadata = {
     title: "Création de sites web performants à Bruxelles — Stéphane Gamot",
     description:
         "Je conçois des sites rapides, élégants et optimisés pour la conversion. Next.js, WordPress et SEO technique pour entreprises et indépendants en Belgique.",
+    metadataBase: new URL("https://stephanegamot.vercel.app"),
+    alternates: {
+        canonical: "/",
+    },
     openGraph: {
         title: "Création de sites web performants à Bruxelles — Stéphane Gamot",
         description:
