@@ -12,7 +12,6 @@ export default function HeaderLogo() {
                 priority
                 fetchPriority="high"
                 loading="eager"
-                quality={90}
                
             />
         </div>

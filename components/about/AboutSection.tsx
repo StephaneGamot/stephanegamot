@@ -22,7 +22,7 @@ export default function AboutSection() {
                             fill
                             className="object-cover"
                             loading="lazy"
-                            priority
+
                         />
                     </div>
                 </div>
