@@ -21,6 +21,7 @@ export default function AboutSection() {
                             alt="Portrait de Stéphane Gamot"
                             fill
                             className="object-cover"
+                            loading="lazy"
                             priority
                         />
                     </div>

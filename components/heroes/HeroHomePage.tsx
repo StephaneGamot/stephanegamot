@@ -65,6 +65,7 @@ export default function HeroHomePage() {
                                     width={316}
                                     height={684}
                                     className="h-full w-full object-cover animate-float-y-slow"
+                                    loading="lazy"
                                     priority
 
                                 />
