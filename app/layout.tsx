@@ -20,8 +20,23 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-    title: "Stéphane Gamot – Web & SEO",
-    description: "Agence web & SEO haut de gamme.",
+    metadataBase: new URL("https://stephanegamot.vercel.app"),
+    title: {
+        default: "Stéphane Gamot — Développeur Full-Stack & SEO",
+        template: "%s — Stéphane Gamot · Développeur Full-Stack & SEO",
+    },
+    description:
+        "Développeur full-stack et consultant SEO en Belgique. Sites rapides, élégants et optimisés pour la conversion.",
+    openGraph: {
+        type: "website",
+        siteName: "Stéphane Gamot",
+        images: [{ url: "/og/home.png", width: 1200, height: 630, alt: "Portfolio Stéphane Gamot" }],
+        locale: "fr_FR",
+    },
+    twitter: {
+        card: "summary_large_image",
+        images: ["/og/home.png"],
+    },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
