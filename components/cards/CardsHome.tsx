@@ -98,17 +98,20 @@ export default function CardsHome() {
                             aria-describedby={`service-${service.slug}-desc`}
                             className="group flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-sm shadow-black/40 transition hover:border-indigo-600/60 hover:bg-white/10 dark:bg-gray-800/40"
                         >
-                            <div className="relative h-40 w-full overflow-hidden">
+                            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl">
                                 <Image
                                     src={service.image}
                                     alt={service.alt}
+                                    title={service.alt}
                                     fill
                                     placeholder="blur"
                                     loading="lazy"
-                                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                                    decoding="async"
                                     sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                                    className="object-cover transition-transform duration-700 group-hover:scale-105"
                                 />
                             </div>
+
 
                             <div className="flex flex-1 flex-col gap-2 px-4 py-1 sm:px-5 sm:py-1">
                                 <h3
