@@ -32,9 +32,8 @@ export default function Home() {
   return (
 <main>
     <HeroHomePage />
-  
-    <WorkProcess />
-    <TestimonialsSection />
+
+
     <AboutSection />
 </main>
   );
