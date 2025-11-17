@@ -64,7 +64,7 @@ export default function CardsHome() {
     return (
         <section
             aria-labelledby="services-heading"
-            className="bg-[#050608] py-14 sm:py-18 lg:py-20"
+            className="bg-blue-500 py-14 sm:py-18 lg:py-20"
         >
             <div className="container-page">
                 {/* En-tête section */}

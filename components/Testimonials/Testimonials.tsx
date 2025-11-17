@@ -87,7 +87,7 @@ export default function TestimonialsSection() {
     };
 
     return (
-        <section id="avis" className="relative bg-[#0b1020] py-20">
+        <section id="avis" className="relative bg-orange-400 py-20">
             {/* Halo premium */}
             <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
                 <div className="absolute left-1/2 top-0 h-64 w-[60rem] -translate-x-1/2 rounded-full bg-indigo-500/15 blur-3xl" />

@@ -73,7 +73,7 @@ export default function ProcessSection() {
     };
 
     return (
-        <section id="process" className="relative py-20 bg-[#0b1020]">
+        <section id="process" className="relative py-20 bg-green-400">
             {/* Lueur d’arrière-plan “premium” */}
             <div
                 aria-hidden

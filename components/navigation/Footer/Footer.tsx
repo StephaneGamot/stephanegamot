@@ -73,7 +73,7 @@ export default function Footer() {
 
     return (
         <footer
-            className="bg-white dark:bg-gray-900"
+            className="bg-white"
             aria-label="Pied de page du site"
         >
             <div className="mx-auto max-w-7xl overflow-hidden px-6 py-6! sm:py-10 lg:px-8">

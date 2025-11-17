@@ -6,7 +6,7 @@ import Portrait from "@/public/Images/me/me.webp";
 
 export default function AboutSection() {
     return (
-        <section id="about" className="relative bg-[#0b1020] py-20">
+        <section id="about" className="relative bg-green-800 py-20">
             {/* halo discret */}
             <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
                 <div className="absolute left-1/2 top-0 h-64 w-[60rem] -translate-x-1/2 rounded-full bg-indigo-500/15 blur-3xl" />
