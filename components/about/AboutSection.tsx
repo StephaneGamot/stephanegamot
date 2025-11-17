@@ -8,9 +8,26 @@ export default function AboutSection() {
     return (
         <section id="about" className="relative bg-transparent py-20">
             {/* halo discret */}
-            <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
-                <div className="absolute left-1/2 top-0 h-64 w-[60rem] -translate-x-1/2 rounded-full bg-indigo-500/15 blur-3xl" />
+            <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 -z-10 overflow-hidden"
+            >
+                <div
+                    className="
+      absolute
+      left-1/2
+      top-0
+      h-64
+      w-[60rem]
+      max-w-[120%]
+      -translate-x-1/2
+      rounded-full
+      bg-indigo-500/15
+      blur-3xl
+    "
+                />
             </div>
+
 
             <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-6 lg:grid-cols-12 lg:gap-16">
                 {/* Portrait */}
