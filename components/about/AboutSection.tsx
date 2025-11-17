@@ -8,7 +8,13 @@ export default function AboutSection() {
     return (
         <section id="about" className="relative bg-transparent py-20">
             {/* halo discret */}
-        
+            <div
+                className="absolute inset-x-[-20%] top-0
+         h-40 sm:h-48 md:h-56 lg:h-64
+         rounded-full bg-indigo-500/15
+         blur-2xl sm:blur-3xl"
+            ></div>
+
 
             <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-6 lg:grid-cols-12 lg:gap-16">
                 {/* Portrait */}
