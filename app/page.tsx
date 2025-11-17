@@ -34,8 +34,7 @@ export default function Home() {
 
     <CardsHome />
     <Carrousel />
-    <WorkProcess />
-    <TestimonialsSection />
+
 
 </main>
   );
