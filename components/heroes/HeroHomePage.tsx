@@ -64,13 +64,14 @@ export default function HeroHomePage() {
                                 className="
     pointer-events-none
     absolute
-    left-[24px] top-[24px]
-    h-[684px] w-[316px]
+    left-[6.5%]   /* ~ 24 / 366 */
+    top-[3.5%]    /* ~ 24 / 729 */
+    w-[87%]       /* ~ 316 / 366 */
+    h-[93%]       /* ~ 684 / 729 */
     overflow-hidden
     rounded-[36px]
   "
                             >
-                                {/* Contenu qui “scrolle” */}
                                 <div className="relative h-[130%] w-full mock-scroll">
                                     <Image
                                         src={Test}
@@ -82,6 +83,7 @@ export default function HeroHomePage() {
                                     />
                                 </div>
                             </div>
+
 
                         </div>
                     </div>

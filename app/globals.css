@@ -45,12 +45,15 @@ html {
 
 html, body, #__next {
     height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 body {
     background: var(--bg-page);
     color: var(--fg-base);
-
+    max-width: 100%;
+    overflow-x: hidden;
     @apply antialiased;
 }
 
