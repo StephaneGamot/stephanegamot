@@ -55,9 +55,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="icon" href="/favicon.ico" sizes="any" />
     </head><body
         className={`${garamond.variable} ${montserrat.variable}`}
-      > <Nav />
+      >
         {children}
-      <Footer />
+
       </body>
     </html>
   );
