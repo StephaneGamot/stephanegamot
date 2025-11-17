@@ -31,9 +31,8 @@ export const metadata = {
 export default function Home() {
   return (
 <main>
- 
-    <CardsHome />
-    <Carrousel />
+    <HeroHomePage />
+  
     <WorkProcess />
     <TestimonialsSection />
     <AboutSection />
