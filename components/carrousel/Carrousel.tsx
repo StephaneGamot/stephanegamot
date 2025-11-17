@@ -206,7 +206,7 @@ export default function Carrousel() {
     };
 
     return (
-        <section id="work" className="bg-red-700 py-20">
+        <section id="work" className="bg-transparent py-20">
             <div className="mx-auto max-w-7xl px-6">
                 <header className="mb-8 flex items-end justify-between gap-4">
                     <div>

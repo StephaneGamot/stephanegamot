@@ -4,7 +4,7 @@ import Test from "./../../public/Images/imgHeroApp.webp"
 export default function HeroHomePage() {
 
     return (
-        <div className="bg-white">
+        <div className="bg-transparent">
             <div className="relative isolate pt-1">
                 <div className="mx-auto max-w-7xl px-6 py-10 sm:py-12 lg:flex lg:items-center lg:gap-x-10 lg:px-8 lg:py-12">
                     <div className="mx-auto max-w-2xl lg:mx-0 lg:flex-auto">

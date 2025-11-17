@@ -36,7 +36,7 @@ export default function Home() {
     <Carrousel />
     <WorkProcess />
     <TestimonialsSection />
-    
+    <AboutSection />
 </main>
   );
 }
