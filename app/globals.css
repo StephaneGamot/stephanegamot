@@ -50,7 +50,7 @@ html, body, #__next {
 body {
     background: var(--bg-page);
     color: var(--fg-base);
-    
+
     @apply antialiased;
 }
 

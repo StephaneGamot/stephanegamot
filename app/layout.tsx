@@ -1,8 +1,7 @@
-import type { Metadata } from "next";
+import type {Metadata, Viewport} from "next";
 import "./globals.css";
 import { Cormorant_Garamond, Montserrat } from "next/font/google";
 import Nav from "@/components/navigation/Header/Nav";
-import Nav2 from "@/components/navigation/Header/Nav2";
 import Footer from "@/components/navigation/Footer/Footer";
 
 const garamond = Cormorant_Garamond({
@@ -37,6 +36,12 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         images: ["/og/home.png"],
     },
+};
+
+export const viewport: Viewport = {
+    width: "device-width",
+    initialScale: 1,
+    viewportFit: "cover",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
