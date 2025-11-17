@@ -47,7 +47,13 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
     <html lang="fr">
-      <body
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
+        <meta name="robots" content="index, follow" />
+        <meta name="googlebot" content="index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+    </head><body
         className={`${garamond.variable} ${montserrat.variable}`}
       > <Nav />
         {children}
