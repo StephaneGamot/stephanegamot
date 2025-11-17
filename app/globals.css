@@ -304,3 +304,37 @@ blockquote {
     animation: float-y-slow 17s ease-in-out infinite;
 }
 
+
+@keyframes hero-screen {
+    0% {
+        transform: scale(1.02);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1.02);
+    }
+}
+
+/* Classe appliquée à l’image dans l’écran */
+.hero-screen {
+    animation: hero-screen 6s ease-in-out infinite;
+    transform-origin: center center;
+}
+
+
+@keyframes mock-scroll {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-22%);
+    }
+}
+
+/* joue une fois, après 0.5s, comme un scroll */
+.mock-scroll {
+    animation: mock-scroll 8s ease-in-out 0.5s infinite alternate;
+}
+

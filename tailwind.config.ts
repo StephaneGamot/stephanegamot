@@ -16,6 +16,16 @@ const config = {
                 // heading: ["var(--font-garamond)", "Cormorant Garamond", "serif"],
                 // body: ["var(--font-montserrat)", "Montserrat", "ui-sans-serif", "system-ui"],
             },
+            keyframes: {
+                'hero-screen': {
+                    '0%': { transform: 'scale(1.02)' },
+                    '50%': { transform: 'scale(1.06)' },
+                    '100%': { transform: 'scale(1.02)' },
+                },
+            },
+            animation: {
+                'hero-screen': 'hero-screen 6s ease-in-out infinite',
+            },
         },
     },
     plugins: [],
