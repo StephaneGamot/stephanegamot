@@ -34,9 +34,9 @@ export default function Home() {
     <HeroHomePage />
     <CardsHome />
     <Carrousel />
-    
+
     <TestimonialsSection />
-    <AboutSection />
+
 </main>
   );
 }
