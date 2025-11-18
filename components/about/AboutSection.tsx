@@ -8,19 +8,19 @@ export default function AboutSection() {
     return (
         <section id="about" className="relative bg-transparent py-20">
             {/* halo discret */}
-            <div
-                className="absolute inset-x-[-20%] top-0
-         h-40 sm:h-48 md:h-56 lg:h-64
-         rounded-full bg-indigo-500/15
-         blur-2xl sm:blur-3xl"
-            ></div>
-
+            <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 flex justify-center">
+                <div   className="
+        h-40 sm:h-48 md:h-56 lg:h-64
+        w-full max-w-[60rem]
+        rounded-full bg-indigo-500/15
+        blur-2xl sm:blur-3xl
+      " />
+            </div>
 
             <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-6 lg:grid-cols-12 lg:gap-16">
                 {/* Portrait */}
                 <div className="lg:col-span-4">
-                    <div
-                        className="relative mx-auto w-[246.4px] h-[313.6px] lg:w-[352px] lg:h-[448px] aspect-square overflow-hidden rounded-2xl ring-1 ring-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.25)]">
+                    <div className="relative mx-auto w-[246.4px] h-[313.6px] lg:w-[352px] lg:h-[448px] aspect-square overflow-hidden rounded-2xl ring-1 ring-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.25)]">
                         <Image
                             src={Portrait}
                             alt="Portrait de Stéphane Gamot"
@@ -51,15 +51,15 @@ export default function AboutSection() {
                     {/* puces crédibilité concises */}
                     <ul className="mt-5 flex flex-wrap items-center gap-3 text-sm text-white/70">
                         <li className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5">
-                            <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-400"/>
+                            <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-400" />
                             Performance & Accessibilité (WCAG 2.1)
                         </li>
                         <li className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5">
-                            <span className="inline-block h-1.5 w-1.5 rounded-full bg-indigo-400"/>
+                            <span className="inline-block h-1.5 w-1.5 rounded-full bg-indigo-400" />
                             Next.js • Java/Spring • WordPress/SEO
                         </li>
                         <li className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5">
-                            <span className="inline-block h-1.5 w-1.5 rounded-full bg-amber-400"/>
+                            <span className="inline-block h-1.5 w-1.5 rounded-full bg-amber-400" />
                             E-commerce • Stripe • SEO technique
                         </li>
                     </ul>
@@ -72,7 +72,7 @@ export default function AboutSection() {
                         >
                             Découvrir mon parcours
                             <svg width="16" height="16" viewBox="0 0 24 24" className="-mb-px">
-                                <path d="M5 12h14m-7-7l7 7-7 7" fill="none" stroke="currentColor" strokeWidth="2"/>
+                                <path d="M5 12h14m-7-7l7 7-7 7" fill="none" stroke="currentColor" strokeWidth="2" />
                             </svg>
                         </Link>
 
