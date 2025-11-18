@@ -1,6 +1,9 @@
-// app/contact/page.tsx
+"use client";
+
 import type { Metadata } from "next";
-import { PhotoIcon, UserCircleIcon } from "@heroicons/react/24/solid";
+import { useState } from "react";
+import Script from "next/script";
+import { PhotoIcon } from "@heroicons/react/24/solid";
 import { ChevronDownIcon } from "@heroicons/react/16/solid";
 
 export const metadata: Metadata = {
@@ -9,9 +12,92 @@ export const metadata: Metadata = {
         "Parlons de votre projet de site web, e-commerce ou SEO. Décrivez vos besoins et recevez un retour personnalisé.",
 };
 
-export default function ContactPage() {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+declare const grecaptcha: any;
+
+
+const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
+
+export default function Contact() {
+    const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">(
+        "idle"
+    );
+    const [errorMsg, setErrorMsg] = useState<string | null>(null);
+
+    async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+        e.preventDefault();
+        setStatus("loading");
+        setErrorMsg(null);
+
+        const form = e.currentTarget;
+        const data = new FormData(form);
+
+        const payload = {
+            firstName: data.get("first-name")?.toString().trim() || "",
+            lastName: data.get("last-name")?.toString().trim() || "",
+            email: data.get("email")?.toString().trim() || "",
+            phone: data.get("phone")?.toString().trim() || "",
+            company: data.get("company")?.toString().trim() || "",
+            projectType: data.get("project-type")?.toString() || "",
+            budget: data.get("budget")?.toString() || "",
+            message: data.get("message")?.toString().trim() || "",
+            consent: data.get("consent") === "on",
+            recaptchaToken: "",
+        };
+
+        try {
+            // 1️⃣ reCAPTCHA v3
+            if (!RECAPTCHA_SITE_KEY) {
+                console.warn("NEXT_PUBLIC_RECAPTCHA_SITE_KEY manquant");
+            } else {
+                const token: string = await new Promise((resolve, reject) => {
+                    if (typeof grecaptcha === "undefined") {
+                        return reject(new Error("reCAPTCHA non chargé"));
+                    }
+                    grecaptcha.ready(() => {
+                        grecaptcha
+                            .execute(RECAPTCHA_SITE_KEY, { action: "contact" })
+                            .then(resolve)
+                            .catch(reject);
+                    });
+                });
+                payload.recaptchaToken = token;
+            }
+
+            // 2️⃣ Appel API
+            const res = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload),
+            });
+
+            const json = await res.json();
+
+            if (!res.ok || !json.ok) {
+                setStatus("error");
+                setErrorMsg(json.error || "Une erreur est survenue.");
+                return;
+            }
+
+            setStatus("success");
+            form.reset();
+        } catch (err) {
+            console.error(err);
+            setStatus("error");
+            setErrorMsg("Impossible d'envoyer votre message. Réessayez plus tard.");
+        }
+    }
+
     return (
         <main className="bg-slate-950 text-white">
+            {/* Script reCAPTCHA v3 */}
+            {RECAPTCHA_SITE_KEY && (
+                <Script
+                    src={`https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`}
+                    strategy="lazyOnload"
+                />
+            )}
+
             <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
                 {/* Titre global */}
                 <header className="mb-10 max-w-2xl">
@@ -23,17 +109,34 @@ export default function ContactPage() {
                     </h1>
                     <p className="mt-3 text-sm text-white/70">
                         Un site sur mesure, un e-commerce, un audit SEO ou une refonte&nbsp;?
-                        Décrivez vos besoins : je vous réponds avec des pistes concrètes, pas du blabla commercial.
+                        Décrivez vos besoins : je vous réponds avec des pistes concrètes, pas du
+                        blabla commercial.
                     </p>
                 </header>
 
-                <div className="divide-y divide-white/10">
+                {/* Messages état */}
+                {status === "success" && (
+                    <p className="mb-6 rounded-lg bg-emerald-500/10 px-4 py-3 text-sm text-emerald-300">
+                        ✅ Merci, votre message a bien été envoyé. Je reviens vers vous
+                        rapidement.
+                    </p>
+                )}
+                {status === "error" && (
+                    <p className="mb-6 rounded-lg bg-red-500/10 px-4 py-3 text-sm text-red-300">
+                        ⚠️ {errorMsg}
+                    </p>
+                )}
+
+                {/* 🔥 Un seul formulaire qui englobe les deux blocs */}
+                <form
+                    onSubmit={handleSubmit}
+                    className="divide-y divide-white/10"
+                    noValidate
+                >
                     {/* Bloc 1 : Vos informations */}
                     <div className="grid grid-cols-1 gap-x-8 gap-y-8 py-10 md:grid-cols-3">
                         <div className="px-1 sm:px-0">
-                            <h2 className="text-base font-semibold text-white">
-                                Vos informations
-                            </h2>
+                            <h2 className="text-base font-semibold text-white">Vos informations</h2>
                             <p className="mt-1 text-sm text-white/60">
                                 Dites-moi qui vous êtes afin que je puisse vous répondre dans les
                                 meilleures conditions.
@@ -55,9 +158,7 @@ export default function ContactPage() {
                             </div>
                         </div>
 
-                        <form
-                            className="md:col-span-2 bg-white shadow-sm outline outline-1 outline-gray-900/5 sm:rounded-xl dark:bg-slate-900/80 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10"
-                        >
+                        <div className="md:col-span-2 bg-white shadow-sm outline outline-1 outline-gray-900/5 sm:rounded-xl dark:bg-slate-900/80 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
                             <div className="px-4 py-6 sm:p-8">
                                 <div className="grid max-w-2xl grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-6">
                                     <div className="sm:col-span-3">
@@ -65,7 +166,7 @@ export default function ContactPage() {
                                             htmlFor="first-name"
                                             className="block text-sm font-medium text-gray-900 dark:text-white"
                                         >
-                                            Prénom
+                                            Prénom *
                                         </label>
                                         <div className="mt-2">
                                             <input
@@ -73,6 +174,7 @@ export default function ContactPage() {
                                                 name="first-name"
                                                 type="text"
                                                 autoComplete="given-name"
+                                                required
                                                 className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm dark:bg-white/5 dark:text-white dark:outline-white/10 dark:placeholder:text-gray-500 dark:focus:outline-indigo-500"
                                             />
                                         </div>
@@ -83,7 +185,7 @@ export default function ContactPage() {
                                             htmlFor="last-name"
                                             className="block text-sm font-medium text-gray-900 dark:text-white"
                                         >
-                                            Nom
+                                            Nom *
                                         </label>
                                         <div className="mt-2">
                                             <input
@@ -91,6 +193,7 @@ export default function ContactPage() {
                                                 name="last-name"
                                                 type="text"
                                                 autoComplete="family-name"
+                                                required
                                                 className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm dark:bg-white/5 dark:text-white dark:outline-white/10 dark:placeholder:text-gray-500 dark:focus:outline-indigo-500"
                                             />
                                         </div>
@@ -101,7 +204,7 @@ export default function ContactPage() {
                                             htmlFor="email"
                                             className="block text-sm font-medium text-gray-900 dark:text-white"
                                         >
-                                            Adresse email
+                                            Adresse email *
                                         </label>
                                         <div className="mt-2">
                                             <input
@@ -109,6 +212,7 @@ export default function ContactPage() {
                                                 name="email"
                                                 type="email"
                                                 autoComplete="email"
+                                                required
                                                 className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm dark:bg-white/5 dark:text-white dark:outline-white/10 dark:placeholder:text-gray-500 dark:focus:outline-indigo-500"
                                             />
                                         </div>
@@ -144,22 +248,13 @@ export default function ContactPage() {
                                                 id="company"
                                                 name="company"
                                                 type="text"
-                                                className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm dark:bg-white/5 dark:text-white dark:outline-white/10 dark:placeholder:text-gray-500 dark:focus:outline-indigo-500"
+                                                className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm dark:bg:white/5 dark:text-white dark:outline-white/10 dark:placeholder:text-gray-500 dark:focus:outline-indigo-500"
                                             />
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
-                            <div className="flex items-center justify-end gap-x-6 border-t border-gray-900/10 px-4 py-4 sm:px-8 dark:border-white/10">
-                                <button
-                                    type="reset"
-                                    className="text-sm font-semibold text-gray-900 dark:text-white"
-                                >
-                                    Effacer
-                                </button>
-                            </div>
-                        </form>
+                        </div>
                     </div>
 
                     {/* Bloc 2 : Votre projet */}
@@ -174,7 +269,7 @@ export default function ContactPage() {
                             </p>
                         </div>
 
-                        <form className="md:col-span-2 bg-white shadow-sm outline outline-1 outline-gray-900/5 sm:rounded-xl dark:bg-slate-900/80 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+                        <div className="md:col-span-2 bg-white shadow-sm outline outline-1 outline-gray-900/5 sm:rounded-xl dark:bg-slate-900/80 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
                             <div className="px-4 py-6 sm:p-8">
                                 <div className="grid max-w-2xl grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-6">
                                     <div className="sm:col-span-3">
@@ -234,19 +329,21 @@ export default function ContactPage() {
                                             htmlFor="message"
                                             className="block text-sm font-medium text-gray-900 dark:text-white"
                                         >
-                                            Votre message
+                                            Votre message *
                                         </label>
                                         <div className="mt-2">
                       <textarea
                           id="message"
                           name="message"
                           rows={5}
+                          required
                           placeholder="Par exemple : refonte de notre site vitrine, besoin d'améliorer les performances, intégration Stripe, SEO local pour Bruxelles, etc."
                           className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm dark:bg-white/5 dark:text-white dark:outline-white/10 dark:placeholder:text-gray-500 dark:focus:outline-indigo-500"
                       />
                                         </div>
                                     </div>
 
+                                    {/* Pièce jointe : on laisse l'UI, mais non traitée côté email pour l'instant */}
                                     <div className="col-span-full">
                                         <label
                                             htmlFor="file-upload"
@@ -303,23 +400,31 @@ export default function ContactPage() {
                                 </div>
                             </div>
 
+                            {/* Boutons de formulaire globaux */}
                             <div className="flex items-center justify-end gap-x-6 border-t border-gray-900/10 px-4 py-4 sm:px-8 dark:border-white/10">
                                 <button
-                                    type="button"
+                                    type="reset"
                                     className="text-sm font-semibold text-gray-900 dark:text-white"
+                                    onClick={() => {
+                                        setStatus("idle");
+                                        setErrorMsg(null);
+                                    }}
                                 >
-                                    Annuler
+                                    Effacer
                                 </button>
                                 <button
                                     type="submit"
-                                    className="rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:bg-indigo-500 dark:shadow-none dark:hover:bg-indigo-400 dark:focus-visible:outline-indigo-500"
+                                    disabled={status === "loading"}
+                                    className="rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 disabled:cursor-not-allowed disabled:opacity-70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:bg-indigo-500 dark:shadow-none dark:hover:bg-indigo-400 dark:focus-visible:outline-indigo-500"
                                 >
-                                    Envoyer ma demande
+                                    {status === "loading"
+                                        ? "Envoi en cours..."
+                                        : "Envoyer ma demande"}
                                 </button>
                             </div>
-                        </form>
+                        </div>
                     </div>
-                </div>
+                </form>
             </div>
         </main>
     );
