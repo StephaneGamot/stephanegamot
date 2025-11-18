@@ -1,10 +1,14 @@
-import Image, {StaticImageData} from "next/image";
-import SeoCard from "./../../public/Images/seo-card.webp"
-import WordPressCard from "./../../public/Images/wordpress-card.webp"
-import EcommerceCard from "./../../public/Images/e-commerce-card.webp"
-import WowCard from "./../../public/Images/wow-card.webp"
-import AccessibilityWebCard from "./../../public/Images/accessibilite-web-card.webp"
-import AdviceCard from "./../../public/Images/conseil-web.webp"
+"use client";
+
+import { useEffect } from "react";
+import Image, { StaticImageData } from "next/image";
+
+import SeoCard from "./../../public/Images/seo-card.webp";
+import WordPressCard from "./../../public/Images/wordpress-card.webp";
+import EcommerceCard from "./../../public/Images/e-commerce-card.webp";
+import WowCard from "./../../public/Images/wow-card.webp";
+import AccessibilityWebCard from "./../../public/Images/accessibilite-web-card.webp";
+import AdviceCard from "./../../public/Images/conseil-web.webp";
 
 type Service = {
     slug: string;
@@ -12,55 +16,96 @@ type Service = {
     description: string;
     alt: string;
     image: StaticImageData;
-
 };
 
 const services: Service[] = [
     {
         slug: "site-nextjs",
         title: "Site Next.js / React",
-        alt:"Création de site avec React & Next",
-        description: "Performance, sécurité et design sur mesure pour une expérience fluide sur tous les écrans.",
+        alt: "Création de site avec React & Next",
+        description:
+            "Performance, sécurité et design sur mesure pour une expérience fluide sur tous les écrans.",
         image: WowCard,
     },
     {
         slug: "site-wordpress",
         title: "Site WordPress",
-        alt:"Création d'un site internet avec le CMS WordPress",
-        description: "Un site simple à gérer, élégant, et optimisé pour votre contenu et vos objectifs.",
+        alt: "Création d'un site internet avec le CMS WordPress",
+        description:
+            "Un site simple à gérer, élégant, et optimisé pour votre contenu et vos objectifs.",
         image: WordPressCard,
     },
     {
         slug: "seo-audit-technique",
         title: "SEO & Audit technique",
-        alt:"Séduire Google est tres important",
-        description: "Structure, contenus et performances travaillés pour gagner des positions sur Google.",
+        alt: "Séduire Google est tres important",
+        description:
+            "Structure, contenus et performances travaillés pour gagner des positions sur Google.",
         image: SeoCard,
     },
     {
         slug: "ecommerce-stripe",
         title: "E-commerce & Stripe",
-        alt:"c'est un magasin en ligne",
-        description: "Une boutique en ligne fluide, rassurante et optimisée pour la conversion.",
+        alt: "c'est un magasin en ligne",
+        description:
+            "Une boutique en ligne fluide, rassurante et optimisée pour la conversion.",
         image: EcommerceCard,
     },
     {
         slug: "accessibilite",
         title: "Accessibilité numérique",
-        alt:"le WCAG 2.3 est necessaire et obligatoire",
-        description: "Conformité WCAG/RGAA et confort d’usage pour tous vos visiteurs.",
+        alt: "le WCAG 2.3 est necessaire et obligatoire",
+        description:
+            "Conformité WCAG/RGAA et confort d’usage pour tous vos visiteurs.",
         image: AccessibilityWebCard,
     },
     {
         slug: "conseil-strategie",
         title: "Conseil & stratégie digitale",
-        alt:"Pour vous aider et avancer dans votre quete",
-        description: "Un accompagnement clair pour aligner votre site, votre SEO et vos objectifs business.",
+        alt: "Pour vous aider et avancer dans votre quete",
+        description:
+            "Un accompagnement clair pour aligner votre site, votre SEO et vos objectifs business.",
         image: AdviceCard,
     },
 ];
 
 export default function CardsHome() {
+    // Animation au scroll (iPhone / mobile inclus)
+    useEffect(() => {
+        const items = Array.from(
+            document.querySelectorAll<HTMLElement>("[data-animate-card]")
+        );
+
+        if (!items.length) return;
+
+        const io = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    const el = entry.target as HTMLElement;
+
+                    if (entry.isIntersecting) {
+                        const idx = Number(el.dataset.index ?? 0);
+                        const delay = idx * 80; // petit stagger entre cartes
+
+                        setTimeout(() => {
+                            el.classList.add("card-visible");
+                            el.classList.remove("opacity-0", "translate-y-4");
+                        }, delay);
+
+                        io.unobserve(el); // on n’anime qu’une fois
+                    }
+                });
+            },
+            {
+                threshold: 0.35, // la carte doit être un peu visible
+            }
+        );
+
+        items.forEach((el) => io.observe(el));
+
+        return () => io.disconnect();
+    }, []);
+
     return (
         <section
             aria-labelledby="services-heading"
@@ -79,8 +124,9 @@ export default function CardsHome() {
                         Ce que je peux faire pour votre site.
                     </h2>
                     <p className="mt-3 text-sm text-white/70">
-                        Je conçois et développe des sites qui allient design, performance et stratégie.
-                        Chaque service est pensé pour servir des résultats concrets, pas seulement une belle vitrine.
+                        Je conçois et développe des sites qui allient design, performance et
+                        stratégie. Chaque service est pensé pour servir des résultats
+                        concrets, pas seulement une belle vitrine.
                     </p>
                 </div>
 
@@ -90,13 +136,21 @@ export default function CardsHome() {
                     role="list"
                     aria-label="Liste des services proposés"
                 >
-                    {services.map((service) => (
+                    {services.map((service, index) => (
                         <article
                             key={service.slug}
                             role="listitem"
                             aria-labelledby={`service-${service.slug}-title`}
                             aria-describedby={`service-${service.slug}-desc`}
-                            className="group flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-sm shadow-black/40 transition hover:border-indigo-600/60 hover:bg-white/10 dark:bg-gray-800/40"
+                            data-animate-card
+                            data-index={index}
+                            className="
+                group flex flex-col overflow-hidden rounded-2xl
+                border border-white/10 bg-white/5 shadow-sm shadow-black/40
+                transition hover:border-indigo-600/60 hover:bg-white/10
+                dark:bg-gray-800/40
+                opacity-0 translate-y-4
+              "
                         >
                             <div className="relative h-40 w-full overflow-hidden">
                                 <Image
@@ -105,7 +159,11 @@ export default function CardsHome() {
                                     fill
                                     placeholder="blur"
                                     loading="lazy"
-                                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                                    className="
+                    object-cover
+                    transition-transform duration-700
+                    group-hover:scale-[1.02]  /* léger effet hover desktop, pas intrusif */
+                  "
                                     sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                                 />
                             </div>
