@@ -179,7 +179,7 @@ export default function ProcessSection() {
                         href="/contact"
                         className="inline-flex items-center gap-2 rounded-full bg-indigo-500 px-6 py-2.5 text-white shadow hover:bg-indigo-400 transition-colors"
                     >
-                        Discuter de votre projet
+                        Discutons de votre projet
                         <svg
                             width="16"
                             height="16"
