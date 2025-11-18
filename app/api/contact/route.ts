@@ -18,7 +18,7 @@ type ContactPayload = {
     consent?: boolean;
     recaptchaToken?: string;
 };
-
+/*
 async function verifyRecaptcha(token?: string) {
     const secret = process.env.RECAPTCHA_SECRET_KEY;
 
@@ -130,3 +130,4 @@ ${message}
     }
 }
 
+*/
