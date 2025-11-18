@@ -70,38 +70,55 @@ const services: Service[] = [
 ];
 
 export default function CardsHome() {
-    // Animation au scroll (iPhone / mobile inclus)
     useEffect(() => {
-        const items = Array.from(
-            document.querySelectorAll<HTMLElement>("[data-animate-card]")
+        const cards = Array.from(
+            document.querySelectorAll<HTMLElement>("[data-service-card]")
         );
 
-        if (!items.length) return;
+        if (!cards.length) return;
+
+        let frameRequested = false;
+        let lastActive: HTMLElement | null = null;
 
         const io = new IntersectionObserver(
             (entries) => {
-                entries.forEach((entry) => {
-                    const el = entry.target as HTMLElement;
+                // On évite de recalculer trop souvent → on passe par rAF
+                if (frameRequested) return;
+                frameRequested = true;
 
-                    if (entry.isIntersecting) {
-                        const idx = Number(el.dataset.index ?? 0);
-                        const delay = idx * 80; // petit stagger entre cartes
+                requestAnimationFrame(() => {
+                    frameRequested = false;
 
-                        setTimeout(() => {
-                            el.classList.add("card-visible");
-                            el.classList.remove("opacity-0", "translate-y-4");
-                        }, delay);
+                    // On garde uniquement les cartes visibles
+                    const visibles = entries
+                        .filter((e) => e.isIntersecting)
+                        .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
 
-                        io.unobserve(el); // on n’anime qu’une fois
-                    }
+                    if (!visibles.length) return;
+
+                    const best = visibles[0]?.target as HTMLElement | undefined;
+                    if (!best) return;
+
+                    // Si c'est déjà la même, on ne fait rien
+                    if (lastActive === best) return;
+
+                    lastActive = best;
+
+                    // On enlève la classe de toutes les cartes
+                    cards.forEach((card) => {
+                        card.classList.remove("card-visible");
+                    });
+
+                    // On l’ajoute à la carte “la plus dans le viewport”
+                    best.classList.add("card-visible");
                 });
             },
             {
-                threshold: 0.35, // la carte doit être un peu visible
+                threshold: [0.25, 0.5, 0.75], // pour mobile + desktop
             }
         );
 
-        items.forEach((el) => io.observe(el));
+        cards.forEach((card) => io.observe(card));
 
         return () => io.disconnect();
     }, []);
@@ -136,21 +153,14 @@ export default function CardsHome() {
                     role="list"
                     aria-label="Liste des services proposés"
                 >
-                    {services.map((service, index) => (
+                    {services.map((service) => (
                         <article
                             key={service.slug}
+                            data-service-card
                             role="listitem"
                             aria-labelledby={`service-${service.slug}-title`}
                             aria-describedby={`service-${service.slug}-desc`}
-                            data-animate-card
-                            data-index={index}
-                            className="
-                group flex flex-col overflow-hidden rounded-2xl
-                border border-white/10 bg-white/5 shadow-sm shadow-black/40
-                transition hover:border-indigo-600/60 hover:bg-white/10
-                dark:bg-gray-800/40
-                opacity-0 translate-y-4
-              "
+                            className="group flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-sm shadow-black/40 transition hover:border-indigo-600/60 hover:bg-white/10 dark:bg-gray-800/40"
                         >
                             <div className="relative h-40 w-full overflow-hidden">
                                 <Image
@@ -159,11 +169,7 @@ export default function CardsHome() {
                                     fill
                                     placeholder="blur"
                                     loading="lazy"
-                                    className="
-                    object-cover
-                    transition-transform duration-700
-                    group-hover:scale-[1.02]  /* léger effet hover desktop, pas intrusif */
-                  "
+                                    className="object-cover transition-transform duration-700 group-hover:scale-105"
                                     sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                                 />
                             </div>

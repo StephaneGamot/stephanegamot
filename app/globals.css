@@ -375,3 +375,9 @@ blockquote {
     }
 }
 
+@media (prefers-reduced-motion: reduce) {
+    .card-visible {
+        animation: none;
+        box-shadow: none;
+    }
+}
