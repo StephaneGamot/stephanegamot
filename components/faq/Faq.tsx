@@ -1,6 +1,7 @@
 // src/components/faq/FAQSection.tsx
 import faqsData from "./faqs.json";
 import type { Faq } from "./types";
+import Link from "next/link";
 
 export default function FAQ() {
     const faqs = faqsData as Faq[];
@@ -30,12 +31,12 @@ export default function FAQ() {
                     <p className="mt-5 text-pretty text-base leading-7 text-gray-600 dark:text-gray-400">
                         Vous ne trouvez pas la réponse que vous cherchez ? Envoyez-moi
                         simplement un message via le formulaire de contact ou par{" "}
-                        <a
+                        <Link
                             href="mailto:contact@exemple.com"
                             className="font-semibold text-indigo-600 hover:text-indigo-500 dark:text-indigo-400 dark:hover:text-indigo-300 underline-offset-4 hover:underline"
                         >
                             e-mail
-                        </a>
+                        </Link>
                         , et je vous répondrai rapidement.
                     </p>
                 </div>
@@ -53,7 +54,7 @@ export default function FAQ() {
                     ?
                   </span>
                                     {/* 👉 Question en Garamond */}
-                                    <span className="text-left text-base leading-snug font-heading">
+                                    <span className="text-left text-base leading-snug !font-heading">
                     {faq.question}
                   </span>
                                 </dt>
