@@ -87,10 +87,15 @@ export default function TestimonialsSection() {
     };
 
     return (
-        <section id="avis" className="relative bg-transparent py-20">
+        <section id="avis" className="relative bg-transparent py-20 overflow-x-hidden">
             {/* Halo premium */}
-            <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
-                <div className="absolute left-1/2 top-0 h-64 w-[60rem] -translate-x-1/2 rounded-full bg-indigo-500/15 blur-3xl" />
+            <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 flex justify-center">
+                <div className="
+            h-40 sm:h-48 md:h-56 lg:h-64
+            w-full max-w-[60rem]
+            rounded-full bg-indigo-500/15
+            blur-2xl sm:blur-3xl
+          " />
             </div>
 
             <div className="mx-auto max-w-7xl px-6">
