@@ -73,23 +73,27 @@ export default function ProcessSection() {
     };
 
     return (
-        <section id="process" className="relative py-20 bg-transparent overflow-x-hidden">
+        <section
+            id="process"
+            className="relative bg-transparent py-20 overflow-x-hidden"
+        >
             {/* Lueur d’arrière-plan “premium” */}
             <div
                 aria-hidden
                 className="pointer-events-none absolute inset-0 -z-10 flex justify-center"
             >
-                <div
-                    className="h-40 sm:h-48 md:h-56 lg:h-64 w-full max-w-[56rem] rounded-full bg-indigo-500/20 blur-2xl sm:blur-3xl"
-                />
+                <div className="h-40 sm:h-48 md:h-56 lg:h-64 w-full max-w-[56rem] rounded-full bg-indigo-500/20 blur-2xl sm:blur-3xl" />
             </div>
 
             <div className="mx-auto max-w-7xl px-6">
-                <header className="mb-12">
-                    <h2 className="text-balance text-3xl font-bold tracking-tight text-white sm:text-4xl">
+                <header className="mb-12 max-w-2xl">
+                    <p className="text-xs font-semibold uppercase tracking-[0.25em] text-emerald-300/80">
+                        Méthode
+                    </p>
+                    <h2 className="mt-3 text-balance text-3xl font-bold tracking-tight text-white sm:text-4xl">
                         Process & Méthode de travail
                     </h2>
-                    <p className="mt-2 text-pretty text-white/70 sm:max-w-2xl">
+                    <p className="mt-2 text-pretty text-white/70">
                         Une approche structurée, orientée résultats — pas “juste un site”,
                         un accompagnement sur la durée.
                     </p>
@@ -109,59 +113,60 @@ export default function ProcessSection() {
                         <li key={s.id}>
                             <article
                                 className={clsx(
-                                    "group h-full rounded-2xl border border-white/10 bg-white/5",
-                                    "p-6 backdrop-blur-md shadow-[0_8px_30px_rgba(0,0,0,0.15)]",
-                                    "transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5",
-                                    "ring-1 ring-inset ring-white/5"
+                                    // wrapper gradient léger pour le côté premium
+                                    "group h-full rounded-2xl bg-gradient-to-b from-white/15 via-white/5 to-white/0 p-[1px]",
+                                    "transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5"
                                 )}
                                 aria-labelledby={`step-${s.id}`}
                             >
-                                {/* Header icône + numéro */}
-                                <div className="flex items-center justify-between">
-                                    <div className="flex items-center gap-3">
-                                        <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-indigo-500/15 ring-1 ring-indigo-300/20">
-                                            <s.icon className="h-5 w-5 text-indigo-300" aria-hidden />
-                                        </div>
-                                        <span className="sr-only">Étape</span>
-                                    </div>
-                                    <span className="inline-flex h-7 min-w-7 items-center justify-center rounded-full bg-white/10 px-2 text-xs font-semibold text-white/80 ring-1 ring-white/15">
-                    {String(idx + 1).padStart(2, "0")}
-                  </span>
-                                </div>
-
-                                {/* Titre + desc */}
-                                <h3
-                                    id={`step-${s.id}`}
-                                    className="mt-4 text-lg font-semibold text-white"
+                                <div
+                                    className={clsx(
+                                        "h-full rounded-2xl border border-white/10 bg-white/5",
+                                        "p-6 backdrop-blur-md shadow-[0_8px_30px_rgba(0,0,0,0.15)]",
+                                        "ring-1 ring-inset ring-white/5"
+                                    )}
                                 >
-                                    {s.title}
-                                </h3>
-                                <p className="mt-2 text-sm leading-relaxed text-white/75">
-                                    {s.desc}
-                                </p>
+                                    {/* Header icône + numéro */}
+                                    <div className="flex items-center justify-between">
+                                        <div className="flex items-center gap-3">
+                                            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-indigo-500/15 ring-1 ring-indigo-300/20">
+                                                <s.icon className="h-5 w-5 text-indigo-300" aria-hidden />
+                                            </div>
+                                            <span className="sr-only">Étape</span>
+                                        </div>
+                                        <span className="inline-flex h-7 min-w-7 items-center justify-center rounded-full bg-white/10 px-2 text-xs font-semibold text-white/80 ring-1 ring-white/15">
+                      {String(idx + 1).padStart(2, "0")}
+                    </span>
+                                    </div>
 
-                                {/* Deliverables (plus “consulting”) */}
-                                {s.deliverables?.length ? (
-                                    <ul className="mt-4 space-y-1.5 text-sm">
-                                        {s.deliverables.map((d, i) => (
-                                            <li key={i} className="flex items-center gap-2 text-white/75">
-                                                <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-400/85" />
-                                                <span>{d}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                ) : null}
+                                    {/* Titre + desc */}
+                                    <h3
+                                        id={`step-${s.id}`}
+                                        className="mt-4 text-lg font-semibold text-white"
+                                    >
+                                        {s.title}
+                                    </h3>
+                                    <p className="mt-2 text-sm leading-relaxed text-white/75">
+                                        {s.desc}
+                                    </p>
 
-                                {/* Micro footer (qualité/perf) */}
-                                <div className="mt-5 flex items-center gap-3 text-xs text-white/60">
-                  <span className="inline-flex items-center gap-1">
-                    <span className="inline-block h-1.5 w-1.5 rounded-full bg-indigo-400/90" />
-                    <span>Process documenté</span>
-                  </span>
-                                    <span className="inline-flex items-center gap-1">
-                    <span className="inline-block h-1.5 w-1.5 rounded-full bg-indigo-400/90" />
-                    <span>Points d’étape</span>
-                  </span>
+                                    {/* Deliverables */}
+                                    {s.deliverables?.length ? (
+                                        <ul className="mt-4 space-y-1.5 text-sm">
+                                            {s.deliverables.map((d, i) => (
+                                                <li
+                                                    key={i}
+                                                    className="flex items-center gap-2 text-white/75"
+                                                >
+                                                    <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-500/85" />
+                                                    <span>{d}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    ) : null}
+
+                                    {/* Micro footer (qualité/perf) */}
+
                                 </div>
                             </article>
                         </li>
@@ -175,8 +180,18 @@ export default function ProcessSection() {
                         className="inline-flex items-center gap-2 rounded-full bg-indigo-500 px-6 py-2.5 text-white shadow hover:bg-indigo-400 transition-colors"
                     >
                         Discuter de votre projet
-                        <svg width="16" height="16" viewBox="0 0 24 24" className="-mb-px">
-                            <path d="M5 12h14m-7-7l7 7-7 7" fill="none" stroke="currentColor" strokeWidth="2" />
+                        <svg
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            className="-mb-px"
+                        >
+                            <path
+                                d="M5 12h14m-7-7l7 7-7 7"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                            />
                         </svg>
                     </Link>
                 </div>
@@ -191,3 +206,4 @@ export default function ProcessSection() {
         </section>
     );
 }
+
