@@ -73,13 +73,15 @@ export default function ProcessSection() {
     };
 
     return (
-        <section id="process" className="relative py-20 bg-transparent">
+        <section id="process" className="relative py-20 bg-transparent overflow-x-hidden">
             {/* Lueur d’arrière-plan “premium” */}
             <div
                 aria-hidden
-                className="pointer-events-none absolute inset-0 -z-10"
+                className="pointer-events-none absolute inset-0 -z-10 flex justify-center"
             >
-                <div className="absolute left-1/2 top-0 h-64 w-[56rem] -translate-x-1/2 rounded-full bg-indigo-500/20 blur-3xl" />
+                <div
+                    className="h-40 sm:h-48 md:h-56 lg:h-64 w-full max-w-[56rem] rounded-full bg-indigo-500/20 blur-2xl sm:blur-3xl"
+                />
             </div>
 
             <div className="mx-auto max-w-7xl px-6">
