@@ -1,22 +1,8 @@
 "use client";
 
-import type { Metadata } from "next";
 import { useState } from "react";
-import Script from "next/script";
 import { PhotoIcon } from "@heroicons/react/24/solid";
 import { ChevronDownIcon } from "@heroicons/react/16/solid";
-
-export const metadata: Metadata = {
-    title: "Contact & Devis | Stéphane Gamot",
-    description:
-        "Parlons de votre projet de site web, e-commerce ou SEO. Décrivez vos besoins et recevez un retour personnalisé.",
-};
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-declare const grecaptcha: any;
-
-
-const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
 
 export default function Contact() {
     const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">(
@@ -42,29 +28,9 @@ export default function Contact() {
             budget: data.get("budget")?.toString() || "",
             message: data.get("message")?.toString().trim() || "",
             consent: data.get("consent") === "on",
-            recaptchaToken: "",
         };
 
         try {
-            // 1️⃣ reCAPTCHA v3
-            if (!RECAPTCHA_SITE_KEY) {
-                console.warn("NEXT_PUBLIC_RECAPTCHA_SITE_KEY manquant");
-            } else {
-                const token: string = await new Promise((resolve, reject) => {
-                    if (typeof grecaptcha === "undefined") {
-                        return reject(new Error("reCAPTCHA non chargé"));
-                    }
-                    grecaptcha.ready(() => {
-                        grecaptcha
-                            .execute(RECAPTCHA_SITE_KEY, { action: "contact" })
-                            .then(resolve)
-                            .catch(reject);
-                    });
-                });
-                payload.recaptchaToken = token;
-            }
-
-            // 2️⃣ Appel API
             const res = await fetch("/api/contact", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -90,14 +56,6 @@ export default function Contact() {
 
     return (
         <main className="bg-slate-950 text-white">
-            {/* Script reCAPTCHA v3
-            {RECAPTCHA_SITE_KEY && (
-                <Script
-                    src={`https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`}
-                    strategy="lazyOnload"
-                />
-            )}     */}
-
             <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
                 {/* Titre global */}
                 <header className="mb-10 max-w-2xl">
@@ -127,7 +85,7 @@ export default function Contact() {
                     </p>
                 )}
 
-                {/* 🔥 Un seul formulaire qui englobe les deux blocs */}
+                {/* Formulaire global */}
                 <form
                     onSubmit={handleSubmit}
                     className="divide-y divide-white/10"
@@ -248,7 +206,7 @@ export default function Contact() {
                                                 id="company"
                                                 name="company"
                                                 type="text"
-                                                className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm dark:bg:white/5 dark:text-white dark:outline-white/10 dark:placeholder:text-gray-500 dark:focus:outline-indigo-500"
+                                                className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm dark:bg-white/5 dark:text-white dark:outline-white/10 dark:placeholder:text-gray-500 dark:focus:outline-indigo-500"
                                             />
                                         </div>
                                     </div>
@@ -343,7 +301,7 @@ export default function Contact() {
                                         </div>
                                     </div>
 
-                                    {/* Pièce jointe : on laisse l'UI, mais non traitée côté email pour l'instant */}
+                                    {/* Pièce jointe UI seulement */}
                                     <div className="col-span-full">
                                         <label
                                             htmlFor="file-upload"
@@ -387,20 +345,17 @@ export default function Contact() {
                                                 type="checkbox"
                                                 className="mt-1 h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600 dark:border-white/20 dark:bg-white/5"
                                             />
-                                            <label
-                                                htmlFor="consent"
-                                                className="text-xs text-white/70"
-                                            >
-                                                J’accepte que mes données soient utilisées pour être
-                                                recontacté·e au sujet de ma demande. Aucune prospection
-                                                abusive, aucun partage avec des tiers.
+                                            <label htmlFor="consent" className="text-xs text-white/70">
+                                                J’accepte que mes données soient utilisées pour être recontacté·e
+                                                au sujet de ma demande. Aucune prospection abusive, aucun partage
+                                                avec des tiers.
                                             </label>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            {/* Boutons de formulaire globaux */}
+                            {/* Boutons */}
                             <div className="flex items-center justify-end gap-x-6 border-t border-gray-900/10 px-4 py-4 sm:px-8 dark:border-white/10">
                                 <button
                                     type="reset"
@@ -417,9 +372,7 @@ export default function Contact() {
                                     disabled={status === "loading"}
                                     className="rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 disabled:cursor-not-allowed disabled:opacity-70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:bg-indigo-500 dark:shadow-none dark:hover:bg-indigo-400 dark:focus-visible:outline-indigo-500"
                                 >
-                                    {status === "loading"
-                                        ? "Envoi en cours..."
-                                        : "Envoyer ma demande"}
+                                    {status === "loading" ? "Envoi en cours..." : "Envoyer ma demande"}
                                 </button>
                             </div>
                         </div>
@@ -429,3 +382,4 @@ export default function Contact() {
         </main>
     );
 }
+
