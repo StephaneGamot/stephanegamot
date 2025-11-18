@@ -302,17 +302,33 @@ export default function Carrousel() {
                     <button
                         aria-label="Slide précédent"
                         onClick={() => goToReal(iReal - 1)}
-                        className="absolute left-3 top-1/2 -translate-y-1/2 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-indigo-600/60 text-white backdrop-blur-md shadow transition-[background,transform] duration-300 hover:bg-indigo-600/70 hover:scale-[1.03]"
+                        className="absolute left-3
+             top-[30%] sm:top-[35%] lg:top-[35%]
+             -translate-y-1/2
+             z-10 flex h-10 w-10 items-center justify-center
+             rounded-full border border-white/20
+             bg-indigo-600/60 text-white backdrop-blur-md shadow
+             transition-[background,transform] duration-300
+             hover:bg-indigo-600/70 hover:scale-[1.03]"
                     >
                         ←
                     </button>
+
                     <button
                         aria-label="Slide suivant"
                         onClick={() => goToReal(iReal + 1)}
-                        className="absolute right-3 top-1/2 -translate-y-1/2 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-indigo-600/60 text-white backdrop-blur-md shadow transition-[background,transform] duration-300 hover:bg-indigo-600/70 hover:scale-[1.03]"
+                        className="absolute right-3
+          top-[30%] sm:top-[35%] lg:top-[35%]
+             -translate-y-1/2
+             z-10 flex h-10 w-10 items-center justify-center
+             rounded-full border border-white/20
+             bg-indigo-600/60 text-white backdrop-blur-md shadow
+             transition-[background,transform] duration-300
+             hover:bg-indigo-600/70 hover:scale-[1.03]"
                     >
                         →
                     </button>
+
 
                     {/* Bullets (index logique réel) */}
                     <div className="mt-6 flex items-center justify-between">
