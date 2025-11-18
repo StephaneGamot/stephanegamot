@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "question": "Combien coûte la création d’un site internet ?",
+    "answer": "Le prix dépend du type de site (vitrine, e-commerce, sur-mesure), du nombre de pages et des fonctionnalités souhaitées. Après un appel découverte, je vous envoie toujours un devis clair et détaillé avant de commencer."
+  },
+  {
+    "id": 2,
+    "question": "Quel est le délai moyen pour réaliser un site ?",
+    "answer": "Pour un site vitrine simple, il faut en général entre 3 et 5 semaines, selon la rapidité de vos retours et la fourniture des contenus (textes, images). Pour un e-commerce, il faut souvent compter un peu plus de temps."
+  },
+  {
+    "id": 3,
+    "question": "Est-ce que vous vous occupez aussi du référencement (SEO) ?",
+    "answer": "Oui. Tous les sites sont livrés avec les bases du SEO technique (balises, performances, mobile, structure). Nous pouvons également prévoir un accompagnement spécifique pour améliorer votre positionnement sur Google."
+  },
+  {
+    "id": 4,
+    "question": "Devrai-je gérer mon site moi-même après la mise en ligne ?",
+    "answer": "C’est vous qui choisissez. Je peux vous former à la gestion des contenus (textes, images, blogs), ou bien proposer un contrat de maintenance pour que vous n’ayez à vous soucier de rien au quotidien."
+  },
+  {
+    "id": 5,
+    "question": "Proposez-vous la maintenance et les mises à jour ?",
+    "answer": "Oui, je propose des formules de maintenance qui incluent les mises à jour techniques, la surveillance de la sécurité, les sauvegardes et des petites modifications de contenu chaque mois."
+  },
+  {
+    "id": 6,
+    "question": "Sommes-nous engagés sur la durée si nous travaillons ensemble ?",
+    "answer": "Non, il n’y a pas d’abonnement caché. Le projet est cadré par un devis et un contrat. Pour la maintenance ou l’accompagnement, je propose des formules mensuelles ou annuelles que vous pouvez arrêter en respectant le préavis indiqué."
+  }
+]
