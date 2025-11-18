@@ -34,6 +34,7 @@ export default function Home() {
     <HeroHomePage />
     <CardsHome />
     <Carrousel />
+    <WorkProcess />
 
     <AboutSection />
 </main>
