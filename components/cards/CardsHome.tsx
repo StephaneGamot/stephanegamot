@@ -74,47 +74,55 @@ export default function CardsHome() {
         const cards = Array.from(
             document.querySelectorAll<HTMLElement>("[data-service-card]")
         );
-
         if (!cards.length) return;
 
+        // On stocke le dernier intersectionRatio pour chaque carte
+        const ratios = new Map<HTMLElement, number>();
+        cards.forEach((card) => ratios.set(card, 0));
+
         let frameRequested = false;
-        let lastActive: HTMLElement | null = null;
 
         const io = new IntersectionObserver(
             (entries) => {
-                // On évite de recalculer trop souvent → on passe par rAF
+                for (const entry of entries) {
+                    const el = entry.target as HTMLElement;
+                    ratios.set(el, entry.isIntersecting ? entry.intersectionRatio : 0);
+                }
+
                 if (frameRequested) return;
                 frameRequested = true;
 
                 requestAnimationFrame(() => {
                     frameRequested = false;
 
-                    // On garde uniquement les cartes visibles
-                    const visibles = entries
-                        .filter((e) => e.isIntersecting)
-                        .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+                    // On calcule le top 2 des cartes les plus visibles
+                    const sorted = [...cards]
+                        .map((card) => ({
+                            card,
+                            ratio: ratios.get(card) ?? 0,
+                        }))
+                        .filter((item) => item.ratio > 0.15) // on ignore les quasi hors-écran
+                        .sort((a, b) => b.ratio - a.ratio);
 
-                    if (!visibles.length) return;
+                    const first = sorted[0]?.card ?? null;
+                    const second = sorted[1]?.card ?? null;
 
-                    const best = visibles[0]?.target as HTMLElement | undefined;
-                    if (!best) return;
-
-                    // Si c'est déjà la même, on ne fait rien
-                    if (lastActive === best) return;
-
-                    lastActive = best;
-
-                    // On enlève la classe de toutes les cartes
+                    // Reset des classes sur toutes les cartes
                     cards.forEach((card) => {
-                        card.classList.remove("card-visible");
+                        card.classList.remove("card-visible-a", "card-visible-b");
                     });
 
-                    // On l’ajoute à la carte “la plus dans le viewport”
-                    best.classList.add("card-visible");
+                    // On affecte au max 2 cartes
+                    if (first) {
+                        first.classList.add("card-visible-a");
+                    }
+                    if (second) {
+                        second.classList.add("card-visible-b");
+                    }
                 });
             },
             {
-                threshold: [0.25, 0.5, 0.75], // pour mobile + desktop
+                threshold: [0.15, 0.35, 0.6, 0.85],
             }
         );
 
