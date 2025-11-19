@@ -19,24 +19,39 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-    metadataBase: new URL("https://stephanegamot.vercel.app"),
+    metadataBase: new URL("https://stephanegamot.com"),
     title: {
-        default: "Stéphane Gamot — Développeur Full-Stack & SEO",
-        template: "%s — Stéphane Gamot · Développeur Full-Stack & SEO",
+        default: "Stéphane Gamot – Créateur de sites web haut de gamme",
+        template: "%s | Stéphane Gamot",
     },
     description:
-        "Développeur full-stack et consultant SEO en Belgique. Sites rapides, élégants et optimisés pour la conversion.",
+        "Je conçois des sites web élégants, rapides et pensés pour convertir. Développeur full-stack basé en Belgique, j’accompagne les entrepreneurs et indépendants qui veulent un site professionnel réellement efficace.",
     openGraph: {
         type: "website",
+        url: "https://stephanegamot.com",
+        title: "Stéphane Gamot – Créateur de sites web haut de gamme",
+        description:
+            "Un site professionnel doit être beau, performant et pensé pour attirer des clients. Je vous accompagne de A à Z pour créer une présence en ligne qui fait la différence.",
         siteName: "Stéphane Gamot",
-        images: [{ url: "/og/home.png", width: 1200, height: 630, alt: "Portfolio Stéphane Gamot" }],
-        locale: "fr_FR",
+        locale: "fr_BE",
+        images: [
+            {
+                url: "/og-default.jpg",
+                width: 1200,
+                height: 630,
+                alt: "Site web professionnel créé par Stéphane Gamot",
+            },
+        ],
     },
     twitter: {
         card: "summary_large_image",
-        images: ["/og/home.png"],
+    },
+    robots: {
+        index: true,
+        follow: true,
     },
 };
+
 
 export const viewport: Viewport = {
     width: "device-width",
