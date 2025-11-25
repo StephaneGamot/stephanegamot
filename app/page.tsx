@@ -40,7 +40,7 @@ export default function Home() {
                 name="Stéphane Gamot"
                 url="https://stephanegamot.vercel.app"
                 description="Création de sites web professionnels pour entrepreneurs et indépendants qui veulent une présence en ligne élégante, rapide et réellement efficace. Chaque site est pensé pour attirer, rassurer et convertir davantage de clients."
-                telephone="+32-477-13-19-93" // remplace par ton vrai numéro
+                telephone="+32-477-13-19-93" 
                 address={{
                     "@type": "PostalAddress",
                     streetAddress: "O de Kerchove d'Exaerdestraat 193",
@@ -60,11 +60,12 @@ export default function Home() {
 
             <main>
                 <HeroHomePage />
+                  <AboutSection />
                 <CardsHome />
                 <Carrousel />
                 <WorkProcess />
                 <TestimonialsSection />
-                <AboutSection />
+      
             </main>
         </>
     );

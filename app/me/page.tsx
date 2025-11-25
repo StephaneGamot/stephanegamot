@@ -1,17 +1,31 @@
 
 import type { Metadata } from "next";
+import AboutPage from "@/components/about/AboutPage";
 
 export const metadata: Metadata = {
-    title: "Projets",
-    description: "Quelques réalisations sélectionnées.",
+    title: "À propos | White Wolf Web – Stéphane Gamot",
+    description:
+        "Découvrez qui se cache derrière White Wolf Web. Je suis Stéphane Gamot, développeur full-stack et créateur de produits digitaux basé en Belgique, spécialisé en sites performants, accessibles et pensés pour le business.",
+    openGraph: {
+        title: "À propos | White Wolf Web – Stéphane Gamot",
+        description:
+            "Je conçois et développe des sites et expériences digitales qui allient design élégant, performance technique et stratégie business.",
+        type: "website",
+        url: "https://ton-domaine.com/a-propos",
+    },
+    alternates: {
+        canonical: "https://ton-domaine.com/a-propos",
+    },
 };
 
 export default function Page() {
     return (
-        <main className="mx-auto max-w-7xl px-6 py-12">
-            <h1 className="text-3xl font-bold">sg</h1>
-            {/* TODO: insère ici ton <Carrousel /> ou ta liste de projets */}
-            <p className="text-gray-500 mt-2">Section en cours…</p>
-        </main>
+        <AboutPage />
     );
 }
+
+
+
+
+
+
