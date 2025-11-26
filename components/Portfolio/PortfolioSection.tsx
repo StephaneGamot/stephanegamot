@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence, type Variants } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
-type CategoryId = "all" | "wellness" | "ecommerce" | "branding" | "concept";
+type CategoryId = "all" | "wellness" | "ecommerce" | "saas" | "branding";
 
 type Project = {
   id: number;
@@ -13,170 +13,154 @@ type Project = {
   description: string;
   category: CategoryId;
   techs: string[];
-  image: string;
-  imageAlt: string;
   link?: string;
-  badge?: string;
+  highlight?: string;
+  imageSrc: string;
+  imageAlt: string;
 };
 
 const categories: { id: CategoryId; label: string }[] = [
-  { id: "all", label: "Tout" },
+  { id: "all", label: "Tous" },
   { id: "wellness", label: "Bien-être" },
   { id: "ecommerce", label: "E-commerce" },
-  { id: "branding", label: "Branding" },
-  { id: "concept", label: "Concepts" },
+  { id: "saas", label: "App / SaaS" },
+  { id: "branding", label: "Branding / Vitrine" },
 ];
 
 const projects: Project[] = [
   {
     id: 1,
     title: "La Voie du Bien-Être",
-    client: "Cabinet shiatsu & massages",
+    client: "Cabinet de shiatsu & massages",
     description:
-      "Une expérience douce, lumineuse et rassurante, centrée sur la prise de rendez-vous et le SEO local.",
+      "Site doux et épuré, orienté conversion, avec SEO local, multilingue et prises de rendez-vous fluides.",
     category: "wellness",
-    techs: ["Next.js", "TypeScript", "Framer Motion", "next-intl"],
-    image: "/Images/carrousel/traiteur43.jpg",
-    imageAlt: "Capture du site La Voie du Bien-Être",
+    techs: ["Next.js", "TypeScript", "Tailwind", "Framer Motion", "next-intl"],
     link: "https://lavoiedubienetre.be",
-    badge: "Bien-être",
+    highlight: "Positionné sur les recherches locales à Halle & Bruxelles.",
+    imageSrc: "/Images/carrousel/boutique-lg.webp",
+    imageAlt: "Capture du site La Voie du Bien-Être",
   },
   {
     id: 2,
     title: "Minao Asian Food",
-    client: "Restaurant asiatique",
+    client: "Restaurant asiatique / take-away",
     description:
-      "Site de commande en ligne avec menu dynamique, paiements Stripe et UX mobile-first.",
+      "Plateforme de commande en ligne : menu dynamique, paiement Stripe, UX mobile-first.",
     category: "ecommerce",
-    techs: ["Next.js", "Stripe", "Tailwind"],
- image: "/Images/carrousel/traiteur43.jpg",
+    techs: ["Next.js", "Stripe", "React", "Node.js"],
+    // pas de link -> pas de bouton
+    highlight: "Pensé pour des commandes rapides en quelques clics.",
+    imageSrc: "/Images/carrousel/boutique-lg.webp",
     imageAlt: "Capture du site Minao Asian Food",
-    link: "#",
-    badge: "E-commerce",
   },
   {
     id: 3,
     title: "Corsica-Corse",
-    client: "Location saisonnière",
+    client: "Location saisonnière en Corse",
     description:
-      "Un site qui mise sur les émotions, la lumière et les paysages pour donner envie de réserver.",
+      "Site vitrine chaleureux pour présenter gîtes, photos immersives et demandes de réservation.",
     category: "branding",
-    techs: ["WordPress", "Elementor", "SEO"],
- image: "/Images/carrousel/traiteur43.jpg",
+    techs: ["WordPress", "Elementor", "SEO", "Performance"],
+    highlight: "Mise en avant de l’émotion et du territoire.",
+    imageSrc: "/Images/carrousel/boutique-lg.webp",
     imageAlt: "Capture du site Corsica-Corse",
-    link: "#",
-    badge: "Branding",
   },
   {
     id: 4,
     title: "Synastria / AstraLovers",
-    client: "Concept app compatibilité",
+    client: "Concept d’app de compatibilité amoureuse",
     description:
-      "Interface ludique et cosmique pour explorer affinités et premières phrases basées sur les signes.",
-    category: "concept",
-    techs: ["Next.js", "Design System"],
- image: "/Images/carrousel/traiteur43.jpg",
-    imageAlt: "Mockup d'une application d'astrologie",
-    link: "#",
-    badge: "Concept",
+      "Prototype d’application basée sur l’astrologie, onboarding ludique et scénarios d’affinités.",
+    category: "saas",
+    techs: ["Next.js", "TypeScript", "Design System", "API"],
+    highlight: "Expérience utilisateur centrée sur le jeu et la curiosité.",
+    imageSrc: "/Images/carrousel/boutique-lg.webp",
+    imageAlt: "Mockup de l’application Synastria / AstraLovers",
   },
   {
     id: 5,
-    title: "White Wolf Studio",
+    title: "White Wolf Web – Studio",
     client: "Studio web haut de gamme",
     description:
-      "Identité premium, sobre, centrée sur la valeur, la confiance et la performance technique.",
+      "Identité visuelle premium, storytelling clair et mise en valeur du portfolio et des services.",
     category: "branding",
-    techs: ["Next.js", "Framer Motion", "Tailwind"],
- image: "/Images/carrousel/traiteur43.jpg",
-    imageAlt: "Capture d'un site de studio web haut de gamme",
-    link: "#",
-    badge: "Studio",
+    techs: ["Next.js", "Framer Motion", "Tailwind", "SEO"],
+    highlight:
+      "Pensé pour rassurer les clients exigeants dès la première impression.",
+    imageSrc: "/Images/carrousel/boutique-lg.webp",
+    imageAlt: "Capture du site White Wolf Web Studio",
   },
 ];
 
-// Variants (sans prise de tête avec TS)
-const sectionVariants: Variants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.7, ease: "easeOut" },
-  },
-};
+function labelFromCategory(category: CategoryId): string {
+  switch (category) {
+    case "wellness":
+      return "Bien-être";
+    case "ecommerce":
+      return "E-commerce";
+    case "saas":
+      return "App / SaaS";
+    case "branding":
+      return "Branding";
+    default:
+      return "Projet";
+  }
+}
 
-const gridVariants: Variants = {
-  hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.12 },
-  },
-};
-
-const cardVariants: Variants = {
-  hidden: { opacity: 0, y: 30, scale: 0.96 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: { duration: 0.45, ease: "easeOut" },
-  },
-};
-
-export default function PortfolioGallery() {
+export default function PortfolioShowcase() {
   const [activeCategory, setActiveCategory] = useState<CategoryId>("all");
 
-  const filtered =
+  const filteredProjects =
     activeCategory === "all"
       ? projects
       : projects.filter((p) => p.category === activeCategory);
 
   return (
     <section className="relative overflow-hidden bg-slate-950 py-16 sm:py-20 lg:py-24">
-      {/* Glow de fond animé */}
+      {/* Fond animé subtil */}
       <div className="pointer-events-none absolute inset-0">
         <motion.div
           className="absolute -left-32 top-0 h-72 w-72 rounded-full bg-indigo-600/25 blur-3xl"
-          animate={{ y: [0, -14, 0] }}
-          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+          animate={{ y: [0, -10, 0] }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
           className="absolute -right-40 bottom-0 h-80 w-80 rounded-full bg-emerald-400/20 blur-3xl"
-          animate={{ y: [0, 18, 0] }}
-          transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
+          animate={{ y: [0, 12, 0] }}
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
         />
       </div>
 
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
-          variants={sectionVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.35 }}
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
           className="mx-auto max-w-3xl text-center"
         >
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-emerald-300/80">
-            Portfolio
+            Réalisations
           </p>
           <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-            Des sites qui{" "}
+            Un portfolio centré sur{" "}
             <span className="bg-gradient-to-r from-emerald-300 via-cyan-300 to-indigo-300 bg-clip-text text-transparent">
-              donnent envie
+              l’expérience
             </span>{" "}
-            d&apos;explorer.
+            et les résultats.
           </h2>
           <p className="mt-4 text-sm sm:text-base text-slate-300/85">
-            Une sélection de projets où l’esthétique, la fluidité et la
-            performance travaillent ensemble pour servir tes clients.
+            Des sites bien-être, e-commerce et projets plus créatifs, tous
+            pensés pour être élégants, rapides et orientés conversion.
           </p>
         </motion.div>
 
         {/* Filtres */}
         <motion.div
-          className="mt-10 flex justify-center"
+          className="mt-10 flex flex-wrap justify-center gap-2 sm:gap-3"
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
         >
           <motion.div
@@ -194,7 +178,7 @@ export default function PortfolioGallery() {
                 >
                   {isActive && (
                     <motion.span
-                      layoutId="portfolio-pill"
+                      layoutId="active-pill"
                       className="absolute inset-0 rounded-full bg-emerald-400/15"
                       transition={{
                         type: "spring",
@@ -210,111 +194,94 @@ export default function PortfolioGallery() {
           </motion.div>
         </motion.div>
 
-        {/* Grid de projets avec images */}
-        <motion.div
-          variants={gridVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          className="mt-10 grid gap-6 sm:mt-12 sm:grid-cols-2 lg:grid-cols-3"
-        >
-          <AnimatePresence mode="popLayout">
-            {filtered.map((project) => (
+        {/* Grid des projets */}
+        <div className="mt-10 grid gap-6 sm:mt-12 sm:grid-cols-2 lg:grid-cols-3">
+          <AnimatePresence mode="wait">
+            {filteredProjects.map((project) => (
               <motion.article
                 key={project.id}
-                variants={cardVariants}
-                layout
-                exit={{ opacity: 0, scale: 0.94, y: 10 }}
-                className="group flex flex-col overflow-hidden rounded-2xl border border-slate-800/80 bg-slate-900/70 shadow-[0_18px_45px_rgba(0,0,0,0.65)] backdrop-blur-md"
+                initial={{ opacity: 0, y: 30, scale: 0.96 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: -20, scale: 0.96 }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+                whileHover={{
+                  y: -6,
+                  rotateX: 2,
+                  rotateY: -2,
+                  transition: { duration: 0.25, ease: "easeOut" },
+                }}
+                className="group flex flex-col justify-between rounded-2xl border border-slate-800/80 bg-slate-900/70 p-5 shadow-[0_18px_45px_rgba(0,0,0,0.65)] backdrop-blur-md transition-colors duration-300 hover:border-emerald-400/60 hover:bg-slate-900/95"
               >
-                {/* Image + overlay animé */}
-                <div className="relative overflow-hidden">
-                  <motion.div
-                    whileHover={{
-                      scale: 1.04,
-                      rotateX: 2,
-                      rotateY: -2,
-                    }}
-                    transition={{ duration: 0.35, ease: "easeOut" }}
-                    className="relative aspect-[16/10]"
-                  >
+                {/* Image */}
+                <div className="mb-4 overflow-hidden rounded-xl border border-slate-800/80 bg-slate-950/60">
+                  <div className="relative aspect-[16/10]">
                     <Image
-                      src={project.image}
+                      src={project.imageSrc}
                       alt={project.imageAlt}
                       fill
-                      className="object-cover"
-                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                      sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw"
                     />
-                  </motion.div>
-
-                  {/* Gradient overlay */}
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/0 to-slate-950/40 opacity-80" />
-
-                  {/* Badge en haut à gauche */}
-                  {project.badge && (
-                    <div className="absolute left-3 top-3 rounded-full border border-emerald-400/70 bg-slate-950/80 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-emerald-200">
-                      {project.badge}
-                    </div>
-                  )}
-
-                  {/* Overlay texte au hover */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileHover={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.25, ease: "easeOut" }}
-                    className="pointer-events-none absolute inset-x-0 bottom-0 p-4"
-                  >
-                    <p className="text-[11px] font-medium uppercase tracking-wide text-emerald-200">
-                      {project.client}
-                    </p>
-                    <p className="mt-1 text-sm text-slate-100">
-                      {project.title}
-                    </p>
-                  </motion.div>
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/10 to-transparent" />
+                  </div>
                 </div>
 
-                {/* Texte de la carte */}
-                <div className="flex flex-1 flex-col p-5">
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300/80">
-                      {project.client}
-                    </p>
-                    <h3 className="mt-1 text-base font-semibold text-white sm:text-lg">
-                      {project.title}
-                    </h3>
-                    <p className="mt-3 text-sm text-slate-300/90">
-                      {project.description}
-                    </p>
-                    <div className="mt-4 flex flex-wrap gap-1.5">
-                      {project.techs.map((tech) => (
-                        <span
-                          key={tech}
-                          className="rounded-full border border-slate-700/80 bg-slate-950/70 px-2.5 py-0.5 text-[11px] uppercase tracking-wide text-slate-200/90"
-                        >
-                          {tech}
-                        </span>
-                      ))}
+                {/* Texte */}
+                <div>
+                  <div className="flex items-start justify-between gap-2">
+                    <div>
+                      <h3 className="text-base font-semibold text-white sm:text-lg">
+                        {project.title}
+                      </h3>
+                      <p className="mt-1 text-xs font-medium uppercase tracking-wide text-emerald-300/80">
+                        {project.client}
+                      </p>
                     </div>
+                    <span className="rounded-full border border-slate-700/70 bg-slate-950/50 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-slate-300/90">
+                      {labelFromCategory(project.category)}
+                    </span>
                   </div>
 
-                  {project.link && (
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-5 inline-flex items-center text-sm font-medium text-emerald-300 transition-colors hover:text-emerald-200"
-                    >
-                      Voir le projet
-                      <span className="ml-1 inline-block text-base transition-transform group-hover:translate-x-0.5">
-                        →
-                      </span>
-                    </a>
+                  <p className="mt-3 text-sm text-slate-300/90">
+                    {project.description}
+                  </p>
+
+                  {project.highlight && (
+                    <p className="mt-3 text-xs text-emerald-200/90">
+                      {project.highlight}
+                    </p>
                   )}
+
+                  <div className="mt-4 flex flex-wrap gap-1.5">
+                    {project.techs.map((tech) => (
+                      <span
+                        key={tech}
+                        className="rounded-full border border-slate-700/80 bg-slate-950/60 px-2.5 py-0.5 text-[11px] uppercase tracking-wide text-slate-200/90"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
+
+                {/* Bouton en option */}
+                {project.link && (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-5 inline-flex items-center text-sm font-medium text-emerald-300 transition-colors hover:text-emerald-200"
+                  >
+                    Voir le projet
+                    <span className="ml-1 inline-block text-base transition-transform group-hover:translate-x-0.5">
+                      →
+                    </span>
+                  </a>
+                )}
               </motion.article>
             ))}
           </AnimatePresence>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
