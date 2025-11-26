@@ -50,7 +50,7 @@ const projects: Project[] = [
     category: "ecommerce",
     techs: ["Next.js", "Stripe", "React", "Node.js"],
     highlight: "Pensé pour des commandes rapides en quelques clics.",
-    imageSrc: "/Images/carrousel/boutique-lg.webp",
+    imageSrc: "/Images/carrousel/boutique-lg.webp", // remplace par la vraie capture
     imageAlt: "Capture du site Minao Asian Food",
   },
   {
@@ -111,7 +111,7 @@ export default function PortfolioShowcase() {
   const [activeCategory, setActiveCategory] = useState<CategoryId>("all");
   const [isTouch, setIsTouch] = useState(false);
 
-  // 🔍 Détection mobile / device tactile
+  // Détection device tactile (iPhone, Android…)
   useEffect(() => {
     if (typeof window !== "undefined") {
       const mq = window.matchMedia("(pointer: coarse)");
@@ -212,7 +212,6 @@ export default function PortfolioShowcase() {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: -20, scale: 0.96 }}
                 transition={{ duration: 0.3, ease: "easeOut" }}
-                // 💻 Effet 3D + déplacement au survol (desktop)
                 whileHover={
                   !isTouch
                     ? {
@@ -223,7 +222,6 @@ export default function PortfolioShowcase() {
                       }
                     : undefined
                 }
-                // 📱 Effet au tap (mobile)
                 whileTap={
                   isTouch
                     ? {
@@ -233,8 +231,35 @@ export default function PortfolioShowcase() {
                       }
                     : undefined
                 }
-                className="group flex flex-col justify-between rounded-2xl border border-slate-800/80 bg-slate-900/70 p-5 shadow-[0_18px_45px_rgba(0,0,0,0.65)] backdrop-blur-md transition-colors duration-300 hover:border-emerald-400/60 hover:bg-slate-900/95"
+                className="group relative flex flex-col justify-between rounded-2xl border border-slate-800/80 bg-slate-900/70 p-5 shadow-[0_18px_45px_rgba(0,0,0,0.65)] backdrop-blur-md transition-colors duration-300 hover:border-emerald-400/60 hover:bg-slate-900/95"
               >
+                {/* Bord scintillant à l’apparition (surtout mobile) */}
+                {isTouch && (
+                  <motion.div
+                    className="pointer-events-none absolute inset-0 rounded-2xl"
+                    initial={{
+                      opacity: 0,
+                      boxShadow: "0 0 0 0 rgba(52,211,153,0)",
+                      borderColor: "rgba(52,211,153,0)",
+                    }}
+                    animate={{
+                      opacity: [0, 1, 0],
+                      boxShadow: [
+                        "0 0 0 0 rgba(52,211,153,0)",
+                        "0 0 35px 0 rgba(52,211,153,0.9)",
+                        "0 0 0 0 rgba(52,211,153,0)",
+                      ],
+                      borderColor: [
+                        "rgba(52,211,153,0)",
+                        "rgba(52,211,153,0.9)",
+                        "rgba(52,211,153,0)",
+                      ],
+                    }}
+                    transition={{ duration: 1.1, ease: "easeOut" }}
+                    style={{ borderWidth: 1 }}
+                  />
+                )}
+
                 {/* Image */}
                 <div className="mb-4 overflow-hidden rounded-xl border border-slate-800/80 bg-slate-950/60">
                   <div className="relative aspect-[16/10]">
