@@ -339,17 +339,19 @@ export default function PortfolioShowcase() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
           className="mx-auto max-w-3xl text-center"
-        >
+        > <h1 className="sr-only">
+        Portfolio – Réalisations de sites web, e-commerce et applications
+      </h1>
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-emerald-300/80">
             Réalisations
           </p>
-          <h1 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
             Un portfolio centré sur{" "}
             <span className="bg-gradient-to-r from-emerald-300 via-cyan-300 to-indigo-300 bg-clip-text text-transparent">
               l’expérience
             </span>{" "}
             et les résultats.
-          </h1>
+          </h2>
           <p className="mt-4 text-sm sm:text-base text-slate-300/85">
             Des sites bien-être, e-commerce et projets plus créatifs, tous
             pensés pour être élégants, rapides et orientés conversion.
