@@ -3,6 +3,22 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import PortFolioAstro from "@/public/Images/portfolio/portfolio-astro.webp"
+import PortFolioBoutique from "@/public/Images/portfolio/portfolio-boutique.webp"
+import PortFolioCorse from "@/public/Images/portfolio/portfolio-corse.webp"
+import PortFolioCourcelles from "@/public/Images/portfolio/portfolio-courcelles.webp"
+import PortFolioEyes from "@/public/Images/portfolio/portfolio-eyes.webp"
+import PortFolioGameOn from "@/public/Images/portfolio/portfolio-gameon.webp"
+import PortFolioJaponais from "@/public/Images/portfolio/portfolio-japonais.webp"
+import PortFolioKanap from "@/public/Images/portfolio/portfolio-kanap.webp"
+import PortFolioKaza from "@/public/Images/portfolio/portfolio-kaza.webp"
+import PortFolioLvbde from "@/public/Images/portfolio/portfolio-lvbde.webp"
+import PortFolioMinao from "@/public/Images/portfolio/portfolio-minao.webp"
+import PortFolioOlympique from "@/public/Images/portfolio/portfolio-olympique.webp"
+import PortFolioRestaurants from "@/public/Images/portfolio/portfolio-restaurants.webp"
+import PortFolioSportSee from "@/public/Images/portfolio/Portfolio-sportsee.webp"
+import PortFolioTarot from "@/public/Images/portfolio/portfolio-tarot.webp"
+import PortFolioTraiteur from "@/public/Images/portfolio/portfolio-traiteur.webp"
 
 type CategoryId = "all" | "wellness" | "ecommerce" | "saas" | "branding";
 
