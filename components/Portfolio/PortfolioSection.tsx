@@ -50,7 +50,7 @@ const projects: Project[] = [
     category: "ecommerce",
     techs: ["Next.js", "Stripe", "React", "Node.js"],
     highlight: "Pensé pour des commandes rapides en quelques clics.",
-    imageSrc: "/Images/carrousel/boutique-lg.webp", // remplace par la vraie capture
+    imageSrc: "/Images/carrousel/boutique-lg.webp", // à remplacer par la vraie capture
     imageAlt: "Capture du site Minao Asian Food",
   },
   {
@@ -233,32 +233,31 @@ export default function PortfolioShowcase() {
                 }
                 className="group relative flex flex-col justify-between rounded-2xl border border-slate-800/80 bg-slate-900/70 p-5 shadow-[0_18px_45px_rgba(0,0,0,0.65)] backdrop-blur-md transition-colors duration-300 hover:border-emerald-400/60 hover:bg-slate-900/95"
               >
-                {/* Bord scintillant à l’apparition (surtout mobile) */}
-                {isTouch && (
-                  <motion.div
-                    className="pointer-events-none absolute inset-0 rounded-2xl"
-                    initial={{
-                      opacity: 0,
-                      boxShadow: "0 0 0 0 rgba(52,211,153,0)",
-                      borderColor: "rgba(52,211,153,0)",
-                    }}
-                    animate={{
-                      opacity: [0, 1, 0],
-                      boxShadow: [
-                        "0 0 0 0 rgba(52,211,153,0)",
-                        "0 0 35px 0 rgba(52,211,153,0.9)",
-                        "0 0 0 0 rgba(52,211,153,0)",
-                      ],
-                      borderColor: [
-                        "rgba(52,211,153,0)",
-                        "rgba(52,211,153,0.9)",
-                        "rgba(52,211,153,0)",
-                      ],
-                    }}
-                    transition={{ duration: 1.1, ease: "easeOut" }}
-                    style={{ borderWidth: 1 }}
-                  />
-                )}
+                {/* Halo scintillant doux & continu tant que la card est visible */}
+                <motion.div
+                  className="pointer-events-none absolute inset-0 rounded-2xl"
+                  initial={{
+                    opacity: 0.15,
+                    boxShadow: "0 0 0 0 rgba(52,211,153,0.25)",
+                    borderColor: "rgba(52,211,153,0.3)",
+                  }}
+                  whileInView={{
+                    opacity: [0.15, 0.4, 0.15],
+                    boxShadow: [
+                      "0 0 0 0 rgba(52,211,153,0.25)",
+                      "0 0 26px 0 rgba(52,211,153,0.7)",
+                      "0 0 0 0 rgba(52,211,153,0.25)",
+                    ],
+                  }}
+                  transition={{
+                    duration: 3.2,
+                    repeat: Infinity,
+                    repeatType: "mirror",
+                    ease: "easeInOut",
+                  }}
+                  viewport={{ amount: 0.6, once: false }}
+                  style={{ borderWidth: 1 }}
+                />
 
                 {/* Image */}
                 <div className="mb-4 overflow-hidden rounded-xl border border-slate-800/80 bg-slate-950/60">
