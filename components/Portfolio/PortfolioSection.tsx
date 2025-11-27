@@ -23,8 +23,8 @@ const categories: { id: CategoryId; label: string }[] = [
   { id: "all", label: "Tous" },
   { id: "wellness", label: "Bien-être" },
   { id: "ecommerce", label: "E-commerce" },
-  { id: "saas", label: "App / SaaS" },
-  { id: "branding", label: "Branding / Vitrine" },
+  { id: "saas", label: "App" },
+  { id: "branding", label: "Vitrine" },
 ];
 
 const projects: Project[] = [
