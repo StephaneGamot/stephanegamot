@@ -190,18 +190,25 @@ export default function TestimonialsSection() {
                                         </p>
                                     </div>
                                 </div>
-                                <div className="flex -mx-0.5" aria-label={`${r.rating} sur 5`}>
-                                    {[0, 1, 2, 3, 4].map((i) => (
-                                        <StarIcon
-                                            key={i}
-                                            className={cx(
-                                                r.rating > i ? "text-yellow-400" : "text-white/20",
-                                                "mx-0.5 h-4 w-4"
-                                            )}
-                                            aria-hidden
-                                        />
-                                    ))}
-                                </div>
+                                <div className="flex items-center gap-1">
+  {/* Étoiles purement visuelles */}
+  <div className="flex -mx-0.5" aria-hidden="true">
+    {[0, 1, 2, 3, 4].map((i) => (
+      <StarIcon
+        key={i}
+        className={cx(
+          r.rating > i ? "text-yellow-400" : "text-white/20",
+          "mx-0.5 h-4 w-4"
+        )}
+        aria-hidden="true"
+      />
+    ))}
+  </div>
+
+  {/* Texte accessible pour lecteurs d’écran */}
+  <span className="sr-only">{r.rating} sur 5</span>
+</div>
+
                             </div>
 
                             <blockquote className="mt-4 text-white/90">
