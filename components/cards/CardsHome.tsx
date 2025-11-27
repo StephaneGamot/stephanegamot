@@ -157,10 +157,7 @@ export default function CardsHome() {
 
                 {/* Grille de cartes */}
                 <div
-                    className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3"
-                    role="list"
-                    aria-label="Liste des services proposés"
-                >
+                    className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                     {services.map((service) => (
                         <article
                             key={service.slug}
