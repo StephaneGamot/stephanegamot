@@ -343,13 +343,13 @@ export default function PortfolioShowcase() {
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-emerald-300/80">
             Réalisations
           </p>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+          <h1 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
             Un portfolio centré sur{" "}
             <span className="bg-gradient-to-r from-emerald-300 via-cyan-300 to-indigo-300 bg-clip-text text-transparent">
               l’expérience
             </span>{" "}
             et les résultats.
-          </h2>
+          </h1>
           <p className="mt-4 text-sm sm:text-base text-slate-300/85">
             Des sites bien-être, e-commerce et projets plus créatifs, tous
             pensés pour être élégants, rapides et orientés conversion.
