@@ -233,31 +233,36 @@ export default function PortfolioShowcase() {
                 }
                 className="group relative flex flex-col justify-between rounded-2xl border border-slate-800/80 bg-slate-900/70 p-5 shadow-[0_18px_45px_rgba(0,0,0,0.65)] backdrop-blur-md transition-colors duration-300 hover:border-emerald-400/60 hover:bg-slate-900/95"
               >
-                {/* Halo scintillant doux & continu tant que la card est visible */}
-                <motion.div
-                  className="pointer-events-none absolute inset-0 rounded-2xl"
-                  initial={{
-                    opacity: 0.15,
-                    boxShadow: "0 0 0 0 rgba(52,211,153,0.25)",
-                    borderColor: "rgba(52,211,153,0.3)",
-                  }}
-                  whileInView={{
-                    opacity: [0.15, 0.4, 0.15],
-                    boxShadow: [
-                      "0 0 0 0 rgba(52,211,153,0.25)",
-                      "0 0 26px 0 rgba(52,211,153,0.7)",
-                      "0 0 0 0 rgba(52,211,153,0.25)",
-                    ],
-                  }}
-                  transition={{
-                    duration: 3.2,
-                    repeat: Infinity,
-                    repeatType: "mirror",
-                    ease: "easeInOut",
-                  }}
-                  viewport={{ amount: 0.6, once: false }}
-                  style={{ borderWidth: 1 }}
-                />
+           {/* Halo scintillant doux & continu tant que la card est visible */}
+<motion.div
+  className="pointer-events-none absolute inset-0 rounded-2xl"
+  initial={{
+    opacity: 0.35,
+    boxShadow: "0 0 0 0 rgba(56,189,248,0.55)", // cyan un peu plus vif
+    borderColor: "rgba(125,211,252,0.9)",       // bord plus lumineux
+  }}
+  whileInView={{
+    opacity: [0.35, 0.8, 0.35],
+    boxShadow: [
+      "0 0 0 0 rgba(56,189,248,0.55)",
+      "0 0 46px 6px rgba(56,189,248,0.98)", // halo plus large et lumineux
+      "0 0 0 0 rgba(56,189,248,0.55)",
+    ],
+  }}
+  transition={{
+    duration: 3.4,
+    repeat: Infinity,
+    repeatType: "mirror",
+    ease: "easeInOut",
+  }}
+  viewport={{ amount: 0.6, once: false }}
+  style={{
+    borderWidth: 1.5,
+    background:
+      "radial-gradient(circle at 50% 0%, rgba(56,189,248,0.18), transparent 60%)",
+  }}
+/>
+
 
                 {/* Image */}
                 <div className="mb-4 overflow-hidden rounded-xl border border-slate-800/80 bg-slate-950/60">
