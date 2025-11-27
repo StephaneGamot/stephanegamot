@@ -114,6 +114,7 @@ export default function TestimonialsSection() {
                     <div
                         className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-white/90 backdrop-blur ring-1 ring-inset ring-white/5"
                         aria-label={`Note moyenne ${average} sur 5 sur Google`}
+                        role="img"
                     >
                         <div className="flex -mx-0.5">
                             {Array.from({ length: 5 }).map((_, i) => (

@@ -165,9 +165,6 @@ export default function CardsHome() {
                         <article
                             key={service.slug}
                             data-service-card
-                            role="listitem"
-                            aria-labelledby={`service-${service.slug}-title`}
-                            aria-describedby={`service-${service.slug}-desc`}
                             className="group flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-sm shadow-black/40 transition hover:border-indigo-600/60 hover:bg-white/10 dark:bg-gray-800/40"
                         >
                             <div className="relative h-40 w-full overflow-hidden">
