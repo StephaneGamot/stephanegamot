@@ -233,33 +233,33 @@ export default function PortfolioShowcase() {
                 }
                 className="group relative flex flex-col justify-between rounded-2xl border border-slate-800/80 bg-slate-900/70 p-5 shadow-[0_18px_45px_rgba(0,0,0,0.65)] backdrop-blur-md transition-colors duration-300 hover:border-emerald-400/60 hover:bg-slate-900/95"
               >
-           {/* Halo scintillant doux & continu tant que la card est visible */}
+       {/* Halo scintillant très doux & continu tant que la card est visible */}
 <motion.div
   className="pointer-events-none absolute inset-0 rounded-2xl"
   initial={{
-    opacity: 0.35,
-    boxShadow: "0 0 0 0 rgba(56,189,248,0.55)", // cyan un peu plus vif
-    borderColor: "rgba(125,211,252,0.9)",       // bord plus lumineux
+    opacity: 0.4,
+    boxShadow: "0 0 10px 0 rgba(56,189,248,0.45)", // halo discret au repos
+    borderColor: "rgba(125,211,252,0.7)",
   }}
   whileInView={{
-    opacity: [0.35, 0.8, 0.35],
+    opacity: [0.4, 0.55, 0.4],                       // petite variation seulement
     boxShadow: [
-      "0 0 0 0 rgba(56,189,248,0.55)",
-      "0 0 46px 6px rgba(56,189,248,0.98)", // halo plus large et lumineux
-      "0 0 0 0 rgba(56,189,248,0.55)",
+      "0 0 10px 0 rgba(56,189,248,0.45)",
+      "0 0 24px 4px rgba(56,189,248,0.75)",          // halo plus doux et moins large
+      "0 0 10px 0 rgba(56,189,248,0.45)",
     ],
   }}
   transition={{
-    duration: 3.4,
+    duration: 4.5,                                   // plus lent = plus zen
     repeat: Infinity,
     repeatType: "mirror",
     ease: "easeInOut",
   }}
   viewport={{ amount: 0.6, once: false }}
   style={{
-    borderWidth: 1.5,
+    borderWidth: 1.2,
     background:
-      "radial-gradient(circle at 50% 0%, rgba(56,189,248,0.18), transparent 60%)",
+      "radial-gradient(circle at 50% 0%, rgba(56,189,248,0.12), transparent 65%)",
   }}
 />
 
