@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   description:
     "Sites web modernes avec React & Next.js : design élégant, performance, SEO solide. Idéal pour site vitrine premium, e-commerce ou app web.",
   alternates: {
-    canonical: "https://whitewolfweb.be/services/site-web-react-next",
+    canonical: "https://www.stephanegamot.com/services/site-web-react-next",
   },
   openGraph: {
     title: "Sites web React & Next.js sur mesure | White Wolf Web",
     description:
       "Un site moderne, rapide et évolutif avec React & Next.js : parfait pour les entrepreneurs, studios, thérapeutes et projets plus ambitieux.",
-    url: "https://whitewolfweb.be/services/site-web-react-next",
+    url: "https://www.stephanegamot.com/services/site-web-react-next",
     type: "website",
   },
 };

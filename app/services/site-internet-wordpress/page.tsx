@@ -6,13 +6,13 @@ export const metadata: Metadata = {
   description:
     "Site vitrine, blog ou petite boutique : je conçois des sites WordPress élégants, rapides et faciles à mettre à jour, adaptés aux indépendants et petites entreprises.",
   alternates: {
-    canonical: "https://whitewolfweb.be/services/site-internet-wordpress",
+    canonical: "https://www.stephanegamot.com/services/site-internet-wordpress",
   },
   openGraph: {
     title: "Création de site WordPress sur mesure | White Wolf Web",
     description:
       "Un site WordPress clair, pro et simple à gérer : idéal pour présenter vos services, publier du contenu et être contacté facilement.",
-    url: "https://whitewolfweb.be/services/site-internet-wordpress",
+    url: "https://www.stephanegamot.com/services/site-internet-wordpress",
     type: "website",
   },
 };
