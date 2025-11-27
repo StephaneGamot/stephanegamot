@@ -36,7 +36,7 @@ export const metadata: Metadata = {
         locale: "fr_BE",
         images: [
             {
-                url: "@/Images/og/office-workstation.webp",
+                url: "/public/Images/og/office-workstation.webp",
                 width: 1200,
                 height: 630,
                 alt: "Site web professionnel créé par Stéphane Gamot",
