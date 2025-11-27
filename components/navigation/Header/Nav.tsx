@@ -183,12 +183,12 @@ export default function Example() {
                     >
                         Portfolio
                     </Link>
-                    <Link
+                  {/*  <Link
                         href="/idees"
                         className="text-lg font-semibold text-gray-900 dark:text-white"
                     >
                         Idées
-                    </Link>
+                    </Link> */}
                     <Link
                         href="blog"
                         className="text-lg font-semibold text-gray-900 dark:text-white"
@@ -289,7 +289,7 @@ export default function Example() {
                                         <span>Portfolio</span>
                                     </Link>
 
-                                    <Link
+                                   {/* <Link
                                         href="idees"
                                         className="group -mx-3 flex items-center gap-x-6 rounded-lg p-3 text-base/7 font-semibold text-gray-900 hover:bg-gray-800 dark:text-white dark:hover:bg-white/5"
                                         onClick={() => setMobileMenuOpen(false)}
@@ -301,7 +301,7 @@ export default function Example() {
                                             />
                                         </div>
                                         <span>Idées</span>
-                                    </Link>
+                                    </Link>*/}
 
                                     <Link
                                         href="blog"

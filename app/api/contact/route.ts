@@ -52,7 +52,7 @@ export async function POST(req: NextRequest) {
         const to = "stephanegamot@outlook.com";
 
         const { error } = await resend.emails.send({
-            from: "Site Stéphane Gamot <contact@whitewolfweb.be>",
+from: "Site Stéphane Gamot <onboarding@resend.dev>",
             to,
             replyTo: email,
             subject: `Nouveau contact — ${firstName} ${lastName}`,
