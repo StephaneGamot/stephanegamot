@@ -13,6 +13,15 @@ export const metadata: Metadata = {
             "Découvrez comment je travaille, les délais, les tarifs et les options de maintenance pour votre site internet.",
         type: "website",
         url: "https://www.stephanegamot.com/faq",
+        locale: "fr_BE",
+        images: [
+            {
+              url: "https://www.stephanegamot.com/Images/og/office-workstation.webp",
+                width: 1200,
+                height: 630,
+                alt: "Site web professionnel créé par Stéphane Gamot",
+            },
+        ],
     },
     alternates: {
         canonical: "https://www.stephanegamot.com/faq",
