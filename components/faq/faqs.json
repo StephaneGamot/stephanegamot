@@ -7,7 +7,7 @@
   {
     "id": 2,
     "question": "Quel est le délai moyen pour réaliser un site ?",
-    "answer": "Pour un site vitrine simple, il faut en général entre 3 et 5 semaines, selon la rapidité de vos retours et la fourniture des contenus (textes, images). Pour un e-commerce, il faut souvent compter un peu plus de temps."
+    "answer": "Pour un site vitrine simple, il faut en général entre 2 et 5 semaines, selon la rapidité de vos retours et la fourniture des contenus (textes, images). Pour un e-commerce, il faut souvent compter un peu plus de temps."
   },
   {
     "id": 3,
@@ -28,5 +28,80 @@
     "id": 6,
     "question": "Sommes-nous engagés sur la durée si nous travaillons ensemble ?",
     "answer": "Non, il n’y a pas d’abonnement caché. Le projet est cadré par un devis et un contrat. Pour la maintenance ou l’accompagnement, je propose des formules mensuelles ou annuelles que vous pouvez arrêter en respectant le préavis indiqué."
+  },
+  {
+    "id": 7,
+    "question": "Pouvez-vous reprendre un site existant pour l’améliorer ?",
+    "answer": "Oui. Je peux auditer votre site actuel pour identifier les problèmes (performance, sécurité, SEO, structure) et proposer une amélioration ou une refonte si nécessaire."
+  },
+  {
+    "id": 8,
+    "question": "Travaillez-vous avec WordPress ou uniquement avec des technologies modernes comme React et Next.js ?",
+    "answer": "Je travaille avec les deux. WordPress est idéal pour certains projets simples ou éditoriaux, tandis que Next.js est parfait pour les sites modernes, rapides et plus personnalisés."
+  },
+  {
+    "id": 9,
+    "question": "Est-ce que je dois fournir les textes et les photos ?",
+    "answer": "Vous pouvez, mais ce n’est pas obligatoire. Je peux vous aider à rédiger les contenus et sélectionner des visuels professionnels si nécessaire."
+  },
+  {
+    "id": 10,
+    "question": "Est-ce que vous créez aussi des logos et chartes graphiques ?",
+    "answer": "Oui, je peux créer une identité visuelle complète ou adapter votre identité actuelle pour l’intégrer harmonieusement à votre site."
+  },
+  {
+    "id": 11,
+    "question": "Est-ce que mon site sera rapide et optimisé pour Google ?",
+    "answer": "Oui. La performance fait partie intégrante de ma méthode. J’optimise la vitesse, la structure, les images, l’accessibilité et tous les points suivis par Google Lighthouse et les Core Web Vitals."
+  },
+  {
+    "id": 12,
+    "question": "Est-ce que vous proposez des paiements en ligne (Stripe, PayPal, etc.) ?",
+    "answer": "Oui. J’intègre Stripe, PayPal ou d'autres solutions de paiement sécurisées pour les sites e-commerce ou les réservations en ligne."
+  },
+  {
+    "id": 13,
+    "question": "Est-ce que le site sera adapté aux smartphones et tablettes ?",
+    "answer": "Oui, 100 %. Tous les sites sont conçus mobile-first et testés sur plusieurs tailles d'écran pour garantir une expérience fluide partout."
+  },
+  {
+    "id": 14,
+    "question": "Puis-je suivre l’avancement du projet ?",
+    "answer": "Oui. Vous recevez des étapes claires (maquettes, intégration, corrections) et vous pouvez valider chaque phase avant de passer à la suivante."
+  },
+  {
+    "id": 15,
+    "question": "Proposez-vous des sites multilingues ?",
+    "answer": "Oui. Je peux développer un site en plusieurs langues (FR/EN/NL/ES…) avec un système professionnel de gestion des traductions (pas juste un traducteur local)."
+  },
+  {
+    "id": 16,
+    "question": "Utilisez-vous des templates ou concevez-vous tout sur-mesure ?",
+    "answer": "Je privilégie le sur-mesure. Chaque site est adapté à vos besoins, à votre image et à votre marché. Pas de thème générique ou de copies."
+  },
+  {
+    "id": 17,
+    "question": "Le site sera-t-il sécurisé ?",
+    "answer": "Oui. Je mets en place les bonnes pratiques modernes : HTTPS, protections anti-bots, mises à jour régulières, sauvegardes, et une architecture solide."
+  },
+  {
+    "id": 18,
+    "question": "Puis-je ajouter des fonctionnalités plus tard ?",
+    "answer": "Oui. Je construis tous les sites de manière évolutive pour que vous puissiez ajouter des pages, des services, ou même une boutique plus tard."
+  },
+  {
+    "id": 19,
+    "question": "Faites-vous aussi des audits de sites existants ?",
+    "answer": "Oui. Je propose des audits complets (performance, SEO, accessibilité, structure, UX) avec une liste de recommandations classées par priorité."
+  },
+  {
+    "id": 20,
+    "question": "Comment se déroule la collaboration concrètement ?",
+    "answer": "Un appel, un devis clair, un plan de travail, le développement, la mise en ligne, puis éventuellement la maintenance. Vous savez toujours où on en est."
+  },
+  {
+    "id": 21,
+    "question": "Puis-je héberger mon site où je veux ?",
+    "answer": "Oui. Je peux gérer l’hébergement pour vous (Vercel, OVH, o2Switch…) ou travailler avec votre hébergeur actuel si vous préférez conserver vos accès."
   }
 ]
