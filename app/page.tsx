@@ -23,6 +23,15 @@ export const metadata: Metadata = {
         url: "https://stephanegamot.vercel.app",
         siteName: "Stéphane Gamot",
         type: "website",
+        locale: "fr_BE",
+        images: [
+            {
+              url: "https://www.stephanegamot.com/Images/og/office-workstation.webp",
+                width: 1200,
+                height: 630,
+                alt: "Site web professionnel créé par Stéphane Gamot",
+            },
+        ],
     },
     twitter: {
         title: "Création de sites web performants à Bruxelles — Stéphane Gamot",
