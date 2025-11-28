@@ -5,7 +5,7 @@ import PortfolioSection from "@/components/Portfolio/PortfolioSection";
 export const metadata: Metadata = {
   title: "Portfolio – Sites web modernes & performants | Stéphane Gamot",
   description:
-    "Découvrez une sélection de sites vitrine, e-commerce, dashboards et applications web réalisés avec Next.js, React et WordPress. Design élégant, performance, SEO et expérience utilisateur au centre de chaque projet.",
+    "Découvrez une sélection de sites vitrine, e-commerce, applications web réalisés avec Next.js, React & WordPress. Élégance, performance, SEO & UX au centre de votre projet",
   keywords: [
     "portfolio développeur web",
     "portfolio création de site internet",
