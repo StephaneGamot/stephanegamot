@@ -103,5 +103,155 @@
     "id": 21,
     "question": "Puis-je héberger mon site où je veux ?",
     "answer": "Oui. Je peux gérer l’hébergement pour vous (Vercel, OVH, o2Switch…) ou travailler avec votre hébergeur actuel si vous préférez conserver vos accès."
+  },
+  {
+    "id": 22,
+    "question": "Votre méthode respecte-t-elle les bonnes pratiques SEO recommandées par Google ?",
+    "answer": "Oui. Je construis tous les sites selon les guidelines Google : structure claire (H1/H2), sitemap, performance, accessibilité, mobile-first, données structurées et optimisation des contenus."
+  },
+  {
+    "id": 23,
+    "question": "Optimisez-vous la vitesse de chargement du site ?",
+    "answer": "Oui, c’est une priorité. Optimisation des images, mise en cache, compression, bundle minimal, police optimisée, lazy loading… Tout est pensé pour obtenir d’excellents scores Core Web Vitals."
+  },
+  {
+    "id": 24,
+    "question": "Faites-vous les meta tags, balises title et descriptions ?",
+    "answer": "Oui. Je configure toutes les balises importantes pour Google : title, meta description, OpenGraph, JSON-LD, ainsi que les balises essentielles pour l’accessibilité."
+  },
+  {
+    "id": 25,
+    "question": "Le site sera-t-il indexé rapidement sur Google ?",
+    "answer": "Oui. Je génère un sitemap, configure la Search Console et optimise la vitesse et la structure, ce qui accélère fortement l’indexation."
+  },
+  {
+    "id": 26,
+    "question": "Pouvez-vous m’aider à apparaître sur Google Maps et en SEO local ?",
+    "answer": "Oui. J’optimise votre fiche Google Business Profile et votre site pour votre zone géographique afin d’améliorer votre visibilité locale."
+  },
+  {
+    "id": 27,
+    "question": "Est-ce que vous intégrez des données structurées (schema.org) ?",
+    "answer": "Oui, j’intègre des JSON-LD adaptés : entreprise, avis clients, FAQ, services, produits, articles… pour maximiser l’apparition des rich snippets."
+  },
+  {
+    "id": 28,
+    "question": "Est-ce que le site sera compatible avec les Core Web Vitals ?",
+    "answer": "Oui. Le projet est construit pour obtenir de très bons scores sur LCP, CLS, FID et INP afin de renforcer votre visibilité et votre conversion."
+  },
+  {
+    "id": 29,
+    "question": "Pouvez-vous améliorer un site WordPress ou Wix déjà existant ?",
+    "answer": "Oui. Je fais un audit complet et j’optimise les performances : images, thèmes, plugins, cache, sécurité, structure des pages et SEO."
+  },
+  {
+    "id": 30,
+    "question": "Proposez-vous des audits SEO complets ?",
+    "answer": "Oui. Technique, structure, backlinks, concurrence, contenus… vous recevez un rapport clair et priorisé."
+  },
+  {
+    "id": 31,
+    "question": "Pouvez-vous m’aider à trouver les bons mots clés ?",
+    "answer": "Oui. Je fais une recherche de mots clés adaptée à votre secteur et je vous conseille sur les contenus à créer pour renforcer votre visibilité."
+  },
+  {
+    "id": 32,
+    "question": "Est-ce que vous rédigez aussi du contenu SEO ?",
+    "answer": "Je peux rédiger ou optimiser vos textes pour qu’ils soient lisibles, naturels et performants pour Google."
+  },
+  {
+    "id": 33,
+    "question": "Le site sera-t-il conforme aux normes d’accessibilité (WCAG) ?",
+    "answer": "Oui. Structure correcte, contrastes, ARIA, navigation clavier, balises sémantiques… l’accessibilité fait partie intégrante du SEO moderne."
+  },
+  {
+    "id": 34,
+    "question": "Est-ce que vous suivez l’évolution SEO après la mise en ligne ?",
+    "answer": "Oui. Je propose un accompagnement mensuel ou ponctuel pour suivre vos positions et adapter la stratégie."
+  },
+  {
+    "id": 35,
+    "question": "Pouvez-vous connecter des outils comme Google Analytics, Search Console, ou Tag Manager ?",
+    "answer": "Oui, je m’occupe de l’intégration complète pour que vous puissiez suivre vos performances et vos conversions."
+  },
+  {
+    "id": 36,
+    "question": "Puis-je espérer apparaître en première page sur Google ?",
+    "answer": "Oui, si le secteur n’est pas ultra concurrentiel. Le SEO dépend de la technique, du contenu et de la concurrence. Je vous accompagne pour maximiser vos chances."
+  },
+  {
+    "id": 37,
+    "question": "Je ne suis pas très à l’aise avec le digital, est-ce un problème ?",
+    "answer": "Pas du tout. Je vous accompagne étape par étape, avec un langage simple et clair, sans jargon technique."
+  },
+  {
+    "id": 38,
+    "question": "Je n’ai pas encore de textes ni de photos, est-ce que vous pouvez m’aider ?",
+    "answer": "Oui. Je peux vous aider à rédiger les contenus et sélectionner des images professionnelles adaptées à votre activité."
+  },
+  {
+    "id": 39,
+    "question": "Je n’ai pas de logo ou d’identité visuelle, est-ce grave ?",
+    "answer": "Non. Je peux créer une identité simple et élégante pour vous permettre de démarrer avec une image professionnelle."
+  },
+  {
+    "id": 40,
+    "question": "Est-ce que mon site sera facile à utiliser pour mes clients ?",
+    "answer": "Oui. Je construis toutes les interfaces pour qu’elles soient claires, rassurantes, accessibles et simples à comprendre."
+  },
+  {
+    "id": 41,
+    "question": "Je veux surtout que mes clients me trouvent facilement, est-ce possible ?",
+    "answer": "Oui. L’optimisation Google local (Belgique, France, région) fait partie intégrante de ma méthode."
+  },
+  {
+    "id": 42,
+    "question": "Vous faites aussi les réservations en ligne ?",
+    "answer": "Oui. Systèmes de réservation pour cabinets, massages, restaurants ou événements, avec e-mails automatiques si besoin."
+  },
+  {
+    "id": 43,
+    "question": "Est-ce que le site sera adapté aux personnes âgées ou malvoyantes ?",
+    "answer": "Oui. Je suis très attentif à l’accessibilité : contrastes, tailles de texte, lisibilité, structure claire."
+  },
+  {
+    "id": 44,
+    "question": "Puis-je mettre à jour mon site moi-même ?",
+    "answer": "Oui. Je peux vous former pour modifier textes, images et contenus, même si vous n’êtes pas technique."
+  },
+  {
+    "id": 45,
+    "question": "Et si j’ai besoin d’aide après la mise en ligne ?",
+    "answer": "Je reste disponible. Vous pouvez me contacter facilement, et je propose des formules de maintenance simples et transparentes."
+  },
+  {
+    "id": 46,
+    "question": "Est-ce que le site sera sécurisé ?",
+    "answer": "Oui. Je configure un certificat SSL, une protection contre les robots, et une architecture fiable pour éviter les piratages."
+  },
+  {
+    "id": 47,
+    "question": "Est-ce que vous travaillez avec les petits budgets ?",
+    "answer": "Je propose plusieurs formules adaptées, avec un budget clair et sans surprise. Le but est de vous aider à avancer."
+  },
+  {
+    "id": 48,
+    "question": "Est-ce que le paiement peut être étalé ?",
+    "answer": "Oui. Je propose des paiements en plusieurs fois pour faciliter votre investissement."
+  },
+  {
+    "id": 49,
+    "question": "Je ne suis pas en Belgique, est-ce que vous pouvez quand même travailler avec moi ?",
+    "answer": "Oui. Je travaille avec des clients en Belgique, France, Luxembourg et Suisse. Tout se fait facilement à distance aujourd'hui."
+  },
+  {
+    "id": 50,
+    "question": "Est-ce que je peux voir où vous en êtes pendant le développement ?",
+    "answer": "Oui. Vous recevez un lien de prévisualisation pour suivre le site en temps réel."
+  },
+  {
+    "id": 51,
+    "question": "Est-ce que vous garantissez que mon site convertira mieux ?",
+    "answer": "Oui, si nous appliquons une bonne structure, une mise en avant claire de vos services et un design rassurant, les résultats s’améliorent presque toujours."
   }
 ]
