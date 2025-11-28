@@ -4,11 +4,46 @@ import { SparklesIcon } from "@heroicons/react/24/outline";
 import Me from "@/public/Images/me/me.webp"
 import Image from "next/image";
 
+const SITE_URL = "https://www.stephanegamot.com";
+
 export const metadata: Metadata = {
   title: "À propos – Stéphane Gamot",
   description:
     "Je suis Stéphane Gamot, développeur web full-stack basé en Belgique. Je crée des sites élégants, rapides et pensés pour la conversion, avec une approche humaine et stratégique.",
+  alternates: {
+    canonical: `${SITE_URL}/me`,
+  },
+  openGraph: {
+    type: "profile",
+    url: `${SITE_URL}/me`,
+    title: "À propos – Stéphane Gamot",
+    description:
+      "Développeur web full-stack basé en Belgique. J’accompagne les entrepreneurs, indépendants et petites entreprises avec des sites élégants, rapides et orientés résultats.",
+    siteName: "Stéphane Gamot",
+    locale: "fr_BE",
+    images: [
+      {
+        // n'utilise PAS "@/public" ici, mais bien un chemin public ou une URL absolue
+        url: `${SITE_URL}/Images/og/office-workstation.webp`,
+        width: 1200,
+        height: 630,
+        alt: "Bureau moderne avec un écran affichant un site web professionnel.",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "À propos – Stéphane Gamot",
+    description:
+      "Développeur web full-stack basé en Belgique, avec une approche haut de gamme, orientée design, performance et conversion.",
+    images: [`${SITE_URL}/Images/og/office-workstation.webp`],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
+
 
 export default function AboutPage() {
   return (
