@@ -8,23 +8,72 @@ import { posts } from "../posts";
 // ⚠️ Avec Next 16, params est un Promise côté RSC
 type ParamsPromise = Promise<{ slug: string }>;
 
+const SITE_URL = "https://www.stephanegamot.com";
+
 export async function generateMetadata(
-    { params }: { params: ParamsPromise }
+  { params }: { params: ParamsPromise }
 ): Promise<Metadata> {
-    const { slug } = await params;
-    const post = posts.find((p) => p.slug === slug);
+  const { slug } = await params;
+  const post = posts.find((p) => p.slug === slug);
 
-    if (!post) {
-        return {
-            title: "Article introuvable | Blog",
-            description: "Article introuvable sur le blog de Stéphane Gamot.",
-        };
-    }
+  const canonicalUrl = `${SITE_URL}/blog/${slug}`;
 
+  if (!post) {
     return {
-        title: `${post.title} | Blog`,
-        description: post.description,
+      title: "Article introuvable | Blog – Stéphane Gamot",
+      description: "Article introuvable sur le blog de Stéphane Gamot.",
+      alternates: {
+        canonical: canonicalUrl,
+      },
+      robots: {
+        index: false,
+        follow: false,
+      },
     };
+  }
+
+  // Normalise l’URL de l’image (Unsplash ou locale)
+  const ogImageUrl = post.imageUrl.startsWith("http")
+    ? post.imageUrl
+    : `${SITE_URL}${post.imageUrl.startsWith("/") ? "" : "/"}${post.imageUrl}`;
+
+  return {
+    title: `${post.title} | Blog – Stéphane Gamot`,
+    description: post.description,
+    alternates: {
+      canonical: canonicalUrl,
+    },
+    openGraph: {
+      type: "article",
+      url: canonicalUrl,
+      title: `${post.title} | Blog – Stéphane Gamot`,
+      description: post.description,
+      siteName: "Stéphane Gamot",
+      locale: "fr_BE",
+      images: [
+        {
+          url: ogImageUrl,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+      authors: [post.author.name],
+      publishedTime: post.datetime, // format AAAA-MM-JJ
+      // éventuellement :
+      // modifiedTime: post.updatedAt,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${post.title} | Blog – Stéphane Gamot`,
+      description: post.description,
+      images: [ogImageUrl],
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
+  };
 }
 
 export default async function BlogPostPage({

@@ -4,10 +4,39 @@ import Image from "next/image";
 import Link from "next/link";
 import { posts } from "../blog/posts";
 
+const SITE_URL = "https://www.stephanegamot.com";
+
 export const metadata: Metadata = {
-    title: "Blog & conseils | Stéphane Gamot",
+  title: "Blog & conseils – Web, SEO, performance | Stéphane Gamot",
+  description:
+    "Articles sur la création de sites modernes, le SEO, la performance web, l’accessibilité et les bonnes pratiques pour les PME et indépendants.",
+  alternates: {
+    canonical: `${SITE_URL}/blog`,
+  },
+  openGraph: {
+    type: "website",
+    url: `${SITE_URL}/blog`,
+    title: "Blog & conseils – Web, SEO, performance | Stéphane Gamot",
     description:
-        "Articles sur la création de sites, le SEO, la performance web et l’accessibilité.",
+      "Conseils pour mieux comprendre comment un site bien pensé peut vraiment servir votre activité : design, SEO, performance, conversion.",
+    siteName: "Stéphane Gamot",
+    locale: "fr_BE",
+    images: [
+      {
+        url: `${SITE_URL}/Images/og/blog-stephane-gamot.webp`, 
+        width: 1200,
+        height: 630,
+        alt: "Blog de Stéphane Gamot sur le web, le SEO et la performance",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blog & conseils – Web, SEO, performance | Stéphane Gamot",
+    description:
+      "Création de sites, SEO, performance, UX et accessibilité expliqués simplement pour les entrepreneurs.",
+    images: [`${SITE_URL}/Images/og/blog-stephane-gamot.webp`],
+  },
 };
 
 export default function BlogPage() {
