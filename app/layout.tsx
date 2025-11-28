@@ -3,6 +3,7 @@ import "./globals.css";
 import { Cormorant_Garamond, Montserrat } from "next/font/google";
 import Nav from "@/components/navigation/Header/Nav";
 import Footer from "@/components/navigation/Footer/Footer";
+// import OgImg from "@/public/Images/og/office-workstation.webp"
 
 const garamond = Cormorant_Garamond({
     subsets: ["latin"],
@@ -36,7 +37,7 @@ export const metadata: Metadata = {
         locale: "fr_BE",
         images: [
             {
-                url: "/public/Images/og/office-workstation.webp",
+                url: "@/public/Images/og/office-workstation.webp",
                 width: 1200,
                 height: 630,
                 alt: "Site web professionnel créé par Stéphane Gamot",
