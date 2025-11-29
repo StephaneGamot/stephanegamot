@@ -69,7 +69,7 @@ export default function TestimonialsSection() {
     const schema = {
         "@context": "https://schema.org",
         "@type": "Organization",
-        name: "Stéphane Gamot — White Wolf Web",
+        name: "Stéphane Gamot",
         url: "https://stephanegamot.vercel.app/",
         aggregateRating: {
             "@type": "AggregateRating",

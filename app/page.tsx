@@ -74,6 +74,7 @@ export default function Home() {
         type="ProfessionalService"
         name="Stéphane Gamot – Création de sites web"
         description="Développeur web basé en Belgique, spécialisé dans la création de sites élégants, rapides et optimisés pour la conversion : sites vitrines, e-commerce, SEO et performance."
+          image="https://www.stephanegamot.com/images/stephane-gamot-profile.jpg"
         url="https://www.stephanegamot.com"
         telephone="+32 477 71 31 93"
         address={{
