@@ -314,41 +314,40 @@ export default function Contact() {
                     </div>
                   </div>
 
-                  {/* Pièce jointe UI seulement */}
-                  <div className="col-span-full">
-                    <label
-                      htmlFor="file-upload"
-                      className="block text-sm font-medium text-gray-900 dark:text-white"
-                    >
-                      Pièce jointe (optionnel)
-                    </label>
-                    <div className="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-8 dark:border-white/25">
-                      <div className="text-center">
-                        <PhotoIcon
-                          aria-hidden="true"
-                          className="mx-auto size-10 text-gray-300 dark:text-gray-500"
-                        />
-                        <div className="mt-3 flex text-sm text-gray-600 dark:text-gray-400">
-                          <label
-                            htmlFor="file-upload"
-                            className="relative cursor-pointer rounded-md bg-white px-2 font-semibold text-indigo-600 focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-indigo-600 hover:text-indigo-500 dark:bg-transparent dark:text-indigo-400 dark:focus-within:outline-indigo-500 dark:hover:text-indigo-300"
-                          >
-                            <span>Importer un fichier</span>
-                            <input
-                              id="file-upload"
-                              name="file-upload"
-                              type="file"
-                              className="sr-only"
-                            />
-                          </label>
-                          <p className="pl-1">ou glisser-déposer</p>
-                        </div>
-                        <p className="text-xs text-gray-600 dark:text-gray-400">
-                          PDF, PNG, JPG, jusqu’à 10&nbsp;Mo
-                        </p>
-                      </div>
-                    </div>
-                  </div>
+                 {/* Pièce jointe UI seulement */}
+<div className="col-span-full">
+  {/* n’est plus un <label>, juste un texte de titre */}
+  <p className="block text-sm font-medium text-gray-900 dark:text-white">
+    Pièce jointe (optionnel)
+  </p>
+
+  <div className="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-8 dark:border-white/25">
+    <div className="text-center">
+      <PhotoIcon
+        aria-hidden="true"
+        className="mx-auto size-10 text-gray-300 dark:text-gray-500"
+      />
+      <div className="mt-3 flex text-sm text-gray-600 dark:text-gray-400">
+        <label
+          htmlFor="file-upload"
+          className="relative cursor-pointer rounded-md bg-white px-2 font-semibold text-indigo-600 focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-indigo-600 hover:text-indigo-500 dark:bg-transparent dark:text-indigo-400 dark:focus-within:outline-indigo-500 dark:hover:text-indigo-300"
+        >
+          <span>Importer un fichier</span>
+          <input
+            id="file-upload"
+            name="file-upload"
+            type="file"
+            className="sr-only"
+          />
+        </label>
+        <p className="pl-1">ou glisser-déposer</p>
+      </div>
+      <p className="text-xs text-gray-600 dark:text-gray-400">
+        PDF, PNG, JPG, jusqu’à 10&nbsp;Mo
+      </p>
+    </div>
+  </div>
+</div>
 
                   <div className="col-span-full">
                     <div className="flex items-start gap-3">
