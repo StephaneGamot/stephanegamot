@@ -1,10 +1,8 @@
 // app/api/contact/route.ts
 import { NextResponse } from "next/server";
-import { Resend } from "resend";
+import nodemailer from "nodemailer";
 
-export const runtime = "nodejs";
-
-const resend = new Resend(process.env.RESEND_API_KEY);
+export const runtime = "nodejs"; // important pour Nodemailer
 
 type Payload = {
   firstName: string;
@@ -69,22 +67,33 @@ export async function POST(req: Request) {
       message,
     } = body;
 
+    // 📨 Transport SMTP (Outlook, OVH, autre… à adapter avec tes infos)
+    const transporter = nodemailer.createTransport({
+      host: process.env.SMTP_HOST,
+      port: Number(process.env.SMTP_PORT) || 587,
+      secure: Number(process.env.SMTP_PORT) === 465, // true pour 465, sinon false
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
+      },
+    });
+
     const to = process.env.CONTACT_TO || "stephanegamot@outlook.com";
     const from =
-      process.env.CONTACT_FROM || "Formulaire <no-reply@resend.dev>";
+      process.env.SMTP_FROM || `"Formulaire site" <${process.env.SMTP_USER}>`;
 
-    const subject = `Nouveau message de ${firstName} ${lastName} – Formulaire site`;
+    const subject = `Nouveau message de ${firstName} ${lastName} – Formulaire de contact`;
 
     const text = `
 Nouveau message reçu depuis le site :
 
 Nom : ${firstName} ${lastName}
 Email : ${email}
-Téléphone : ${phone || "-" }
-Entreprise : ${company || "-" }
+Téléphone : ${phone || "-"}
+Entreprise : ${company || "-"}
 
-Type de projet : ${projectType || "-" }
-Budget indicatif : ${budget || "-" }
+Type de projet : ${projectType || "-"}
+Budget indicatif : ${budget || "-"}
 
 Message :
 ${message}
@@ -103,25 +112,13 @@ ${message}
   <p>${message.replace(/\n/g, "<br />")}</p>
 `;
 
-    const { error } = await resend.emails.send({
-      from,
+    await transporter.sendMail({
       to,
+      from,
       subject,
       text,
       html,
     });
-
-    if (error) {
-      console.error("Resend error:", error);
-      return NextResponse.json(
-        {
-          ok: false,
-          error:
-            "Impossible d’envoyer l’email pour le moment. Vous pouvez aussi me contacter directement par email.",
-        },
-        { status: 500 }
-      );
-    }
 
     return NextResponse.json({ ok: true });
   } catch (err) {
