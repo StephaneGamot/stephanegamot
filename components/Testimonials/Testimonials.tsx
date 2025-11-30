@@ -70,7 +70,7 @@ export default function TestimonialsSection() {
         "@context": "https://schema.org",
         "@type": "Organization",
         name: "Stéphane Gamot",
-        url: "https://stephanegamot.vercel.app/",
+        url: "https://www.stephanegamot.com/",
         aggregateRating: {
             "@type": "AggregateRating",
             ratingValue: `${average}`,
