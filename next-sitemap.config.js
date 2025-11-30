@@ -7,7 +7,6 @@ const config = {
   generateRobotsTxt: true,
 
   transform: async (config, path) => {
-    // Valeurs par défaut
     let priority = 0.7;
     let changefreq = "monthly";
 
@@ -40,7 +39,7 @@ const config = {
         allow: "/",
       },
     ],
-    additionalSitemaps: [`${siteUrl}/sitemap.xml`],
+    // ❌ plus de additionalSitemaps ici
   },
 };
 
