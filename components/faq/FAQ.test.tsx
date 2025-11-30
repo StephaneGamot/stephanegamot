@@ -1,4 +1,4 @@
-// src/components/faq/FAQSection.test.tsx
+
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import FAQSection from "./Faq";

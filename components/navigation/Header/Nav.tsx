@@ -189,7 +189,7 @@ export default function Example() {
                     >
                         Idées
                     </Link> */}
-                    <Link
+                   {/*  <Link
                         href="blog"
                         className="text-lg font-semibold text-gray-900 dark:text-white"
                     >
@@ -200,7 +200,7 @@ export default function Example() {
                         className="text-lg font-semibold text-gray-900 dark:text-white"
                     >
                         FAQ
-                    </Link>
+                    </Link>*/}
                     <Link
                         href="/me"
                         className="text-lg font-semibold text-gray-900 dark:text-white"
