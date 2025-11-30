@@ -78,7 +78,7 @@ export default function Home() {
         url="https://www.stephanegamot.com"
         telephone="+32 477 71 31 93"
         address={{
-          streetAddress: "Rue Octave de Kerchove d’Exaerdestraat 193",
+          streetAddress: "Octave de Kerchove d’Exaerdestraat 193",
           addressLocality: "Halle",
           postalCode: "1501",
           addressCountry: "BE",
@@ -91,7 +91,8 @@ export default function Home() {
           "Bruxelles",
           "Halle",
           "Brabant wallon",
-          "Belgique francophone",
+         "Brabant flamand",
+           "France",
         ]}
         sameAs={["https://www.stephanegamot.com"]}
         priceRange="€€"
