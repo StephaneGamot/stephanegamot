@@ -1,8 +1,8 @@
 // app/api/contact/route.ts
-import { NextResponse } from "next/server";
-import nodemailer from "nodemailer";
+import { NextRequest, NextResponse } from "next/server";
+import { Resend } from "resend";
 
-export const runtime = "nodejs"; // important pour Nodemailer
+export const runtime = "nodejs";
 
 type Payload = {
   firstName: string;
@@ -44,7 +44,7 @@ function validate(body: any): { ok: boolean; error?: string } {
   return { ok: true };
 }
 
-export async function POST(req: Request) {
+export async function POST(req: NextRequest) {
   try {
     const body = (await req.json()) as Payload;
 
@@ -55,6 +55,21 @@ export async function POST(req: Request) {
         { status: 400 }
       );
     }
+
+    const apiKey = process.env.RESEND_API_KEY;
+    if (!apiKey) {
+      console.error("❌ RESEND_API_KEY manquante sur le serveur");
+      return NextResponse.json(
+        {
+          ok: false,
+          error:
+            "Configuration serveur incomplète (clé email manquante). Contactez-moi directement par email.",
+        },
+        { status: 500 }
+      );
+    }
+
+    const resend = new Resend(apiKey);
 
     const {
       firstName,
@@ -67,22 +82,12 @@ export async function POST(req: Request) {
       message,
     } = body;
 
-    // 📨 Transport SMTP (Outlook, OVH, autre… à adapter avec tes infos)
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT) || 587,
-      secure: Number(process.env.SMTP_PORT) === 465, // true pour 465, sinon false
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
-      },
-    });
-
     const to = process.env.CONTACT_TO || "stephanegamot@outlook.com";
     const from =
-      process.env.SMTP_FROM || `"Formulaire site" <${process.env.SMTP_USER}>`;
+      process.env.CONTACT_FROM ||
+      "Stéphane Gamot <contact@mail.stephanegamot.com>";
 
-    const subject = `Nouveau message de ${firstName} ${lastName} – Formulaire de contact`;
+    const subject = `Nouveau message de ${firstName} ${lastName} – Formulaire site`;
 
     const text = `
 Nouveau message reçu depuis le site :
@@ -112,22 +117,39 @@ ${message}
   <p>${message.replace(/\n/g, "<br />")}</p>
 `;
 
-    await transporter.sendMail({
-      to,
+    const { data, error } = await resend.emails.send({
       from,
+      to,
       subject,
       text,
       html,
+      replyTo: email, // pour pouvoir répondre direct au client
     });
+
+    if (error) {
+      console.error("❌ Erreur Resend :", error);
+      return NextResponse.json(
+        {
+          ok: false,
+          error:
+            "Impossible d’envoyer l’email pour le moment. Vous pouvez aussi me contacter directement par email.",
+          details: process.env.NODE_ENV === "development" ? error : undefined,
+        },
+        { status: 500 }
+      );
+    }
+
+    console.log("✅ Email envoyé via Resend :", data);
 
     return NextResponse.json({ ok: true });
   } catch (err) {
-    console.error("Erreur /api/contact :", err);
+    console.error("❌ Erreur /api/contact :", err);
     return NextResponse.json(
       {
         ok: false,
         error:
           "Une erreur est survenue lors de l’envoi du message. Vous pouvez aussi me contacter directement par email.",
+        details: process.env.NODE_ENV === "development" ? String(err) : undefined,
       },
       { status: 500 }
     );
