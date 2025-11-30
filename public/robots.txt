@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.stephanegamot.com
+
+# Sitemaps
+Sitemap: https://www.stephanegamot.com/sitemap.xml
