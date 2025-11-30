@@ -330,28 +330,33 @@ export default function Carrousel() {
           </button>
 
           {/* Bullets (index logique réel) */}
-          <div className="mt-6 flex items-center justify-between">
-            <div className="flex items-center gap-2" />
-            <div
-              className="flex items-center gap-2"
-              role="tablist"
-              aria-label="Sélecteur de slide"
-            >
-              {baseProjects.map((_, k) => (
-                <button
-                  key={k}
-                  role="tab"
-                  aria-selected={iReal === k}
-                  aria-label={`Aller au slide ${k + 1}`}
-                  onClick={() => goToReal(k)}
-                  className={[
-                    "h-2.5 rounded-full transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]",
-                    iReal === k
-                      ? "w-6 bg-indigo-400"
-                      : "w-2.5 bg-white/30 hover:bg-white/45",
-                  ].join(" ")}
-                />
-              ))}
+         <div className="mt-6 flex justify-center">
+  <div
+    className="flex items-center gap-3"
+    role="tablist"
+    aria-label="Sélecteur de slide"
+  >
+            {baseProjects.map((_, k) => (
+  <button
+    key={k}
+    role="tab"
+    aria-selected={iReal === k}
+    aria-label={`Aller au slide ${k + 1}`}
+    onClick={() => goToReal(k)}
+    className="group relative flex h-9 w-9 items-center justify-center rounded-full"
+  >
+    <span
+      aria-hidden="true"
+      className={[
+        "block rounded-full transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]",
+        iReal === k
+          ? "h-2.5 w-6 bg-indigo-400"
+          : "h-2.5 w-2.5 bg-white/30 group-hover:bg-white/45",
+      ].join(" ")}
+    />
+  </button>
+))}
+
             </div>
           </div>
 
