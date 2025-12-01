@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+ import { ServicesSection } from "@/components/services/ServicesSection";
 
 export const metadata: Metadata = {
   title: "Création de site internet WordPress | White Wolf Web",
@@ -173,6 +174,7 @@ export default function WordPressServicePage() {
             </Link>
           </div>
         </div>
+                <ServicesSection />
       </section>
     </main>
   );

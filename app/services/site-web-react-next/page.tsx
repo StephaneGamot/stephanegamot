@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+ import { ServicesSection } from "@/components/services/ServicesSection";
 
 export const metadata: Metadata = {
   title: "Création de site web React & Next.js | White Wolf Web",
@@ -172,6 +173,7 @@ export default function ReactNextServicePage() {
             </Link>
           </div>
         </div>
+                <ServicesSection />
       </section>
     </main>
   );
