@@ -35,13 +35,13 @@ export async function generateMetadata(
   // Normalise l’URL de l’image (Unsplash ou locale)
   const rawImageUrl =
   typeof post.imageUrl === "string" ? post.imageUrl : post.imageUrl.src;
-  
+
 const ogImageUrl = rawImageUrl.startsWith("http")
   ? rawImageUrl
   : `${SITE_URL}${rawImageUrl}`;
 
   return {
-    title: `${post.title} | Blog – Stéphane Gamot`,
+    title: `${post.title} | Blog`,
     description: post.description,
     alternates: {
       canonical: canonicalUrl,
@@ -49,7 +49,7 @@ const ogImageUrl = rawImageUrl.startsWith("http")
     openGraph: {
       type: "article",
       url: canonicalUrl,
-      title: `${post.title} | Blog – Stéphane Gamot`,
+      title: `${post.title} | Blog`,
       description: post.description,
       siteName: "Stéphane Gamot",
       locale: "fr_BE",

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import PortfolioSection from "@/components/Portfolio/PortfolioSection";
 
 export const metadata: Metadata = {
-  title: "Portfolio – Sites web modernes & performants | Stéphane Gamot",
+  title: "Portfolio – Sites web modernes & performants",
   description:
     "Découvrez une sélection de sites vitrine, e-commerce, applications web réalisés avec Next.js, React & WordPress. Élégance, performance, SEO & UX au centre de votre projet",
   keywords: [
