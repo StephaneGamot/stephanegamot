@@ -6,7 +6,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Accessibilité numérique & conformité légale",
   description:
-    "Audit et mise en conformité accessibilité (WCAG/RGAA/EAA) pour vos sites en Belgique et en France. La loi de juin 2025 rend l’accessibilité obligatoire pour de nombreux services numériques.",
+    "Audit et mise en conformité accessibilité WCAG pour vos sites en Belgique & en France. La loi de juin 2025 rend l’accessibilité obligatoire pour les services numériques.",
   alternates: {
     canonical: "https://www.stephanegamot.com/services/accessibilite",
   },

@@ -32,9 +32,9 @@ export default function HeroHomePage() {
                             >
                                 Contact
                             </a>
-                            <a href="/idees" className="text-sm/6 font-semibold text-gray-900 dark:text-white">
+                           {/*  <a href="/idees" className="text-sm/6 font-semibold text-gray-900 dark:text-white">
                                 Des idées pour vous <span aria-hidden="true">→</span>
-                            </a>
+                            </a>*/}
                         </div>
                     </div>
 
