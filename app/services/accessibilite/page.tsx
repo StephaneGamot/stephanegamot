@@ -4,7 +4,7 @@ import Link from "next/link";
  import { ServicesSection } from "@/components/services/ServicesSection";
 
 export const metadata: Metadata = {
-  title: "Accessibilité numérique & conformité légale | Stéphane Gamot",
+  title: "Accessibilité numérique & conformité légale",
   description:
     "Audit et mise en conformité accessibilité (WCAG/RGAA/EAA) pour vos sites en Belgique et en France. La loi de juin 2025 rend l’accessibilité obligatoire pour de nombreux services numériques.",
   alternates: {

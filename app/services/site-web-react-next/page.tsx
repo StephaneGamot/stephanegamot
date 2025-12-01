@@ -3,7 +3,7 @@ import Link from "next/link";
  import { ServicesSection } from "@/components/services/ServicesSection";
 
 export const metadata: Metadata = {
-  title: "Création de site web React & Next.js | White Wolf Web",
+  title: "Création de site web React & Next.js",
   description:
     "Sites web modernes avec React & Next.js : design élégant, performance, SEO solide. Idéal pour site vitrine premium, e-commerce ou app web.",
   alternates: {

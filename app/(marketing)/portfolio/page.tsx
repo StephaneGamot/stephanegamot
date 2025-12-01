@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://www.stephanegamot.com/portfolio",
-    title: "Portfolio – Sites web modernes & performants | Stéphane Gamot",
+    title: "Portfolio – Sites web modernes & performants",
     description:
       "Sélection de projets web : sites vitrine premium, e-commerce, dashboards et applications Next.js. Un portfolio centré sur l’expérience, la performance et les résultats.",
     siteName: "Stéphane Gamot",

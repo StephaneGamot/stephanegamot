@@ -3,7 +3,7 @@ import Link from "next/link";
  import { ServicesSection } from "@/components/services/ServicesSection";
 
 export const metadata: Metadata = {
-  title: "Création de site vitrine | Stéphane Gamot",
+  title: "Création de site vitrine",
   description:
     "Site vitrine sur mesure : design élégant, textes clairs et structure pensée pour donner confiance et générer des contacts.",
   alternates: {

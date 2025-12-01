@@ -3,7 +3,7 @@ import Link from "next/link";
  import { ServicesSection } from "@/components/services/ServicesSection";
 
 export const metadata: Metadata = {
-  title: "Audit & optimisation SEO | White Wolf Web",
+  title: "Audit & optimisation SEO",
   description:
     "Audit technique, SEO on-page et optimisation de vos contenus : je vous aide à rendre votre site plus visible sur Google, sans promesses irréalistes.",
   alternates: {

@@ -3,7 +3,7 @@ import Link from "next/link";
  import { ServicesSection } from "@/components/services/ServicesSection";
 
 export const metadata: Metadata = {
-  title: "Création de site internet WordPress | White Wolf Web",
+  title: "Création de site internet WordPress",
   description:
     "Site vitrine, blog ou petite boutique : je conçois des sites WordPress élégants, rapides et faciles à mettre à jour, adaptés aux indépendants et petites entreprises.",
   alternates: {

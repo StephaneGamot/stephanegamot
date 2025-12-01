@@ -7,7 +7,7 @@ import { posts } from "../blog/posts";
 const SITE_URL = "https://www.stephanegamot.com";
 
 export const metadata: Metadata = {
-  title: "Blog & conseil Web, SEO, performance | Stéphane Gamot",
+  title: "Blog & conseil Web, SEO, performance",
   description:
     "Articles sur la création de sites modernes, le SEO, la performance web, l’accessibilité et les bonnes pratiques pour les PME et indépendants.",
   alternates: {
