@@ -33,9 +33,12 @@ export async function generateMetadata(
   }
 
   // Normalise l’URL de l’image (Unsplash ou locale)
-  const ogImageUrl = post.imageUrl.startsWith("http")
-    ? post.imageUrl
-    : `${SITE_URL}${post.imageUrl.startsWith("/") ? "" : "/"}${post.imageUrl}`;
+  const rawImageUrl =
+  typeof post.imageUrl === "string" ? post.imageUrl : post.imageUrl.src;
+  
+const ogImageUrl = rawImageUrl.startsWith("http")
+  ? rawImageUrl
+  : `${SITE_URL}${rawImageUrl}`;
 
   return {
     title: `${post.title} | Blog – Stéphane Gamot`,

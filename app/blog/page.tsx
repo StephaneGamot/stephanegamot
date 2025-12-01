@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     locale: "fr_BE",
     images: [
       {
-        url: `${SITE_URL}/Images/og/blog-stephane-gamot.webp`, 
+        url: `${SITE_URL}/Images/me/me.webp`, 
         width: 1200,
         height: 630,
         alt: "Blog de Stéphane Gamot sur le web, le SEO et la performance",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     title: "Blog & conseils – Web, SEO, performance | Stéphane Gamot",
     description:
       "Création de sites, SEO, performance, UX et accessibilité expliqués simplement pour les entrepreneurs.",
-    images: [`${SITE_URL}/Images/og/blog-stephane-gamot.webp`],
+    images: [`${SITE_URL}/Images/me/me.webp`],
   },
 };
 
