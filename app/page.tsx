@@ -9,7 +9,7 @@ import TestimonialsSection from "@/components/Testimonials/Testimonials";
 import AboutSection from "@/components/about/AboutSection";
 
 export const metadata: Metadata = {
-  title: "Création de sites web performants à Bruxelles — Stéphane Gamot",
+  title: "Stéphane Gamot | Création de sites web performants à Bruxelles",
   description:
     "Je conçois des sites rapides, élégants et optimisés pour la conversion. Next.js, WordPress et SEO technique pour entreprises et indépendants en Belgique.",
   metadataBase: new URL("https://www.stephanegamot.com"),
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     },
   ],
   openGraph: {
-    title: "Création de sites web performants à Bruxelles — Stéphane Gamot",
+    title: "|  de sites web performants à Bruxelles — Stéphane Gamot",
     description:
       "Développeur web freelance à Bruxelles. Sites Next.js, WordPress et e-commerce Stripe, pensés pour la performance, le référencement et la conversion.",
     url: "https://www.stephanegamot.com",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Création de sites web performants à Bruxelles — Stéphane Gamot",
+    title: "|  de sites web performants à Bruxelles — Stéphane Gamot",
     description:
       "Sites Next.js, WordPress et e-commerce optimisés SEO. Performance, design et stratégie digitale pour entrepreneurs exigeants.",
     images: ["https://www.stephanegamot.com/Images/og/office-workstation.webp"],
@@ -72,7 +72,7 @@ export default function Home() {
     <>
       <LocalBusinessJsonLd
         type="ProfessionalService"
-        name="Stéphane Gamot – Création de sites web"
+        name="Stéphane Gamot – |  de sites web"
         description="Développeur web basé en Belgique, spécialisé dans la création de sites élégants, rapides et optimisés pour la conversion : sites vitrines, e-commerce, SEO et performance."
           image="https://www.stephanegamot.com/images/stephane-gamot-profile.jpg"
         url="https://www.stephanegamot.com"

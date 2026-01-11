@@ -26,7 +26,7 @@ export const metadata: Metadata = {
         template: "%s | Stéphane Gamot",
     },
     description:
-        "Je conçois des sites web élégants, rapides et pensés pour convertir. Développeur full-stack basé en Belgique, j’accompagne les entrepreneurs et indépendants qui veulent un site professionnel réellement efficace.",
+        "Je conçois des sites web élégants, rapides et pensés pour convertir. Ingénieur & Développeur full-stack basé en Belgique, j’accompagne les entrepreneurs et indépendants qui veulent un site professionnel réellement efficace.",
     openGraph: {
         type: "website",
         url: "https://stephanegamot.com",

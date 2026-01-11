@@ -11,6 +11,9 @@ import WordPress3 from "@/public/Images/blog/wordPress3.webp"
 import NextUxExperience from "@/public/Images/blog/next-ux-experience.webp"
 import NextFuture from "@/public/Images/blog/next-future.webp"
 import Next1 from "@/public/Images/blog/next1.webp"
+import Chance from "@/public/Images/blog/change.webp"
+import Seo from "@/public/Images/blog/seo.webp"
+import WebsitePrice from "@/public/Images/blog/websitePrice.webp"
 
 export type BlogPost = {
     id: number;
@@ -322,8 +325,8 @@ export const posts: BlogPost[] = [
   description:
     "WordPress est le CMS le plus utilisé au monde… mais est-ce vraiment le bon choix pour votre projet ? Voici un avis honnête, clair et orienté business.",
   imageUrl: WordPress2,
-  date: "2 décembre 2025",
-  datetime: "2025-12-02",
+  date: "12 décembre 2025",
+  datetime: "2025-12-12",
   readingTimeMinutes: 5,
   views: 0,
   category: { title: "CMS & Web", href: "#" },
@@ -522,8 +525,8 @@ export const posts: BlogPost[] = [
   description:
     "Next.js est plus cher à la création qu’un site classique… mais sur le long terme, c’est l’une des meilleures décisions qu’un entrepreneur puisse prendre : performance, sécurité, évolution et expérience de vente.",
   imageUrl: Next1,
-  date: "3 décembre 2025",
-  datetime: "2025-12-03",
+  date: "30 décembre 2025",
+  datetime: "2025-12-30",
   readingTimeMinutes: 5,
   views: 0,
   category: { title: "Technologies Web", href: "#" },
@@ -709,6 +712,596 @@ export const posts: BlogPost[] = [
     </>
   ),
 },
+{
+  id: 4,
+  slug: "pourquoi-votre-site-ne-convertit-pas",
+  title: "Pourquoi votre site ne convertit pas (même s’il est beau) — 7 erreurs fréquentes",
+  description:
+    "Vous avez un site joli mais peu de demandes ? Voici 7 erreurs qui bloquent la conversion… et comment les corriger simplement pour obtenir plus de clients.",
+  imageUrl: Chance,
+  date: "4 janvier 2026",
+  datetime: "2026-01-04",
+  readingTimeMinutes: 6,
+  views: 0,
+  category: { title: "Conversion & Business", href: "#" },
+  author: {
+    name: "Stéphane Gamot",
+    role: "Développeur full-stack & SEO",
+    href: "/me",
+    imageUrl: Moi,
+  },
+  content: (
+    <>
+      <p>
+        Beaucoup d’entrepreneurs ont un site{" "}
+        <strong className="text-emerald-300">beau</strong>, parfois même très
+        moderne… mais{" "}
+        <strong className="text-indigo-300">qui ne rapporte presque rien</strong>.
+      </p>
+
+      <p>
+        Et c’est frustrant, parce que vous vous dites :{" "}
+        <em className="text-slate-200">
+          “J’ai investi du temps / de l’argent, pourquoi personne ne me contacte ?”
+        </em>
+      </p>
+
+      <div className="mt-6 rounded-2xl border border-indigo-500/20 bg-indigo-500/5 p-4 text-sm text-indigo-100">
+        <p className="font-semibold">
+          Vérité simple :{" "}
+          <span className="text-emerald-300">un site ne doit pas seulement être beau</span>
+          . Il doit{" "}
+          <span className="text-emerald-300">guider</span>,{" "}
+          <span className="text-emerald-300">rassurer</span> et{" "}
+          <span className="text-emerald-300">faire passer à l’action</span>.
+        </p>
+      </div>
+
+      <h2 className="mt-10 text-xl font-semibold text-indigo-300">
+        1) Votre message n’est pas clair en 5 secondes
+      </h2>
+      <p>
+        Quand quelqu’un arrive sur votre homepage, il doit comprendre immédiatement :
+      </p>
+      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+        <li>ce que vous faites,</li>
+        <li>pour qui,</li>
+        <li>et ce que ça change dans sa vie / son business.</li>
+      </ul>
+      <p className="mt-4">
+        Si votre phrase d’accroche est trop vague (“Solutions digitales”, “Bienvenue”),
+        vous perdez des clients.
+      </p>
+
+      <h2 className="mt-10 text-xl font-semibold text-indigo-300">
+        2) Vos appels à l’action (CTA) sont trop faibles
+      </h2>
+      <p>
+        Un bouton “Contact” ou “En savoir plus” n’est pas assez fort.
+      </p>
+      <p>
+        Il faut un CTA clair et orienté résultat :
+      </p>
+      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+        <li>
+          <strong className="text-emerald-300">Demander un devis</strong>
+        </li>
+        <li>
+          <strong className="text-emerald-300">Réserver un appel gratuit</strong>
+        </li>
+        <li>
+          <strong className="text-emerald-300">Recevoir un audit</strong>
+        </li>
+      </ul>
+
+      <h2 className="mt-10 text-xl font-semibold text-indigo-300">
+        3) Votre site oblige les gens à réfléchir (trop)
+      </h2>
+      <p>
+        Un site doit être{" "}
+        <strong className="text-emerald-300">simple</strong>.
+      </p>
+      <p>
+        Si votre menu contient 12 liens, 8 pages, 5 sous-menus… votre visiteur est
+        perdu. Et quand il est perdu, il quitte.
+      </p>
+
+      <h2 className="mt-10 text-xl font-semibold text-indigo-300">
+        4) Il n’y a pas assez de preuves (vous ne rassurez pas)
+      </h2>
+      <p>
+        Les gens veulent être rassurés avant d’acheter.
+      </p>
+      <p>Ajoutez :</p>
+      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+        <li>des avis clients (même 3 c’est déjà très bien),</li>
+        <li>des captures de réalisations,</li>
+        <li>des résultats concrets : +trafic, +ventes, +réservations, etc.</li>
+      </ul>
+
+      <div className="mt-6 rounded-2xl border border-emerald-400/30 bg-emerald-400/5 p-4 text-sm text-emerald-100">
+        <p className="font-semibold">Astuce :</p>
+        <p>
+          La page “Réalisations” peut être{" "}
+          <strong>plus importante</strong> que la page “À propos”.
+        </p>
+      </div>
+
+      <h2 className="mt-10 text-xl font-semibold text-indigo-300">
+        5) Votre site est lent (et vous perdez du SEO + des clients)
+      </h2>
+      <p>
+        Un site lent est un vrai tueur de conversion.
+      </p>
+      <p>
+        Si votre site met 4–6 secondes à charger sur mobile : vous perdez des
+        prospects, même si vous êtes excellent.
+      </p>
+      <p className="mt-3">
+        C’est aussi pour ça que{" "}
+        <strong className="text-indigo-300">Next.js</strong> prend de plus en plus
+        d’importance : ça permet un site{" "}
+        <strong className="text-emerald-300">premium et ultra rapide</strong>.
+      </p>
+
+      <h2 className="mt-10 text-xl font-semibold text-indigo-300">
+        6) Votre page “Services” n’est pas faite pour vendre
+      </h2>
+      <p>
+        Beaucoup de sites ont une page service trop courte, trop “catalogue” :
+      </p>
+      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+        <li>liste de prestations,</li>
+        <li>pas de bénéfices,</li>
+        <li>pas d’exemples,</li>
+        <li>pas de vraie structure.</li>
+      </ul>
+
+      <p className="mt-4">
+        Une bonne page service doit :{" "}
+        <strong className="text-emerald-300">attirer → rassurer → convertir</strong>.
+      </p>
+
+      <h2 className="mt-10 text-xl font-semibold text-indigo-300">
+        7) Vous n’avez pas de “parcours client”
+      </h2>
+      <p>
+        Un visiteur froid ne va pas vous appeler directement.
+      </p>
+      <p>
+        Il a besoin d’un parcours :
+      </p>
+      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+        <li>homepage claire</li>
+        <li>page service détaillée</li>
+        <li>preuves + portfolio</li>
+        <li>CTA (appel / devis / audit)</li>
+      </ul>
+
+      <h2 className="mt-10 text-xl font-semibold text-indigo-300">
+        En résumé : votre site doit vendre pour vous
+      </h2>
+      <p>
+        Si votre site est beau mais ne convertit pas, ce n’est pas une fatalité.
+      </p>
+      <p>
+        Avec quelques ajustements simples, vous pouvez obtenir{" "}
+        <strong className="text-emerald-300">plus de demandes</strong>,{" "}
+        <strong className="text-emerald-300">plus de clients</strong> et un site
+        vraiment rentable.
+      </p>
+
+      <p className="mt-6 rounded-2xl border border-indigo-500/20 bg-indigo-500/5 p-4 text-sm text-indigo-100">
+        <strong className="text-emerald-300">Vous voulez un avis pro ?</strong>{" "}
+        Je peux analyser rapidement votre site et vous dire{" "}
+        <strong>ce qui bloque</strong> (et quoi faire en priorité pour convertir).
+      </p>
+    </>
+  ),
+},{
+  id: 5,
+  slug: "seo-2026-ce-qui-marche-vraiment",
+  title: "SEO 2026 : ce qui marche vraiment (et ce qui ne sert plus à rien)",
+  description:
+    "En 2026, le SEO a changé : Google veut des sites rapides, utiles et crédibles. Voici ce qui fonctionne vraiment aujourd’hui pour gagner des clients.",
+  imageUrl: Seo,
+  date: "7 janvier 2026",
+  datetime: "2026-01-07",
+  readingTimeMinutes: 7,
+  views: 0,
+  category: { title: "SEO & Visibilité", href: "#" },
+  author: {
+    name: "Stéphane Gamot",
+    role: "Développeur full-stack & SEO",
+    href: "/me",
+    imageUrl: Moi,
+  },
+  content: (
+    <>
+      <p>
+        Beaucoup de gens pensent encore que le SEO, c’est juste “mettre des mots-clés”.
+      </p>
+
+      <p>
+        En réalité, en 2026, Google est devenu beaucoup plus exigeant :
+        il veut mettre en avant des sites{" "}
+        <strong className="text-emerald-300">utiles</strong>,{" "}
+        <strong className="text-emerald-300">rapides</strong>,{" "}
+        <strong className="text-emerald-300">fiables</strong> et orientés
+        expérience utilisateur.
+      </p>
+
+      <div className="mt-6 rounded-2xl border border-emerald-400/30 bg-emerald-400/5 p-4 text-sm text-emerald-100">
+        <p className="font-semibold">
+          Objectif du SEO en 2026 :{" "}
+          <span className="text-indigo-200">
+            attirer un trafic qualifié (qui achète / réserve / demande un devis)
+          </span>
+          , pas “faire du trafic pour faire du trafic”.
+        </p>
+      </div>
+
+      <h2 className="mt-10 text-xl font-semibold text-indigo-300">
+        ✅ Ce qui ne sert plus à grand-chose (voire vous pénalise)
+      </h2>
+
+      <h3 className="mt-6 text-lg font-semibold text-indigo-200">
+        1) Bourrer les mots-clés
+      </h3>
+      <p>
+        Répéter 25 fois le même mot-clé ne vous aide plus. Google comprend
+        désormais le contexte et la qualité du contenu.
+      </p>
+
+      <h3 className="mt-6 text-lg font-semibold text-indigo-200">
+        2) Les articles “vides” ou copiés
+      </h3>
+      <p>
+        Les contenus génériques (3 paragraphes, rien de concret) ne rankent plus.
+        Google veut du contenu qui{" "}
+        <strong className="text-emerald-300">apporte une vraie réponse</strong>.
+      </p>
+
+      <h3 className="mt-6 text-lg font-semibold text-indigo-200">
+        3) Les backlinks bas de gamme
+      </h3>
+      <p>
+        Acheter des liens douteux ou faire du spam peut encore marcher sur le très
+        court terme… mais c’est risqué.
+      </p>
+      <p>
+        En 2026, la stratégie gagnante est la{" "}
+        <strong className="text-emerald-300">crédibilité</strong>.
+      </p>
+
+      <h2 className="mt-10 text-xl font-semibold text-indigo-300">
+        🚀 Ce qui marche vraiment en SEO en 2026
+      </h2>
+
+      <h3 className="mt-6 text-lg font-semibold text-indigo-200">
+        1) Un site ultra rapide (Core Web Vitals)
+      </h3>
+      <p>
+        La vitesse est devenue un avantage énorme.
+      </p>
+      <p>
+        Un site rapide = meilleur SEO + meilleure conversion.
+      </p>
+
+      <div className="mt-6 rounded-2xl border border-indigo-500/20 bg-indigo-500/5 p-4 text-sm text-indigo-100">
+        <p className="font-semibold">
+          Exemple concret :{" "}
+          <span className="text-emerald-300">
+            si votre site charge 2x plus vite
+          </span>
+          , vous pouvez gagner des positions Google… et des clients.
+        </p>
+      </div>
+
+      <h3 className="mt-6 text-lg font-semibold text-indigo-200">
+        2) L’expérience mobile d’abord
+      </h3>
+      <p>
+        La majorité des visites viennent du mobile.
+      </p>
+      <p>
+        Si votre site est compliqué, lourd ou peu lisible sur téléphone : votre SEO
+        chute et vos visiteurs partent.
+      </p>
+
+      <h3 className="mt-6 text-lg font-semibold text-indigo-200">
+        3) Des pages services solides (c’est ça qui fait rentrer de l’argent)
+      </h3>
+      <p>
+        Le vrai SEO rentable ne vient pas uniquement des articles de blog.
+      </p>
+      <p>
+        Il vient souvent des pages :
+      </p>
+      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+        <li>“Création site web + ville”</li>
+        <li>“Refonte site internet + Belgique / France”</li>
+        <li>“Développeur Next.js / SEO technique”</li>
+        <li>“E-commerce Stripe”</li>
+      </ul>
+
+      <p className="mt-3">
+        Une page service bien construite peut{" "}
+        <strong className="text-emerald-300">convertir toute l’année</strong>.
+      </p>
+
+      <h3 className="mt-6 text-lg font-semibold text-indigo-200">
+        4) L’expertise + la crédibilité (E-E-A-T)
+      </h3>
+      <p>
+        Google veut savoir si vous êtes fiable.
+      </p>
+      <p>
+        Il regarde indirectement :
+      </p>
+      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+        <li>qui écrit (à propos, auteur),</li>
+        <li>les preuves (réalisations, avis),</li>
+        <li>la cohérence du site,</li>
+        <li>la qualité des explications.</li>
+      </ul>
+
+      <h3 className="mt-6 text-lg font-semibold text-indigo-200">
+        5) Une structure technique propre (le SEO technique)
+      </h3>
+      <p>
+        Le SEO technique est souvent le facteur “invisible” qui fait exploser un site :
+      </p>
+      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+        <li>balises title / meta description uniques,</li>
+        <li>maillage interne intelligent,</li>
+        <li>canonical, sitemap, robots,</li>
+        <li>images optimisées,</li>
+        <li>schema.org (données structurées).</li>
+      </ul>
+
+      <p className="mt-3">
+        Et c’est exactement là où{" "}
+        <strong className="text-indigo-300">Next.js</strong> devient très puissant :
+        on peut construire un site{" "}
+        <strong className="text-emerald-300">ultra optimisé</strong> dès la base.
+      </p>
+
+      <h2 className="mt-10 text-xl font-semibold text-indigo-300">
+        En résumé
+      </h2>
+      <p>
+        En 2026, le SEO est devenu plus simple à comprendre :
+      </p>
+      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+        <li>un site rapide,</li>
+        <li>du contenu utile,</li>
+        <li>de la crédibilité,</li>
+        <li>une structure technique propre.</li>
+      </ul>
+
+      <p className="mt-4">
+        Si vous voulez attirer des clients (et pas juste du trafic), le SEO moderne
+        est un{" "}
+        <strong className="text-emerald-300">investissement incontournable</strong>.
+      </p>
+
+      <p className="mt-6 rounded-2xl border border-emerald-400/30 bg-emerald-400/5 p-4 text-sm text-emerald-100">
+        <strong>Vous voulez savoir où vous en êtes ?</strong> Je peux réaliser un
+        mini-audit SEO rapide : vitesse, structure, pages rentables, et actions
+        prioritaires pour remonter sur Google.
+      </p>
+    </>
+  ),
+},
+{
+  id: 6,
+  slug: "combien-coute-un-site-web-en-2026-prix-pieges",
+  title: "Combien coûte vraiment un site web en 2026 ? (prix, pièges, et comment choisir)",
+  description:
+    "Entre 500 € et 15 000 €… pourquoi autant d’écart ? Voici les vrais prix d’un site en 2026, ce qui change tout, les pièges à éviter et comment choisir sans se faire avoir.",
+  imageUrl: WebsitePrice,
+  date: "11 janvier 2026",
+  datetime: "2026-01-11",
+  readingTimeMinutes: 8,
+  views: 0,
+  category: { title: "Budget & Stratégie", href: "#" },
+  author: {
+    name: "Stéphane Gamot",
+    role: "Développeur full-stack & SEO",
+    href: "/me",
+    imageUrl: Moi,
+  },
+  content: (
+    <>
+      <p>
+        Vous avez sûrement déjà vu des offres à{" "}
+        <strong className="text-emerald-300">500 €</strong>… et d’autres à{" "}
+        <strong className="text-emerald-300">10 000 €+</strong>.
+      </p>
+
+      <p>
+        Et forcément, la question arrive :{" "}
+        <strong className="text-indigo-300">
+          “Pourquoi un site peut coûter aussi cher ?”
+        </strong>
+      </p>
+
+      <p>
+        La réponse est simple : vous ne payez pas “un site”.
+        Vous payez un{" "}
+        <strong className="text-emerald-300">outil de business</strong>{" "}
+        (ou parfois juste une vitrine).
+      </p>
+
+      <div className="mt-6 rounded-2xl border border-indigo-500/20 bg-indigo-500/5 p-4 text-sm text-indigo-100">
+        <p className="font-semibold">
+          En résumé : le prix dépend surtout de{" "}
+          <span className="text-emerald-300">l’objectif</span> (vitrine vs acquisition),
+          de la <span className="text-emerald-300">qualité</span> (design + technique),
+          et de la <span className="text-emerald-300">stratégie</span> (SEO + conversion).
+        </p>
+      </div>
+
+      <h2 className="mt-10 text-xl font-semibold text-indigo-300">
+        Les 4 grandes catégories de sites (et leurs prix réalistes)
+      </h2>
+
+      <h3 className="mt-6 text-lg font-semibold text-indigo-200">
+        1) “Petit site vitrine simple” (souvent 1 à 5 pages)
+      </h3>
+      <p>
+        Objectif : être présent en ligne, présenter l’activité, donner confiance.
+      </p>
+      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+        <li>
+          <strong className="text-emerald-300">Prix courant :</strong> 500 € → 2 000 €
+        </li>
+        <li>Souvent : template, peu de personnalisation, SEO de base.</li>
+        <li>
+          Bien si : vous démarrez et vous avez besoin d’un minimum propre.
+        </li>
+      </ul>
+
+      <h3 className="mt-6 text-lg font-semibold text-indigo-200">
+        2) “Site WordPress pro” (vitrine + contenu + autonomie)
+      </h3>
+      <p>
+        Objectif : un site moderne, administrable, avec une vraie structure.
+      </p>
+      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+        <li>
+          <strong className="text-emerald-300">Prix courant :</strong> 1 500 € → 6 000 €
+        </li>
+        <li>Souvent : thème premium + plugins + optimisation performance.</li>
+        <li>
+          Bien si : vous publiez du contenu et voulez gérer vous-même vos pages.
+        </li>
+      </ul>
+
+      <h3 className="mt-6 text-lg font-semibold text-indigo-200">
+        3) “Site premium Next.js” (performance + SEO + conversion)
+      </h3>
+      <p>
+        Objectif : un site rapide, fluide, pensé pour convertir et durer.
+      </p>
+      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+        <li>
+          <strong className="text-emerald-300">Prix courant :</strong> 3 000 € → 15 000 €
+        </li>
+        <li>
+          Souvent : design sur mesure, optimisation Core Web Vitals, SEO technique solide.
+        </li>
+        <li>
+          Bien si : vous prenez le web au sérieux (image, acquisition, long terme).
+        </li>
+      </ul>
+
+      <h3 className="mt-6 text-lg font-semibold text-indigo-200">
+        4) “E-commerce” (WordPress/WooCommerce ou Next.js + Stripe)
+      </h3>
+      <p>
+        Objectif : vendre en ligne (et éviter les bugs, lenteurs, paniers abandonnés).
+      </p>
+      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+        <li>
+          <strong className="text-emerald-300">Prix courant :</strong> 2 500 € → 25 000 €
+        </li>
+        <li>
+          Le prix dépend surtout : produits, paiements, livraison, stock, emails,
+          automatisations, SEO catégories…
+        </li>
+      </ul>
+
+      <h2 className="mt-10 text-xl font-semibold text-indigo-300">
+        Pourquoi certains sites “pas chers” coûtent très cher après
+      </h2>
+      <p>
+        Le piège classique : payer peu au départ… puis payer beaucoup ensuite.
+      </p>
+
+      <h3 className="mt-6 text-lg font-semibold text-indigo-200">
+        Les 5 pièges les plus fréquents
+      </h3>
+      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+        <li>
+          <strong className="text-emerald-300">Site lent</strong> → mauvais SEO + moins de demandes.
+        </li>
+        <li>
+          <strong className="text-emerald-300">Site non sécurisé</strong> → piratage, downtime, stress.
+        </li>
+        <li>
+          <strong className="text-emerald-300">Pas de stratégie</strong> → joli site, zéro conversion.
+        </li>
+        <li>
+          <strong className="text-emerald-300">Dépendance totale</strong> → impossible de modifier sans “payer à chaque fois”.
+        </li>
+        <li>
+          <strong className="text-emerald-300">Refonte obligatoire</strong> au bout de 12–18 mois (car base fragile).
+        </li>
+      </ul>
+
+      <div className="mt-6 rounded-2xl border border-emerald-400/30 bg-emerald-400/5 p-4 text-sm text-emerald-100">
+        <p className="font-semibold">Règle simple :</p>
+        <p>
+          Un bon site, c’est un site qui{" "}
+          <strong>vous rapporte</strong> plus qu’il ne vous coûte.
+        </p>
+      </div>
+
+      <h2 className="mt-10 text-xl font-semibold text-indigo-300">
+        Comment choisir le bon budget (sans vous faire avoir)
+      </h2>
+
+      <h3 className="mt-6 text-lg font-semibold text-indigo-200">
+        1) Posez la vraie question : “À quoi doit servir mon site ?”
+      </h3>
+      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+        <li>Juste exister en ligne ?</li>
+        <li>Obtenir des demandes / appels ?</li>
+        <li>Vendre (e-commerce) ?</li>
+        <li>Construire une marque premium ?</li>
+      </ul>
+
+      <h3 className="mt-6 text-lg font-semibold text-indigo-200">
+        2) Regardez le coût global (pas seulement le prix de création)
+      </h3>
+      <p>
+        Un site “moins cher” peut coûter plus cher en :
+        maintenance, bugs, lenteur, SEO raté, refonte…
+      </p>
+
+      <h3 className="mt-6 text-lg font-semibold text-indigo-200">
+        3) Demandez des livrables clairs
+      </h3>
+      <p>Un devis sérieux précise :</p>
+      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+        <li>nombre de pages + contenu,</li>
+        <li>SEO (technique + structure),</li>
+        <li>performance (mobile),</li>
+        <li>tracking (analytics, conversions),</li>
+        <li>ce qui est inclus / non inclus.</li>
+      </ul>
+
+      <h2 className="mt-10 text-xl font-semibold text-indigo-300">
+        Le meilleur choix : un site “rentable”, pas juste un site “pas cher”
+      </h2>
+      <p>
+        Un site web n’est pas une dépense “design”. C’est un{" "}
+        <strong className="text-emerald-300">outil de vente</strong>.
+      </p>
+
+      <p className="mt-6 rounded-2xl border border-indigo-500/20 bg-indigo-500/5 p-4 text-sm text-indigo-100">
+        <strong className="text-emerald-300">Vous voulez un chiffre réaliste ?</strong>{" "}
+        Dites-moi votre activité + votre objectif (vitrine, leads, e-commerce),
+        et je vous donne une{" "}
+        <strong>fourchette de budget cohérente</strong> (sans blabla),
+        avec les priorités à financer en premier.
+      </p>
+    </>
+  ),
+},
+
 
 
 ];
