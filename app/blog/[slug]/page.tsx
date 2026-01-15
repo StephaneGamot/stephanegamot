@@ -41,7 +41,7 @@ const ogImageUrl = rawImageUrl.startsWith("http")
   : `${SITE_URL}${rawImageUrl}`;
 
   return {
-    title: `${post.title} | Blog`,
+    title: `${post.title}`,
     description: post.description,
     alternates: {
       canonical: canonicalUrl,
@@ -49,7 +49,7 @@ const ogImageUrl = rawImageUrl.startsWith("http")
     openGraph: {
       type: "article",
       url: canonicalUrl,
-      title: `${post.title} | Blog`,
+      title: `${post.title}`,
       description: post.description,
       siteName: "Stéphane Gamot",
       locale: "fr_BE",
@@ -68,7 +68,7 @@ const ogImageUrl = rawImageUrl.startsWith("http")
     },
     twitter: {
       card: "summary_large_image",
-      title: `${post.title} | Blog – Stéphane Gamot`,
+      title: `${post.title}`,
       description: post.description,
       images: [ogImageUrl],
     },
