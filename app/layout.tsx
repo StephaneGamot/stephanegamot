@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     metadataBase: new URL("https://stephanegamot.com"),
     title: {
         default: "Stéphane Gamot – Créateur de sites web haut de gamme",
-        template: "%s | Stéphane Gamot",
+        template: "%s ",
     },
     description:
         "Je conçois des sites web élégants, rapides et pensés pour convertir. Ingénieur & Développeur full-stack basé en Belgique, j’accompagne les entrepreneurs et indépendants qui veulent un site professionnel réellement efficace.",
