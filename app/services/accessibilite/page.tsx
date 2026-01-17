@@ -6,7 +6,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Accessibilité web & conformité selon les normes européennes WCAG 2,1",
   description:
-    "Mise en conformité accessibilité (WCAG/RGAA) : corrections UI, contrastes, navigation clavier, ARIA, formulaires. Réduisez les risques et élargissez votre audience.",
+    "Mise en conformité accessibilité WCAG : corrections UI, contrastes, navigation clavier, ARIA, formulaires. Réduisez les risques et élargissez votre audience.",
   metadataBase: new URL("https://www.stephanegamot.com"),
   alternates: { canonical: "/services/accessibilite" },
   keywords: [

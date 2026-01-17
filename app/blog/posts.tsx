@@ -1099,7 +1099,7 @@ export const posts: BlogPost[] = [
   slug: "combien-coute-un-site-web-en-2026-prix-pieges",
   title: "Combien coûte vraiment un site web en 2026 ? (prix, pièges, et comment choisir)",
   description:
-    "Entre 500 € et 15 000 € Pourquoi autant d’écart ? Voici les vrais prix d’un site en 2026, ce qui change tout, les pièges à éviter et comment choisir sans se faire avoir",
+    "Entre 500 € et 15 000 € Pourquoi autant d’écart ? Voici les vrais prix d’un site en 2026, les pièges à éviter et comment choisir sans se faire avoir",
   imageUrl: WebsitePrice,
   date: "11 janvier 2026",
   datetime: "2026-01-11",
