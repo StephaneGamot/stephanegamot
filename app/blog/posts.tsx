@@ -521,7 +521,7 @@ export const posts: BlogPost[] = [
  {
   id: 3,
   slug: "pourquoi-nextjs-est-le-meilleur-investissement",
-  title: "Next.js : pourquoi c’est l’un des meilleurs investissements pour votre site web",
+  title: "Next.js  c’est l’un des meilleurs investissements pour votre site web",
   description:
     "Next.js est plus cher à la création qu’un site classique… mais sur le long terme, c’est l’une des meilleures décisions qu’un entrepreneur puisse prendre",
   imageUrl: Next1,
@@ -715,7 +715,7 @@ export const posts: BlogPost[] = [
 {
   id: 4,
   slug: "pourquoi-votre-site-ne-convertit-pas",
-  title: "Pourquoi votre site ne convertit pas (même s’il est beau) — 7 erreurs fréquentes",
+  title: "Pourquoi votre site ne convertit pas — 7 erreurs fréquentes",
   description:
     "Vous avez un site joli mais peu de demandes ? Voici 7 erreurs qui bloquent la conversion… et comment les corriger simplement pour obtenir plus de clients.",
   imageUrl: Chance,
@@ -1097,7 +1097,7 @@ export const posts: BlogPost[] = [
 {
   id: 6,
   slug: "combien-coute-un-site-web-en-2026-prix-pieges",
-  title: "Combien coûte vraiment un site web en 2026 ? (prix, pièges, et comment choisir)",
+  title: "Combien coûte vraiment un site web en 2026 ? prix, pièges, que choisir",
   description:
     "Entre 500 € et 15 000 € Pourquoi autant d’écart ? Voici les vrais prix d’un site en 2026, les pièges à éviter et comment choisir sans se faire avoir",
   imageUrl: WebsitePrice,
