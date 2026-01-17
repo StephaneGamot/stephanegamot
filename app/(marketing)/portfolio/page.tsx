@@ -5,7 +5,7 @@ import PortfolioSection from "@/components/Portfolio/PortfolioSection";
 export const metadata: Metadata = {
   title: "Portfolio – Sites web modernes & performants",
   description:
-    "Découvrez une sélection de sites vitrine, e-commerce, applications web réalisés avec Next.js, React & WordPress. Élégance, performance, SEO & UX au coeur de votre projet",
+    "Découvrez une sélection de site web, Ecommerce, application web réalisés avec Next, React & WordPress. Élégance, performance, SEO & UX au coeur de votre projet",
   keywords: [
     "portfolio développeur web",
     "portfolio création de site internet",

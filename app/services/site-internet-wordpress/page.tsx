@@ -3,20 +3,47 @@ import Link from "next/link";
  import { ServicesSection } from "@/components/services/ServicesSection";
 
 export const metadata: Metadata = {
-  title: "Création de site internet WordPress",
+  title: "Site internet WordPress pro & rapide",
   description:
-    "Site vitrine, blog ou petite boutique : je conçois des sites WordPress élégants, rapides et faciles à mettre à jour, adaptés aux indépendants et petites entreprises.",
-  alternates: {
-    canonical: "https://www.stephanegamot.com/services/site-internet-wordpress",
-  },
+    "Création de sites WordPress clairs et élégants : vitrine, blog ou petite boutique. Rapide, sécurisé, facile à mettre à jour, optimisé SEO.",
+  metadataBase: new URL("https://www.stephanegamot.com"),
+  alternates: { canonical: "/services/site-internet-wordpress" },
+  keywords: [
+    "site WordPress",
+    "création site WordPress Belgique",
+    "WordPress rapide",
+    "WordPress SEO",
+    "site vitrine WordPress",
+    "maintenance WordPress",
+  ],
+  robots: { index: true, follow: true },
+  authors: [{ name: "Stéphane Gamot", url: "https://www.stephanegamot.com/me" }],
   openGraph: {
-    title: "Création de site WordPress sur mesure | White Wolf Web",
+    title: "Site WordPress pro & rapide – Stéphane Gamot",
     description:
-      "Un site WordPress clair, pro et simple à gérer : idéal pour présenter vos services, publier du contenu et être contacté facilement.",
-    url: "https://www.stephanegamot.com/services/site-internet-wordpress",
+      "Un site WordPress simple à gérer, solide techniquement, avec un design pro et un SEO propre.",
+    url: "/services/site-internet-wordpress",
+    siteName: "Stéphane Gamot",
     type: "website",
+    locale: "fr_BE",
+    images: [
+      {
+        url: "/Images/og/office-workstation.webp",
+        width: 1200,
+        height: 630,
+        alt: "Création de site WordPress professionnel",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Site WordPress pro & rapide – Stéphane Gamot",
+    description:
+      "Vitrine, blog ou petite boutique : un WordPress élégant, rapide, sécurisé et facile à mettre à jour.",
+    images: ["/Images/og/office-workstation.webp"],
   },
 };
+
 
 export default function WordPressServicePage() {
   return (

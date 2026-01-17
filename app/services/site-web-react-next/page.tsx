@@ -3,18 +3,48 @@ import Link from "next/link";
  import { ServicesSection } from "@/components/services/ServicesSection";
 
 export const metadata: Metadata = {
-  title: "Création de site web React & Next.js",
+  title: "Site web React & Next.js sur mesure",
   description:
-    "Sites web modernes avec React & Next.js : design élégant, performance, SEO solide. Idéal pour site vitrine premium, e-commerce ou app web.",
+    "Création de sites React & Next.js : design premium, performance, SEO technique et parcours mobile fluide. Idéal vitrine, e-commerce ou app web.",
+  metadataBase: new URL("https://www.stephanegamot.com"),
   alternates: {
-    canonical: "https://www.stephanegamot.com/services/site-web-react-next",
+    canonical: "/services/site-web-react-next",
   },
+  keywords: [
+    "site Next.js",
+    "développeur Next.js Belgique",
+    "site React sur mesure",
+    "site web performant",
+    "Core Web Vitals",
+    "SEO technique",
+    "site vitrine premium",
+    "application web",
+  ],
+  robots: { index: true, follow: true },
+  authors: [{ name: "Stéphane Gamot", url: "https://www.stephanegamot.com/me" }],
   openGraph: {
-    title: "Sites web React & Next.js sur mesure | White Wolf Web",
+    title: "Site React & Next.js sur mesure – Stéphane Gamot",
     description:
-      "Un site moderne, rapide et évolutif avec React & Next.js : parfait pour les entrepreneurs, studios, thérapeutes et projets plus ambitieux.",
-    url: "https://www.stephanegamot.com/services/site-web-react-next",
+      "Un site moderne, rapide et évolutif : design soigné, SEO solide, performance et expérience mobile impeccable.",
+    url: "/services/site-web-react-next",
+    siteName: "Stéphane Gamot",
     type: "website",
+    locale: "fr_BE",
+    images: [
+      {
+        url: "/Images/og/office-workstation.webp",
+        width: 1200,
+        height: 630,
+        alt: "Création de site web sur mesure par Stéphane Gamot",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Site React & Next.js sur mesure – Stéphane Gamot",
+    description:
+      "Design premium, SEO technique, performance et UX mobile pour vitrine, e-commerce ou app web.",
+    images: ["/Images/og/office-workstation.webp"],
   },
 };
 

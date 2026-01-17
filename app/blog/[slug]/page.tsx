@@ -20,7 +20,7 @@ export async function generateMetadata(
 
   if (!post) {
     return {
-      title: "Article introuvable | Blog – Stéphane Gamot",
+      title: "Article introuvable ",
       description: "Article introuvable sur le blog de Stéphane Gamot.",
       alternates: {
         canonical: canonicalUrl,

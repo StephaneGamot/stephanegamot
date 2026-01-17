@@ -3,20 +3,47 @@ import Link from "next/link";
  import { ServicesSection } from "@/components/services/ServicesSection";
 
 export const metadata: Metadata = {
-  title: "Création de site vitrine",
+  title: "Création de site vitrine premium",
   description:
-    "Site vitrine sur mesure : design élégant, textes clairs et structure pensée pour donner confiance et générer des contacts.",
-  alternates: {
-    canonical: "https://www.stephanegamot.com/services/site-vitrine",
-  },
+    "Site vitrine sur mesure : design élégant, textes clairs, SEO local, vitesse et structure pensée pour rassurer et générer des contacts.",
+  metadataBase: new URL("https://www.stephanegamot.com"),
+  alternates: { canonical: "/services/site-vitrine" },
+  keywords: [
+    "site vitrine",
+    "création site vitrine Belgique",
+    "site vitrine premium",
+    "SEO local",
+    "site professionnel",
+    "conversion",
+  ],
+  robots: { index: true, follow: true },
+  authors: [{ name: "Stéphane Gamot", url: "https://www.stephanegamot.com/me" }],
   openGraph: {
-    title: "Site vitrine professionnel sur mesure | Stéphane Gamot",
+    title: "Site vitrine premium – Stéphane Gamot",
     description:
-      "Un site vitrine clair, moderne et rassurant pour présenter votre activité, vos services et faciliter la prise de contact.",
-    url: "https://www.stephanegamot.com/services/site-vitrine",
+      "Un site vitrine moderne, rapide et rassurant : clair, bien structuré, optimisé SEO et pensé pour convertir.",
+    url: "/services/site-vitrine",
+    siteName: "Stéphane Gamot",
     type: "website",
+    locale: "fr_BE",
+    images: [
+      {
+        url: "/Images/og/office-workstation.webp",
+        width: 1200,
+        height: 630,
+        alt: "Site vitrine professionnel créé par Stéphane Gamot",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Site vitrine premium – Stéphane Gamot",
+    description:
+      "Design élégant, SEO local, vitesse et structure claire : un site vitrine fait pour générer des contacts.",
+    images: ["/Images/og/office-workstation.webp"],
   },
 };
+
 
 export default function SiteVitrineServicePage() {
   return (

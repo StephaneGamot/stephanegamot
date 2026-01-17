@@ -3,20 +3,48 @@ import Link from "next/link";
  import { ServicesSection } from "@/components/services/ServicesSection";
 
 export const metadata: Metadata = {
-  title: "Audit & optimisation SEO",
+  title: "Audit SEO & optimisation – Stéphane Gamot",
   description:
-    "Audit technique, SEO on-page et optimisation de vos contenus : je vous aide à rendre votre site plus visible sur Google, sans promesses irréalistes.",
-  alternates: {
-    canonical: "https://www.stephanegamot.com/services/seo",
-  },
+    "Audit SEO technique, structure, contenu et performance. Correction des blocages et plan d’actions clair pour gagner en visibilité sur Google.",
+  metadataBase: new URL("https://www.stephanegamot.com"),
+  alternates: { canonical: "/services/seo" },
+  keywords: [
+    "audit SEO",
+    "SEO technique",
+    "optimisation performance",
+    "Core Web Vitals",
+    "SEO on-page",
+    "balises meta",
+    "plan d'action SEO",
+  ],
+  robots: { index: true, follow: true },
+  authors: [{ name: "Stéphane Gamot", url: "https://www.stephanegamot.com/me" }],
   openGraph: {
-    title: "Audit SEO & optimisation de site | White Wolf Web",
+    title: "Audit SEO & optimisation – Stéphane Gamot",
     description:
-      "Comprendre où vous en êtes, corriger les blocages techniques et mieux structurer vos contenus pour le référencement naturel.",
-    url: "https://www.stephanegamot.com/services/seo",
+      "Comprendre ce qui bloque votre référencement et corriger : technique, structure, contenu et performances.",
+    url: "/services/seo",
+    siteName: "Stéphane Gamot",
     type: "website",
+    locale: "fr_BE",
+    images: [
+      {
+        url: "/Images/og/office-workstation.webp",
+        width: 1200,
+        height: 630,
+        alt: "Audit SEO et optimisation de site web",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Audit SEO & optimisation – Stéphane Gamot",
+    description:
+      "Audit technique + plan d’actions clair pour améliorer visibilité, performance et structure SEO.",
+    images: ["/Images/og/office-workstation.webp"],
   },
 };
+
 
 export default function SeoServicePage() {
   return (

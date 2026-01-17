@@ -523,7 +523,7 @@ export const posts: BlogPost[] = [
   slug: "pourquoi-nextjs-est-le-meilleur-investissement",
   title: "Next.js : pourquoi c’est l’un des meilleurs investissements pour votre site web",
   description:
-    "Next.js est plus cher à la création qu’un site classique… mais sur le long terme, c’est l’une des meilleures décisions qu’un entrepreneur puisse prendre : performance, sécurité, évolution et expérience de vente.",
+    "Next.js est plus cher à la création qu’un site classique… mais sur le long terme, c’est l’une des meilleures décisions qu’un entrepreneur puisse prendre",
   imageUrl: Next1,
   date: "30 décembre 2025",
   datetime: "2025-12-30",
@@ -1099,7 +1099,7 @@ export const posts: BlogPost[] = [
   slug: "combien-coute-un-site-web-en-2026-prix-pieges",
   title: "Combien coûte vraiment un site web en 2026 ? (prix, pièges, et comment choisir)",
   description:
-    "Entre 500 € et 15 000 €… pourquoi autant d’écart ? Voici les vrais prix d’un site en 2026, ce qui change tout, les pièges à éviter et comment choisir sans se faire avoir.",
+    "Entre 500 € et 15 000 € Pourquoi autant d’écart ? Voici les vrais prix d’un site en 2026, ce qui change tout, les pièges à éviter et comment choisir sans se faire avoir",
   imageUrl: WebsitePrice,
   date: "11 janvier 2026",
   datetime: "2026-01-11",

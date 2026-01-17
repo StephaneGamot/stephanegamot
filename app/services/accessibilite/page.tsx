@@ -4,20 +4,49 @@ import Link from "next/link";
  import { ServicesSection } from "@/components/services/ServicesSection";
 
 export const metadata: Metadata = {
-  title: "Accessibilité numérique & conformité légale",
+  title: "Accessibilité web & conformité selon les normes européennes WCAG 2,1",
   description:
-    "Audit et mise en conformité accessibilité WCAG pour vos sites en Belgique & en France. La loi de juin 2025 rend l’accessibilité obligatoire pour les services numériques.",
-  alternates: {
-    canonical: "https://www.stephanegamot.com/services/accessibilite",
-  },
+    "Mise en conformité accessibilité (WCAG/RGAA) : corrections UI, contrastes, navigation clavier, ARIA, formulaires. Réduisez les risques et élargissez votre audience.",
+  metadataBase: new URL("https://www.stephanegamot.com"),
+  alternates: { canonical: "/services/accessibilite" },
+  keywords: [
+    "accessibilité web",
+    "WCAG",
+    "RGAA",
+    "audit accessibilité",
+    "contrastes",
+    "navigation clavier",
+    "ARIA",
+    "conformité accessibilité",
+  ],
+  robots: { index: true, follow: true },
+  authors: [{ name: "Stéphane Gamot", url: "https://www.stephanegamot.com/me" }],
   openGraph: {
-    title: "Accessibilité numérique : éviter les amendes & l’exclusion | Stéphane Gamot",
+    title: "Accessibilité web & conformité – Stéphane Gamot",
     description:
-      "Depuis le 28 juin 2025, l’accessibilité devient une obligation pour beaucoup de sites (e-commerce, services en ligne…). Je vous aide à vous mettre en conformité, en Belgique et en France.",
-    url: "https://www.stephanegamot.com/services/accessibilite",
+      "Audit + corrections : contrastes, formulaires, ARIA, navigation clavier, structure. Un site plus inclusif et plus robuste.",
+    url: "/services/accessibilite",
+    siteName: "Stéphane Gamot",
     type: "website",
+    locale: "fr_BE",
+    images: [
+      {
+        url: "/Images/og/office-workstation.webp",
+        width: 1200,
+        height: 630,
+        alt: "Accessibilité numérique et conformité WCAG",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Accessibilité web & conformité – Stéphane Gamot",
+    description:
+      "Audit + corrections WCAG/RGAA : contrastes, clavier, ARIA, formulaires, structure. Inclusif et robuste.",
+    images: ["/Images/og/office-workstation.webp"],
   },
 };
+
 
 export default function AccessibiliteServicePage() {
   return (

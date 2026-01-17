@@ -3,20 +3,48 @@ import Link from "next/link";
  import { ServicesSection } from "@/components/services/ServicesSection";
 
 export const metadata: Metadata = {
-  title: "Création de site e-commerce | White Wolf Web",
+  title: "Création de site e-commerce",
   description:
-    "Boutique en ligne sur mesure : parcours d’achat fluide, paiement sécurisé (Stripe), mobile-first et pensé pour convertir.",
-  alternates: {
-    canonical: "https://www.stephanegamot.com/services/e-commerce",
-  },
+    "Boutique en ligne sur mesure : tunnel d’achat simple, paiement sécurisé (Stripe), mobile-first, SEO solide et performances optimisées pour convertir.",
+  metadataBase: new URL("https://www.stephanegamot.com"),
+  alternates: { canonical: "/services/e-commerce" },
+  keywords: [
+    "création boutique en ligne",
+    "site e-commerce",
+    "Stripe",
+    "paiement en ligne",
+    "conversion",
+    "SEO e-commerce",
+    "performance e-commerce",
+  ],
+  robots: { index: true, follow: true },
+  authors: [{ name: "Stéphane Gamot", url: "https://www.stephanegamot.com/me" }],
   openGraph: {
-    title: "Sites e-commerce sur mesure | White Wolf Web",
+    title: "Création de site e-commerce – Stéphane Gamot",
     description:
-      "Création de boutiques en ligne modernes : parcours simple, paiement sécurisé, expérience mobile soignée.",
-    url: "https://www.stephanegamot.com/services/e-commerce",
+      "E-commerce moderne : UX fluide, paiement Stripe, mobile-first, SEO et performance pour vendre plus facilement.",
+    url: "/services/e-commerce",
+    siteName: "Stéphane Gamot",
     type: "website",
+    locale: "fr_BE",
+    images: [
+      {
+        url: "/Images/og/office-workstation.webp",
+        width: 1200,
+        height: 630,
+        alt: "Création de site e-commerce performant",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Création de site e-commerce – Stéphane Gamot",
+    description:
+      "Tunnel d’achat simple, Stripe, mobile-first, SEO et performance : une boutique pensée pour convertir.",
+    images: ["/Images/og/office-workstation.webp"],
   },
 };
+
 
 export default function EcommerceServicePage() {
   return (
