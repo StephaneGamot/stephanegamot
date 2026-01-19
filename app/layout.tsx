@@ -1,6 +1,6 @@
 import type {Metadata, Viewport} from "next";
 import "./globals.css";
-
+import Script from "next/script";
 import { Cormorant_Garamond, Montserrat } from "next/font/google";
 import Nav from "@/components/navigation/Header/Nav";
 import Footer from "@/components/navigation/Footer/Footer";
@@ -62,11 +62,16 @@ export const viewport: Viewport = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-    return (
-    <html lang="fr">
-
-  <body className={`${garamond.variable} ${montserrat.variable}`}>
-        
+  return (
+    <html lang="fr" className={`${garamond.variable} ${montserrat.variable}`}>
+      <body>
+        <Script
+          id="ahrefs-analytics"
+          src="https://analytics.ahrefs.com/analytics.js"
+          data-key="GDaY2OVpE6IfdQicYtz/qQ"
+          strategy="beforeInteractive"
+          async
+        />
         <Nav />
         {children}
         <Footer />
