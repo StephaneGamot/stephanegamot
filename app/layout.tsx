@@ -71,16 +71,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="googlebot" content="index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
     </head><body className={`${garamond.variable} ${montserrat.variable}`}>
-       <Script id="ahrefs-loader" strategy="beforeInteractive">{`
-  (function () {
-    var s = document.createElement('script');
-    s.src = 'https://analytics.ahrefs.com/analytics.js';
-    s.async = true;
-    s.setAttribute('data-key', 'GDaY2OVpE6IfdQicYtz/qQ');
-    document.head.appendChild(s);
-  })();
-`}</Script>
-
+        <Script
+          src="https://analytics.ahrefs.com/analytics.js"
+          data-key="GDaY2OVpE6IfdQicYtz/qQ"
+          strategy="afterInteractive"
+        />
         <Nav />
         {children}
         <Footer />
