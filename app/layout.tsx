@@ -62,16 +62,25 @@ export const viewport: Viewport = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="fr" className={`${garamond.variable} ${montserrat.variable}`}>
-      <body>
-        <Script
-          id="ahrefs-analytics"
-          src="https://analytics.ahrefs.com/analytics.js"
-          data-key="GDaY2OVpE6IfdQicYtz/qQ"
-          strategy="beforeInteractive"
-          async
-        />
+    return (
+    <html lang="fr">
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
+        <meta name="robots" content="index, follow" />
+        <meta name="googlebot" content="index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+    </head><body className={`${garamond.variable} ${montserrat.variable}`}>
+       <Script id="ahrefs-loader" strategy="beforeInteractive">{`
+  (function () {
+    var s = document.createElement('script');
+    s.src = 'https://analytics.ahrefs.com/analytics.js';
+    s.async = true;
+    s.setAttribute('data-key', 'GDaY2OVpE6IfdQicYtz/qQ');
+    document.head.appendChild(s);
+  })();
+`}</Script>
+
         <Nav />
         {children}
         <Footer />
