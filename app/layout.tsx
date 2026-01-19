@@ -1,85 +1,72 @@
-import type { Metadata, Viewport } from "next";
+import type {Metadata, Viewport} from "next";
 import "./globals.css";
 import Script from "next/script";
 import { Cormorant_Garamond, Montserrat } from "next/font/google";
 import Nav from "@/components/navigation/Header/Nav";
 import Footer from "@/components/navigation/Footer/Footer";
+// import OgImg from "@/public/Images/og/office-workstation.webp"
 
 const garamond = Cormorant_Garamond({
-  subsets: ["latin"],
-  variable: "--font-garamond",
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
+    subsets: ["latin"],
+    variable: "--font-garamond",
+    weight: ["400", "500", "600", "700"],
+    display: "swap",
 });
 
 const montserrat = Montserrat({
-  subsets: ["latin"],
-  variable: "--font-montserrat",
-  weight: ["400", "500", "600"],
-  display: "swap",
+    subsets: ["latin"],
+    variable: "--font-montserrat",
+    weight: ["400", "500", "600"],
+    display: "swap",
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://stephanegamot.com"),
-  title: {
-    default: "Stéphane Gamot – Créateur de sites web haut de gamme",
-    template: "%s",
-  },
-  description:
-    "Je conçois des sites web élégants, rapides et pensés pour convertir. Ingénieur & Développeur full-stack basé en Belgique, j’accompagne les entrepreneurs et indépendants qui veulent un site professionnel réellement efficace.",
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
+    metadataBase: new URL("https://stephanegamot.com"),
+    title: {
+        default: "Stéphane Gamot – Créateur de sites web haut de gamme",
+        template: "%s ",
     },
-  },
-  icons: {
-    icon: "/favicon.ico",
-  },
-  openGraph: {
-    type: "website",
-    url: "https://stephanegamot.com",
-    title: "Stéphane Gamot – Créateur de sites web haut de gamme",
     description:
-      "Un site professionnel doit être beau, performant et pensé pour attirer des clients. Je vous accompagne de A à Z pour créer une présence en ligne qui fait la différence.",
-    siteName: "Stéphane Gamot",
-    locale: "fr_BE",
-    images: [
-      {
-        url: "/Images/og/office-workstation.webp", // ✅ relatif OK avec metadataBase
-        width: 1200,
-        height: 630,
-        alt: "Site web professionnel créé par Stéphane Gamot",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    images: ["/Images/og/office-workstation.webp"],
-  },
+        "Je conçois des sites web élégants, rapides et pensés pour convertir. Ingénieur & Développeur full-stack basé en Belgique, j’accompagne les entrepreneurs et indépendants qui veulent un site professionnel réellement efficace.",
+    openGraph: {
+        type: "website",
+        url: "https://stephanegamot.com",
+        title: "Stéphane Gamot – Créateur de sites web haut de gamme",
+        description:
+            "Un site professionnel doit être beau, performant et pensé pour attirer des clients. Je vous accompagne de A à Z pour créer une présence en ligne qui fait la différence.",
+        siteName: "Stéphane Gamot",
+        locale: "fr_BE",
+        images: [
+            {
+              url: "https://www.stephanegamot.com/Images/og/office-workstation.webp",
+                width: 1200,
+                height: 630,
+                alt: "Site web professionnel créé par Stéphane Gamot",
+            },
+        ],
+    },
+    twitter: {
+        card: "summary_large_image",
+    },
+    robots: {
+        index: true,
+        follow: true,
+    },
 };
 
+
 export const viewport: Viewport = {
-  width: "device-width",
-  initialScale: 1,
-  viewportFit: "cover",
+    width: "device-width",
+    initialScale: 1,
+    viewportFit: "cover",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="fr" className={`${garamond.variable} ${montserrat.variable}`}>
-      <body>
-        <Script
-          src="https://analytics.ahrefs.com/analytics.js"
-          data-key="GDaY2OVpE6IfdQicYtz/qQ"
-          strategy="afterInteractive"
-          async
-        />
+    return (
+    <html lang="fr">
+
+  <body className={`${garamond.variable} ${montserrat.variable}`}>
+        
         <Nav />
         {children}
         <Footer />
