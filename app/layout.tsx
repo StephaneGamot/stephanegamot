@@ -74,8 +74,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Script
           src="https://analytics.ahrefs.com/analytics.js"
           data-key="GDaY2OVpE6IfdQicYtz/qQ"
-          strategy="beforeInteractive"
-          async
+          strategy="afterInteractive"
         />
         <Nav />
         {children}
