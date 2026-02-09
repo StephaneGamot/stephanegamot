@@ -41,7 +41,7 @@ export default function AboutSection() {
                     </header>
 
                     <p className="text-white/80 text-pretty leading-relaxed">
-                        Développeur <span className="font-semibold">full-stack</span> et
+                        <span className="font-semibold">Architecte</span> Front-End — Design Systems & <span className="font-semibold">Ingénieur en développement</span> logiciel full-stack et
                         consultant <span className="font-semibold">SEO</span> basé en Belgique.
                         Je crée des sites <span className="font-semibold">rapides</span>,{" "}
                         <span className="font-semibold">élégants</span> et{" "}
