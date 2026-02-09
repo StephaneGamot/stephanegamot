@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     url: `${SITE_URL}/me`,
     title: "À propos – Stéphane Gamot",
     description:
-      "Développeur web full-stack basé en Belgique. J’accompagne les entrepreneurs, indépendants et petites entreprises avec des sites élégants, rapides & orientés résultats.",
+      "Front-End Architect — Design Systems & Ingénieur en développement logiciel full-stack. J’accompagne les entrepreneurs, indépendants et petites entreprises avec des sites élégants, rapides & orientés résultats.",
     siteName: "Stéphane Gamot",
     locale: "fr_BE",
     images: [
