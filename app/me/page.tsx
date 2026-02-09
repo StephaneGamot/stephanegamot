@@ -9,7 +9,7 @@ const SITE_URL = "https://www.stephanegamot.com";
 export const metadata: Metadata = {
   title: "À propos – Stéphane Gamot",
   description:
-    "Je suis Stéphane Gamot, développeur web full-stack basé en Belgique. Je crée des sites élégants, rapides, avec une approche humaine & stratégique.",
+    "Front-End Architect — Design Systems & Ingénieur en développement logiciel full-stack. Je crée des sites élégants, rapides, avec une approche humaine & stratégique.",
   alternates: {
     canonical: `${SITE_URL}/me`,
   },
@@ -74,7 +74,7 @@ export default function AboutPage() {
 
             <p className="text-sm leading-relaxed text-slate-200 sm:text-base">
               Je suis <span className="font-semibold">Stéphane Gamot</span>,
-              développeur web full-stack basé en Belgique.  
+             Front-End Architect — Design Systems & Ingénieur en développement logiciel full-stack. 
               Je conçois des sites pour les indépendants, thérapeutes,
               restaurants et petites entreprises qui veulent une présence en ligne
               sérieuse, rassurante et professionnelle.
