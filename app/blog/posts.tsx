@@ -14,6 +14,7 @@ import Next1 from "@/public/Images/blog/next1.webp"
 import Chance from "@/public/Images/blog/change.webp"
 import Seo from "@/public/Images/blog/seo.webp"
 import WebsitePrice from "@/public/Images/blog/websitePrice.webp"
+import Php1 from "@/public/Images/blog/php1.webp"
 
 export type BlogPost = {
     id: number;
@@ -1307,7 +1308,7 @@ export const posts: BlogPost[] = [
   title: "Est-ce que PHP survivrait sans WordPress ? (réponse honnête)",
   description:
     "WordPress représente une part énorme du web… et WordPress, c’est du PHP. Mais si WordPress disparaissait demain, PHP serait-il condamné ? Voici la réponse — nuancée, factuelle et orientée réalité du marché.",
-  imageUrl: WordPress1,
+  imageUrl: Php1,
   date: "2 mars 2026",
   datetime: "2026-03-02",
   readingTimeMinutes: 6,
