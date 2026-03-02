@@ -14,7 +14,7 @@ import Next1 from "@/public/Images/blog/next1.webp"
 import Chance from "@/public/Images/blog/change.webp"
 import Seo from "@/public/Images/blog/seo.webp"
 import WebsitePrice from "@/public/Images/blog/websitePrice.webp"
-import Php1 from "@/public/Images/blog/php1.webp"
+import Php1 from "@/public/Images/blog/php.webp"
 
 export type BlogPost = {
     id: number;
