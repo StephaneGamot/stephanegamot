@@ -1301,7 +1301,235 @@ export const posts: BlogPost[] = [
     </>
   ),
 },
+{
+  id: 7,
+  slug: "php-survivrait-il-sans-wordpress",
+  title: "Est-ce que PHP survivrait sans WordPress ? (réponse honnête)",
+  description:
+    "WordPress représente une part énorme du web… et WordPress, c’est du PHP. Mais si WordPress disparaissait demain, PHP serait-il condamné ? Voici la réponse — nuancée, factuelle et orientée réalité du marché.",
+  imageUrl: WordPress1,
+  date: "2 mars 2026",
+  datetime: "2026-03-02",
+  readingTimeMinutes: 6,
+  views: 0,
+  category: { title: "Technologies Web", href: "#" },
+  author: {
+    name: "Stéphane Gamot",
+    role: "Développeur full-stack & SEO",
+    href: "/me",
+    imageUrl: Moi,
+  },
+  content: (
+    <>
+      <p>
+        Quand on parle de{" "}
+        <strong className="text-emerald-300">PHP</strong>, beaucoup de gens pensent
+        immédiatement à{" "}
+        <strong className="text-indigo-300">WordPress</strong>.
+        Et c’est normal : WordPress a longtemps été le moteur le plus visible du
+        web “accessible”.
+      </p>
 
+      <p>
+        Mais la vraie question est intéressante :{" "}
+        <strong className="text-emerald-300">
+          si WordPress disparaissait, PHP disparaîtrait-il avec lui ?
+        </strong>
+      </p>
+
+      <div className="mt-6 rounded-2xl border border-indigo-500/20 bg-indigo-500/5 p-4 text-sm text-indigo-100">
+        <p className="font-semibold">
+          Réponse courte :{" "}
+          <span className="text-emerald-300">
+            PHP survivrait, mais il perdrait une partie de sa visibilité grand public
+          </span>
+          . Il resterait très utilisé côté “back-end” et entreprises, mais avec une
+          image moins “CMS”.
+        </p>
+      </div>
+
+      <h2 className="mt-10 text-xl font-semibold text-indigo-300">
+        Pourquoi WordPress pèse si lourd dans l’image de PHP
+      </h2>
+      <p>
+        WordPress a rendu PHP omniprésent chez :
+      </p>
+      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+        <li>les indépendants,</li>
+        <li>les petites entreprises,</li>
+        <li>les agences,</li>
+        <li>et l’hébergement mutualisé (le web “simple”).</li>
+      </ul>
+
+      <p className="mt-4">
+        Résultat : même si le monde tech parle beaucoup de JavaScript, Python ou
+        Go, PHP est resté{" "}
+        <strong className="text-emerald-300">massivement présent</strong>
+        … parce que WordPress a continué à tourner partout, tout le temps.
+      </p>
+
+      <div className="my-8 relative aspect-video w-full overflow-hidden rounded-2xl ring-1 ring-indigo-500/30">
+        <Image
+          src={WordPress2}
+          alt="WordPress : l'écosystème qui a rendu PHP ultra visible"
+          fill
+          className="object-cover"
+        />
+      </div>
+
+      <h2 className="mt-10 text-xl font-semibold text-indigo-300">
+        Si WordPress disparaissait : qu’est-ce qui resterait à PHP ?
+      </h2>
+
+      <h3 className="mt-6 text-lg font-semibold text-indigo-200">
+        1) Les frameworks (Laravel, Symfony…) : le PHP “pro”
+      </h3>
+      <p>
+        Sans WordPress, PHP ne serait pas “mort”. Il deviendrait juste plus
+        clairement ce qu’il est déjà pour beaucoup d’équipes :
+        un langage back-end stable pour développer des applications web.
+      </p>
+      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+        <li>
+          <strong className="text-emerald-300">Symfony</strong> : très présent en
+          entreprise, architecture solide, long terme.
+        </li>
+        <li>
+          <strong className="text-emerald-300">Laravel</strong> : productivité, DX,
+          écosystème moderne, rapide pour livrer.
+        </li>
+      </ul>
+
+      <p className="mt-4">
+        Donc non : PHP ne dépend pas *uniquement* de WordPress.
+        WordPress est surtout le moteur de sa présence “grand public”.
+      </p>
+
+      <h3 className="mt-8 text-lg font-semibold text-indigo-200">
+        2) Le web “legacy” : un énorme parc installé
+      </h3>
+      <p>
+        Même sans WordPress, il resterait :
+      </p>
+      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+        <li>des milliers d’applications internes en PHP,</li>
+        <li>des back-offices, CRM, outils métiers, intranets,</li>
+        <li>des sites historiques (sur mesure) encore rentables,</li>
+        <li>et beaucoup de maintenance (qui fait vivre un marché entier).</li>
+      </ul>
+
+      <h3 className="mt-8 text-lg font-semibold text-indigo-200">
+        3) Les hébergements “simples” : PHP reste ultra accessible
+      </h3>
+      <p>
+        L’un des super-pouvoirs de PHP, c’est sa disponibilité :
+        quasiment tous les hébergeurs le supportent facilement.
+        Même si WordPress disparaissait, le{" "}
+        <strong className="text-emerald-300">coût d’entrée</strong> resterait
+        très bas pour lancer un projet PHP.
+      </p>
+
+      <h2 className="mt-10 text-xl font-semibold text-indigo-300">
+        Mais… qu’est-ce que PHP perdrait vraiment sans WordPress ?
+      </h2>
+
+      <h3 className="mt-6 text-lg font-semibold text-indigo-200">
+        1) La “vitrine” la plus populaire
+      </h3>
+      <p>
+        WordPress est une vitrine énorme : c’est ce qui fait que des millions de
+        gens utilisent PHP sans le savoir. Sans WordPress, PHP deviendrait moins
+        visible auprès du grand public.
+      </p>
+
+      <h3 className="mt-8 text-lg font-semibold text-indigo-200">
+        2) Une partie du marché des petits sites vitrines
+      </h3>
+      <p>
+        Beaucoup de petits projets migreraient vers :
+      </p>
+      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+        <li>des builders (Webflow, Wix…)</li>
+        <li>des stacks JS (Next.js + CMS headless)</li>
+        <li>des solutions e-commerce SaaS</li>
+      </ul>
+
+      <p className="mt-4">
+        Et ce serait logique : ce segment-là est très sensible à la simplicité
+        “clé en main”.
+      </p>
+
+      <div className="my-8 relative aspect-video w-full overflow-hidden rounded-2xl ring-1 ring-indigo-500/30">
+        <Image
+          src={WordPress3}
+          alt="Le débat : WordPress et l'avenir de PHP"
+          fill
+          className="object-cover"
+        />
+      </div>
+
+      <h2 className="mt-10 text-xl font-semibold text-indigo-300">
+        La vraie réponse : PHP survivrait, mais deviendrait “moins grand public”
+      </h2>
+
+      <p>
+        Sans WordPress, PHP :
+      </p>
+      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+        <li>
+          <strong className="text-emerald-300">survivrait</strong> grâce aux frameworks,
+          au parc installé et à l’accessibilité serveur,
+        </li>
+        <li>
+          <strong className="text-emerald-300">perdrait</strong> une partie de son
+          image “CMS du web”, donc moins de nouveaux utilisateurs non-tech,
+        </li>
+        <li>
+          et serait perçu comme un langage plus “backend pro” que “outil de sites”.
+        </li>
+      </ul>
+
+      <h2 className="mt-10 text-xl font-semibold text-indigo-300">
+        Et toi, en tant qu’entreprise : qu’est-ce que tu dois retenir ?
+      </h2>
+      <p>
+        La bonne question n’est pas “PHP ou pas PHP”.
+        La bonne question est :
+      </p>
+      <p className="mt-4 rounded-2xl border border-emerald-400/30 bg-emerald-400/5 p-4 text-sm text-emerald-100">
+        <strong className="text-emerald-300">
+          Est-ce que ton site doit être administrable facilement (WordPress)…
+        </strong>{" "}
+        ou est-ce que ton site doit être{" "}
+        <strong>ultra rapide, premium, et pensé conversion/SEO (Next.js)</strong> ?
+      </p>
+
+      <h3 className="mt-8 text-lg font-semibold text-indigo-200">
+        Choisis WordPress si…
+      </h3>
+      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+        <li>tu veux publier souvent et être autonome,</li>
+        <li>tu as un budget initial plus serré,</li>
+        <li>ton site est surtout éditorial / vitrine.</li>
+      </ul>
+
+      <h3 className="mt-8 text-lg font-semibold text-indigo-200">
+        Choisis une stack moderne (Next.js) si…
+      </h3>
+      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+        <li>tu veux une expérience premium rapide,</li>
+        <li>tu veux maximiser SEO + conversion,</li>
+        <li>tu veux une base plus durable, sécurisée et sur mesure.</li>
+      </ul>
+
+      <p className="mt-6 rounded-2xl border border-indigo-500/20 bg-indigo-500/5 p-4 text-sm text-indigo-100">
+        <strong className="text-emerald-300">Tu hésites ?</strong>{" "}
+        Je peux te dire en 10 minutes ce qui est le plus cohérent pour ton projet
+        (WordPress optimisé vs Next.js), en fonction de ton objectif business.
+      </p>
+    </>
+  ),
+},
 
 
 ];
