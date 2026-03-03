@@ -15,6 +15,8 @@ import Chance from "@/public/Images/blog/change.webp"
 import Seo from "@/public/Images/blog/seo.webp"
 import WebsitePrice from "@/public/Images/blog/websitePrice.webp"
 import Php1 from "@/public/Images/blog/php.webp"
+import Php2 from "@/public/Images/blog/php2.webp"
+import Php3 from "@/public/Images/blog/php3.webp"
 
 export type BlogPost = {
     id: number;
@@ -1305,7 +1307,7 @@ export const posts: BlogPost[] = [
 {
   id: 7,
   slug: "php-survivrait-il-sans-wordpress",
-  title: "Est-ce que PHP survivrait sans WordPress ? (réponse honnête)",
+  title: "Est-ce que PHP survivrait sans WordPress ?",
   description:
     "WordPress représente une part énorme du web… et WordPress, c’est du PHP. Mais si WordPress disparaissait demain, PHP serait-il condamné ? Voici la réponse — nuancée, factuelle et orientée réalité du marché.",
   imageUrl: Php1,
@@ -1371,7 +1373,7 @@ export const posts: BlogPost[] = [
 
       <div className="my-8 relative aspect-video w-full overflow-hidden rounded-2xl ring-1 ring-indigo-500/30">
         <Image
-          src={WordPress2}
+          src={Php2}
           alt="WordPress : l'écosystème qui a rendu PHP ultra visible"
           fill
           className="object-cover"
@@ -1462,7 +1464,7 @@ export const posts: BlogPost[] = [
 
       <div className="my-8 relative aspect-video w-full overflow-hidden rounded-2xl ring-1 ring-indigo-500/30">
         <Image
-          src={WordPress3}
+          src={Php3}
           alt="Le débat : WordPress et l'avenir de PHP"
           fill
           className="object-cover"
