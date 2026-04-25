@@ -1,9 +1,10 @@
-// app/(marketing)/_components/ProcessSection.tsx
+"use client";
+
 import { Lightbulb, PencilRuler, Code2, Rocket } from "lucide-react";
-import type { Metadata } from "next";
 import Link from "next/link";
 import Script from "next/script";
-import clsx from "clsx";
+import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/animations/ScrollReveal";
+import { MagneticButton } from "@/components/animations/MagneticButton";
 
 type Step = {
     id: number;
@@ -18,7 +19,7 @@ const steps: Step[] = [
         id: 1,
         title: "Découverte & stratégie",
         desc:
-            "On clarifie vos objectifs, vos cibles et vos KPIs. Benchmark et plan d’action priorisé.",
+            "On clarifie vos objectifs, vos cibles et vos KPIs. Benchmark et plan d'action priorisé.",
         icon: Lightbulb,
         deliverables: ["Brief stratégique", "Roadmap priorisée", "Planning macro"],
     },
@@ -42,19 +43,13 @@ const steps: Step[] = [
         id: 4,
         title: "Lancement & accompagnement",
         desc:
-            "Mise en ligne, suivi des KPIs, itérations continues et plan d’évolution.",
+            "Mise en ligne, suivi des KPIs, itérations continues et plan d'évolution.",
         icon: Rocket,
         deliverables: ["Check-list go-live", "Plan de suivi", "Backlog évolutif"],
     },
 ];
 
-export const metadata: Metadata = {
-    title: "Process & Méthode",
-    description: "Une approche structurée, orientée résultats.",
-};
-
 export default function ProcessSection() {
-    // JSON-LD HowTo (SEO)
     const howto = {
         "@context": "https://schema.org",
         "@type": "HowTo",
@@ -75,126 +70,113 @@ export default function ProcessSection() {
     return (
         <section
             id="process"
-            className="relative bg-transparent py-20 overflow-x-hidden"
+            className="relative section overflow-x-hidden"
         >
-            {/* Lueur d’arrière-plan “premium” */}
-            <div
-                aria-hidden
-                className="pointer-events-none absolute inset-0 -z-10 flex justify-center"
-            >
-                <div className="h-40 sm:h-48 md:h-56 lg:h-64 w-full max-w-[56rem] rounded-full bg-indigo-500/20 blur-2xl sm:blur-3xl" />
-            </div>
+            {/* Séparateur */}
+            <div className="divider mx-auto max-w-6xl" />
 
-            <div className="mx-auto max-w-7xl px-6">
-                <header className="mb-12 max-w-2xl">
-                    <p className="text-xs font-semibold uppercase tracking-[0.25em] text-emerald-300/80">
+            <div className="mx-auto max-w-6xl px-8 lg:px-12" style={{ paddingTop: 'var(--section-gap)' }}>
+                <ScrollReveal as="header" className="mb-16 max-w-xl">
+                    <p className="section-label mb-4">
                         Méthode
                     </p>
-                    <h2 className="mt-3 text-balance text-3xl font-bold tracking-tight text-white sm:text-4xl">
-                        Process & Méthode de travail
+                    <h2 style={{ color: 'var(--fg-base)' }}>
+                        Process &amp; méthode de travail
                     </h2>
-                    <p className="mt-2 text-pretty text-white/70">
-                        Une approche structurée, orientée résultats — pas “juste un site”,
+                    <p className="mt-4" style={{ color: 'var(--fg-muted)' }}>
+                        Une approche structurée, orientée résultats — pas &quot;juste un site&quot;,
                         un accompagnement sur la durée.
                     </p>
-                </header>
+                </ScrollReveal>
 
-                {/* Rail / timeline (desktop) */}
+                {/* Timeline fine (desktop) */}
                 <div className="relative hidden lg:block">
-                    <div className="absolute left-[8%] right-[8%] top-16 h-px bg-gradient-to-r from-white/10 via-white/20 to-white/10" />
+                    <div className="absolute left-[8%] right-[8%] top-16 h-px" style={{ background: 'var(--border)' }} />
                 </div>
 
-                {/* Cards */}
-                <ol
+                {/* Cards — staggerées */}
+                <StaggerContainer
+                    as="ol"
                     className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4"
-                    role="list"
+                    staggerDelay={0.12}
                 >
                     {steps.map((s, idx) => (
-                        <li key={s.id}>
+                        <StaggerItem key={s.id} as="li">
                             <article
-                                className={clsx(
-                                    // wrapper gradient léger pour le côté premium
-                                    "group h-full rounded-2xl bg-gradient-to-b from-white/15 via-white/5 to-white/0 p-[1px]",
-                                    "transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5"
-                                )}
+                                className="group h-full"
+                                style={{ transition: 'transform 0.5s cubic-bezier(0.16,1,0.3,1)' }}
                                 aria-labelledby={`step-${s.id}`}
                             >
                                 <div
-                                    className={clsx(
-                                        "h-full rounded-2xl border border-white/10 bg-white/5",
-                                        "p-6 backdrop-blur-md shadow-[0_8px_30px_rgba(0,0,0,0.15)]",
-                                        "ring-1 ring-inset ring-white/5"
-                                    )}
+                                    className="h-full p-6"
+                                    style={{
+                                        background: 'var(--surface-1)',
+                                        border: '1px solid var(--border)',
+                                        borderRadius: '1rem',
+                                    }}
                                 >
                                     {/* Header icône + numéro */}
-                                    <div className="flex items-center justify-between">
-                                        <div className="flex items-center gap-3">
-                                            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-indigo-500/15 ring-1 ring-indigo-300/20">
-                                                <s.icon className="h-5 w-5 text-indigo-300" aria-hidden />
-                                            </div>
-                                            <span className="sr-only">Étape</span>
+                                    <div className="flex items-center justify-between mb-5">
+                                        <div
+                                            className="flex h-11 w-11 items-center justify-center rounded-lg"
+                                            style={{ background: 'var(--accent-muted)', border: '1px solid var(--border)' }}
+                                        >
+                                            <s.icon className="h-4.5 w-4.5" style={{ color: 'var(--accent)' }} aria-hidden />
                                         </div>
-                                        <span className="inline-flex h-7 min-w-7 items-center justify-center rounded-full bg-white/10 px-2 text-xs font-semibold text-white/80 ring-1 ring-white/15">
-                      {String(idx + 1).padStart(2, "0")}
-                    </span>
+                                        <span
+                                            className="text-xs font-medium"
+                                            style={{ color: 'var(--fg-subtle)', fontFamily: 'var(--font-body)', letterSpacing: '0.1em' }}
+                                        >
+                                            {String(idx + 1).padStart(2, "0")}
+                                        </span>
                                     </div>
 
                                     {/* Titre + desc */}
                                     <h3
                                         id={`step-${s.id}`}
-                                        className="mt-4 text-lg font-semibold text-white"
+                                        className="text-lg"
+                                        style={{ color: 'var(--fg-base)', fontFamily: 'var(--font-heading)' }}
                                     >
                                         {s.title}
                                     </h3>
-                                    <p className="mt-2 text-sm leading-relaxed text-white/75">
+                                    <p className="mt-3 text-sm" style={{ color: 'var(--fg-subtle)', lineHeight: '1.7' }}>
                                         {s.desc}
                                     </p>
 
                                     {/* Deliverables */}
                                     {s.deliverables?.length ? (
-                                        <ul className="mt-4 space-y-1.5 text-sm">
+                                        <ul className="mt-5 space-y-2 text-sm">
                                             {s.deliverables.map((d, i) => (
                                                 <li
                                                     key={i}
-                                                    className="flex items-center gap-2 text-white/75"
+                                                    className="flex items-center gap-2.5"
+                                                    style={{ color: 'var(--fg-subtle)' }}
                                                 >
-                                                    <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-500/85" />
+                                                    <span
+                                                        className="inline-block h-1 w-1 rounded-full flex-shrink-0"
+                                                        style={{ background: 'var(--accent)' }}
+                                                    />
                                                     <span>{d}</span>
                                                 </li>
                                             ))}
                                         </ul>
                                     ) : null}
-
-                                    {/* Micro footer (qualité/perf) */}
-
                                 </div>
                             </article>
-                        </li>
+                        </StaggerItem>
                     ))}
-                </ol>
+                </StaggerContainer>
 
                 {/* CTA */}
-                <div className="mt-12 flex flex-wrap items-center gap-4">
-                    <Link
+                <ScrollReveal className="mt-16" delay={0.3}>
+                    <MagneticButton
+                        as="a"
                         href="/contact"
-                        className="inline-flex items-center gap-2 rounded-full bg-indigo-500 px-6 py-2.5 text-white shadow hover:bg-indigo-400 transition-colors"
+                        className="btn btn-primary"
                     >
                         Discutons de votre projet
-                        <svg
-                            width="16"
-                            height="16"
-                            viewBox="0 0 24 24"
-                            className="-mb-px"
-                        >
-                            <path
-                                d="M5 12h14m-7-7l7 7-7 7"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="2"
-                            />
-                        </svg>
-                    </Link>
-                </div>
+                    </MagneticButton>
+                </ScrollReveal>
             </div>
 
             {/* SEO HowTo */}
@@ -206,4 +188,3 @@ export default function ProcessSection() {
         </section>
     );
 }
-

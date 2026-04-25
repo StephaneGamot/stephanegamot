@@ -18,15 +18,9 @@ import {
     ShoppingBagIcon,
     SparklesIcon,
     EyeIcon,
-    RectangleGroupIcon,
-    LightBulbIcon,
-    DocumentTextIcon,
-    QuestionMarkCircleIcon,
-    UserCircleIcon,
-    EnvelopeIcon,
 } from '@heroicons/react/24/outline'
 
-import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
+import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import Link from 'next/link'
 import HeaderLogo from '@/components/navigation/Header/HeaderLogo'
 
@@ -34,14 +28,14 @@ const services = [
     {
         name: 'Site web en React-Next',
         description:
-            'Application web ultra rapide en Next.js, optimisée Core Web Vitals et prête pour le SEO.',
+            'Application web ultra rapide en Next.js, optimisee Core Web Vitals et prete pour le SEO.',
         href: '/services/site-web-react-next',
         icon: CodeBracketIcon,
     },
     {
         name: 'Site internet WordPress',
         description:
-            'Site WordPress sur-mesure, facile à gérer et pensé pour la performance.',
+            'Site WordPress sur-mesure, facile a gerer et pense pour la performance.',
         href: '/services/site-internet-wordpress',
         icon: WindowIcon,
     },
@@ -55,58 +49,68 @@ const services = [
     {
         name: 'E-commerce',
         description:
-            'Boutique en ligne fluide, checkout optimisé et intégration des moyens de paiement.',
+            'Boutique en ligne fluide, checkout optimise et integration des moyens de paiement.',
         href: '/services/e-commerce',
         icon: ShoppingBagIcon,
     },
     {
         name: 'Site vitrine',
         description:
-            'Site vitrine élégant pour présenter votre activité et générer des contacts qualifiés.',
+            'Site vitrine elegant pour presenter votre activite et generer des contacts qualifies.',
         href: '/services/site-vitrine',
         icon: SparklesIcon,
     },
     {
-        name: 'Accessibilité',
+        name: 'Accessibilite',
         description:
-            'Mise en conformité accessibilité (RGAA/WCAG) pour un site inclusif et confortable à utiliser.',
+            'Mise en conformite accessibilite (RGAA/WCAG) pour un site inclusif et confortable a utiliser.',
         href: '/services/accessibilite',
         icon: EyeIcon,
     },
 ]
 
+const navLinks = [
+    { href: '/portfolio', label: 'Portfolio' },
+    { href: '/blog', label: 'Blog' },
+    { href: '/faq', label: 'FAQ' },
+    { href: '/me', label: 'A Propos' },
+]
 
-
-const callsToAction = [
-    { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
-    { name: 'Contact', href: '/contact', icon: PhoneIcon },
+const mobileLinks = [
+    { href: '/portfolio', label: 'Portfolio' },
+    { href: '/blog', label: 'Blog' },
+    { href: '/faq', label: 'FAQ' },
+    { href: '/me', label: 'A Propos' },
+    { href: '/contact', label: 'Contact' },
 ]
 
 export default function Example() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
     return (
-        <header className="bg-gray-900">
+        <header className="relative z-50" style={{ background: "transparent" }}>
+            <div className="absolute inset-x-0 bottom-0 h-px" style={{ background: "var(--border)" }} />
+
             <nav
                 aria-label="Navigation principale"
-                className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
+                className="mx-auto flex max-w-6xl items-center justify-between px-8 py-6 lg:px-12 lg:py-7"
             >
                 <div className="flex lg:flex-1">
                     <Link
                         href="/"
-                        aria-label="Aller à l’accueil"
-                        className="-m-1.5 p-1.5 inline-flex items-center"
+                        aria-label="Aller a l accueil"
+                        className="inline-flex items-center"
                     >
                         <HeaderLogo />
                     </Link>
                 </div>
 
-                {/* Bouton mobile */}
                 <div className="flex lg:hidden">
                     <button
                         type="button"
                         onClick={() => setMobileMenuOpen(true)}
-                        className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 dark:text-gray-400"
+                        className="inline-flex items-center justify-center min-h-[44px] min-w-[44px] p-2.5"
+                        style={{ color: "var(--fg-muted)" }}
                         aria-label="Ouvrir le menu principal"
                         aria-expanded={mobileMenuOpen}
                         aria-controls="mobile-menu"
@@ -116,126 +120,102 @@ export default function Example() {
                     </button>
                 </div>
 
-                {/* Desktop nav */}
-                <PopoverGroup className="hidden lg:flex lg:gap-x-12 ">
-                    <Popover className="relative ">
-                        <PopoverButton className="flex items-center gap-x-1 text-lg font-semibold text-gray-900 dark:text-white ">
+                <PopoverGroup className="hidden lg:flex lg:items-center lg:gap-x-10">
+                    <Popover className="relative">
+                        <PopoverButton
+                            className="flex items-center gap-x-1 text-[13px] font-medium uppercase tracking-[0.1em] transition-colors duration-300"
+                            style={{ color: "var(--fg-muted)" }}
+                        >
                             Services
                             <ChevronDownIcon
                                 aria-hidden="true"
-                                className="size-5 flex-none text-gray-400 dark:text-gray-500"
+                                className="size-4 flex-none opacity-40"
                             />
                         </PopoverButton>
 
                         <PopoverPanel
                             transition
-                            className="absolute left-1/2 z-10 mt-3 w-screen max-w-md -translate-x-1/2 overflow-hidden rounded-3xl bg-white shadow-lg outline-1 outline-gray-900/5 transition data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in dark:bg-gray-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10 "
+                            className="absolute left-1/2 z-10 mt-5 w-screen max-w-md -translate-x-1/2 overflow-hidden rounded-xl transition data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
+                            style={{ background: "#0f1015", border: "1px solid var(--border)", boxShadow: "var(--shadow-soft)" }}
                         >
-                            <div className="p-4 ">
+                            <div className="p-3">
                                 {services.map((item) => (
                                     <div
                                         key={item.name}
-                                        className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-50 dark:hover:bg-white/5  "
+                                        className="group relative flex items-center gap-x-5 rounded-lg p-4 text-sm transition-colors duration-300"
                                     >
-                                        <div className="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white dark:bg-gray-700/50 dark:group-hover:bg-gray-700 ">
+                                        <div
+                                            className="flex size-10 flex-none items-center justify-center rounded-lg transition-colors duration-300"
+                                            style={{ background: "var(--surface-2)", border: "1px solid var(--border)" }}
+                                        >
                                             <item.icon
                                                 aria-hidden="true"
-                                                className="size-6 text-gray-600 group-hover:text-indigo-600 dark:text-gray-400 dark:group-hover:text-white"
+                                                className="size-5 transition-colors duration-300"
+                                                style={{ color: "var(--fg-subtle)" }}
                                             />
                                         </div>
                                         <div className="flex-auto">
                                             <Link
                                                 href={item.href}
-                                                className="block font-semibold text-gray-900 dark:text-white "
+                                                className="block text-sm font-medium transition-colors duration-300"
+                                                style={{ color: "var(--fg-base)" }}
                                             >
                                                 {item.name}
                                                 <span className="absolute inset-0" aria-hidden="true" />
                                             </Link>
-                                            <p className="mt-1 text-gray-600 dark:text-gray-400">
+                                            <p className="mt-1 text-xs" style={{ color: "var(--fg-subtle)" }}>
                                                 {item.description}
                                             </p>
                                         </div>
                                     </div>
                                 ))}
                             </div>
-                            <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50 dark:divide-white/10 dark:bg-gray-700/50">
-                                {callsToAction.map((item) => (
-                                    <Link
-                                        key={item.name}
-                                        href={item.href}
-                                        className="flex items-center justify-center gap-x-2.5 p-3 text-sm/6 font-semibold text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700/50"
-                                        aria-label={item.name}
-                                    >
-                                        <item.icon
-                                            aria-hidden="true"
-                                            className="size-5 flex-none text-gray-400 dark:text-gray-500"
-                                        />
-                                        {item.name}
-                                    </Link>
-                                ))}
-                            </div>
                         </PopoverPanel>
                     </Popover>
 
-                    <Link
-                        href="/portfolio"
-                        className="text-lg font-semibold text-gray-900 dark:text-white"
-                    >
-                        Portfolio
-                    </Link>
-                  {/*  <Link
-                        href="/idees"
-                        className="text-lg font-semibold text-gray-900 dark:text-white"
-                    >
-                        Idées
-                    </Link> */}
-                     <Link
-                        href="/blog"
-                        className="text-lg font-semibold text-gray-900 dark:text-white"
-                    >
-                        Blog
-                    </Link>
-                    <Link
-                        href="/faq"
-                        className="text-lg font-semibold text-gray-900 dark:text-white"
-                    >
-                        FAQ
-                    </Link>
-                    <Link
-                        href="/me"
-                        className="text-lg font-semibold text-gray-900 dark:text-white"
-                    >
-                        A Propos
-                    </Link>
+                    {navLinks.map((link) => (
+                        <Link
+                            key={link.href}
+                            href={link.href}
+                            className="text-[13px] font-medium uppercase tracking-[0.1em] transition-colors duration-300 hover:!text-[var(--accent)]"
+                            style={{ color: "var(--fg-muted)" }}
+                        >
+                            {link.label}
+                        </Link>
+                    ))}
+
                     <Link
                         href="/contact"
-                        className="text-lg font-semibold text-gray-900 dark:text-white"
+                        className="ml-4 text-[13px] font-medium uppercase tracking-[0.1em] transition-all duration-400 px-5 py-2.5"
+                        style={{
+                            color: "var(--accent)",
+                            border: "1px solid var(--accent)",
+                            borderRadius: "0.5rem",
+                        }}
                     >
                         Contact
                     </Link>
                 </PopoverGroup>
-
-                <div className="hidden lg:flex lg:flex-1 lg:justify-end" />
             </nav>
 
-            {/* Mobile dialog */}
             <Dialog
                 open={mobileMenuOpen}
                 onClose={setMobileMenuOpen}
                 className="mobile-menu lg:hidden"
                 aria-label="Menu principal"
             >
-                <div className="fixed inset-0 z-10" />
+                <div className="fixed inset-0 z-40" style={{ background: "rgba(8,9,12,0.6)", backdropFilter: "blur(4px)" }} />
                 <DialogPanel
                     id="mobile-menu"
-                    className="fixed inset-y-0 right-0 z-10 flex w-full flex-col justify-between overflow-y-auto bg-white sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 dark:bg-gray-900 dark:sm:ring-white/10"
+                    className="fixed inset-y-0 right-0 z-50 flex w-full flex-col overflow-y-auto sm:max-w-sm"
+                    style={{ background: "#0c0d12", borderLeft: "1px solid var(--border)" }}
                 >
-                    <div className="p-6">
+                    <div className="px-8 py-7">
                         <div className="flex items-center justify-between">
                             <Link
                                 href="/"
-                                aria-label="Retour à l’accueil"
-                                className="-m-1.5 p-1.5 inline-flex items-center"
+                                aria-label="Retour a l accueil"
+                                className="inline-flex items-center"
                                 onClick={() => setMobileMenuOpen(false)}
                             >
                                 <HeaderLogo />
@@ -243,7 +223,8 @@ export default function Example() {
                             <button
                                 type="button"
                                 onClick={() => setMobileMenuOpen(false)}
-                                className="-m-2.5 rounded-md p-2.5 text-gray-700 dark:text-gray-400"
+                                className="min-h-[44px] min-w-[44px] flex items-center justify-center p-2.5"
+                                style={{ color: "var(--fg-subtle)" }}
                                 aria-label="Fermer le menu"
                             >
                                 <span className="sr-only">Fermer le menu</span>
@@ -251,121 +232,34 @@ export default function Example() {
                             </button>
                         </div>
 
-                        <div className="mt-6 flow-root">
-                            <div className="-my-6 divide-y divide-gray-500/10 dark:divide-white/10">
-                                {/* Services mobile */}
-                                <div className="space-y-2 py-6">
-                                    {services.map((item) => (
-                                        <Link
-                                            key={item.name}
-                                            href={item.href}
-                                            className="group -mx-3 flex items-center gap-x-6 rounded-lg p-3 text-base/7 font-semibold text-gray-900 hover:bg-gray-800 dark:text-white dark:hover:bg:white/5"
-                                            onClick={() => setMobileMenuOpen(false)}
-                                        >
-                                            <div className="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white dark:bg-gray-800 dark:group-hover:bg-gray-700">
-                                                <item.icon
-                                                    aria-hidden="true"
-                                                    className="size-6 text-gray-600 group-hover:text-indigo-600 dark:text-gray-300 dark:group-hover:text-white"
-                                                />
-                                            </div>
-                                            {item.name}
-                                        </Link>
-                                    ))}
-                                </div>
+                        <div className="mt-12 flex flex-col gap-1">
+                            {services.map((item) => (
+                                <Link
+                                    key={item.name}
+                                    href={item.href}
+                                    className="flex items-center min-h-[48px] py-3.5 text-[13px] font-medium uppercase tracking-[0.1em] transition-colors duration-300"
+                                    style={{ color: "var(--fg-muted)", borderBottom: "1px solid var(--border)" }}
+                                    onClick={() => setMobileMenuOpen(false)}
+                                >
+                                    {item.name}
+                                </Link>
+                            ))}
 
-                                {/* Liens classiques mobile */}
-                                <div className="space-y-2 py-6">
-                                    <Link
-                                        href="/portfolio"
-                                        className="group -mx-3 flex items-center gap-x-6 rounded-lg p-3 text-base/7 font-semibold text-gray-900 hover:bg-gray-800 dark:text-white dark:hover:bg-white/5"
-                                        onClick={() => setMobileMenuOpen(false)}
-                                    >
-                                        <div className="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white dark:bg-gray-800 dark:group-hover:bg-gray-700">
-                                            <RectangleGroupIcon
-                                                aria-hidden="true"
-                                                className="size-6 text-gray-600 group-hover:text-indigo-600 dark:text-gray-300 dark:group-hover:text-white"
-                                            />
-                                        </div>
-                                        <span>Portfolio</span>
-                                    </Link>
+                            <div className="my-4" />
 
-                                   {/* <Link
-                                        href="idees"
-                                        className="group -mx-3 flex items-center gap-x-6 rounded-lg p-3 text-base/7 font-semibold text-gray-900 hover:bg-gray-800 dark:text-white dark:hover:bg-white/5"
-                                        onClick={() => setMobileMenuOpen(false)}
-                                    >
-                                        <div className="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white dark:bg-gray-800 dark:group-hover:bg-gray-700">
-                                            <LightBulbIcon
-                                                aria-hidden="true"
-                                                className="size-6 text-gray-600 group-hover:text-indigo-600 dark:text-gray-300 dark:group-hover:text-white"
-                                            />
-                                        </div>
-                                        <span>Idées</span>
-                                    </Link>*/}
-
-                                    <Link
-                                        href="blog"
-                                        className="group -mx-3 flex items-center gap-x-6 rounded-lg p-3 text-base/7 font-semibold text-gray-900 hover:bg-gray-800 dark:text-white dark:hover:bg-white/5"
-                                        onClick={() => setMobileMenuOpen(false)}
-                                    >
-                                        <div className="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white dark:bg-gray-800 dark:group-hover:bg-gray-700">
-                                            <DocumentTextIcon
-                                                aria-hidden="true"
-                                                className="size-6 text-gray-600 group-hover:text-indigo-600 dark:text-gray-300 dark:group-hover:text-white"
-                                            />
-                                        </div>
-                                        <span>Blog</span>
-                                    </Link>
-
-                                    <Link
-                                        href="/faq"
-                                        className="group -mx-3 flex items-center gap-x-6 rounded-lg p-3 text-base/7 font-semibold text-gray-900 hover:bg-gray-800 dark:text-white dark:hover:bg-white/5"
-                                        onClick={() => setMobileMenuOpen(false)}
-                                    >
-                                        <div className="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white dark:bg-gray-800 dark:group-hover:bg-gray-700">
-                                            <QuestionMarkCircleIcon
-                                                aria-hidden="true"
-                                                className="size-6 text-gray-600 group-hover:text-indigo-600 dark:text-gray-300 dark:group-hover:text-white"
-                                            />
-                                        </div>
-                                        <span>FAQ</span>
-                                    </Link>
-
-                                    <Link
-                                        href="/me"
-                                        className="group -mx-3 flex items-center gap-x-6 rounded-lg p-3 text-base/7 font-semibold text-gray-900 hover:bg-gray-800 dark:text-white dark:hover:bg-white/5"
-                                        onClick={() => setMobileMenuOpen(false)}
-                                    >
-                                        <div className="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white dark:bg-gray-800 dark:group-hover:bg-gray-700">
-                                            <UserCircleIcon
-                                                aria-hidden="true"
-                                                className="size-6 text-gray-600 group-hover:text-indigo-600 dark:text-gray-300 dark:group-hover:text-white"
-                                            />
-                                        </div>
-                                        <span>A Propos</span>
-                                    </Link>
-
-                                    <Link
-                                        href="/contact"
-                                        className="group -mx-3 flex items-center gap-x-6 rounded-lg p-3 text-base/7 font-semibold text-gray-900 hover:bg-gray-800 dark:text-white dark:hover:bg-white/5"
-                                        onClick={() => setMobileMenuOpen(false)}
-                                    >
-                                        <div className="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white dark:bg-gray-800 dark:group-hover:bg-gray-700">
-                                            <EnvelopeIcon
-                                                aria-hidden="true"
-                                                className="size-6 text-gray-600 group-hover:text-indigo-600 dark:text-gray-300 dark:group-hover:text-white"
-                                            />
-                                        </div>
-                                        <span>Contact</span>
-                                    </Link>
-                                </div>
-
-                            </div>
+                            {mobileLinks.map((link) => (
+                                <Link
+                                    key={link.href}
+                                    href={link.href}
+                                    className="flex items-center min-h-[48px] py-3.5 text-[13px] font-medium uppercase tracking-[0.1em] transition-colors duration-300"
+                                    style={{ color: "var(--fg-muted)", borderBottom: "1px solid var(--border)" }}
+                                    onClick={() => setMobileMenuOpen(false)}
+                                >
+                                    {link.label}
+                                </Link>
+                            ))}
                         </div>
                     </div>
-
-                    {/* CTA bas mobile */}
-
                 </DialogPanel>
             </Dialog>
         </header>

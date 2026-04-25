@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Clock3 } from "lucide-react";
+import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { posts } from "../posts";
 
 // ⚠️ Avec Next 16, params est un Promise côté RSC
@@ -89,16 +90,16 @@ export default async function BlogPostPage({
 
     if (!post) {
         return (
-            <main className="bg-slate-950 text-white py-16 sm:py-20 lg:py-24">
-                <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-                    <h1 className="text-2xl font-semibold">Article introuvable</h1>
-                    <p className="mt-2 text-sm text-white/70">
+            <div className="section">
+                <div className="mx-auto max-w-3xl px-8 lg:px-12" style={{ paddingTop: "var(--section-gap)" }}>
+                    <h1 className="text-2xl font-semibold" style={{ color: "var(--fg-base)" }}>Article introuvable</h1>
+                    <p className="mt-2 text-sm" style={{ color: "var(--fg-muted)" }}>
                         Aucun article trouvé pour le slug :{" "}
-                        <span className="font-mono text-emerald-300">
+                        <span className="font-mono" style={{ color: "var(--accent)" }}>
               {String(slug || "(slug vide)")}
             </span>
                     </p>
-                    <p className="mt-4 text-sm text-white/70">
+                    <p className="mt-4 text-sm" style={{ color: "var(--fg-muted)" }}>
                         Slugs disponibles :
                         <br />
                         {posts.map((p) => (
@@ -110,53 +111,74 @@ export default async function BlogPostPage({
 
                     <Link
                         href="/blog"
-                        className="mt-6 inline-flex items-center text-sm text-indigo-300 hover:text-indigo-200"
+                        className="mt-6 inline-flex items-center text-sm transition-colors"
+                        style={{ color: "var(--accent)" }}
                     >
                         ← Retour au blog
                     </Link>
                 </div>
-            </main>
+            </div>
         );
     }
 
     const related = posts.filter((p) => p.slug !== post.slug).slice(0, 2);
 
+    const rawImg = typeof post.imageUrl === "string" ? post.imageUrl : post.imageUrl.src;
+    const fullImageUrl = rawImg.startsWith("http") ? rawImg : `${SITE_URL}${rawImg}`;
+
+    const articleSchema = {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        headline: post.title,
+        description: post.description,
+        image: fullImageUrl,
+        datePublished: post.datetime,
+        author: {
+            "@type": "Person",
+            name: post.author.name,
+            url: `${SITE_URL}${post.author.href}`,
+        },
+        publisher: {
+            "@type": "Organization",
+            name: "Stéphane Gamot",
+            url: SITE_URL,
+        },
+        mainEntityOfPage: {
+            "@type": "WebPage",
+            "@id": `${SITE_URL}/blog/${post.slug}`,
+        },
+        url: `${SITE_URL}/blog/${post.slug}`,
+        wordCount: post.readingTimeMinutes * 200,
+        inLanguage: "fr",
+    };
+
     return (
-        <main className="bg-slate-950 text-white py-16 sm:py-20 lg:py-24">
-            <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <>
+        <div className="section">
+            <div className="mx-auto max-w-4xl px-8 lg:px-12" style={{ paddingTop: "var(--section-gap)" }}>
                 {/* Breadcrumb */}
-                <nav className="mb-6 text-xs text-white/60">
-                    <Link href="/" className="hover:text-white">
-                        Accueil
-                    </Link>
-                    <span className="mx-1.5 text-white/40">/</span>
-                    <Link href="/blog" className="hover:text-white">
-                        Blog
-                    </Link>
-                    <span className="mx-1.5 text-white/40">/</span>
-                    <span className="text-white/80">{post.title}</span>
-                </nav>
+                <Breadcrumb items={[{ label: "Blog", href: "/blog" }, { label: post.title }]} />
 
                 {/* Header article */}
                 <header className="mb-8">
-                    <p className="text-xs font-semibold uppercase tracking-[0.25em] text-emerald-300/80">
+                    <p className="section-label">
                         {post.category.title}
                     </p>
-                    <h1 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
+                    <h1 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl" style={{ color: "var(--fg-base)" }}>
                         {post.title}
                     </h1>
 
-                    <div className="mt-4 flex flex-wrap items-center gap-3 text-xs text-white/60">
+                    <div className="mt-4 flex flex-wrap items-center gap-3 text-xs" style={{ color: "var(--fg-subtle)" }}>
                         <time dateTime={post.datetime}>{post.date}</time>
-                        <span className="h-1 w-1 rounded-full bg-white/30" />
+                        <span className="h-1 w-1 rounded-full" style={{ background: "var(--border)" }} />
                         <span className="inline-flex items-center gap-1">
               <Clock3 className="h-3.5 w-3.5" aria-hidden />
                             {post.readingTimeMinutes} min de lecture
             </span>
                         {post.views >= 50 && (
                             <>
-                                <span className="h-1 w-1 rounded-full bg-white/30" />
-                                <span className="inline-flex items-center rounded-full bg-white/10 px-2.5 py-1 text-[11px] font-medium text-emerald-300/90">
+                                <span className="h-1 w-1 rounded-full" style={{ background: "var(--border)" }} />
+                                <span className="inline-flex items-center rounded-full px-2.5 py-1 text-[11px] font-medium" style={{ background: "var(--accent-muted)", color: "var(--accent)" }}>
                   {post.views.toLocaleString("fr-BE")} lectures
                 </span>
                             </>
@@ -172,15 +194,15 @@ export default async function BlogPostPage({
                             height={40}
                             className="h-10 w-10 rounded-full object-cover"
                         />
-                        <div className="text-xs text-white/70">
-                            <p className="font-semibold text-white">{post.author.name}</p>
+                        <div className="text-xs" style={{ color: "var(--fg-subtle)" }}>
+                            <p className="font-semibold" style={{ color: "var(--fg-base)" }}>{post.author.name}</p>
                             <p>{post.author.role}</p>
                         </div>
                     </div>
                 </header>
 
                 {/* Image de couverture */}
-                <div className="mb-10 overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+                <div className="mb-10 overflow-hidden" style={{ border: "1px solid var(--border)", background: "var(--surface-1)", borderRadius: "1rem" }}>
                     <div className="relative aspect-[16/9] w-full">
                         <Image
                             src={post.imageUrl}
@@ -192,14 +214,14 @@ export default async function BlogPostPage({
                 </div>
 
                 {/* Contenu riche (ReactNode) → plus de .split() ici */}
-                <article className="prose prose-invert prose-sm sm:prose-base prose-headings:scroll-mt-20 prose-a:text-indigo-300 hover:prose-a:text-indigo-200 prose-strong:text-white prose-img:rounded-2xl max-w-none">
+                <article className="prose prose-invert prose-sm sm:prose-base prose-headings:scroll-mt-20 prose-img:rounded-2xl max-w-none" style={{ "--tw-prose-links": "var(--accent)", "--tw-prose-bold": "var(--fg-base)" } as React.CSSProperties}>
                     {post.content}
                 </article>
 
                 {/* À lire ensuite */}
                 {related.length > 0 && (
-                    <section className="mt-12 border-t border-white/10 pt-8">
-                        <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-white/70">
+                    <section className="mt-12 pt-8" style={{ borderTop: "1px solid var(--border)" }}>
+                        <h2 className="text-sm font-semibold uppercase tracking-[0.2em]" style={{ color: "var(--fg-subtle)" }}>
                             À lire ensuite
                         </h2>
                         <div className="mt-4 grid gap-4 sm:grid-cols-2">
@@ -207,15 +229,16 @@ export default async function BlogPostPage({
                                 <Link
                                     key={r.slug}
                                     href={`/blog/${r.slug}`}
-                                    className="group rounded-xl border border-white/10 bg-white/5 p-4 transition hover:border-indigo-400/70"
+                                    className="group p-4 transition"
+                                    style={{ border: "1px solid var(--border)", background: "var(--surface-1)", borderRadius: "1rem" }}
                                 >
-                                    <p className="text-xs text-white/60">
+                                    <p className="text-xs" style={{ color: "var(--fg-subtle)" }}>
                                         {r.date} · {r.readingTimeMinutes} min
                                     </p>
-                                    <h3 className="mt-2 text-sm font-semibold text-white group-hover:text-indigo-200">
+                                    <h3 className="mt-2 text-sm font-semibold" style={{ color: "var(--fg-base)" }}>
                                         {r.title}
                                     </h3>
-                                    <p className="mt-2 line-clamp-2 text-xs text-white/70">
+                                    <p className="mt-2 line-clamp-2 text-xs" style={{ color: "var(--fg-muted)" }}>
                                         {r.description}
                                     </p>
                                 </Link>
@@ -224,6 +247,11 @@ export default async function BlogPostPage({
                     </section>
                 )}
             </div>
-        </main>
+        </div>
+        <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+        />
+        </>
     );
 }

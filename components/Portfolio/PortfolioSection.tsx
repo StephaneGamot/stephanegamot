@@ -82,10 +82,10 @@ const projects: Project[] = [
     category: "branding",
     techs: ["WordPress", "Elementor", "SEO", "Performance"],
     highlight:
-      "Accent mis sur l’émotion, la lumière et le territoire pour donner envie de réserver.",
+      "Accent mis sur l'émotion, la lumière et le territoire pour donner envie de réserver.",
     imageSrc: PortFolioCorse,
     imageAlt:
-      "Page d’accueil du site de locations saisonnières Corsica-Corse, avec paysages corses.",
+      "Page d'accueil du site de locations saisonnières Corsica-Corse, avec paysages corses.",
   },
   {
     id: 4,
@@ -99,7 +99,7 @@ const projects: Project[] = [
       "Pensé pour rassurer et mettre en confiance dès la première visite sur le site.",
     imageSrc: PortFolioCourcelles,
     imageAlt:
-      "Interface d’un site pour centre de bien-être avec ambiance relaxante.",
+      "Interface d'un site pour centre de bien-être avec ambiance relaxante.",
   },
   {
     id: 5,
@@ -110,24 +110,24 @@ const projects: Project[] = [
     category: "branding",
     techs: ["Next.js", "Framer Motion", "Tailwind"],
     highlight:
-      "Met en avant la personnalité du studio plutôt qu’une simple liste de prestations.",
+      "Met en avant la personnalité du studio plutôt qu'une simple liste de prestations.",
     imageSrc: PortFolioEyes,
     imageAlt:
-      "Page d’accueil d’un studio créatif avec visuel fort et design immersif.",
+      "Page d'accueil d'un studio créatif avec visuel fort et design immersif.",
   },
   {
     id: 6,
     title: "AstraLovers / Synastria",
-    client: "Concept d’app de compatibilité amoureuse",
+    client: "Concept d'app de compatibilité amoureuse",
     description:
-      "Prototype d’application basée sur l’astrologie, avec onboarding ludique, profils et scénarios d’affinités.",
+      "Prototype d'application basée sur l'astrologie, avec onboarding ludique, profils et scénarios d'affinités.",
     category: "saas",
     techs: ["Next.js", "TypeScript", "Design System", "API"],
     highlight:
       "Une expérience orientée jeu, curiosité et premières phrases pour briser la glace.",
     imageSrc: PortFolioAstro,
     imageAlt:
-      "Interface cosmique de l’application de compatibilité amoureuse AstraLovers.",
+      "Interface cosmique de l'application de compatibilité amoureuse AstraLovers.",
   },
   {
     id: 7,
@@ -146,16 +146,16 @@ const projects: Project[] = [
   {
     id: 8,
     title: "GameOn Analytics",
-    client: "Plateforme d’événements sportifs",
+    client: "Plateforme d'événements sportifs",
     description:
-      "Dashboard d’inscriptions et de statistiques pour une plateforme d’événements, tournois et compétitions.",
+      "Dashboard d'inscriptions et de statistiques pour une plateforme d'événements, tournois et compétitions.",
     category: "saas",
     techs: ["React", "TypeScript", "API"],
     highlight:
-      "Organisation des données pour que les organisateurs visualisent rapidement l’essentiel.",
+      "Organisation des données pour que les organisateurs visualisent rapidement l'essentiel.",
     imageSrc: PortFolioGameOn,
     imageAlt:
-      "Interface de dashboard GameOn pour la gestion d’événements sportifs.",
+      "Interface de dashboard GameOn pour la gestion d'événements sportifs.",
   },
   {
     id: 9,
@@ -169,7 +169,7 @@ const projects: Project[] = [
       "Pensé pour rester lisible même avec beaucoup de données sur un seul écran.",
     imageSrc: PortFolioOlympique,
     imageAlt:
-      "Dashboard inspiré d’un comité olympique pour le suivi des performances.",
+      "Dashboard inspiré d'un comité olympique pour le suivi des performances.",
   },
   {
     id: 10,
@@ -180,23 +180,23 @@ const projects: Project[] = [
     category: "ecommerce",
     techs: ["React", "Tailwind", "UX", "Responsive"],
     highlight:
-      "Pensée pour mettre en avant quelques produits phares plutôt qu’un catalogue interminable.",
+      "Pensée pour mettre en avant quelques produits phares plutôt qu'un catalogue interminable.",
     imageSrc: PortFolioBoutique,
     imageAlt:
-      "Page d’accueil d’une boutique en ligne tendance pour mode et accessoires.",
+      "Page d'accueil d'une boutique en ligne tendance pour mode et accessoires.",
   },
   {
     id: 11,
     title: "Kanap – E-commerce mobilier",
     client: "Vente de canapés & mobilier",
     description:
-      "Site e-commerce d’entraînement autour de la vente de canapés, avec fiches produits détaillées.",
+      "Site e-commerce d'entraînement autour de la vente de canapés, avec fiches produits détaillées.",
     category: "ecommerce",
     techs: ["JavaScript", "API", "Responsive"],
     highlight:
       "Travail particulier sur la fiche produit et la mise en avant des visuels.",
     imageSrc: PortFolioKanap,
-    imageAlt: "Page produit d’un site e-commerce dédié aux canapés.",
+    imageAlt: "Page produit d'un site e-commerce dédié aux canapés.",
   },
   {
     id: 12,
@@ -207,10 +207,10 @@ const projects: Project[] = [
     category: "branding",
     techs: ["React", "API", "UX"],
     highlight:
-      "Organisation de l’information pour rendre la recherche de biens simple et agréable.",
+      "Organisation de l'information pour rendre la recherche de biens simple et agréable.",
     imageSrc: PortFolioKaza,
     imageAlt:
-      "Page d’accueil d’un portail immobilier moderne avec listing de biens.",
+      "Page d'accueil d'un portail immobilier moderne avec listing de biens.",
   },
   {
     id: 13,
@@ -221,10 +221,10 @@ const projects: Project[] = [
     category: "ecommerce",
     techs: ["React", "Tailwind", "UX"],
     highlight:
-      "Centré sur l’ambiance et les visuels pour donner faim dès la première visite.",
+      "Centré sur l'ambiance et les visuels pour donner faim dès la première visite.",
     imageSrc: PortFolioJaponais,
     imageAlt:
-      "Interface d’un site de restaurant japonais mettant en avant les plats.",
+      "Interface d'un site de restaurant japonais mettant en avant les plats.",
   },
   {
     id: 14,
@@ -238,7 +238,7 @@ const projects: Project[] = [
       "Pensé pour évoluer vers une plateforme multi-enseignes avec logique de menu et de commande.",
     imageSrc: PortFolioRestaurants,
     imageAlt:
-      "Interface d’un portail multi-restaurants avec plusieurs cartes disponibles.",
+      "Interface d'un portail multi-restaurants avec plusieurs cartes disponibles.",
   },
   {
     id: 15,
@@ -252,7 +252,7 @@ const projects: Project[] = [
       "Univers visuel travaillé pour inspirer confiance sans tomber dans le cliché.",
     imageSrc: PortFolioTarot,
     imageAlt:
-      "Page d’accueil d’un site de tarot et de développement personnel.",
+      "Page d'accueil d'un site de tarot et de développement personnel.",
   },
   {
     id: 16,
@@ -265,7 +265,7 @@ const projects: Project[] = [
     highlight:
       "Positionnement premium avec une grande importance accordée aux visuels et à la lisibilité des offres.",
     imageSrc: PortFolioTraiteur,
-    imageAlt: "Site vitrine d’un traiteur haut de gamme pour événements.",
+    imageAlt: "Site vitrine d'un traiteur haut de gamme pour événements.",
   },
 {
   id: 17,
@@ -276,10 +276,10 @@ const projects: Project[] = [
   category: "branding",
   techs: ["Next.js", "React", "UI Design"],
   highlight:
-    "Mise en avant de l’esprit du dojo et des informations pratiques pour les futurs membres.",
+    "Mise en avant de l'esprit du dojo et des informations pratiques pour les futurs membres.",
   imageSrc: PortFolioKarate,
   imageAlt:
-    "Page d’accueil d’un site de club de karaté avec visuel de pratiquants en action.",
+    "Page d'accueil d'un site de club de karaté avec visuel de pratiquants en action.",
 },
 
 ];
@@ -303,7 +303,6 @@ export default function PortfolioShowcase() {
   const [activeCategory, setActiveCategory] = useState<CategoryId>("all");
   const [isTouch, setIsTouch] = useState(false);
 
-  // Détection device tactile (iPhone, Android…)
   useEffect(() => {
     if (typeof window !== "undefined") {
       const mq = window.matchMedia("(pointer: coarse)");
@@ -317,42 +316,29 @@ export default function PortfolioShowcase() {
       : projects.filter((p) => p.category === activeCategory);
 
   return (
-    <section className="relative overflow-hidden bg-slate-950 py-16 sm:py-20 lg:py-24">
-      {/* Fond animé subtil */}
-      <div className="pointer-events-none absolute inset-0">
-        <motion.div
-          className="absolute -left-32 top-0 h-72 w-72 rounded-full bg-indigo-600/25 blur-3xl"
-          animate={{ y: [0, -10, 0] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <motion.div
-          className="absolute -right-40 bottom-0 h-80 w-80 rounded-full bg-emerald-400/20 blur-3xl"
-          animate={{ y: [0, 12, 0] }}
-          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-        />
-      </div>
-
+    <section className="relative overflow-hidden py-16 sm:py-20 lg:py-24">
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
+          transition={{ type: "spring", damping: 35, stiffness: 120, mass: 1 }}
           className="mx-auto max-w-3xl text-center"
-        > <h1 className="sr-only">
-        Portfolio – Réalisations de sites web, e-commerce et applications
-      </h1>
-          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-emerald-300/80">
+        >
+          <h1 className="sr-only">
+            Portfolio – Réalisations de sites web, e-commerce et applications
+          </h1>
+          <p className="section-label">
             Réalisations
           </p>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl" style={{ color: "var(--fg-base)" }}>
             Un portfolio centré sur{" "}
-            <span className="bg-gradient-to-r from-emerald-300 via-cyan-300 to-indigo-300 bg-clip-text text-transparent">
-              l’expérience
+            <span style={{ color: "var(--accent)" }}>
+              l'expérience
             </span>{" "}
             et les résultats.
           </h2>
-          <p className="mt-4 text-sm sm:text-base text-slate-300/85">
+          <p className="mt-4 text-sm sm:text-base" style={{ color: "var(--fg-muted)" }}>
             Des sites bien-être, e-commerce et projets plus créatifs, tous
             pensés pour être élégants, rapides et orientés conversion.
           </p>
@@ -363,11 +349,12 @@ export default function PortfolioShowcase() {
           className="mt-10 flex flex-wrap justify-center gap-2 sm:gap-3"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
+          transition={{ type: "spring", damping: 30, stiffness: 150, mass: 0.8 }}
         >
           <motion.div
             layout
-            className="inline-flex rounded-full bg-slate-900/70 p-1 backdrop-blur"
+            className="inline-flex rounded-full p-1 backdrop-blur"
+            style={{ background: "var(--surface-2)" }}
           >
             {categories.map((cat) => {
               const isActive = cat.id === activeCategory;
@@ -376,12 +363,14 @@ export default function PortfolioShowcase() {
                   key={cat.id}
                   type="button"
                   onClick={() => setActiveCategory(cat.id)}
-                  className="relative rounded-full px-3.5 py-1.5 text-xs font-medium text-slate-300 transition-colors sm:px-4 sm:text-sm"
+                  className="relative rounded-full px-3.5 py-1.5 text-xs font-medium transition-colors sm:px-4 sm:text-sm"
+                  style={{ color: "var(--fg-muted)" }}
                 >
                   {isActive && (
                     <motion.span
                       layoutId="active-pill"
-                      className="absolute inset-0 rounded-full bg-emerald-400/15"
+                      className="absolute inset-0 rounded-full"
+                      style={{ background: "var(--accent-muted)" }}
                       transition={{
                         type: "spring",
                         stiffness: 400,
@@ -405,14 +394,14 @@ export default function PortfolioShowcase() {
                 initial={{ opacity: 0, y: 30, scale: 0.96 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: -20, scale: 0.96 }}
-                transition={{ duration: 0.3, ease: "easeOut" }}
+                transition={{ type: "spring", damping: 30, stiffness: 200, mass: 0.7 }}
                 whileHover={
                   !isTouch
                     ? {
                         y: -6,
                         rotateX: 2,
                         rotateY: -2,
-                        transition: { duration: 0.25, ease: "easeOut" },
+                        transition: { type: "spring", damping: 25, stiffness: 300, mass: 0.6 },
                       }
                     : undefined
                 }
@@ -421,44 +410,21 @@ export default function PortfolioShowcase() {
                     ? {
                         scale: 0.97,
                         y: -2,
-                        transition: { duration: 0.15, ease: "easeOut" },
+                        transition: { type: "spring", damping: 20, stiffness: 400, mass: 0.5 },
                       }
                     : undefined
                 }
-                className="group relative flex h-full flex-col justify-between rounded-2xl border border-slate-800/80 bg-slate-900/70 p-4 sm:p-5 shadow-[0_18px_45px_rgba(0,0,0,0.65)] backdrop-blur-md transition-colors duration-300 hover:border-emerald-400/60 hover:bg-slate-900/95"
+                className="group portfolio-card relative flex h-full flex-col justify-between rounded-2xl border p-4 sm:p-5 backdrop-blur-md transition-colors duration-300"
+                style={{
+                  borderColor: "var(--border)",
+                  background: "var(--surface-1)",
+                }}
               >
-                {/* Halo scintillant très doux & continu tant que la card est visible */}
-                <motion.div
-                  className="pointer-events-none absolute inset-0 rounded-2xl"
-                  initial={{
-                    opacity: 0.4,
-                    boxShadow: "0 0 10px 0 rgba(56,189,248,0.45)", // halo discret au repos
-                    borderColor: "rgba(125,211,252,0.7)",
-                  }}
-                  whileInView={{
-                    opacity: [0.4, 0.55, 0.4], // petite variation seulement
-                    boxShadow: [
-                      "0 0 10px 0 rgba(56,189,248,0.45)",
-                      "0 0 24px 4px rgba(56,189,248,0.75)", // halo plus doux et moins large
-                      "0 0 10px 0 rgba(56,189,248,0.45)",
-                    ],
-                  }}
-                  transition={{
-                    duration: 4.5, // plus lent = plus zen
-                    repeat: Infinity,
-                    repeatType: "mirror",
-                    ease: "easeInOut",
-                  }}
-                  viewport={{ amount: 0.6, once: false }}
-                  style={{
-                    borderWidth: 1.2,
-                    background:
-                      "radial-gradient(circle at 50% 0%, rgba(56,189,248,0.12), transparent 65%)",
-                  }}
-                />
-
-                {/* Image – marge contrôlée */}
-                <div className="mb-3 overflow-hidden rounded-xl border border-slate-800/80 bg-slate-950/60">
+                {/* Image */}
+                <div
+                  className="mb-3 overflow-hidden rounded-xl border"
+                  style={{ borderColor: "var(--border)", background: "var(--surface-1)" }}
+                >
                   <div className="relative aspect-[16/10]">
                     <Image
                       src={project.imageSrc}
@@ -467,7 +433,10 @@ export default function PortfolioShowcase() {
                       className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
                       sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw"
                     />
-                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/10 to-transparent" />
+                    <div
+                      className="pointer-events-none absolute inset-0"
+                      style={{ background: "linear-gradient(to top, rgba(8,9,12,0.5), transparent 40%)" }}
+                    />
                   </div>
                 </div>
 
@@ -475,29 +444,36 @@ export default function PortfolioShowcase() {
                 <div className="flex flex-1 flex-col">
             <div className="flex flex-col gap-1.5">
   {/* Pill catégorie en premier */}
-  <span className="self-end shrink-0 rounded-full border border-slate-700/70 bg-slate-950/50 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-slate-300/90 whitespace-nowrap">
+  <span
+    className="self-end shrink-0 rounded-full border px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide whitespace-nowrap"
+    style={{
+      borderColor: "var(--border)",
+      background: "var(--surface-1)",
+      color: "var(--fg-subtle)",
+    }}
+  >
     {labelFromCategory(project.category)}
   </span>
 
   {/* Titre ensuite */}
-  <h3 className="text-base !mt-0 font-semibold text-white sm:text-lg">
+  <h3 className="text-base !mt-0 font-semibold sm:text-lg" style={{ color: "var(--fg-base)" }}>
     {project.title}
   </h3>
 
   {/* Client en dessous */}
-  <p className="text-xs font-medium uppercase tracking-wide text-emerald-300/80">
+  <p className="text-xs font-medium uppercase tracking-wide" style={{ color: "var(--accent)" }}>
     {project.client}
   </p>
 </div>
 
 
 
-                  <p className="mt-2 text-sm text-slate-300/90">
+                  <p className="mt-2 text-sm" style={{ color: "var(--fg-muted)" }}>
                     {project.description}
                   </p>
 
                   {project.highlight && (
-                    <p className="mt-2 text-xs text-emerald-200/90">
+                    <p className="mt-2 text-xs" style={{ color: "var(--fg-muted)" }}>
                       {project.highlight}
                     </p>
                   )}
@@ -506,7 +482,12 @@ export default function PortfolioShowcase() {
                     {project.techs.map((tech) => (
                       <span
                         key={tech}
-                        className="rounded-full border border-slate-700/80 bg-slate-950/60 px-2.5 py-0.5 text-[11px] uppercase tracking-wide text-slate-200/90"
+                        className="rounded-full border px-2.5 py-0.5 text-[11px] uppercase tracking-wide"
+                        style={{
+                          borderColor: "var(--border)",
+                          background: "var(--surface-1)",
+                          color: "var(--fg-subtle)",
+                        }}
                       >
                         {tech}
                       </span>
@@ -520,7 +501,8 @@ export default function PortfolioShowcase() {
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-4 inline-flex items-center text-sm font-medium text-emerald-300 transition-colors hover:text-emerald-200"
+                    className="mt-4 inline-flex items-center text-sm font-medium transition-opacity hover:opacity-80"
+                    style={{ color: "var(--accent)" }}
                   >
                     Voir le projet
                     <span className="ml-1 inline-block text-base transition-transform group-hover:translate-x-0.5">

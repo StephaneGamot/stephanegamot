@@ -1,104 +1,98 @@
+"use client";
+
 import Image from "next/image";
-import Test from "./../../public/Images/imgHeroApp.webp"
+import HeroImage from "./../../public/Images/imgHeroApp.webp";
+import { MagneticButton } from "@/components/animations/MagneticButton";
 
 export default function HeroHomePage() {
-
     return (
-        <div className="bg-transparent">
-            <div className="relative isolate pt-1">
-                <div className="mx-auto max-w-7xl px-6 py-10 sm:py-12 lg:flex lg:items-center lg:gap-x-10 lg:px-8 lg:py-12">
-                    <div className="mx-auto max-w-2xl lg:mx-0 lg:flex-auto">
-                        <div   className="flex mb-12">
-                            <div className="eyebrow relative flex items-center gap-x-4 rounded-full bg-white px-4 py-1 text-sm/6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20 dark:bg-white/5 dark:text-gray-300 dark:ring-white/10 dark:hover:ring-white/20">
-                                <span className="eyebrow font-semibold text-indigo-600 dark:text-indigo-400">Stéphane Gamot</span>
-                                <span aria-hidden="true" className="h-4 w-px bg-gray-900/10 dark:bg-white/10" />
+        <section className="relative overflow-hidden" style={{ paddingTop: 'clamp(4rem, 10vw, 8rem)', paddingBottom: 'clamp(5rem, 12vw, 10rem)' }}>
+            {/* Halo ultra-subtil — or pâle diffus */}
+            <div aria-hidden className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/3 w-[70vw] max-w-[900px] aspect-square rounded-full opacity-[0.04]" style={{ background: 'radial-gradient(circle, var(--accent), transparent 70%)' }} />
 
-                                    <span aria-hidden="true" className="absolute inset-0" />
-                                    Développeur web &amp; consultant SEO
-                            </div>
-                        </div>
-                        <h1 className="mt-10 text-pretty text-5xl font-semibold tracking-tight sm:text-7xl dark:text-white">
-                            Un site web élégant, rapide  et conçu pour attirer vos futurs clients.
+            <div className="mx-auto max-w-6xl px-8 lg:px-12">
+                {/* Label de section */}
+                <p className="section-label mb-8" style={{ color: 'var(--accent)' }}>
+                    Stéphane Gamot — Développeur web &amp; consultant SEO
+                </p>
+
+                {/* Layout asymétrique : texte large + mockup */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-end">
+
+                    {/* Colonne texte — occupe 7/12 */}
+                    <div className="lg:col-span-7">
+                        <h1 style={{ color: 'var(--fg-base)', lineHeight: '1.02', letterSpacing: '-0.04em' }}>
+                            Un site web<br className="hidden sm:block" />
+                            d&apos;une élégance<br className="hidden sm:block" />
+                            <span style={{ color: 'var(--accent)' }}>absolue.</span>
                         </h1>
-                        <p className="mt-8 text-pretty text-lg font-medium text-gray-500 sm:text-xl/8 dark:text-gray-400">
-                            Je crée des sites web hautement performants avec Next.js et WordPress,
-                            pensés pour convertir, se référencer et durer. Chaque projet est
-                            développé avec rigueur, finesse et un sens du détail qui inspire confiance.
+
+                        <p className="mt-8 text-lg" style={{ color: 'var(--fg-muted)', maxWidth: '52ch', lineHeight: '1.75' }}>
+                            Je conçois des expériences digitales performantes, raffinées
+                            et pensées pour convertir. Chaque projet est développé avec une
+                            rigueur et un sens du détail qui inspirent confiance.
                         </p>
-                        <div className="mt-10 flex items-center gap-x-6">
-                            <a
+
+                        {/* CTAs — boutons magnétiques */}
+                        <div className="mt-12 flex flex-wrap items-center gap-6">
+                            <MagneticButton
+                                as="a"
                                 href="/contact"
-                                className="rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:bg-indigo-500 dark:hover:bg-indigo-400 dark:focus-visible:outline-indigo-500"
+                                className="btn btn-primary"
+                                strength={0.25}
                             >
-                                Contact
-                            </a>
-                           {/*  <a href="/idees" className="text-sm/6 font-semibold text-gray-900 dark:text-white">
-                                Des idées pour vous <span aria-hidden="true">→</span>
-                            </a>*/}
+                                Discutons
+                            </MagneticButton>
+                            <MagneticButton
+                                as="a"
+                                href="/portfolio"
+                                className="text-[13px] font-medium uppercase tracking-[0.1em]"
+                                style={{ color: 'var(--fg-subtle)', borderBottom: '1px solid var(--border)' }}
+                                strength={0.2}
+                            >
+                                Voir mes réalisations
+                            </MagneticButton>
                         </div>
                     </div>
 
-
-                    <div className="mt-16 sm:mt-24 lg:mt-0 lg:shrink-0 lg:grow">
-                        {/* Conteneur du téléphone */}
-                        <div className="relative mx-auto w-[22.875rem] max-w-full drop-shadow-xl">
-                            {/* SVG du téléphone (coque) */}
+                    {/* Colonne mockup — occupe 5/12, traité comme une oeuvre en galerie */}
+                    <div className="lg:col-span-5">
+                        <div className="relative mx-auto w-full max-w-[340px]">
+                            {/* Cadre du téléphone */}
                             <svg
                                 role="img"
                                 viewBox="0 0 366 729"
                                 className="block h-auto w-full"
+                                style={{ filter: 'drop-shadow(0 20px 60px rgba(0,0,0,0.4))' }}
                             >
-                                <title>App screenshot</title>
+                                <title>Aperçu mobile d&apos;un site conçu par Stéphane Gamot</title>
                                 <path
                                     d="M363.315 64.213C363.315 22.99 341.312 1 300.092 1H66.751C25.53 1 3.528 22.99 3.528 64.213v44.68l-.857.143A2 2 0 0 0 1 111.009v24.611a2 2 0 0 0 1.671 1.973l.95.158a2.26 2.26 0 0 1-.093.236v26.173c.212.1.398.296.541.643l-1.398.233A2 2 0 0 0 1 167.009v47.611a2 2 0 0 0 1.671 1.973l1.368.228c-.139.319-.314.533-.511.653v16.637c.221.104.414.313.56.689l-1.417.236A2 2 0 0 0 1 237.009v47.611a2 2 0 0 0 1.671 1.973l1.347.225c-.135.294-.302.493-.49.607v377.681c0 41.213 22 63.208 63.223 63.208h95.074c.947-.504 2.717-.843 4.745-.843l.141.001h.194l.086-.001 33.704.005c1.849.043 3.442.37 4.323.838h95.074c41.222 0 63.223-21.999 63.223-63.212v-394.63c-.259-.275-.48-.796-.63-1.47l-.011-.133 1.655-.276A2 2 0 0 0 366 266.62v-77.611a2 2 0 0 0-1.671-1.973l-1.712-.285c.148-.839.396-1.491.698-1.811V64.213Z"
-                                    fill="#4B5563"
+                                    fill="#1a1b22"
                                 />
                                 <path
                                     d="M16 59c0-23.748 19.252-43 43-43h246c23.748 0 43 19.252 43 43v615c0 23.196-18.804 42-42 42H58c-23.196 0-42-18.804-42-42V59Z"
-                                    fill="#343E4E"
+                                    fill="#111218"
                                 />
                             </svg>
 
-                            {/* Écran du téléphone par-dessus (HTML, compatible iOS) */}
-                            <div
-                                className="
-    pointer-events-none
-    absolute
-    left-[6.5%]   /* ~ 24 / 366 */
-    top-[3.5%]    /* ~ 24 / 729 */
-    w-[87%]       /* ~ 316 / 366 */
-    h-[93%]       /* ~ 684 / 729 */
-    overflow-hidden
-    rounded-[36px]
-  "
-                            >
+                            {/* Écran */}
+                            <div className="pointer-events-none absolute left-[6.5%] top-[3.5%] w-[87%] h-[93%] overflow-hidden rounded-[36px]">
                                 <div className="relative h-[130%] w-full mock-scroll">
                                     <Image
-                                        src={Test}
-                                        alt="Aperçu d’un site conçu par Stéphane Gamot"
+                                        src={HeroImage}
+                                        alt="Aperçu d'un site conçu par Stéphane Gamot"
                                         fill
                                         className="object-cover"
-                                        sizes="(min-width: 1024px) 22.875rem, 80vw"
+                                        sizes="(min-width: 1024px) 340px, 80vw"
                                         loading="lazy"
                                     />
                                 </div>
                             </div>
-
-
                         </div>
                     </div>
-
-
-
-
-
-
-
-
-
                 </div>
             </div>
-        </div>
-    )
+        </section>
+    );
 }
-

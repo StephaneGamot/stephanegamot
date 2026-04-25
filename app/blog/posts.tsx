@@ -15,8 +15,8 @@ import Chance from "@/public/Images/blog/change.webp"
 import Seo from "@/public/Images/blog/seo.webp"
 import WebsitePrice from "@/public/Images/blog/websitePrice.webp"
 import Php1 from "@/public/Images/blog/php.webp"
-import Php2 from "@/public/Images/blog/php2.webp"
-import Php3 from "@/public/Images/blog/php3.webp"
+import Php2 from "@/public/Images/blog/Php2.webp"
+import Php3 from "@/public/Images/blog/Php3.webp"
 
 export type BlogPost = {
     id: number;
@@ -62,51 +62,51 @@ export const posts: BlogPost[] = [
       <p>
         WordPress reste la solution la plus connue pour créer un site
         rapidement. De son côté,{" "}
-        <strong className="text-indigo-300">Next.js</strong> s’impose
+        <strong style={{ color: "var(--accent)" }}>Next.js</strong> s’impose
         comme une technologie moderne, ultra rapide et très appréciée de
         Google.
       </p>
 
       <p>
         Si vous hésitez entre les deux, cet article va vous aider à{" "}
-        <strong className="text-emerald-300">
+        <strong style={{ color: "var(--accent)" }}>
           choisir la solution la plus adaptée à votre projet
         </strong>
         , sans jargon technique inutile.
       </p>
 
-      <div className="mt-6 rounded-2xl border border-indigo-500/20 bg-indigo-500/5 p-4 text-sm text-indigo-100">
+      <div className="mt-6 p-4 text-sm" style={{ borderRadius: "1rem", border: "1px solid var(--border)", background: "var(--accent-muted)", color: "var(--fg-muted)" }}>
         <p className="font-semibold">
           En résumé :{" "}
-          <span className="text-emerald-300">
+          <span style={{ color: "var(--accent)" }}>
             WordPress est excellent pour gérer du contenu
           </span>{" "}
           au quotidien, tandis que{" "}
-          <span className="text-emerald-300">
+          <span style={{ color: "var(--accent)" }}>
             Next.js est parfait pour un site haut de gamme, rapide et durable
           </span>
           .
         </p>
       </div>
 
-      <h2 className="mt-10 text-xl font-semibold text-indigo-300">
+      <h2 className="mt-10 text-xl font-semibold" style={{ color: "var(--accent)" }}>
         WordPress : le roi du contenu et des sites administrables
       </h2>
       <p>
         WordPress propulse une énorme partie du web. Sa grande force : il
         permet de{" "}
-        <strong className="text-emerald-300">
+        <strong style={{ color: "var(--accent)" }}>
           gérer facilement votre contenu
         </strong>{" "}
         (pages, articles, images) via une interface d’administration.
       </p>
 
-      <h3 className="mt-6 text-lg font-semibold text-indigo-200">
+      <h3 className="mt-6 text-lg font-semibold" style={{ color: "var(--fg-muted)" }}>
         Les points forts de WordPress
       </h3>
-      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+      <ul className="ml-4 list-disc space-y-1" style={{ color: "var(--fg-muted)" }}>
         <li>
-          <strong className="text-emerald-300">
+          <strong style={{ color: "var(--accent)" }}>
             Idéal pour les blogs et sites éditoriaux
           </strong>{" "}
           : publications, actualités, contenus réguliers.
@@ -127,24 +127,24 @@ export const posts: BlogPost[] = [
 
       <p className="mt-4">
         Pour un site vitrine classique, un blog, ou un petit e-commerce,{" "}
-        <strong className="text-emerald-300">
+        <strong style={{ color: "var(--accent)" }}>
           WordPress est souvent une très bonne base
         </strong>
         .
       </p>
 
-      <h3 className="mt-8 text-lg font-semibold text-indigo-200">
+      <h3 className="mt-8 text-lg font-semibold" style={{ color: "var(--fg-muted)" }}>
         Les limites de WordPress
       </h3>
-      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+      <ul className="ml-4 list-disc space-y-1" style={{ color: "var(--fg-muted)" }}>
         <li>
           Les performances dépendent du thème, des plugins et de
           l’hébergement. Un site peut vite devenir{" "}
-          <strong className="text-emerald-300">lent</strong>.
+          <strong style={{ color: "var(--accent)" }}>lent</strong>.
         </li>
         <li>
           Il faut gérer les{" "}
-          <strong className="text-emerald-300">mises à jour</strong>{" "}
+          <strong style={{ color: "var(--accent)" }}>mises à jour</strong>{" "}
           (WordPress, thèmes, extensions) pour éviter les failles de sécurité.
         </li>
         <li>
@@ -157,7 +157,7 @@ export const posts: BlogPost[] = [
         </li>
       </ul>
 
-      <div className="my-8 relative aspect-video w-full overflow-hidden rounded-2xl ring-1 ring-indigo-500/30">
+      <div className="my-8 relative aspect-video w-full overflow-hidden" style={{ borderRadius: "1rem", border: "1px solid var(--border)" }}>
         <Image
           src={WordPress3}
           alt="Exemple d'interface WordPress permettant de gérer le contenu d'un site"
@@ -166,24 +166,24 @@ export const posts: BlogPost[] = [
         />
       </div>
 
-      <h2 className="mt-10 text-xl font-semibold text-indigo-300">
+      <h2 className="mt-10 text-xl font-semibold" style={{ color: "var(--accent)" }}>
         Next.js : performance, modernité et expérience premium
       </h2>
       <p>
         Next.js est un framework moderne basé sur React, utilisé par de
         nombreuses grandes entreprises. Il permet de créer des sites{" "}
-        <strong className="text-emerald-300">
+        <strong style={{ color: "var(--accent)" }}>
           très rapides, stables et sur mesure
         </strong>
         .
       </p>
 
-      <h3 className="mt-6 text-lg font-semibold text-indigo-200">
+      <h3 className="mt-6 text-lg font-semibold" style={{ color: "var(--fg-muted)" }}>
         Les forces de Next.js
       </h3>
-      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+      <ul className="ml-4 list-disc space-y-1" style={{ color: "var(--fg-muted)" }}>
         <li>
-          <strong className="text-emerald-300">
+          <strong style={{ color: "var(--accent)" }}>
             Performance exceptionnelle
           </strong>{" "}
           : temps de chargement très courts, ce qui améliore l’expérience
@@ -194,13 +194,13 @@ export const posts: BlogPost[] = [
           d’application plutôt que de “simple site”.
         </li>
         <li>
-          <strong className="text-emerald-300">Architecture moderne</strong> :
+          <strong style={{ color: "var(--accent)" }}>Architecture moderne</strong> :
           parfait pour connecter des APIs, des outils métiers, ou des
           fonctionnalités spécifiques.
         </li>
         <li>
           Très bon pour les{" "}
-          <span className="font-semibold text-emerald-300">
+          <span className="font-semibold" style={{ color: "var(--accent)" }}>
             Core Web Vitals
           </span>
           , un critère que Google surveille de plus en plus.
@@ -211,17 +211,17 @@ export const posts: BlogPost[] = [
         </li>
       </ul>
 
-      <h3 className="mt-8 text-lg font-semibold text-indigo-200">
+      <h3 className="mt-8 text-lg font-semibold" style={{ color: "var(--fg-muted)" }}>
         Les limites de Next.js
       </h3>
-      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+      <ul className="ml-4 list-disc space-y-1" style={{ color: "var(--fg-muted)" }}>
         <li>
           Pas d’interface d’admin par défaut : la gestion du contenu se fait
           plutôt avec un développeur ou via un CMS “headless” connecté.
         </li>
         <li>
           Nécessite un{" "}
-          <strong className="text-emerald-300">
+          <strong style={{ color: "var(--accent)" }}>
             budget un peu plus élevé
           </strong>{" "}
           pour un vrai site sur mesure.
@@ -232,24 +232,24 @@ export const posts: BlogPost[] = [
         </li>
       </ul>
 
-      <h2 className="mt-10 text-xl font-semibold text-indigo-300">
+      <h2 className="mt-10 text-xl font-semibold" style={{ color: "var(--accent)" }}>
         Alors, WordPress ou Next.js pour votre projet ?
       </h2>
       <p>
         Il n’y a pas une “bonne” réponse universelle :{" "}
-        <strong className="text-emerald-300">
+        <strong style={{ color: "var(--accent)" }}>
           tout dépend de vos priorités
         </strong>
         .
       </p>
 
-      <h3 className="mt-6 text-lg font-semibold text-indigo-200">
+      <h3 className="mt-6 text-lg font-semibold" style={{ color: "var(--fg-muted)" }}>
         Choisissez plutôt WordPress si…
       </h3>
-      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+      <ul className="ml-4 list-disc space-y-1" style={{ color: "var(--fg-muted)" }}>
         <li>
           Vous voulez{" "}
-          <strong className="text-emerald-300">
+          <strong style={{ color: "var(--accent)" }}>
             gérer le contenu vous-même
           </strong>{" "}
           facilement (textes, pages, articles).
@@ -264,19 +264,19 @@ export const posts: BlogPost[] = [
         </li>
       </ul>
 
-      <h3 className="mt-8 text-lg font-semibold text-indigo-200">
+      <h3 className="mt-8 text-lg font-semibold" style={{ color: "var(--fg-muted)" }}>
         Choisissez plutôt Next.js si…
       </h3>
-      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+      <ul className="ml-4 list-disc space-y-1" style={{ color: "var(--fg-muted)" }}>
         <li>
           Vous voulez un site{" "}
-          <strong className="text-emerald-300">haut de gamme</strong>, rapide,
+          <strong style={{ color: "var(--accent)" }}>haut de gamme</strong>, rapide,
           fluide, avec une vraie expérience premium.
         </li>
         <li>
           Vous misez sérieusement sur le{" "}
-          <strong className="text-emerald-300">SEO</strong>, la performance
-          et la <strong className="text-emerald-300">conversion</strong>.
+          <strong style={{ color: "var(--accent)" }}>SEO</strong>, la performance
+          et la <strong style={{ color: "var(--accent)" }}>conversion</strong>.
         </li>
         <li>
           Vous avez besoin de fonctionnalités sur mesure ou d’intégrations
@@ -284,35 +284,35 @@ export const posts: BlogPost[] = [
         </li>
         <li>
           Vous voyez votre site comme un{" "}
-          <strong className="text-emerald-300">
+          <strong style={{ color: "var(--accent)" }}>
             investissement long terme
           </strong>
           , pas comme une simple carte de visite.
         </li>
       </ul>
 
-      <h2 className="mt-10 text-xl font-semibold text-indigo-300">
+      <h2 className="mt-10 text-xl font-semibold" style={{ color: "var(--accent)" }}>
         Ma façon de travailler : choisir l’outil en fonction de vous
       </h2>
       <p>
         Dans mes projets, je ne suis pas “pro WordPress” ou “pro Next.js à
         tout prix”. Je choisis la technologie en fonction de{" "}
-        <strong className="text-emerald-300">vos objectifs réels</strong> :
+        <strong style={{ color: "var(--accent)" }}>vos objectifs réels</strong> :
       </p>
-      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+      <ul className="ml-4 list-disc space-y-1" style={{ color: "var(--fg-muted)" }}>
         <li>
           parfois un bon{" "}
-          <strong className="text-emerald-300">WordPress optimisé</strong> est
+          <strong style={{ color: "var(--accent)" }}>WordPress optimisé</strong> est
           largement suffisant ;
         </li>
         <li>
           parfois, un site{" "}
-          <strong className="text-emerald-300">Next.js</strong> est clairement
+          <strong style={{ color: "var(--accent)" }}>Next.js</strong> est clairement
           le meilleur choix pour viser la performance et l’image de marque.
         </li>
       </ul>
 
-      <p className="mt-6 rounded-2xl border border-emerald-400/30 bg-emerald-400/5 p-4 text-sm text-emerald-100">
+      <p className="mt-6 p-4 text-sm" style={{ borderRadius: "1rem", border: "1px solid var(--border)", background: "var(--accent-muted)", color: "var(--fg-muted)" }}>
         Vous hésitez entre les deux ? Je peux analyser votre projet et vous
         orienter gratuitement vers la solution la plus pertinente pour votre
         activité.
@@ -343,7 +343,7 @@ export const posts: BlogPost[] = [
     <>
       <p>
         WordPress équipe plus de{" "}
-        <strong className="text-emerald-300">
+        <strong style={{ color: "var(--accent)" }}>
           40 % des sites web dans le monde
         </strong>
         . Un succès impressionnant, mais qui crée aussi une confusion : un
@@ -353,16 +353,16 @@ export const posts: BlogPost[] = [
 
       <p>
         Voici un tour d’horizon clair et honnête des{" "}
-        <strong className="text-emerald-300">forces</strong> et{" "}
-        <strong className="text-emerald-300">faiblesses</strong> de
+        <strong style={{ color: "var(--accent)" }}>forces</strong> et{" "}
+        <strong style={{ color: "var(--accent)" }}>faiblesses</strong> de
         WordPress, basé sur mon expérience terrain avec des entrepreneurs,
         indépendants et PME en Belgique et en France.
       </p>
 
-      <div className="mt-6 rounded-2xl border border-indigo-500/20 bg-indigo-500/5 p-4 text-sm text-indigo-100">
+      <div className="mt-6 p-4 text-sm" style={{ borderRadius: "1rem", border: "1px solid var(--border)", background: "var(--accent-muted)", color: "var(--fg-muted)" }}>
         <p className="font-semibold">
           L’idée clé :{" "}
-          <span className="text-emerald-300">
+          <span style={{ color: "var(--accent)" }}>
             WordPress est un outil puissant
           </span>
           , mais il n’est pas magique. Utilisé correctement, c’est un allié
@@ -370,11 +370,11 @@ export const posts: BlogPost[] = [
         </p>
       </div>
 
-      <h2 className="mt-10 text-xl font-semibold text-indigo-300">
+      <h2 className="mt-10 text-xl font-semibold" style={{ color: "var(--accent)" }}>
         ✔️ Les avantages de WordPress
       </h2>
 
-      <h3 className="mt-6 text-lg font-semibold text-indigo-200">
+      <h3 className="mt-6 text-lg font-semibold" style={{ color: "var(--fg-muted)" }}>
         1. Une grande flexibilité grâce aux plugins
       </h3>
       <p>
@@ -383,11 +383,11 @@ export const posts: BlogPost[] = [
       </p>
       <p>
         Cela permet de{" "}
-        <strong className="text-emerald-300">créer rapidement</strong> des
+        <strong style={{ color: "var(--accent)" }}>créer rapidement</strong> des
         fonctionnalités avancées sans devoir tout coder.
       </p>
 
-      <h3 className="mt-6 text-lg font-semibold text-indigo-200">
+      <h3 className="mt-6 text-lg font-semibold" style={{ color: "var(--fg-muted)" }}>
         2. Idéal pour les sites vitrines & blogs
       </h3>
       <p>
@@ -396,7 +396,7 @@ export const posts: BlogPost[] = [
         performant.
       </p>
 
-      <div className="my-8 relative aspect-video w-full overflow-hidden rounded-2xl ring-1 ring-indigo-500/30">
+      <div className="my-8 relative aspect-video w-full overflow-hidden" style={{ borderRadius: "1rem", border: "1px solid var(--border)" }}>
         <Image
           src={WordPress1}
           alt="Exemple de site WordPress moderne"
@@ -405,7 +405,7 @@ export const posts: BlogPost[] = [
         />
       </div>
 
-      <h3 className="mt-6 text-lg font-semibold text-indigo-200">
+      <h3 className="mt-6 text-lg font-semibold" style={{ color: "var(--fg-muted)" }}>
         3. Beaucoup de thèmes (dont certains très qualitatifs)
       </h3>
       <p>
@@ -414,7 +414,7 @@ export const posts: BlogPost[] = [
         rapidement.
       </p>
 
-      <h3 className="mt-6 text-lg font-semibold text-indigo-200">
+      <h3 className="mt-6 text-lg font-semibold" style={{ color: "var(--fg-muted)" }}>
         4. Coût d&apos;entrée raisonnable
       </h3>
       <p>
@@ -422,15 +422,15 @@ export const posts: BlogPost[] = [
         solide. Là où des solutions sur-mesure coûteraient plus cher.
       </p>
 
-      <h2 className="mt-10 text-xl font-semibold text-indigo-300">
+      <h2 className="mt-10 text-xl font-semibold" style={{ color: "var(--accent)" }}>
         ❌ Les inconvénients de WordPress
       </h2>
 
-      <h3 className="mt-6 text-lg font-semibold text-indigo-200">
+      <h3 className="mt-6 text-lg font-semibold" style={{ color: "var(--fg-muted)" }}>
         1. Les plugins : force, mais aussi faiblesse
       </h3>
       <p>Plus il y a de plugins, plus vous risquez :</p>
-      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+      <ul className="ml-4 list-disc space-y-1" style={{ color: "var(--fg-muted)" }}>
         <li>des ralentissements,</li>
         <li>des conflits,</li>
         <li>des bugs après mises à jour,</li>
@@ -440,7 +440,7 @@ export const posts: BlogPost[] = [
         Un site WordPress mal géré peut vite devenir lourd et instable.
       </p>
 
-      <h3 className="mt-6 text-lg font-semibold text-indigo-200">
+      <h3 className="mt-6 text-lg font-semibold" style={{ color: "var(--fg-muted)" }}>
         2. Performance souvent inférieure à du Next.js
       </h3>
       <p>
@@ -448,17 +448,17 @@ export const posts: BlogPost[] = [
         d’un site moderne en React / Next.js.
       </p>
       <p>Cela impacte directement :</p>
-      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+      <ul className="ml-4 list-disc space-y-1" style={{ color: "var(--fg-muted)" }}>
         <li>le SEO,</li>
         <li>l’expérience mobile,</li>
         <li>le taux de conversion.</li>
       </ul>
 
-      <h3 className="mt-6 text-lg font-semibold text-indigo-200">
+      <h3 className="mt-6 text-lg font-semibold" style={{ color: "var(--fg-muted)" }}>
         3. Maintenance obligatoire
       </h3>
       <p>WordPress requiert un suivi régulier :</p>
-      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+      <ul className="ml-4 list-disc space-y-1" style={{ color: "var(--fg-muted)" }}>
         <li>mises à jour des plugins,</li>
         <li>sécurisation du site et du serveur,</li>
         <li>optimisation continue.</li>
@@ -467,7 +467,7 @@ export const posts: BlogPost[] = [
         Sans maintenance, un site WordPress se dégrade très vite.
       </p>
 
-      <h3 className="mt-6 text-lg font-semibold text-indigo-200">
+      <h3 className="mt-6 text-lg font-semibold" style={{ color: "var(--fg-muted)" }}>
         4. Interface parfois déroutante pour les non-tech
       </h3>
       <p>
@@ -475,11 +475,11 @@ export const posts: BlogPost[] = [
         l&apos;interface admin peut devenir confuse pour les débutants.
       </p>
 
-      <h2 className="mt-10 text-xl font-semibold text-indigo-300">
+      <h2 className="mt-10 text-xl font-semibold" style={{ color: "var(--accent)" }}>
         Alors… WordPress ou pas&nbsp;?
       </h2>
       <p>WordPress est un excellent choix pour :</p>
-      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+      <ul className="ml-4 list-disc space-y-1" style={{ color: "var(--fg-muted)" }}>
         <li>les sites vitrines simples,</li>
         <li>les blogs,</li>
         <li>les sites à petit budget,</li>
@@ -488,17 +488,17 @@ export const posts: BlogPost[] = [
 
       <p className="mt-4">
         Mais pour des projets nécessitant{" "}
-        <strong className="text-emerald-300">performance</strong>,{" "}
-        <strong className="text-emerald-300">sécurité</strong>, ou une{" "}
-        <strong className="text-emerald-300">
+        <strong style={{ color: "var(--accent)" }}>performance</strong>,{" "}
+        <strong style={{ color: "var(--accent)" }}>sécurité</strong>, ou une{" "}
+        <strong style={{ color: "var(--accent)" }}>
           expérience sur-mesure
         </strong>
         , des solutions modernes comme{" "}
-        <strong className="text-emerald-300">Next.js</strong> sont souvent
+        <strong style={{ color: "var(--accent)" }}>Next.js</strong> sont souvent
         meilleures.
       </p>
 
-      <h2 className="mt-10 text-xl font-semibold text-indigo-300">
+      <h2 className="mt-10 text-xl font-semibold" style={{ color: "var(--accent)" }}>
         En résumé
       </h2>
       <p>
@@ -508,11 +508,11 @@ export const posts: BlogPost[] = [
       </p>
       <p>
         Le plus important : choisir la technologie en fonction du{" "}
-        <strong className="text-emerald-300">vrai besoin</strong>, pas parce
+        <strong style={{ color: "var(--accent)" }}>vrai besoin</strong>, pas parce
         qu’un outil est populaire.
       </p>
 
-      <p className="mt-6 rounded-2xl border border-emerald-400/30 bg-emerald-400/5 p-4 text-sm text-emerald-100">
+      <p className="mt-6 p-4 text-sm" style={{ borderRadius: "1rem", border: "1px solid var(--border)", background: "var(--accent-muted)", color: "var(--fg-muted)" }}>
         Si vous avez un doute sur la direction à prendre, je peux vous aider à
         clarifier votre besoin et à choisir la solution la plus cohérente avec
         votre stratégie.
@@ -543,7 +543,7 @@ export const posts: BlogPost[] = [
     <>
       <p>
         Aujourd’hui, beaucoup d’entrepreneurs découvrent{" "}
-        <span className="font-semibold text-indigo-300">
+        <span className="font-semibold" style={{ color: "var(--accent)" }}>
           Next.js comme l&apos;alternative moderne
         </span>{" "}
         aux CMS traditionnels. Plus rapide, plus sécurisé, plus fluide… mais
@@ -553,37 +553,37 @@ export const posts: BlogPost[] = [
 
       <p>
         La vérité, c’est que Next.js est souvent{" "}
-        <strong className="text-emerald-300">
+        <strong style={{ color: "var(--accent)" }}>
           l’un des meilleurs investissements à long terme
         </strong>{" "}
         pour un site professionnel ou un e-commerce. Voici pourquoi.
       </p>
 
-      <div className="mt-6 rounded-2xl border border-indigo-500/20 bg-indigo-500/5 p-4 text-sm text-indigo-100">
+      <div className="mt-6 p-4 text-sm" style={{ borderRadius: "1rem", border: "1px solid var(--border)", background: "var(--accent-muted)", color: "var(--fg-muted)" }}>
         <p className="font-semibold">
           En une phrase : Next.js coûte un peu plus au départ, mais{" "}
-          <span className="text-emerald-300">
+          <span style={{ color: "var(--accent)" }}>
             vous économise du temps, du stress et de l’argent
           </span>{" "}
           sur la durée.
         </p>
       </div>
 
-      <h2 className="mt-10 text-xl font-semibold text-indigo-300">
+      <h2 className="mt-10 text-xl font-semibold" style={{ color: "var(--accent)" }}>
         ✔️ 1. Une performance qui dépasse tout le reste
       </h2>
       <p>
         Next.js génère des sites ultra rapides, légers et optimisés, même avec
         beaucoup de contenu. Et plus un site est rapide, plus :
       </p>
-      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+      <ul className="ml-4 list-disc space-y-1" style={{ color: "var(--fg-muted)" }}>
         <li>Google le met en avant,</li>
         <li>les visiteurs restent,</li>
         <li>le taux de conversion augmente,</li>
         <li>le panier moyen progresse.</li>
       </ul>
 
-      <div className="my-8 relative aspect-video overflow-hidden rounded-2xl ring-1 ring-indigo-500/30">
+      <div className="my-8 relative aspect-video overflow-hidden" style={{ borderRadius: "1rem", border: "1px solid var(--border)" }}>
         <Image
           src={NextUxExperience}
           alt="Interface moderne d’un site Next.js performant"
@@ -594,15 +594,15 @@ export const posts: BlogPost[] = [
 
       <p>
         Là où d’autres solutions deviennent lourdes au fil du temps,{" "}
-        <span className="font-semibold text-indigo-200">Next.js</span> reste
+        <span className="font-semibold" style={{ color: "var(--accent)" }}>Next.js</span> reste
         fluide, stable et rapide, même après des années.
       </p>
 
-      <h2 className="mt-10 text-xl font-semibold text-indigo-300">
+      <h2 className="mt-10 text-xl font-semibold" style={{ color: "var(--accent)" }}>
         ✔️ 2. Un coût de maintenance quasi nul
       </h2>
       <p>Avec une architecture moderne, il n’y a :</p>
-      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+      <ul className="ml-4 list-disc space-y-1" style={{ color: "var(--fg-muted)" }}>
         <li>ni plugins qui se cassent,</li>
         <li>ni mises à jour urgentes,</li>
         <li>ni conflit entre extensions,</li>
@@ -611,18 +611,18 @@ export const posts: BlogPost[] = [
 
       <p>
         Résultat : vous dépensez{" "}
-        <strong className="text-emerald-300">moins chaque année</strong> en
+        <strong style={{ color: "var(--accent)" }}>moins chaque année</strong> en
         réparations, correctifs ou optimisations.
       </p>
 
-      <h2 className="mt-10 text-xl font-semibold text-indigo-300">
+      <h2 className="mt-10 text-xl font-semibold" style={{ color: "var(--accent)" }}>
         ✔️ 3. Idéal pour les e-commerce modernes
       </h2>
       <p>
         Un e-commerce classique souffre souvent de lenteurs et de bugs. Avec
         Next.js, vous avez une base solide pour un site :
       </p>
-      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+      <ul className="ml-4 list-disc space-y-1" style={{ color: "var(--fg-muted)" }}>
         <li>rapide même avec beaucoup de produits,</li>
         <li>capable de gérer Stripe + paiements modernes,</li>
         <li>stable même sous forte charge,</li>
@@ -633,17 +633,17 @@ export const posts: BlogPost[] = [
 
       <p>
         Et surtout : un e-commerce bien optimisé avec Next.js peut{" "}
-        <strong className="text-emerald-300">
+        <strong style={{ color: "var(--accent)" }}>
           augmenter vos ventes immédiatement
         </strong>{" "}
         grâce à une interface plus efficace et un temps de chargement réduit.
       </p>
 
-      <h2 className="mt-10 text-xl font-semibold text-indigo-300">
+      <h2 className="mt-10 text-xl font-semibold" style={{ color: "var(--accent)" }}>
         ✔️ 4. Une sécurité nettement supérieure
       </h2>
       <p>Next.js élimine toute une catégorie de risques liés aux CMS :</p>
-      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+      <ul className="ml-4 list-disc space-y-1" style={{ color: "var(--fg-muted)" }}>
         <li>injections via plugins,</li>
         <li>extensions abandonnées,</li>
         <li>vulnérabilités liées à PHP,</li>
@@ -652,19 +652,19 @@ export const posts: BlogPost[] = [
 
       <p>
         Le résultat : un site{" "}
-        <strong className="text-emerald-300">
+        <strong style={{ color: "var(--accent)" }}>
           beaucoup plus difficile à pirater
         </strong>
         , sans surveillance constante.
       </p>
 
-      <h2 className="mt-10 text-xl font-semibold text-indigo-300">
+      <h2 className="mt-10 text-xl font-semibold" style={{ color: "var(--accent)" }}>
         ✔️ 5. Une solution qui évolue avec votre business
       </h2>
       <p>
         Contrairement à d’autres outils, Next.js s’adapte parfaitement si vous :
       </p>
-      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+      <ul className="ml-4 list-disc space-y-1" style={{ color: "var(--fg-muted)" }}>
         <li>ajoutez de nouvelles fonctionnalités,</li>
         <li>changez votre modèle économique,</li>
         <li>passez au multilingue,</li>
@@ -673,20 +673,20 @@ export const posts: BlogPost[] = [
 
       <p>
         Vous évitez le fameux{" "}
-        <em className="text-slate-200">« on doit tout refaire »</em> qui arrive
+        <em style={{ color: "var(--fg-muted)" }}>« on doit tout refaire »</em> qui arrive
         très souvent avec des CMS vieillissants.
       </p>
 
-      <h2 className="mt-10 text-xl font-semibold text-indigo-300">
+      <h2 className="mt-10 text-xl font-semibold" style={{ color: "var(--accent)" }}>
         Alors… est-ce que Next.js “coûte plus cher” ?
       </h2>
       <p>
         Sur le court terme, oui. Sur le long terme,{" "}
-        <strong className="text-emerald-300">c’est tout l’inverse</strong>.
+        <strong style={{ color: "var(--accent)" }}>c’est tout l’inverse</strong>.
       </p>
 
       <p>Vous gagnez :</p>
-      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+      <ul className="ml-4 list-disc space-y-1" style={{ color: "var(--fg-muted)" }}>
         <li>en vitesse,</li>
         <li>en SEO,</li>
         <li>en conversion,</li>
@@ -699,7 +699,7 @@ export const posts: BlogPost[] = [
         techniques d’un système vieillissant.
       </p>
 
-      <h2 className="mt-10 text-xl font-semibold text-indigo-300">En résumé</h2>
+      <h2 className="mt-10 text-xl font-semibold" style={{ color: "var(--accent)" }}>En résumé</h2>
       <p>
         Next.js est la meilleure option pour les entrepreneurs qui recherchent
         une solution capable de durer. Oui, l’investissement initial est plus
@@ -707,7 +707,7 @@ export const posts: BlogPost[] = [
         plus fiable et plus rentable.
       </p>
 
-      <p className="mt-4 rounded-2xl border border-emerald-400/30 bg-emerald-400/5 p-4 text-sm text-emerald-100">
+      <p className="mt-4 p-4 text-sm" style={{ borderRadius: "1rem", border: "1px solid var(--border)", background: "var(--accent-muted)", color: "var(--fg-muted)" }}>
         Si votre objectif est d’avoir un site qui{" "}
         <strong>grandit avec votre activité</strong>, Next.js est l’un des
         meilleurs choix possibles aujourd’hui.
@@ -737,36 +737,36 @@ export const posts: BlogPost[] = [
     <>
       <p>
         Beaucoup d’entrepreneurs ont un site{" "}
-        <strong className="text-emerald-300">beau</strong>, parfois même très
+        <strong style={{ color: "var(--accent)" }}>beau</strong>, parfois même très
         moderne… mais{" "}
-        <strong className="text-indigo-300">qui ne rapporte presque rien</strong>.
+        <strong style={{ color: "var(--accent)" }}>qui ne rapporte presque rien</strong>.
       </p>
 
       <p>
         Et c’est frustrant, parce que vous vous dites :{" "}
-        <em className="text-slate-200">
+        <em style={{ color: "var(--fg-muted)" }}>
           “J’ai investi du temps / de l’argent, pourquoi personne ne me contacte ?”
         </em>
       </p>
 
-      <div className="mt-6 rounded-2xl border border-indigo-500/20 bg-indigo-500/5 p-4 text-sm text-indigo-100">
+      <div className="mt-6 p-4 text-sm" style={{ borderRadius: "1rem", border: "1px solid var(--border)", background: "var(--accent-muted)", color: "var(--fg-muted)" }}>
         <p className="font-semibold">
           Vérité simple :{" "}
-          <span className="text-emerald-300">un site ne doit pas seulement être beau</span>
+          <span style={{ color: "var(--accent)" }}>un site ne doit pas seulement être beau</span>
           . Il doit{" "}
-          <span className="text-emerald-300">guider</span>,{" "}
-          <span className="text-emerald-300">rassurer</span> et{" "}
-          <span className="text-emerald-300">faire passer à l’action</span>.
+          <span style={{ color: "var(--accent)" }}>guider</span>,{" "}
+          <span style={{ color: "var(--accent)" }}>rassurer</span> et{" "}
+          <span style={{ color: "var(--accent)" }}>faire passer à l’action</span>.
         </p>
       </div>
 
-      <h2 className="mt-10 text-xl font-semibold text-indigo-300">
+      <h2 className="mt-10 text-xl font-semibold" style={{ color: "var(--accent)" }}>
         1) Votre message n’est pas clair en 5 secondes
       </h2>
       <p>
         Quand quelqu’un arrive sur votre homepage, il doit comprendre immédiatement :
       </p>
-      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+      <ul className="ml-4 list-disc space-y-1" style={{ color: "var(--fg-muted)" }}>
         <li>ce que vous faites,</li>
         <li>pour qui,</li>
         <li>et ce que ça change dans sa vie / son business.</li>
@@ -776,7 +776,7 @@ export const posts: BlogPost[] = [
         vous perdez des clients.
       </p>
 
-      <h2 className="mt-10 text-xl font-semibold text-indigo-300">
+      <h2 className="mt-10 text-xl font-semibold" style={{ color: "var(--accent)" }}>
         2) Vos appels à l’action (CTA) sont trop faibles
       </h2>
       <p>
@@ -785,44 +785,44 @@ export const posts: BlogPost[] = [
       <p>
         Il faut un CTA clair et orienté résultat :
       </p>
-      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+      <ul className="ml-4 list-disc space-y-1" style={{ color: "var(--fg-muted)" }}>
         <li>
-          <strong className="text-emerald-300">Demander un devis</strong>
+          <strong style={{ color: "var(--accent)" }}>Demander un devis</strong>
         </li>
         <li>
-          <strong className="text-emerald-300">Réserver un appel gratuit</strong>
+          <strong style={{ color: "var(--accent)" }}>Réserver un appel gratuit</strong>
         </li>
         <li>
-          <strong className="text-emerald-300">Recevoir un audit</strong>
+          <strong style={{ color: "var(--accent)" }}>Recevoir un audit</strong>
         </li>
       </ul>
 
-      <h2 className="mt-10 text-xl font-semibold text-indigo-300">
+      <h2 className="mt-10 text-xl font-semibold" style={{ color: "var(--accent)" }}>
         3) Votre site oblige les gens à réfléchir (trop)
       </h2>
       <p>
         Un site doit être{" "}
-        <strong className="text-emerald-300">simple</strong>.
+        <strong style={{ color: "var(--accent)" }}>simple</strong>.
       </p>
       <p>
         Si votre menu contient 12 liens, 8 pages, 5 sous-menus… votre visiteur est
         perdu. Et quand il est perdu, il quitte.
       </p>
 
-      <h2 className="mt-10 text-xl font-semibold text-indigo-300">
+      <h2 className="mt-10 text-xl font-semibold" style={{ color: "var(--accent)" }}>
         4) Il n’y a pas assez de preuves (vous ne rassurez pas)
       </h2>
       <p>
         Les gens veulent être rassurés avant d’acheter.
       </p>
       <p>Ajoutez :</p>
-      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+      <ul className="ml-4 list-disc space-y-1" style={{ color: "var(--fg-muted)" }}>
         <li>des avis clients (même 3 c’est déjà très bien),</li>
         <li>des captures de réalisations,</li>
         <li>des résultats concrets : +trafic, +ventes, +réservations, etc.</li>
       </ul>
 
-      <div className="mt-6 rounded-2xl border border-emerald-400/30 bg-emerald-400/5 p-4 text-sm text-emerald-100">
+      <div className="mt-6 p-4 text-sm" style={{ borderRadius: "1rem", border: "1px solid var(--border)", background: "var(--accent-muted)", color: "var(--fg-muted)" }}>
         <p className="font-semibold">Astuce :</p>
         <p>
           La page “Réalisations” peut être{" "}
@@ -830,7 +830,7 @@ export const posts: BlogPost[] = [
         </p>
       </div>
 
-      <h2 className="mt-10 text-xl font-semibold text-indigo-300">
+      <h2 className="mt-10 text-xl font-semibold" style={{ color: "var(--accent)" }}>
         5) Votre site est lent (et vous perdez du SEO + des clients)
       </h2>
       <p>
@@ -842,18 +842,18 @@ export const posts: BlogPost[] = [
       </p>
       <p className="mt-3">
         C’est aussi pour ça que{" "}
-        <strong className="text-indigo-300">Next.js</strong> prend de plus en plus
+        <strong style={{ color: "var(--accent)" }}>Next.js</strong> prend de plus en plus
         d’importance : ça permet un site{" "}
-        <strong className="text-emerald-300">premium et ultra rapide</strong>.
+        <strong style={{ color: "var(--accent)" }}>premium et ultra rapide</strong>.
       </p>
 
-      <h2 className="mt-10 text-xl font-semibold text-indigo-300">
+      <h2 className="mt-10 text-xl font-semibold" style={{ color: "var(--accent)" }}>
         6) Votre page “Services” n’est pas faite pour vendre
       </h2>
       <p>
         Beaucoup de sites ont une page service trop courte, trop “catalogue” :
       </p>
-      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+      <ul className="ml-4 list-disc space-y-1" style={{ color: "var(--fg-muted)" }}>
         <li>liste de prestations,</li>
         <li>pas de bénéfices,</li>
         <li>pas d’exemples,</li>
@@ -862,10 +862,10 @@ export const posts: BlogPost[] = [
 
       <p className="mt-4">
         Une bonne page service doit :{" "}
-        <strong className="text-emerald-300">attirer → rassurer → convertir</strong>.
+        <strong style={{ color: "var(--accent)" }}>attirer → rassurer → convertir</strong>.
       </p>
 
-      <h2 className="mt-10 text-xl font-semibold text-indigo-300">
+      <h2 className="mt-10 text-xl font-semibold" style={{ color: "var(--accent)" }}>
         7) Vous n’avez pas de “parcours client”
       </h2>
       <p>
@@ -874,14 +874,14 @@ export const posts: BlogPost[] = [
       <p>
         Il a besoin d’un parcours :
       </p>
-      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+      <ul className="ml-4 list-disc space-y-1" style={{ color: "var(--fg-muted)" }}>
         <li>homepage claire</li>
         <li>page service détaillée</li>
         <li>preuves + portfolio</li>
         <li>CTA (appel / devis / audit)</li>
       </ul>
 
-      <h2 className="mt-10 text-xl font-semibold text-indigo-300">
+      <h2 className="mt-10 text-xl font-semibold" style={{ color: "var(--accent)" }}>
         En résumé : votre site doit vendre pour vous
       </h2>
       <p>
@@ -889,13 +889,13 @@ export const posts: BlogPost[] = [
       </p>
       <p>
         Avec quelques ajustements simples, vous pouvez obtenir{" "}
-        <strong className="text-emerald-300">plus de demandes</strong>,{" "}
-        <strong className="text-emerald-300">plus de clients</strong> et un site
+        <strong style={{ color: "var(--accent)" }}>plus de demandes</strong>,{" "}
+        <strong style={{ color: "var(--accent)" }}>plus de clients</strong> et un site
         vraiment rentable.
       </p>
 
-      <p className="mt-6 rounded-2xl border border-indigo-500/20 bg-indigo-500/5 p-4 text-sm text-indigo-100">
-        <strong className="text-emerald-300">Vous voulez un avis pro ?</strong>{" "}
+      <p className="mt-6 p-4 text-sm" style={{ borderRadius: "1rem", border: "1px solid var(--border)", background: "var(--accent-muted)", color: "var(--fg-muted)" }}>
+        <strong style={{ color: "var(--accent)" }}>Vous voulez un avis pro ?</strong>{" "}
         Je peux analyser rapidement votre site et vous dire{" "}
         <strong>ce qui bloque</strong> (et quoi faire en priorité pour convertir).
       </p>
@@ -928,27 +928,27 @@ export const posts: BlogPost[] = [
       <p>
         En réalité, en 2026, Google est devenu beaucoup plus exigeant :
         il veut mettre en avant des sites{" "}
-        <strong className="text-emerald-300">utiles</strong>,{" "}
-        <strong className="text-emerald-300">rapides</strong>,{" "}
-        <strong className="text-emerald-300">fiables</strong> et orientés
+        <strong style={{ color: "var(--accent)" }}>utiles</strong>,{" "}
+        <strong style={{ color: "var(--accent)" }}>rapides</strong>,{" "}
+        <strong style={{ color: "var(--accent)" }}>fiables</strong> et orientés
         expérience utilisateur.
       </p>
 
-      <div className="mt-6 rounded-2xl border border-emerald-400/30 bg-emerald-400/5 p-4 text-sm text-emerald-100">
+      <div className="mt-6 p-4 text-sm" style={{ borderRadius: "1rem", border: "1px solid var(--border)", background: "var(--accent-muted)", color: "var(--fg-muted)" }}>
         <p className="font-semibold">
           Objectif du SEO en 2026 :{" "}
-          <span className="text-indigo-200">
+          <span style={{ color: "var(--fg-muted)" }}>
             attirer un trafic qualifié (qui achète / réserve / demande un devis)
           </span>
           , pas “faire du trafic pour faire du trafic”.
         </p>
       </div>
 
-      <h2 className="mt-10 text-xl font-semibold text-indigo-300">
+      <h2 className="mt-10 text-xl font-semibold" style={{ color: "var(--accent)" }}>
         ✅ Ce qui ne sert plus à grand-chose (voire vous pénalise)
       </h2>
 
-      <h3 className="mt-6 text-lg font-semibold text-indigo-200">
+      <h3 className="mt-6 text-lg font-semibold" style={{ color: "var(--fg-muted)" }}>
         1) Bourrer les mots-clés
       </h3>
       <p>
@@ -956,16 +956,16 @@ export const posts: BlogPost[] = [
         désormais le contexte et la qualité du contenu.
       </p>
 
-      <h3 className="mt-6 text-lg font-semibold text-indigo-200">
+      <h3 className="mt-6 text-lg font-semibold" style={{ color: "var(--fg-muted)" }}>
         2) Les articles “vides” ou copiés
       </h3>
       <p>
         Les contenus génériques (3 paragraphes, rien de concret) ne rankent plus.
         Google veut du contenu qui{" "}
-        <strong className="text-emerald-300">apporte une vraie réponse</strong>.
+        <strong style={{ color: "var(--accent)" }}>apporte une vraie réponse</strong>.
       </p>
 
-      <h3 className="mt-6 text-lg font-semibold text-indigo-200">
+      <h3 className="mt-6 text-lg font-semibold" style={{ color: "var(--fg-muted)" }}>
         3) Les backlinks bas de gamme
       </h3>
       <p>
@@ -974,14 +974,14 @@ export const posts: BlogPost[] = [
       </p>
       <p>
         En 2026, la stratégie gagnante est la{" "}
-        <strong className="text-emerald-300">crédibilité</strong>.
+        <strong style={{ color: "var(--accent)" }}>crédibilité</strong>.
       </p>
 
-      <h2 className="mt-10 text-xl font-semibold text-indigo-300">
+      <h2 className="mt-10 text-xl font-semibold" style={{ color: "var(--accent)" }}>
         🚀 Ce qui marche vraiment en SEO en 2026
       </h2>
 
-      <h3 className="mt-6 text-lg font-semibold text-indigo-200">
+      <h3 className="mt-6 text-lg font-semibold" style={{ color: "var(--fg-muted)" }}>
         1) Un site ultra rapide (Core Web Vitals)
       </h3>
       <p>
@@ -991,17 +991,17 @@ export const posts: BlogPost[] = [
         Un site rapide = meilleur SEO + meilleure conversion.
       </p>
 
-      <div className="mt-6 rounded-2xl border border-indigo-500/20 bg-indigo-500/5 p-4 text-sm text-indigo-100">
+      <div className="mt-6 p-4 text-sm" style={{ borderRadius: "1rem", border: "1px solid var(--border)", background: "var(--accent-muted)", color: "var(--fg-muted)" }}>
         <p className="font-semibold">
           Exemple concret :{" "}
-          <span className="text-emerald-300">
+          <span style={{ color: "var(--accent)" }}>
             si votre site charge 2x plus vite
           </span>
           , vous pouvez gagner des positions Google… et des clients.
         </p>
       </div>
 
-      <h3 className="mt-6 text-lg font-semibold text-indigo-200">
+      <h3 className="mt-6 text-lg font-semibold" style={{ color: "var(--fg-muted)" }}>
         2) L’expérience mobile d’abord
       </h3>
       <p>
@@ -1012,7 +1012,7 @@ export const posts: BlogPost[] = [
         chute et vos visiteurs partent.
       </p>
 
-      <h3 className="mt-6 text-lg font-semibold text-indigo-200">
+      <h3 className="mt-6 text-lg font-semibold" style={{ color: "var(--fg-muted)" }}>
         3) Des pages services solides (c’est ça qui fait rentrer de l’argent)
       </h3>
       <p>
@@ -1021,7 +1021,7 @@ export const posts: BlogPost[] = [
       <p>
         Il vient souvent des pages :
       </p>
-      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+      <ul className="ml-4 list-disc space-y-1" style={{ color: "var(--fg-muted)" }}>
         <li>“Création site web + ville”</li>
         <li>“Refonte site internet + Belgique / France”</li>
         <li>“Développeur Next.js / SEO technique”</li>
@@ -1030,10 +1030,10 @@ export const posts: BlogPost[] = [
 
       <p className="mt-3">
         Une page service bien construite peut{" "}
-        <strong className="text-emerald-300">convertir toute l’année</strong>.
+        <strong style={{ color: "var(--accent)" }}>convertir toute l’année</strong>.
       </p>
 
-      <h3 className="mt-6 text-lg font-semibold text-indigo-200">
+      <h3 className="mt-6 text-lg font-semibold" style={{ color: "var(--fg-muted)" }}>
         4) L’expertise + la crédibilité (E-E-A-T)
       </h3>
       <p>
@@ -1042,20 +1042,20 @@ export const posts: BlogPost[] = [
       <p>
         Il regarde indirectement :
       </p>
-      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+      <ul className="ml-4 list-disc space-y-1" style={{ color: "var(--fg-muted)" }}>
         <li>qui écrit (à propos, auteur),</li>
         <li>les preuves (réalisations, avis),</li>
         <li>la cohérence du site,</li>
         <li>la qualité des explications.</li>
       </ul>
 
-      <h3 className="mt-6 text-lg font-semibold text-indigo-200">
+      <h3 className="mt-6 text-lg font-semibold" style={{ color: "var(--fg-muted)" }}>
         5) Une structure technique propre (le SEO technique)
       </h3>
       <p>
         Le SEO technique est souvent le facteur “invisible” qui fait exploser un site :
       </p>
-      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+      <ul className="ml-4 list-disc space-y-1" style={{ color: "var(--fg-muted)" }}>
         <li>balises title / meta description uniques,</li>
         <li>maillage interne intelligent,</li>
         <li>canonical, sitemap, robots,</li>
@@ -1065,18 +1065,18 @@ export const posts: BlogPost[] = [
 
       <p className="mt-3">
         Et c’est exactement là où{" "}
-        <strong className="text-indigo-300">Next.js</strong> devient très puissant :
+        <strong style={{ color: "var(--accent)" }}>Next.js</strong> devient très puissant :
         on peut construire un site{" "}
-        <strong className="text-emerald-300">ultra optimisé</strong> dès la base.
+        <strong style={{ color: "var(--accent)" }}>ultra optimisé</strong> dès la base.
       </p>
 
-      <h2 className="mt-10 text-xl font-semibold text-indigo-300">
+      <h2 className="mt-10 text-xl font-semibold" style={{ color: "var(--accent)" }}>
         En résumé
       </h2>
       <p>
         En 2026, le SEO est devenu plus simple à comprendre :
       </p>
-      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+      <ul className="ml-4 list-disc space-y-1" style={{ color: "var(--fg-muted)" }}>
         <li>un site rapide,</li>
         <li>du contenu utile,</li>
         <li>de la crédibilité,</li>
@@ -1086,10 +1086,10 @@ export const posts: BlogPost[] = [
       <p className="mt-4">
         Si vous voulez attirer des clients (et pas juste du trafic), le SEO moderne
         est un{" "}
-        <strong className="text-emerald-300">investissement incontournable</strong>.
+        <strong style={{ color: "var(--accent)" }}>investissement incontournable</strong>.
       </p>
 
-      <p className="mt-6 rounded-2xl border border-emerald-400/30 bg-emerald-400/5 p-4 text-sm text-emerald-100">
+      <p className="mt-6 p-4 text-sm" style={{ borderRadius: "1rem", border: "1px solid var(--border)", background: "var(--accent-muted)", color: "var(--fg-muted)" }}>
         <strong>Vous voulez savoir où vous en êtes ?</strong> Je peux réaliser un
         mini-audit SEO rapide : vitesse, structure, pages rentables, et actions
         prioritaires pour remonter sur Google.
@@ -1119,13 +1119,13 @@ export const posts: BlogPost[] = [
     <>
       <p>
         Vous avez sûrement déjà vu des offres à{" "}
-        <strong className="text-emerald-300">500 €</strong>… et d’autres à{" "}
-        <strong className="text-emerald-300">10 000 €+</strong>.
+        <strong style={{ color: "var(--accent)" }}>500 €</strong>… et d’autres à{" "}
+        <strong style={{ color: "var(--accent)" }}>10 000 €+</strong>.
       </p>
 
       <p>
         Et forcément, la question arrive :{" "}
-        <strong className="text-indigo-300">
+        <strong style={{ color: "var(--accent)" }}>
           “Pourquoi un site peut coûter aussi cher ?”
         </strong>
       </p>
@@ -1133,32 +1133,32 @@ export const posts: BlogPost[] = [
       <p>
         La réponse est simple : vous ne payez pas “un site”.
         Vous payez un{" "}
-        <strong className="text-emerald-300">outil de business</strong>{" "}
+        <strong style={{ color: "var(--accent)" }}>outil de business</strong>{" "}
         (ou parfois juste une vitrine).
       </p>
 
-      <div className="mt-6 rounded-2xl border border-indigo-500/20 bg-indigo-500/5 p-4 text-sm text-indigo-100">
+      <div className="mt-6 p-4 text-sm" style={{ borderRadius: "1rem", border: "1px solid var(--border)", background: "var(--accent-muted)", color: "var(--fg-muted)" }}>
         <p className="font-semibold">
           En résumé : le prix dépend surtout de{" "}
-          <span className="text-emerald-300">l’objectif</span> (vitrine vs acquisition),
-          de la <span className="text-emerald-300">qualité</span> (design + technique),
-          et de la <span className="text-emerald-300">stratégie</span> (SEO + conversion).
+          <span style={{ color: "var(--accent)" }}>l’objectif</span> (vitrine vs acquisition),
+          de la <span style={{ color: "var(--accent)" }}>qualité</span> (design + technique),
+          et de la <span style={{ color: "var(--accent)" }}>stratégie</span> (SEO + conversion).
         </p>
       </div>
 
-      <h2 className="mt-10 text-xl font-semibold text-indigo-300">
+      <h2 className="mt-10 text-xl font-semibold" style={{ color: "var(--accent)" }}>
         Les 4 grandes catégories de sites (et leurs prix réalistes)
       </h2>
 
-      <h3 className="mt-6 text-lg font-semibold text-indigo-200">
+      <h3 className="mt-6 text-lg font-semibold" style={{ color: "var(--fg-muted)" }}>
         1) “Petit site vitrine simple” (souvent 1 à 5 pages)
       </h3>
       <p>
         Objectif : être présent en ligne, présenter l’activité, donner confiance.
       </p>
-      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+      <ul className="ml-4 list-disc space-y-1" style={{ color: "var(--fg-muted)" }}>
         <li>
-          <strong className="text-emerald-300">Prix courant :</strong> 500 € → 2 000 €
+          <strong style={{ color: "var(--accent)" }}>Prix courant :</strong> 500 € → 2 000 €
         </li>
         <li>Souvent : template, peu de personnalisation, SEO de base.</li>
         <li>
@@ -1166,15 +1166,15 @@ export const posts: BlogPost[] = [
         </li>
       </ul>
 
-      <h3 className="mt-6 text-lg font-semibold text-indigo-200">
+      <h3 className="mt-6 text-lg font-semibold" style={{ color: "var(--fg-muted)" }}>
         2) “Site WordPress pro” (vitrine + contenu + autonomie)
       </h3>
       <p>
         Objectif : un site moderne, administrable, avec une vraie structure.
       </p>
-      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+      <ul className="ml-4 list-disc space-y-1" style={{ color: "var(--fg-muted)" }}>
         <li>
-          <strong className="text-emerald-300">Prix courant :</strong> 1 500 € → 6 000 €
+          <strong style={{ color: "var(--accent)" }}>Prix courant :</strong> 1 500 € → 6 000 €
         </li>
         <li>Souvent : thème premium + plugins + optimisation performance.</li>
         <li>
@@ -1182,15 +1182,15 @@ export const posts: BlogPost[] = [
         </li>
       </ul>
 
-      <h3 className="mt-6 text-lg font-semibold text-indigo-200">
+      <h3 className="mt-6 text-lg font-semibold" style={{ color: "var(--fg-muted)" }}>
         3) “Site premium Next.js” (performance + SEO + conversion)
       </h3>
       <p>
         Objectif : un site rapide, fluide, pensé pour convertir et durer.
       </p>
-      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+      <ul className="ml-4 list-disc space-y-1" style={{ color: "var(--fg-muted)" }}>
         <li>
-          <strong className="text-emerald-300">Prix courant :</strong> 3 000 € → 15 000 €
+          <strong style={{ color: "var(--accent)" }}>Prix courant :</strong> 3 000 € → 15 000 €
         </li>
         <li>
           Souvent : design sur mesure, optimisation Core Web Vitals, SEO technique solide.
@@ -1200,15 +1200,15 @@ export const posts: BlogPost[] = [
         </li>
       </ul>
 
-      <h3 className="mt-6 text-lg font-semibold text-indigo-200">
+      <h3 className="mt-6 text-lg font-semibold" style={{ color: "var(--fg-muted)" }}>
         4) “E-commerce” (WordPress/WooCommerce ou Next.js + Stripe)
       </h3>
       <p>
         Objectif : vendre en ligne (et éviter les bugs, lenteurs, paniers abandonnés).
       </p>
-      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+      <ul className="ml-4 list-disc space-y-1" style={{ color: "var(--fg-muted)" }}>
         <li>
-          <strong className="text-emerald-300">Prix courant :</strong> 2 500 € → 25 000 €
+          <strong style={{ color: "var(--accent)" }}>Prix courant :</strong> 2 500 € → 25 000 €
         </li>
         <li>
           Le prix dépend surtout : produits, paiements, livraison, stock, emails,
@@ -1216,35 +1216,35 @@ export const posts: BlogPost[] = [
         </li>
       </ul>
 
-      <h2 className="mt-10 text-xl font-semibold text-indigo-300">
+      <h2 className="mt-10 text-xl font-semibold" style={{ color: "var(--accent)" }}>
         Pourquoi certains sites “pas chers” coûtent très cher après
       </h2>
       <p>
         Le piège classique : payer peu au départ… puis payer beaucoup ensuite.
       </p>
 
-      <h3 className="mt-6 text-lg font-semibold text-indigo-200">
+      <h3 className="mt-6 text-lg font-semibold" style={{ color: "var(--fg-muted)" }}>
         Les 5 pièges les plus fréquents
       </h3>
-      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+      <ul className="ml-4 list-disc space-y-1" style={{ color: "var(--fg-muted)" }}>
         <li>
-          <strong className="text-emerald-300">Site lent</strong> → mauvais SEO + moins de demandes.
+          <strong style={{ color: "var(--accent)" }}>Site lent</strong> → mauvais SEO + moins de demandes.
         </li>
         <li>
-          <strong className="text-emerald-300">Site non sécurisé</strong> → piratage, downtime, stress.
+          <strong style={{ color: "var(--accent)" }}>Site non sécurisé</strong> → piratage, downtime, stress.
         </li>
         <li>
-          <strong className="text-emerald-300">Pas de stratégie</strong> → joli site, zéro conversion.
+          <strong style={{ color: "var(--accent)" }}>Pas de stratégie</strong> → joli site, zéro conversion.
         </li>
         <li>
-          <strong className="text-emerald-300">Dépendance totale</strong> → impossible de modifier sans “payer à chaque fois”.
+          <strong style={{ color: "var(--accent)" }}>Dépendance totale</strong> → impossible de modifier sans “payer à chaque fois”.
         </li>
         <li>
-          <strong className="text-emerald-300">Refonte obligatoire</strong> au bout de 12–18 mois (car base fragile).
+          <strong style={{ color: "var(--accent)" }}>Refonte obligatoire</strong> au bout de 12–18 mois (car base fragile).
         </li>
       </ul>
 
-      <div className="mt-6 rounded-2xl border border-emerald-400/30 bg-emerald-400/5 p-4 text-sm text-emerald-100">
+      <div className="mt-6 p-4 text-sm" style={{ borderRadius: "1rem", border: "1px solid var(--border)", background: "var(--accent-muted)", color: "var(--fg-muted)" }}>
         <p className="font-semibold">Règle simple :</p>
         <p>
           Un bon site, c’est un site qui{" "}
@@ -1252,21 +1252,21 @@ export const posts: BlogPost[] = [
         </p>
       </div>
 
-      <h2 className="mt-10 text-xl font-semibold text-indigo-300">
+      <h2 className="mt-10 text-xl font-semibold" style={{ color: "var(--accent)" }}>
         Comment choisir le bon budget (sans vous faire avoir)
       </h2>
 
-      <h3 className="mt-6 text-lg font-semibold text-indigo-200">
+      <h3 className="mt-6 text-lg font-semibold" style={{ color: "var(--fg-muted)" }}>
         1) Posez la vraie question : “À quoi doit servir mon site ?”
       </h3>
-      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+      <ul className="ml-4 list-disc space-y-1" style={{ color: "var(--fg-muted)" }}>
         <li>Juste exister en ligne ?</li>
         <li>Obtenir des demandes / appels ?</li>
         <li>Vendre (e-commerce) ?</li>
         <li>Construire une marque premium ?</li>
       </ul>
 
-      <h3 className="mt-6 text-lg font-semibold text-indigo-200">
+      <h3 className="mt-6 text-lg font-semibold" style={{ color: "var(--fg-muted)" }}>
         2) Regardez le coût global (pas seulement le prix de création)
       </h3>
       <p>
@@ -1274,11 +1274,11 @@ export const posts: BlogPost[] = [
         maintenance, bugs, lenteur, SEO raté, refonte…
       </p>
 
-      <h3 className="mt-6 text-lg font-semibold text-indigo-200">
+      <h3 className="mt-6 text-lg font-semibold" style={{ color: "var(--fg-muted)" }}>
         3) Demandez des livrables clairs
       </h3>
       <p>Un devis sérieux précise :</p>
-      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+      <ul className="ml-4 list-disc space-y-1" style={{ color: "var(--fg-muted)" }}>
         <li>nombre de pages + contenu,</li>
         <li>SEO (technique + structure),</li>
         <li>performance (mobile),</li>
@@ -1286,16 +1286,16 @@ export const posts: BlogPost[] = [
         <li>ce qui est inclus / non inclus.</li>
       </ul>
 
-      <h2 className="mt-10 text-xl font-semibold text-indigo-300">
+      <h2 className="mt-10 text-xl font-semibold" style={{ color: "var(--accent)" }}>
         Le meilleur choix : un site “rentable”, pas juste un site “pas cher”
       </h2>
       <p>
         Un site web n’est pas une dépense “design”. C’est un{" "}
-        <strong className="text-emerald-300">outil de vente</strong>.
+        <strong style={{ color: "var(--accent)" }}>outil de vente</strong>.
       </p>
 
-      <p className="mt-6 rounded-2xl border border-indigo-500/20 bg-indigo-500/5 p-4 text-sm text-indigo-100">
-        <strong className="text-emerald-300">Vous voulez un chiffre réaliste ?</strong>{" "}
+      <p className="mt-6 p-4 text-sm" style={{ borderRadius: "1rem", border: "1px solid var(--border)", background: "var(--accent-muted)", color: "var(--fg-muted)" }}>
+        <strong style={{ color: "var(--accent)" }}>Vous voulez un chiffre réaliste ?</strong>{" "}
         Dites-moi votre activité + votre objectif (vitrine, leads, e-commerce),
         et je vous donne une{" "}
         <strong>fourchette de budget cohérente</strong> (sans blabla),
@@ -1326,24 +1326,24 @@ export const posts: BlogPost[] = [
     <>
       <p>
         Quand on parle de{" "}
-        <strong className="text-emerald-300">PHP</strong>, beaucoup de gens pensent
+        <strong style={{ color: "var(--accent)" }}>PHP</strong>, beaucoup de gens pensent
         immédiatement à{" "}
-        <strong className="text-indigo-300">WordPress</strong>.
+        <strong style={{ color: "var(--accent)" }}>WordPress</strong>.
         Et c’est normal : WordPress a longtemps été le moteur le plus visible du
         web “accessible”.
       </p>
 
       <p>
         Mais la vraie question est intéressante :{" "}
-        <strong className="text-emerald-300">
+        <strong style={{ color: "var(--accent)" }}>
           si WordPress disparaissait, PHP disparaîtrait-il avec lui ?
         </strong>
       </p>
 
-      <div className="mt-6 rounded-2xl border border-indigo-500/20 bg-indigo-500/5 p-4 text-sm text-indigo-100">
+      <div className="mt-6 p-4 text-sm" style={{ borderRadius: "1rem", border: "1px solid var(--border)", background: "var(--accent-muted)", color: "var(--fg-muted)" }}>
         <p className="font-semibold">
           Réponse courte :{" "}
-          <span className="text-emerald-300">
+          <span style={{ color: "var(--accent)" }}>
             PHP survivrait, mais il perdrait une partie de sa visibilité grand public
           </span>
           . Il resterait très utilisé côté “back-end” et entreprises, mais avec une
@@ -1351,13 +1351,13 @@ export const posts: BlogPost[] = [
         </p>
       </div>
 
-      <h2 className="mt-10 text-xl font-semibold text-indigo-300">
+      <h2 className="mt-10 text-xl font-semibold" style={{ color: "var(--accent)" }}>
         Pourquoi WordPress pèse si lourd dans l’image de PHP
       </h2>
       <p>
         WordPress a rendu PHP omniprésent chez :
       </p>
-      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+      <ul className="ml-4 list-disc space-y-1" style={{ color: "var(--fg-muted)" }}>
         <li>les indépendants,</li>
         <li>les petites entreprises,</li>
         <li>les agences,</li>
@@ -1367,11 +1367,11 @@ export const posts: BlogPost[] = [
       <p className="mt-4">
         Résultat : même si le monde tech parle beaucoup de JavaScript, Python ou
         Go, PHP est resté{" "}
-        <strong className="text-emerald-300">massivement présent</strong>
+        <strong style={{ color: "var(--accent)" }}>massivement présent</strong>
         … parce que WordPress a continué à tourner partout, tout le temps.
       </p>
 
-      <div className="my-8 relative aspect-video w-full overflow-hidden rounded-2xl ring-1 ring-indigo-500/30">
+      <div className="my-8 relative aspect-video w-full overflow-hidden" style={{ borderRadius: "1rem", border: "1px solid var(--border)" }}>
         <Image
           src={Php2}
           alt="WordPress : l'écosystème qui a rendu PHP ultra visible"
@@ -1380,11 +1380,11 @@ export const posts: BlogPost[] = [
         />
       </div>
 
-      <h2 className="mt-10 text-xl font-semibold text-indigo-300">
+      <h2 className="mt-10 text-xl font-semibold" style={{ color: "var(--accent)" }}>
         Si WordPress disparaissait : qu’est-ce qui resterait à PHP ?
       </h2>
 
-      <h3 className="mt-6 text-lg font-semibold text-indigo-200">
+      <h3 className="mt-6 text-lg font-semibold" style={{ color: "var(--fg-muted)" }}>
         1) Les frameworks (Laravel, Symfony…) : le PHP “pro”
       </h3>
       <p>
@@ -1392,13 +1392,13 @@ export const posts: BlogPost[] = [
         clairement ce qu’il est déjà pour beaucoup d’équipes :
         un langage back-end stable pour développer des applications web.
       </p>
-      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+      <ul className="ml-4 list-disc space-y-1" style={{ color: "var(--fg-muted)" }}>
         <li>
-          <strong className="text-emerald-300">Symfony</strong> : très présent en
+          <strong style={{ color: "var(--accent)" }}>Symfony</strong> : très présent en
           entreprise, architecture solide, long terme.
         </li>
         <li>
-          <strong className="text-emerald-300">Laravel</strong> : productivité, DX,
+          <strong style={{ color: "var(--accent)" }}>Laravel</strong> : productivité, DX,
           écosystème moderne, rapide pour livrer.
         </li>
       </ul>
@@ -1408,35 +1408,35 @@ export const posts: BlogPost[] = [
         WordPress est surtout le moteur de sa présence “grand public”.
       </p>
 
-      <h3 className="mt-8 text-lg font-semibold text-indigo-200">
+      <h3 className="mt-8 text-lg font-semibold" style={{ color: "var(--fg-muted)" }}>
         2) Le web “legacy” : un énorme parc installé
       </h3>
       <p>
         Même sans WordPress, il resterait :
       </p>
-      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+      <ul className="ml-4 list-disc space-y-1" style={{ color: "var(--fg-muted)" }}>
         <li>des milliers d’applications internes en PHP,</li>
         <li>des back-offices, CRM, outils métiers, intranets,</li>
         <li>des sites historiques (sur mesure) encore rentables,</li>
         <li>et beaucoup de maintenance (qui fait vivre un marché entier).</li>
       </ul>
 
-      <h3 className="mt-8 text-lg font-semibold text-indigo-200">
+      <h3 className="mt-8 text-lg font-semibold" style={{ color: "var(--fg-muted)" }}>
         3) Les hébergements “simples” : PHP reste ultra accessible
       </h3>
       <p>
         L’un des super-pouvoirs de PHP, c’est sa disponibilité :
         quasiment tous les hébergeurs le supportent facilement.
         Même si WordPress disparaissait, le{" "}
-        <strong className="text-emerald-300">coût d’entrée</strong> resterait
+        <strong style={{ color: "var(--accent)" }}>coût d’entrée</strong> resterait
         très bas pour lancer un projet PHP.
       </p>
 
-      <h2 className="mt-10 text-xl font-semibold text-indigo-300">
+      <h2 className="mt-10 text-xl font-semibold" style={{ color: "var(--accent)" }}>
         Mais… qu’est-ce que PHP perdrait vraiment sans WordPress ?
       </h2>
 
-      <h3 className="mt-6 text-lg font-semibold text-indigo-200">
+      <h3 className="mt-6 text-lg font-semibold" style={{ color: "var(--fg-muted)" }}>
         1) La “vitrine” la plus populaire
       </h3>
       <p>
@@ -1445,13 +1445,13 @@ export const posts: BlogPost[] = [
         visible auprès du grand public.
       </p>
 
-      <h3 className="mt-8 text-lg font-semibold text-indigo-200">
+      <h3 className="mt-8 text-lg font-semibold" style={{ color: "var(--fg-muted)" }}>
         2) Une partie du marché des petits sites vitrines
       </h3>
       <p>
         Beaucoup de petits projets migreraient vers :
       </p>
-      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+      <ul className="ml-4 list-disc space-y-1" style={{ color: "var(--fg-muted)" }}>
         <li>des builders (Webflow, Wix…)</li>
         <li>des stacks JS (Next.js + CMS headless)</li>
         <li>des solutions e-commerce SaaS</li>
@@ -1462,7 +1462,7 @@ export const posts: BlogPost[] = [
         “clé en main”.
       </p>
 
-      <div className="my-8 relative aspect-video w-full overflow-hidden rounded-2xl ring-1 ring-indigo-500/30">
+      <div className="my-8 relative aspect-video w-full overflow-hidden" style={{ borderRadius: "1rem", border: "1px solid var(--border)" }}>
         <Image
           src={Php3}
           alt="Le débat : WordPress et l'avenir de PHP"
@@ -1471,20 +1471,20 @@ export const posts: BlogPost[] = [
         />
       </div>
 
-      <h2 className="mt-10 text-xl font-semibold text-indigo-300">
+      <h2 className="mt-10 text-xl font-semibold" style={{ color: "var(--accent)" }}>
         La vraie réponse : PHP survivrait, mais deviendrait “moins grand public”
       </h2>
 
       <p>
         Sans WordPress, PHP :
       </p>
-      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+      <ul className="ml-4 list-disc space-y-1" style={{ color: "var(--fg-muted)" }}>
         <li>
-          <strong className="text-emerald-300">survivrait</strong> grâce aux frameworks,
+          <strong style={{ color: "var(--accent)" }}>survivrait</strong> grâce aux frameworks,
           au parc installé et à l’accessibilité serveur,
         </li>
         <li>
-          <strong className="text-emerald-300">perdrait</strong> une partie de son
+          <strong style={{ color: "var(--accent)" }}>perdrait</strong> une partie de son
           image “CMS du web”, donc moins de nouveaux utilisateurs non-tech,
         </li>
         <li>
@@ -1492,41 +1492,41 @@ export const posts: BlogPost[] = [
         </li>
       </ul>
 
-      <h2 className="mt-10 text-xl font-semibold text-indigo-300">
+      <h2 className="mt-10 text-xl font-semibold" style={{ color: "var(--accent)" }}>
         Et toi, en tant qu’entreprise : qu’est-ce que tu dois retenir ?
       </h2>
       <p>
         La bonne question n’est pas “PHP ou pas PHP”.
         La bonne question est :
       </p>
-      <p className="mt-4 rounded-2xl border border-emerald-400/30 bg-emerald-400/5 p-4 text-sm text-emerald-100">
-        <strong className="text-emerald-300">
+      <p className="mt-4 p-4 text-sm" style={{ borderRadius: "1rem", border: "1px solid var(--border)", background: "var(--accent-muted)", color: "var(--fg-muted)" }}>
+        <strong style={{ color: "var(--accent)" }}>
           Est-ce que ton site doit être administrable facilement (WordPress)…
         </strong>{" "}
         ou est-ce que ton site doit être{" "}
         <strong>ultra rapide, premium, et pensé conversion/SEO (Next.js)</strong> ?
       </p>
 
-      <h3 className="mt-8 text-lg font-semibold text-indigo-200">
+      <h3 className="mt-8 text-lg font-semibold" style={{ color: "var(--fg-muted)" }}>
         Choisis WordPress si…
       </h3>
-      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+      <ul className="ml-4 list-disc space-y-1" style={{ color: "var(--fg-muted)" }}>
         <li>tu veux publier souvent et être autonome,</li>
         <li>tu as un budget initial plus serré,</li>
         <li>ton site est surtout éditorial / vitrine.</li>
       </ul>
 
-      <h3 className="mt-8 text-lg font-semibold text-indigo-200">
+      <h3 className="mt-8 text-lg font-semibold" style={{ color: "var(--fg-muted)" }}>
         Choisis une stack moderne (Next.js) si…
       </h3>
-      <ul className="ml-4 list-disc space-y-1 text-slate-100">
+      <ul className="ml-4 list-disc space-y-1" style={{ color: "var(--fg-muted)" }}>
         <li>tu veux une expérience premium rapide,</li>
         <li>tu veux maximiser SEO + conversion,</li>
         <li>tu veux une base plus durable, sécurisée et sur mesure.</li>
       </ul>
 
-      <p className="mt-6 rounded-2xl border border-indigo-500/20 bg-indigo-500/5 p-4 text-sm text-indigo-100">
-        <strong className="text-emerald-300">Tu hésites ?</strong>{" "}
+      <p className="mt-6 p-4 text-sm" style={{ borderRadius: "1rem", border: "1px solid var(--border)", background: "var(--accent-muted)", color: "var(--fg-muted)" }}>
+        <strong style={{ color: "var(--accent)" }}>Tu hésites ?</strong>{" "}
         Je peux te dire en 10 minutes ce qui est le plus cohérent pour ton projet
         (WordPress optimisé vs Next.js), en fonction de ton objectif business.
       </p>

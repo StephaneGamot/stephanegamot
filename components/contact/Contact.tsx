@@ -50,94 +50,102 @@ export default function Contact() {
     } catch (err) {
       console.error(err);
       setStatus("error");
-      setErrorMsg("Impossible d'envoyer votre message. Réessayez plus tard.");
+      setErrorMsg("Impossible d'envoyer votre message. Reessayez plus tard.");
     }
   }
 
   return (
-    <main className="bg-slate-950 text-white">
+    <main>
       <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
         {/* Titre global */}
         <header className="mb-10 max-w-2xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-emerald-300/80">
+          <p className="section-label">
             Contact
           </p>
-          <h1 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
+          <h1 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl" style={{ color: "var(--fg-base)" }}>
             Parlons de votre projet.
           </h1>
-          <p className="mt-3 text-sm text-white/70">
+          <p className="mt-3 text-sm" style={{ color: "var(--fg-muted)" }}>
             Un site sur mesure, un e-commerce, un audit SEO ou une
-            refonte&nbsp;? Décrivez vos besoins : je vous réponds avec des
-            pistes concrètes, pas du blabla commercial.
+            refonte&nbsp;? Decrivez vos besoins : je vous reponds avec des
+            pistes concretes, pas du blabla commercial.
           </p>
         </header>
 
-        {/* Messages état */}
+        {/* Messages etat */}
         {status === "success" && (
-          <p className="mb-6 rounded-lg bg-emerald-500/10 px-4 py-3 text-sm text-emerald-300">
-            ✅ Merci, votre message a bien été envoyé. Je reviens vers vous
+          <p
+            className="mb-6 rounded-lg px-4 py-3 text-sm"
+            style={{ background: "var(--accent-muted)", color: "var(--accent)" }}
+          >
+            Merci, votre message a bien ete envoye. Je reviens vers vous
             rapidement.
           </p>
         )}
         {status === "error" && (
           <p className="mb-6 rounded-lg bg-red-500/10 px-4 py-3 text-sm text-red-300">
-            ⚠️ {errorMsg}
+            {errorMsg}
           </p>
         )}
 
         {/* Formulaire global */}
         <form
           onSubmit={handleSubmit}
-          className="divide-y divide-white/10"
+          className="divide-y"
+          style={{ borderColor: "var(--border)" }}
           noValidate
         >
           {/* Bloc 1 : Vos informations */}
           <div className="grid grid-cols-1 gap-x-8 gap-y-8 py-10 md:grid-cols-3">
             <div className="px-1 sm:px-0">
-              <h2 className="text-base font-semibold text-white">
+              <h2 className="text-base font-semibold" style={{ color: "var(--fg-base)" }}>
                 Vos informations
               </h2>
-              <p className="mt-1 text-sm text-white/60">
-                Dites-moi qui vous êtes afin que je puisse vous répondre dans
+              <p className="mt-1 text-sm" style={{ color: "var(--fg-subtle)" }}>
+                Dites-moi qui vous etes afin que je puisse vous repondre dans
                 les meilleures conditions.
               </p>
 
-              <div className="mt-6 space-y-3 text-sm text-white/60">
-                <p className="font-semibold text-white/80">
-                  Coordonnées directes
+              <div className="mt-6 space-y-3 text-sm" style={{ color: "var(--fg-subtle)" }}>
+                <p className="font-semibold" style={{ color: "var(--fg-muted)" }}>
+                  Coordonnees directes
                 </p>
                 <p>
                   Email :{" "}
                   <a
                     href="mailto:stephanegamot@outlook.com"
-                    className="text-indigo-300 hover:text-indigo-200"
+                    style={{ color: "var(--accent)" }}
                   >
                     stephanegamot@outlook.com
                   </a>
                   <br />
-                  Téléphone :{" "}
+                  Telephone :{" "}
                   <a
                     href="tel:+324777131993"
-                    className="text-indigo-300 hover:text-indigo-200"
+                    style={{ color: "var(--accent)" }}
                   >
                     0477 71 31 93
                   </a>
                   <br />
-                  Région : Bruxelles – Halle – Belgique (clients à distance
+                  Region : Bruxelles - Halle - Belgique (clients a distance
                   possibles)
                 </p>
               </div>
             </div>
 
-            <div className="md:col-span-2 bg-white shadow-sm outline outline-1 outline-gray-900/5 sm:rounded-xl dark:bg-slate-900/80 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+            <div
+              className="md:col-span-2 sm:rounded-xl"
+              style={{ background: "var(--surface-1)", border: "1px solid var(--border)", borderRadius: "1rem" }}
+            >
               <div className="px-4 py-6 sm:p-8">
                 <div className="grid max-w-2xl grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-6">
                   <div className="sm:col-span-3">
                     <label
                       htmlFor="first-name"
-                      className="block text-sm font-medium text-gray-900 dark:text-white"
+                      className="block text-sm font-medium"
+                      style={{ color: "var(--fg-base)" }}
                     >
-                      Prénom *
+                      Prenom *
                     </label>
                     <div className="mt-2">
                       <input
@@ -146,7 +154,8 @@ export default function Contact() {
                         type="text"
                         autoComplete="given-name"
                         required
-                        className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm dark:bg-white/5 dark:text-white dark:outline-white/10 dark:placeholder:text-gray-500 dark:focus:outline-indigo-500"
+                        className="w-full text-sm"
+                        style={{ background: "var(--surface-2)", color: "var(--fg-base)", border: "1px solid var(--border)", borderRadius: "0.5rem", padding: "0.5rem 0.75rem" }}
                       />
                     </div>
                   </div>
@@ -154,7 +163,8 @@ export default function Contact() {
                   <div className="sm:col-span-3">
                     <label
                       htmlFor="last-name"
-                      className="block text-sm font-medium text-gray-900 dark:text-white"
+                      className="block text-sm font-medium"
+                      style={{ color: "var(--fg-base)" }}
                     >
                       Nom *
                     </label>
@@ -165,7 +175,8 @@ export default function Contact() {
                         type="text"
                         autoComplete="family-name"
                         required
-                        className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm dark:bg-white/5 dark:text-white dark:outline-white/10 dark:placeholder:text-gray-500 dark:focus:outline-indigo-500"
+                        className="w-full text-sm"
+                        style={{ background: "var(--surface-2)", color: "var(--fg-base)", border: "1px solid var(--border)", borderRadius: "0.5rem", padding: "0.5rem 0.75rem" }}
                       />
                     </div>
                   </div>
@@ -173,7 +184,8 @@ export default function Contact() {
                   <div className="sm:col-span-4">
                     <label
                       htmlFor="email"
-                      className="block text-sm font-medium text-gray-900 dark:text-white"
+                      className="block text-sm font-medium"
+                      style={{ color: "var(--fg-base)" }}
                     >
                       Adresse email *
                     </label>
@@ -184,7 +196,8 @@ export default function Contact() {
                         type="email"
                         autoComplete="email"
                         required
-                        className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm dark:bg-white/5 dark:text-white dark:outline-white/10 dark:placeholder:text-gray-500 dark:focus:outline-indigo-500"
+                        className="w-full text-sm"
+                        style={{ background: "var(--surface-2)", color: "var(--fg-base)", border: "1px solid var(--border)", borderRadius: "0.5rem", padding: "0.5rem 0.75rem" }}
                       />
                     </div>
                   </div>
@@ -192,9 +205,10 @@ export default function Contact() {
                   <div className="sm:col-span-2">
                     <label
                       htmlFor="phone"
-                      className="block text-sm font-medium text-gray-900 dark:text-white"
+                      className="block text-sm font-medium"
+                      style={{ color: "var(--fg-base)" }}
                     >
-                      Téléphone (optionnel)
+                      Telephone (optionnel)
                     </label>
                     <div className="mt-2">
                       <input
@@ -202,7 +216,8 @@ export default function Contact() {
                         name="phone"
                         type="tel"
                         autoComplete="tel"
-                        className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm dark:bg-white/5 dark:text-white dark:outline-white/10 dark:placeholder:text-gray-500 dark:focus:outline-indigo-500"
+                        className="w-full text-sm"
+                        style={{ background: "var(--surface-2)", color: "var(--fg-base)", border: "1px solid var(--border)", borderRadius: "0.5rem", padding: "0.5rem 0.75rem" }}
                       />
                     </div>
                   </div>
@@ -210,7 +225,8 @@ export default function Contact() {
                   <div className="col-span-full">
                     <label
                       htmlFor="company"
-                      className="block text-sm font-medium text-gray-900 dark:text-white"
+                      className="block text-sm font-medium"
+                      style={{ color: "var(--fg-base)" }}
                     >
                       Entreprise / organisation (optionnel)
                     </label>
@@ -219,7 +235,8 @@ export default function Contact() {
                         id="company"
                         name="company"
                         type="text"
-                        className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm dark:bg-white/5 dark:text-white dark:outline-white/10 dark:placeholder:text-gray-500 dark:focus:outline-indigo-500"
+                        className="w-full text-sm"
+                        style={{ background: "var(--surface-2)", color: "var(--fg-base)", border: "1px solid var(--border)", borderRadius: "0.5rem", padding: "0.5rem 0.75rem" }}
                       />
                     </div>
                   </div>
@@ -231,22 +248,26 @@ export default function Contact() {
           {/* Bloc 2 : Votre projet */}
           <div className="grid grid-cols-1 gap-x-8 gap-y-8 py-10 md:grid-cols-3">
             <div className="px-1 sm:px-0">
-              <h2 className="text-base font-semibold text-white">
+              <h2 className="text-base font-semibold" style={{ color: "var(--fg-base)" }}>
                 Parlez-moi de votre projet
               </h2>
-              <p className="mt-1 text-sm text-white/60">
-                Plus vous êtes précis, plus je peux vous proposer un plan
-                d’action adapté : type de site, objectifs, délais, budget…
+              <p className="mt-1 text-sm" style={{ color: "var(--fg-subtle)" }}>
+                Plus vous etes precis, plus je peux vous proposer un plan
+                d'action adapte : type de site, objectifs, delais, budget...
               </p>
             </div>
 
-            <div className="md:col-span-2 bg-white shadow-sm outline outline-1 outline-gray-900/5 sm:rounded-xl dark:bg-slate-900/80 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+            <div
+              className="md:col-span-2"
+              style={{ background: "var(--surface-1)", border: "1px solid var(--border)", borderRadius: "1rem" }}
+            >
               <div className="px-4 py-6 sm:p-8">
                 <div className="grid max-w-2xl grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-6">
                   <div className="sm:col-span-3">
                     <label
                       htmlFor="project-type"
-                      className="block text-sm font-medium text-gray-900 dark:text-white"
+                      className="block text-sm font-medium"
+                      style={{ color: "var(--fg-base)" }}
                     >
                       Type de projet
                     </label>
@@ -254,17 +275,19 @@ export default function Contact() {
                       <select
                         id="project-type"
                         name="project-type"
-                        className="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pl-3 pr-8 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm dark:bg-white/5 dark:text-white dark:outline-white/10 dark:*:bg-slate-900 dark:focus:outline-indigo-500"
+                        className="col-start-1 row-start-1 w-full appearance-none text-sm"
+                        style={{ background: "var(--surface-2)", color: "var(--fg-base)", border: "1px solid var(--border)", borderRadius: "0.5rem", padding: "0.5rem 0.75rem" }}
                       >
                         <option>Site vitrine</option>
                         <option>Site e-commerce</option>
                         <option>Refonte de site</option>
                         <option>SEO / Audit technique</option>
-                        <option>Autre (préciser ci-dessous)</option>
+                        <option>Autre (preciser ci-dessous)</option>
                       </select>
                       <ChevronDownIcon
                         aria-hidden="true"
-                        className="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end text-gray-500 sm:size-4 dark:text-gray-400"
+                        className="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end sm:size-4"
+                        style={{ color: "var(--fg-subtle)" }}
                       />
                     </div>
                   </div>
@@ -272,7 +295,8 @@ export default function Contact() {
                   <div className="sm:col-span-3">
                     <label
                       htmlFor="budget"
-                      className="block text-sm font-medium text-gray-900 dark:text-white"
+                      className="block text-sm font-medium"
+                      style={{ color: "var(--fg-base)" }}
                     >
                       Budget indicatif
                     </label>
@@ -280,17 +304,19 @@ export default function Contact() {
                       <select
                         id="budget"
                         name="budget"
-                        className="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pl-3 pr-8 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm dark:bg-white/5 dark:text-white dark:outline-white/10 dark:*:bg-slate-900 dark:focus:outline-indigo-500"
+                        className="col-start-1 row-start-1 w-full appearance-none text-sm"
+                        style={{ background: "var(--surface-2)", color: "var(--fg-base)", border: "1px solid var(--border)", borderRadius: "0.5rem", padding: "0.5rem 0.75rem" }}
                       >
-                        <option>Moins de 1 500 €</option>
-                        <option>1 500 € – 3 000 €</option>
-                        <option>3 000 € – 6 000 €</option>
-                        <option>6 000 € et plus</option>
+                        <option>Moins de 1 500 EUR</option>
+                        <option>1 500 EUR - 3 000 EUR</option>
+                        <option>3 000 EUR - 6 000 EUR</option>
+                        <option>6 000 EUR et plus</option>
                         <option>Je ne sais pas encore</option>
                       </select>
                       <ChevronDownIcon
                         aria-hidden="true"
-                        className="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end text-gray-500 sm:size-4 dark:text-gray-400"
+                        className="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end sm:size-4"
+                        style={{ color: "var(--fg-subtle)" }}
                       />
                     </div>
                   </div>
@@ -298,7 +324,8 @@ export default function Contact() {
                   <div className="col-span-full">
                     <label
                       htmlFor="message"
-                      className="block text-sm font-medium text-gray-900 dark:text-white"
+                      className="block text-sm font-medium"
+                      style={{ color: "var(--fg-base)" }}
                     >
                       Votre message *
                     </label>
@@ -308,46 +335,51 @@ export default function Contact() {
                         name="message"
                         rows={5}
                         required
-                        placeholder="Par exemple : refonte de notre site vitrine, besoin d'améliorer les performances, intégration Stripe, SEO local pour Bruxelles, etc."
-                        className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm dark:bg-white/5 dark:text-white dark:outline-white/10 dark:placeholder:text-gray-500 dark:focus:outline-indigo-500"
+                        placeholder="Par exemple : refonte de notre site vitrine, besoin d'ameliorer les performances, integration Stripe, SEO local pour Bruxelles, etc."
+                        className="w-full text-sm"
+                        style={{ background: "var(--surface-2)", color: "var(--fg-base)", border: "1px solid var(--border)", borderRadius: "0.5rem", padding: "0.5rem 0.75rem" }}
                       />
                     </div>
                   </div>
 
-                 {/* Pièce jointe UI seulement */}
-<div className="col-span-full">
-  {/* n’est plus un <label>, juste un texte de titre */}
-  <p className="block text-sm font-medium text-gray-900 dark:text-white">
-    Pièce jointe (optionnel)
-  </p>
+                  {/* Piece jointe UI seulement */}
+                  <div className="col-span-full">
+                    <p className="block text-sm font-medium" style={{ color: "var(--fg-base)" }}>
+                      Piece jointe (optionnel)
+                    </p>
 
-  <div className="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-8 dark:border-white/25">
-    <div className="text-center">
-      <PhotoIcon
-        aria-hidden="true"
-        className="mx-auto size-10 text-gray-300 dark:text-gray-500"
-      />
-      <div className="mt-3 flex text-sm text-gray-600 dark:text-gray-400">
-        <label
-          htmlFor="file-upload"
-          className="relative cursor-pointer rounded-md bg-white px-2 font-semibold text-indigo-600 focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-indigo-600 hover:text-indigo-500 dark:bg-transparent dark:text-indigo-400 dark:focus-within:outline-indigo-500 dark:hover:text-indigo-300"
-        >
-          <span>Importer un fichier</span>
-          <input
-            id="file-upload"
-            name="file-upload"
-            type="file"
-            className="sr-only"
-          />
-        </label>
-        <p className="pl-1">ou glisser-déposer</p>
-      </div>
-      <p className="text-xs text-gray-600 dark:text-gray-400">
-        PDF, PNG, JPG, jusqu’à 10&nbsp;Mo
-      </p>
-    </div>
-  </div>
-</div>
+                    <div
+                      className="mt-2 flex justify-center rounded-lg border border-dashed px-6 py-8"
+                      style={{ borderColor: "var(--border)" }}
+                    >
+                      <div className="text-center">
+                        <PhotoIcon
+                          aria-hidden="true"
+                          className="mx-auto size-10"
+                          style={{ color: "var(--fg-subtle)" }}
+                        />
+                        <div className="mt-3 flex text-sm" style={{ color: "var(--fg-muted)" }}>
+                          <label
+                            htmlFor="file-upload"
+                            className="relative cursor-pointer rounded-md px-2 font-semibold"
+                            style={{ color: "var(--accent)" }}
+                          >
+                            <span>Importer un fichier</span>
+                            <input
+                              id="file-upload"
+                              name="file-upload"
+                              type="file"
+                              className="sr-only"
+                            />
+                          </label>
+                          <p className="pl-1">ou glisser-deposer</p>
+                        </div>
+                        <p className="text-xs" style={{ color: "var(--fg-muted)" }}>
+                          PDF, PNG, JPG, jusqu'a 10&nbsp;Mo
+                        </p>
+                      </div>
+                    </div>
+                  </div>
 
                   <div className="col-span-full">
                     <div className="flex items-start gap-3">
@@ -355,14 +387,16 @@ export default function Contact() {
                         id="consent"
                         name="consent"
                         type="checkbox"
-                        className="mt-1 h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600 dark:border-white/20 dark:bg-white/5"
+                        className="mt-1 h-4 w-4 rounded"
+                        style={{ accentColor: "var(--accent)" }}
                       />
                       <label
                         htmlFor="consent"
-                        className="text-xs text-white/70"
+                        className="text-xs"
+                        style={{ color: "var(--fg-muted)" }}
                       >
-                        J’accepte que mes données soient utilisées pour être
-                        recontacté·e au sujet de ma demande. Aucune prospection
+                        J'accepte que mes donnees soient utilisees pour etre
+                        recontacte au sujet de ma demande. Aucune prospection
                         abusive, aucun partage avec des tiers.
                       </label>
                     </div>
@@ -371,10 +405,14 @@ export default function Contact() {
               </div>
 
               {/* Boutons */}
-              <div className="flex items-center justify-end gap-x-6 border-t border-gray-900/10 px-4 py-4 sm:px-8 dark:border-white/10">
+              <div
+                className="flex items-center justify-end gap-x-6 border-t px-4 py-4 sm:px-8"
+                style={{ borderColor: "var(--border)" }}
+              >
                 <button
                   type="reset"
-                  className="text-sm font-semibold text-gray-900 dark:text-white"
+                  className="text-sm font-semibold"
+                  style={{ color: "var(--fg-muted)" }}
                   onClick={() => {
                     setStatus("idle");
                     setErrorMsg(null);
@@ -385,7 +423,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={status === "loading"}
-                  className="rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 disabled:cursor-not-allowed disabled:opacity-70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:bg-indigo-500 dark:shadow-none dark:hover:bg-indigo-400 dark:focus-visible:outline-indigo-500"
+                  className="btn btn-primary"
                 >
                   {status === "loading"
                     ? "Envoi en cours..."

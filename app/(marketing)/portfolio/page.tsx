@@ -1,11 +1,14 @@
 
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import PortfolioSection from "@/components/Portfolio/PortfolioSection";
+import { Breadcrumb } from "@/components/navigation/Breadcrumb";
+import { SkeletonPortfolioCard } from "@/components/animations/SkeletonLoader";
 
 export const metadata: Metadata = {
-  title: "Portfolio – Sites web modernes & performants",
+  title: "Portfolio de sites web et e-commerce — Stéphane Gamot",
   description:
-    "Découvrez une sélection de site web, Ecommerce, application web réalisés avec Next, React & WordPress. Élégance, performance, SEO & UX au coeur de votre projet",
+    "Sélection de sites web, e-commerce et applications réalisés avec Next.js, React & WordPress. Performance, SEO & UX au service de vos projets.",
   keywords: [
     "portfolio développeur web",
     "portfolio création de site internet",
@@ -25,7 +28,7 @@ export const metadata: Metadata = {
     url: "https://www.stephanegamot.com/portfolio",
     title: "Portfolio – Sites web modernes & performants",
     description:
-      "Sélection de projets web : sites vitrine premium, e-commerce, dashboards et applications Next.js. Un portfolio centré sur l’expérience, la performance et les résultats.",
+      "Sélection de projets web : sites vitrine premium, e-commerce, dashboards et applications Next.js. Un portfolio centré sur l'expérience, la performance et les résultats.",
     siteName: "Stéphane Gamot",
     locale: "fr_BE",
     images: [
@@ -40,7 +43,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@stephanegamot", 
+    site: "@stephanegamot",
     title: "Portfolio – Sites web modernes & performants | Stéphane Gamot",
     description:
       "Exemples de sites vitrine, e-commerce et applications web réalisés avec Next.js, React et WordPress.",
@@ -54,11 +57,53 @@ export const metadata: Metadata = {
   },
 };
 
+function PortfolioSkeleton() {
+  return (
+    <div className="py-16 sm:py-20 lg:py-24">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        {/* Header skeleton */}
+        <div className="mx-auto max-w-3xl text-center mb-12">
+          <div className="skeleton-shimmer mx-auto h-3 w-24 rounded-full mb-4" style={{ background: "var(--surface-2)" }} />
+          <div className="skeleton-shimmer mx-auto h-8 w-3/4 rounded-lg mb-3" style={{ background: "var(--surface-2)" }} />
+          <div className="skeleton-shimmer mx-auto h-4 w-2/3 rounded-full" style={{ background: "var(--surface-2)" }} />
+        </div>
+        {/* Grid skeleton */}
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {Array.from({ length: 6 }).map((_, i) => (
+            <SkeletonPortfolioCard key={i} />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function Page() {
     return (
-        <main className="mx-auto max-w-7xl px-6 py-12">
-<PortfolioSection />
-        </main>
+        <>
+        <div className="mx-auto max-w-7xl px-6 py-12">
+            <Breadcrumb items={[{ label: "Portfolio" }]} />
+            <Suspense fallback={<PortfolioSkeleton />}>
+              <PortfolioSection />
+            </Suspense>
+        </div>
+        <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+                __html: JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "CollectionPage",
+                    name: "Portfolio de sites web et e-commerce",
+                    description: "Sélection de sites web, e-commerce et applications réalisés avec Next.js, React & WordPress.",
+                    url: "https://www.stephanegamot.com/portfolio",
+                    author: {
+                        "@type": "Person",
+                        name: "Stéphane Gamot",
+                        url: "https://www.stephanegamot.com/me",
+                    },
+                }),
+            }}
+        />
+        </>
     );
 }

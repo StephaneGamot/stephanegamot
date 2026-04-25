@@ -1,88 +1,101 @@
-// app/(marketing)/_components/AboutSection.tsx
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-// Remplace par ton vrai portrait (ex: /public/sg-portrait.jpg)
 import Portrait from "@/public/Images/me/me.webp";
+import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/animations/ScrollReveal";
+import { MagneticButton } from "@/components/animations/MagneticButton";
 
 export default function AboutSection() {
     return (
-        <section id="about" className="relative bg-transparent py-20">
-            {/* halo discret */}
-            <div aria-hidden className="pointer-events-none absolute inset-0 -z-10 flex justify-center">
-                <div   className="
-        h-40 sm:h-48 md:h-56 lg:h-64
-        w-full max-w-[60rem]
-        rounded-full bg-indigo-500/15
-        blur-2xl sm:blur-3xl
-      " />
-            </div>
+        <section id="about" className="relative section">
+            {/* Séparateur */}
+            <div className="divider mx-auto max-w-6xl" />
 
-            <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-6 lg:grid-cols-12 lg:gap-16">
-                {/* Portrait */}
-                <div className="lg:col-span-4">
-                    <div className="relative mx-auto w-[246.4px] h-[313.6px] lg:w-[352px] lg:h-[448px] aspect-square overflow-hidden rounded-2xl ring-1 ring-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.25)]">
-                        <Image
-                            src={Portrait}
-                            alt="Portrait de Stéphane Gamot"
-                            fill
-                            className="object-cover"
-                            loading="lazy"
-
-                        />
-                    </div>
-                </div>
-
-                {/* Texte */}
-                <div className="lg:col-span-8">
-                    <header className="mb-4">
-                        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
-                            À propos — Stéphane Gamot
-                        </h2>
-                    </header>
-
-                    <p className="text-white/80 text-pretty leading-relaxed">
-                        <span className="font-semibold">Architecte</span> Front-End — Design Systems & <span className="font-semibold">Ingénieur en développement</span> logiciel full-stack et
-                        consultant <span className="font-semibold">SEO</span> basé en Belgique.
-                        Je crée des sites <span className="font-semibold">rapides</span>,{" "}
-                        <span className="font-semibold">élégants</span> et{" "}
-                        <span className="font-semibold">optimisés pour la conversion</span>.
-                    </p>
-
-                    {/* puces crédibilité concises */}
-                    <ul className="mt-5 flex flex-wrap items-center gap-3 text-sm text-white/70">
-                        <li className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5">
-                            <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                            Performance & Accessibilité (WCAG 2.1)
-                        </li>
-                        <li className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5">
-                            <span className="inline-block h-1.5 w-1.5 rounded-full bg-indigo-400" />
-                            Next.js • Java/Spring • WordPress/SEO
-                        </li>
-                        <li className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5">
-                            <span className="inline-block h-1.5 w-1.5 rounded-full bg-amber-400" />
-                            E-commerce • Stripe • SEO technique
-                        </li>
-                    </ul>
-
-                    {/* CTA */}
-                    <div className="mt-8 flex flex-wrap items-center gap-4">
-                        <Link
-                            href="/me"
-                            className="inline-flex items-center gap-2 rounded-full bg-indigo-500 px-6 py-2.5 text-white shadow hover:bg-indigo-400 transition-colors"
+            <div className="mx-auto max-w-6xl px-8 lg:px-12" style={{ paddingTop: 'var(--section-gap)' }}>
+                <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-12 lg:gap-24">
+                    {/* Portrait — traité comme une oeuvre d'art en galerie */}
+                    <ScrollReveal className="lg:col-span-5" y={40}>
+                        <div
+                            className="relative mx-auto overflow-hidden"
+                            style={{
+                                width: '100%',
+                                maxWidth: '380px',
+                                aspectRatio: '3/4',
+                                borderRadius: '0.75rem',
+                                border: '1px solid var(--border)',
+                            }}
                         >
-                            Découvrir mon parcours
-                            <svg width="16" height="16" viewBox="0 0 24 24" className="-mb-px">
-                                <path d="M5 12h14m-7-7l7 7-7 7" fill="none" stroke="currentColor" strokeWidth="2" />
-                            </svg>
-                        </Link>
+                            <Image
+                                src={Portrait}
+                                alt="Portrait de Stéphane Gamot"
+                                fill
+                                className="object-cover"
+                                loading="lazy"
+                            />
+                        </div>
+                    </ScrollReveal>
 
-                        <Link
-                            href="/contact"
-                            className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-2.5 text-white/90 hover:bg-white/10"
-                        >
-                            Me contacter
-                        </Link>
-                    </div>
+                    {/* Texte */}
+                    <StaggerContainer className="lg:col-span-7" staggerDelay={0.12}>
+                        <StaggerItem>
+                            <p className="section-label mb-4">À propos</p>
+                        </StaggerItem>
+
+                        <StaggerItem>
+                            <h2 style={{ color: 'var(--fg-base)' }}>
+                                Stéphane Gamot
+                            </h2>
+                        </StaggerItem>
+
+                        <StaggerItem>
+                            <p className="mt-6" style={{ color: 'var(--fg-muted)', lineHeight: '1.8' }}>
+                                Architecte Front-End, ingénieur en développement full-stack et
+                                consultant SEO basé en Belgique.
+                                Je crée des sites rapides, élégants et
+                                optimisés pour la conversion.
+                            </p>
+                        </StaggerItem>
+
+                        {/* Puces crédibilité — style Quiet Luxury */}
+                        <StaggerItem>
+                            <div className="mt-8 flex flex-wrap items-center gap-3">
+                                {[
+                                    'Performance & Accessibilité',
+                                    'Next.js & WordPress',
+                                    'SEO technique',
+                                ].map((label) => (
+                                    <span
+                                        key={label}
+                                        className="pill"
+                                    >
+                                        {label}
+                                    </span>
+                                ))}
+                            </div>
+                        </StaggerItem>
+
+                        {/* CTA */}
+                        <StaggerItem>
+                            <div className="mt-10 flex flex-wrap items-center gap-6">
+                                <MagneticButton
+                                    as="a"
+                                    href="/me"
+                                    className="btn btn-outline"
+                                >
+                                    Découvrir mon parcours
+                                </MagneticButton>
+
+                                <Link
+                                    href="/contact"
+                                    className="text-[13px] font-medium uppercase tracking-[0.1em] transition-colors duration-300"
+                                    style={{ color: 'var(--fg-subtle)', borderBottom: '1px solid var(--border)' }}
+                                >
+                                    Me contacter
+                                </Link>
+                            </div>
+                        </StaggerItem>
+                    </StaggerContainer>
                 </div>
             </div>
         </section>

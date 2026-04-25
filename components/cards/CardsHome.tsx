@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect } from "react";
 import Image, { StaticImageData } from "next/image";
+import Link from "next/link";
+import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/animations/ScrollReveal";
 
 import SeoCard from "./../../public/Images/seo-card.webp";
 import WordPressCard from "./../../public/Images/wordpress-card.webp";
@@ -20,7 +21,7 @@ type Service = {
 
 const services: Service[] = [
     {
-        slug: "site-nextjs",
+        slug: "site-web-react-next",
         title: "Site Next.js / React",
         alt: "Création de site avec React & Next",
         description:
@@ -28,7 +29,7 @@ const services: Service[] = [
         image: WowCard,
     },
     {
-        slug: "site-wordpress",
+        slug: "site-internet-wordpress",
         title: "Site WordPress",
         alt: "Création d'un site internet avec le CMS WordPress",
         description:
@@ -36,17 +37,17 @@ const services: Service[] = [
         image: WordPressCard,
     },
     {
-        slug: "seo-audit-technique",
+        slug: "seo",
         title: "SEO & Audit technique",
-        alt: "Séduire Google est tres important",
+        alt: "Audit SEO et optimisation technique pour Google",
         description:
             "Structure, contenus et performances travaillés pour gagner des positions sur Google.",
         image: SeoCard,
     },
     {
-        slug: "ecommerce-stripe",
+        slug: "e-commerce",
         title: "E-commerce & Stripe",
-        alt: "c'est un magasin en ligne",
+        alt: "Boutique en ligne e-commerce",
         description:
             "Une boutique en ligne fluide, rassurante et optimisée pour la conversion.",
         image: EcommerceCard,
@@ -54,145 +55,122 @@ const services: Service[] = [
     {
         slug: "accessibilite",
         title: "Accessibilité numérique",
-        alt: "le WCAG 2.3 est necessaire et obligatoire",
+        alt: "Conformité WCAG et accessibilité web",
         description:
-            "Conformité WCAG/RGAA et confort d’usage pour tous vos visiteurs.",
+            "Conformité WCAG/RGAA et confort d'usage pour tous vos visiteurs.",
         image: AccessibilityWebCard,
     },
     {
-        slug: "conseil-strategie",
-        title: "Conseil & stratégie digitale",
-        alt: "Pour vous aider et avancer dans votre quete",
+        slug: "site-vitrine",
+        title: "Site vitrine",
+        alt: "Création de site vitrine professionnel",
         description:
-            "Un accompagnement clair pour aligner votre site, votre SEO et vos objectifs business.",
+            "Un site élégant et clair pour présenter votre activité et générer des contacts qualifiés.",
         image: AdviceCard,
     },
 ];
 
 export default function CardsHome() {
-    useEffect(() => {
-        const cards = Array.from(
-            document.querySelectorAll<HTMLElement>("[data-service-card]")
-        );
-        if (!cards.length) return;
-
-        // On stocke le dernier intersectionRatio pour chaque carte
-        const ratios = new Map<HTMLElement, number>();
-        cards.forEach((card) => ratios.set(card, 0));
-
-        let frameRequested = false;
-
-        const io = new IntersectionObserver(
-            (entries) => {
-                for (const entry of entries) {
-                    const el = entry.target as HTMLElement;
-                    ratios.set(el, entry.isIntersecting ? entry.intersectionRatio : 0);
-                }
-
-                if (frameRequested) return;
-                frameRequested = true;
-
-                requestAnimationFrame(() => {
-                    frameRequested = false;
-
-                    // On calcule le top 2 des cartes les plus visibles
-                    const sorted = [...cards]
-                        .map((card) => ({
-                            card,
-                            ratio: ratios.get(card) ?? 0,
-                        }))
-                        .filter((item) => item.ratio > 0.15) // on ignore les quasi hors-écran
-                        .sort((a, b) => b.ratio - a.ratio);
-
-                    const first = sorted[0]?.card ?? null;
-                    const second = sorted[1]?.card ?? null;
-
-                    // Reset des classes sur toutes les cartes
-                    cards.forEach((card) => {
-                        card.classList.remove("card-visible-a", "card-visible-b");
-                    });
-
-                    // On affecte au max 2 cartes
-                    if (first) {
-                        first.classList.add("card-visible-a");
-                    }
-                    if (second) {
-                        second.classList.add("card-visible-b");
-                    }
-                });
-            },
-            {
-                threshold: [0.15, 0.35, 0.6, 0.85],
-            }
-        );
-
-        cards.forEach((card) => io.observe(card));
-
-        return () => io.disconnect();
-    }, []);
-
     return (
         <section
             aria-labelledby="services-heading"
-            className="bg-transparent py-14 sm:py-18 lg:py-20"
+            className="section"
         >
-            <div className="container-page">
-                {/* En-tête section */}
-                <div className="max-w-2xl">
-                    <p className="text-xs font-semibold uppercase tracking-[0.25em] text-emerald-300/80">
-                        Services clés
+            {/* Séparateur fin */}
+            <div className="divider mx-auto max-w-6xl" />
+
+            <div className="mx-auto max-w-6xl px-8 lg:px-12" style={{ paddingTop: 'var(--section-gap)' }}>
+                {/* En-tête section — scroll reveal */}
+                <ScrollReveal className="mb-16 max-w-xl">
+                    <p className="section-label mb-4">
+                        Services
                     </p>
                     <h2
                         id="services-heading"
-                        className="mt-3 font-heading text-2xl font-semibold text-white sm:text-3xl"
+                        style={{ color: 'var(--fg-base)' }}
                     >
-                        Ce que je peux faire pour votre site.
+                        Ce que je peux faire pour vous.
                     </h2>
-                    <p className="mt-3 text-sm text-white/70">
-                        Je conçois et développe des sites qui allient design, performance et
-                        stratégie. Chaque service est pensé pour servir des résultats
-                        concrets, pas seulement une belle vitrine.
+                    <p className="mt-4" style={{ color: 'var(--fg-muted)' }}>
+                        Des sites qui allient design, performance et stratégie.
+                        Chaque service est pensé pour servir des résultats concrets.
                     </p>
-                </div>
+                </ScrollReveal>
 
-                {/* Grille de cartes */}
-                <div
-                    className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                    {services.map((service) => (
-                        <article
-                            key={service.slug}
-                            data-service-card
-                            className="group flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-sm shadow-black/40 transition hover:border-indigo-600/60 hover:bg-white/10 dark:bg-gray-800/40"
-                        >
-                            <div className="relative h-40 w-full overflow-hidden">
-                                <Image
-                                    src={service.image}
-                                    alt={service.alt}
-                                    fill
-                                    placeholder="blur"
-                                    loading="lazy"
-                                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                {/* Grille Bento — stagger sur les cartes */}
+                <StaggerContainer
+                    className="grid gap-4 md:grid-cols-2 lg:grid-cols-3"
+                    staggerDelay={0.08}
+                >
+                    {services.map((service, idx) => (
+                        <StaggerItem key={service.slug} as="article">
+                            <Link
+                                href={`/services/${service.slug}`}
+                                className={`group relative overflow-hidden block h-full outline-none ${
+                                    idx < 2 ? 'lg:row-span-1' : ''
+                                }`}
+                                style={{
+                                    background: 'var(--surface-1)',
+                                    border: '1px solid var(--border)',
+                                    borderRadius: '1rem',
+                                    display: 'block',
+                                    transition: 'transform 0.4s cubic-bezier(0.16,1,0.3,1), border-color 0.3s ease',
+                                }}
+                            >
+                                {/* Image — espace réservé pour éviter CLS */}
+                                <div className="relative h-44 w-full overflow-hidden" style={{ borderRadius: '1rem 1rem 0 0' }}>
+                                    <Image
+                                        src={service.image}
+                                        alt={service.alt}
+                                        fill
+                                        placeholder="blur"
+                                        loading="lazy"
+                                        className="object-cover"
+                                        style={{
+                                            transition: 'transform 0.7s cubic-bezier(0.16,1,0.3,1)',
+                                        }}
+                                        sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                                    />
+                                    {/* Overlay subtil */}
+                                    <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(8,9,12,0.45), transparent 35%)' }} />
+                                </div>
+
+                                <div className="px-6 py-5">
+                                    <h3
+                                        id={`service-${service.slug}-title`}
+                                        className="text-base font-medium"
+                                        style={{ color: 'var(--fg-base)', fontFamily: 'var(--font-heading)', fontSize: '1.15rem' }}
+                                    >
+                                        {service.title}
+                                    </h3>
+                                    <p
+                                        id={`service-${service.slug}-desc`}
+                                        className="mt-2 text-sm"
+                                        style={{ color: 'var(--fg-subtle)', lineHeight: '1.6' }}
+                                    >
+                                        {service.description}
+                                    </p>
+
+                                    <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium" style={{ color: 'var(--accent)' }}>
+                                        Découvrir
+                                        <span aria-hidden="true" className="inline-block" style={{ transition: 'transform 0.3s cubic-bezier(0.16,1,0.3,1)' }}>→</span>
+                                    </span>
+                                </div>
+
+                                {/* Hover — bordure qui s'éclaire doucement */}
+                                <div
+                                    className="absolute inset-0 pointer-events-none"
+                                    style={{
+                                        border: '1px solid var(--border-hover)',
+                                        borderRadius: '1rem',
+                                        opacity: 0,
+                                        transition: 'opacity 0.4s ease',
+                                    }}
                                 />
-                            </div>
-
-                            <div className="flex flex-1 flex-col gap-2 px-4 py-1 sm:px-5 sm:py-1">
-                                <h3
-                                    id={`service-${service.slug}-title`}
-                                    className="!my-1.5 font-heading text-base font-semibold text-white"
-                                >
-                                    {service.title}
-                                </h3>
-                                <p
-                                    id={`service-${service.slug}-desc`}
-                                    className="!mt-0 text-sm text-white/70"
-                                >
-                                    {service.description}
-                                </p>
-                            </div>
-                        </article>
+                            </Link>
+                        </StaggerItem>
                     ))}
-                </div>
+                </StaggerContainer>
             </div>
         </section>
     );

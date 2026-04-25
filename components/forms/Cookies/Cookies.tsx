@@ -1,31 +1,39 @@
 export default function Cookies() {
     return (
-        <div className="pointer-events-none fixed inset-x-0 bottom-0 px-6 pb-6">
-            <div className="pointer-events-auto ml-auto max-w-xl rounded-xl bg-white p-6 shadow-lg outline outline-1 outline-gray-900/10 dark:bg-gray-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
-                <p className="text-sm/6 text-gray-900 dark:text-white">
-                    This website uses cookies to supplement a balanced diet and provide a much deserved reward to the senses after
-                    consuming bland but nutritious meals. Accepting our cookies is optional but recommended, as they are
-                    delicious. See our{' '}
+        <div className="pointer-events-none fixed inset-x-0 bottom-0 px-6 pb-6 z-50">
+            <div
+                className="pointer-events-auto ml-auto max-w-xl p-6"
+                style={{
+                    background: "var(--surface-1)",
+                    border: "1px solid var(--border)",
+                    backdropFilter: "blur(12px)",
+                }}
+            >
+                <p className="text-sm leading-relaxed" style={{ color: "var(--fg-muted)" }}>
+                    Ce site utilise des cookies pour ameliorer votre experience de navigation.
+                    En continuant, vous acceptez leur utilisation.{" "}
                     <a
                         href="#"
-                        className="font-semibold text-indigo-600 hover:text-indigo-500 dark:text-indigo-400 dark:hover:text-indigo-300"
+                        className="font-medium transition-colors duration-300"
+                        style={{ color: "var(--accent)" }}
                     >
-                        cookie policy
+                        Politique de cookies
                     </a>
                     .
                 </p>
                 <div className="mt-4 flex items-center gap-x-5">
                     <button
                         type="button"
-                        className="rounded-md bg-gray-900 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900 dark:bg-gray-700 dark:ring-1 dark:ring-inset dark:ring-white/10 dark:hover:bg-white/15 dark:focus-visible:outline-white"
+                        className="btn btn-primary text-sm"
                     >
-                        Accept all
+                        Accepter
                     </button>
                     <button
                         type="button"
-                        className="text-sm/6 font-semibold text-gray-900 hover:text-gray-700 dark:text-white dark:hover:text-gray-300"
+                        className="text-sm font-medium transition-colors duration-300"
+                        style={{ color: "var(--fg-muted)" }}
                     >
-                        Reject all
+                        Refuser
                     </button>
                 </div>
             </div>
