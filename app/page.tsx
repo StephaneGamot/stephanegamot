@@ -7,6 +7,7 @@ import Carrousel from "@/components/carrousel/Carrousel";
 import WorkProcess from "@/components/workProcess/WorkProcess";
 import TestimonialsSection from "@/components/Testimonials/Testimonials";
 import AboutSection from "@/components/about/AboutSection";
+import Statement from "@/components/statement/Statement";
 
 export const metadata: Metadata = {
   title: "Création de sites web performants — Stéphane Gamot",
@@ -108,6 +109,12 @@ export default function Home() {
       <>
         <HeroHomePage />
         <AboutSection />
+        <Statement caption="Philosophie de travail">
+            Le détail que personne ne voit{" "}
+            <span style={{ color: "var(--accent)" }}>est celui</span>
+            <br />
+            qui change tout.
+        </Statement>
         <CardsHome />
         <Carrousel />
         <WorkProcess />

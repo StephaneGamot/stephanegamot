@@ -51,6 +51,13 @@ export const metadata: Metadata = {
     robots: {
         index: true,
         follow: true,
+        googleBot: {
+            index: true,
+            follow: true,
+            "max-video-preview": -1,
+            "max-image-preview": "large",
+            "max-snippet": -1,
+        },
     },
 };
 
@@ -66,11 +73,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="fr">
 
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
-        <meta name="robots" content="index, follow" />
-        <meta name="googlebot" content="index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
-    </head><body className={`${garamond.variable} ${montserrat.variable}`} style={{ fontFamily: 'var(--font-body)' }}>
+    </head>
+    <body className={`${garamond.variable} ${montserrat.variable}`} style={{ fontFamily: 'var(--font-body)' }}>
         <a href="#main" className="skip-to-content">Aller au contenu principal</a>
         <Script
           src="https://analytics.ahrefs.com/analytics.js"

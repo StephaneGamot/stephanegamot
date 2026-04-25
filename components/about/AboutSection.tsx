@@ -1,10 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import Portrait from "@/public/Images/me/me.webp";
 import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/animations/ScrollReveal";
 import { MagneticButton } from "@/components/animations/MagneticButton";
+import { ParallaxImage } from "@/components/animations/ParallaxImage";
 
 export default function AboutSection() {
     return (
@@ -14,10 +14,13 @@ export default function AboutSection() {
 
             <div className="mx-auto max-w-6xl px-8 lg:px-12" style={{ paddingTop: 'var(--section-gap)' }}>
                 <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-12 lg:gap-24">
-                    {/* Portrait — traité comme une oeuvre d'art en galerie */}
+                    {/* Portrait — traité comme une oeuvre d'art en galerie, avec parallaxe */}
                     <ScrollReveal className="lg:col-span-5" y={40}>
-                        <div
-                            className="relative mx-auto overflow-hidden"
+                        <ParallaxImage
+                            src={Portrait}
+                            alt="Portrait de Stéphane Gamot"
+                            offset={30}
+                            className="mx-auto"
                             style={{
                                 width: '100%',
                                 maxWidth: '380px',
@@ -25,15 +28,8 @@ export default function AboutSection() {
                                 borderRadius: '0.75rem',
                                 border: '1px solid var(--border)',
                             }}
-                        >
-                            <Image
-                                src={Portrait}
-                                alt="Portrait de Stéphane Gamot"
-                                fill
-                                className="object-cover"
-                                loading="lazy"
-                            />
-                        </div>
+                            sizes="(min-width: 1024px) 380px, 80vw"
+                        />
                     </ScrollReveal>
 
                     {/* Texte */}

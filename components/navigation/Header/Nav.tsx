@@ -28,14 +28,14 @@ const services = [
     {
         name: 'Site web en React-Next',
         description:
-            'Application web ultra rapide en Next.js, optimisee Core Web Vitals et prete pour le SEO.',
+            'Application web ultra rapide en Next.js, optimisée Core Web Vitals et prête pour le SEO.',
         href: '/services/site-web-react-next',
         icon: CodeBracketIcon,
     },
     {
         name: 'Site internet WordPress',
         description:
-            'Site WordPress sur-mesure, facile a gerer et pense pour la performance.',
+            'Site WordPress sur-mesure, facile à gérer et pensé pour la performance.',
         href: '/services/site-internet-wordpress',
         icon: WindowIcon,
     },
@@ -49,21 +49,21 @@ const services = [
     {
         name: 'E-commerce',
         description:
-            'Boutique en ligne fluide, checkout optimise et integration des moyens de paiement.',
+            'Boutique en ligne fluide, checkout optimisé et intégration des moyens de paiement.',
         href: '/services/e-commerce',
         icon: ShoppingBagIcon,
     },
     {
         name: 'Site vitrine',
         description:
-            'Site vitrine elegant pour presenter votre activite et generer des contacts qualifies.',
+            'Site vitrine élégant pour présenter votre activité et générer des contacts qualifiés.',
         href: '/services/site-vitrine',
         icon: SparklesIcon,
     },
     {
-        name: 'Accessibilite',
+        name: 'Accessibilité',
         description:
-            'Mise en conformite accessibilite (RGAA/WCAG) pour un site inclusif et confortable a utiliser.',
+            'Mise en conformité accessibilité (RGAA/WCAG) pour un site inclusif et confortable à utiliser.',
         href: '/services/accessibilite',
         icon: EyeIcon,
     },
@@ -73,14 +73,14 @@ const navLinks = [
     { href: '/portfolio', label: 'Portfolio' },
     { href: '/blog', label: 'Blog' },
     { href: '/faq', label: 'FAQ' },
-    { href: '/me', label: 'A Propos' },
+    { href: '/me', label: 'À propos' },
 ]
 
 const mobileLinks = [
     { href: '/portfolio', label: 'Portfolio' },
     { href: '/blog', label: 'Blog' },
     { href: '/faq', label: 'FAQ' },
-    { href: '/me', label: 'A Propos' },
+    { href: '/me', label: 'À propos' },
     { href: '/contact', label: 'Contact' },
 ]
 
@@ -98,7 +98,7 @@ export default function Example() {
                 <div className="flex lg:flex-1">
                     <Link
                         href="/"
-                        aria-label="Aller a l accueil"
+                        aria-label="Aller à l'accueil"
                         className="inline-flex items-center"
                     >
                         <HeaderLogo />
@@ -214,7 +214,7 @@ export default function Example() {
                         <div className="flex items-center justify-between">
                             <Link
                                 href="/"
-                                aria-label="Retour a l accueil"
+                                aria-label="Retour à l'accueil"
                                 className="inline-flex items-center"
                                 onClick={() => setMobileMenuOpen(false)}
                             >

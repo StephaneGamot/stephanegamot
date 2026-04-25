@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     title: "Site WordPress pro & rapide – Stéphane Gamot",
     description:
       "Un site WordPress simple à gérer, solide techniquement, avec un design pro et un SEO propre.",
-    url: "/services/site-internet-wordpress",
+    url: "https://www.stephanegamot.com/services/site-internet-wordpress",
     siteName: "Stéphane Gamot",
     type: "website",
     locale: "fr_BE",

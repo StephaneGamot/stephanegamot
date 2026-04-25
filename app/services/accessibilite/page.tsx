@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     title: "Accessibilité web & conformité – Stéphane Gamot",
     description:
       "Audit + corrections : contrastes, formulaires, ARIA, navigation clavier, structure. Un site plus inclusif et plus robuste.",
-    url: "/services/accessibilite",
+    url: "https://www.stephanegamot.com/services/accessibilite",
     siteName: "Stéphane Gamot",
     type: "website",
     locale: "fr_BE",

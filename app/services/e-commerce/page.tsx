@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     title: "Création de site e-commerce – Stéphane Gamot",
     description:
       "E-commerce moderne : UX fluide, paiement Stripe, mobile-first, SEO et performance pour vendre plus facilement.",
-    url: "/services/e-commerce",
+    url: "https://www.stephanegamot.com/services/e-commerce",
     siteName: "Stéphane Gamot",
     type: "website",
     locale: "fr_BE",

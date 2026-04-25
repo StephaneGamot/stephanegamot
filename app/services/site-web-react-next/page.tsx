@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     title: "Site React & Next.js sur mesure – Stéphane Gamot",
     description:
       "Un site moderne, rapide et évolutif : design soigné, SEO solide, performance et expérience mobile impeccable.",
-    url: "/services/site-web-react-next",
+    url: "https://www.stephanegamot.com/services/site-web-react-next",
     siteName: "Stéphane Gamot",
     type: "website",
     locale: "fr_BE",

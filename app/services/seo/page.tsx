@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     title: "Audit SEO & optimisation – Stéphane Gamot",
     description:
       "Comprendre ce qui bloque votre référencement et corriger : technique, structure, contenu et performances.",
-    url: "/services/seo",
+    url: "https://www.stephanegamot.com/services/seo",
     siteName: "Stéphane Gamot",
     type: "website",
     locale: "fr_BE",

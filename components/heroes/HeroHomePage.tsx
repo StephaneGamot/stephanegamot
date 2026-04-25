@@ -85,7 +85,7 @@ export default function HeroHomePage() {
                                         fill
                                         className="object-cover"
                                         sizes="(min-width: 1024px) 340px, 80vw"
-                                        loading="lazy"
+                                        priority
                                     />
                                 </div>
                             </div>

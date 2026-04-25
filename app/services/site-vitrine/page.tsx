@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     title: "Site vitrine premium – Stéphane Gamot",
     description:
       "Un site vitrine moderne, rapide et rassurant : clair, bien structuré, optimisé SEO et pensé pour convertir.",
-    url: "/services/site-vitrine",
+    url: "https://www.stephanegamot.com/services/site-vitrine",
     siteName: "Stéphane Gamot",
     type: "website",
     locale: "fr_BE",

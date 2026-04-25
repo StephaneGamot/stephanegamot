@@ -209,6 +209,7 @@ export default async function BlogPostPage({
                             alt={post.title}
                             fill
                             className="object-cover"
+                            sizes="(min-width: 1024px) 768px, (min-width: 640px) 90vw, 100vw"
                         />
                     </div>
                 </div>

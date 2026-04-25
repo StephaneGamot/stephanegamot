@@ -105,6 +105,7 @@ export default function AboutPage() {
                 src={Me}
                 alt="Lumière douce dans un intérieur minimal, ambiance calme et harmonieuse."
                 className="h-full max-h-[380px] w-full object-cover"
+                sizes="(min-width: 1024px) 384px, (min-width: 640px) 50vw, 100vw"
               />
             </div>
             <div className="pointer-events-none absolute -bottom-6 right-5 w-44 p-3 text-[11px]" style={{ borderRadius: "1rem", background: "rgba(8,9,12,0.9)", border: "1px solid var(--border)", boxShadow: "var(--shadow-soft)" }}>

@@ -97,79 +97,108 @@ export default function CardsHome() {
                     </p>
                 </ScrollReveal>
 
-                {/* Grille Bento — stagger sur les cartes */}
+                {/* Grille Bento asymétrique — stagger sur les cartes */}
                 <StaggerContainer
-                    className="grid gap-4 md:grid-cols-2 lg:grid-cols-3"
+                    className="grid gap-4 md:grid-cols-2 lg:grid-cols-12 lg:auto-rows-[minmax(0,1fr)]"
                     staggerDelay={0.08}
                 >
-                    {services.map((service, idx) => (
-                        <StaggerItem key={service.slug} as="article">
-                            <Link
-                                href={`/services/${service.slug}`}
-                                className={`group relative overflow-hidden block h-full outline-none ${
-                                    idx < 2 ? 'lg:row-span-1' : ''
-                                }`}
-                                style={{
-                                    background: 'var(--surface-1)',
-                                    border: '1px solid var(--border)',
-                                    borderRadius: '1rem',
-                                    display: 'block',
-                                    transition: 'transform 0.4s cubic-bezier(0.16,1,0.3,1), border-color 0.3s ease',
-                                }}
-                            >
-                                {/* Image — espace réservé pour éviter CLS */}
-                                <div className="relative h-44 w-full overflow-hidden" style={{ borderRadius: '1rem 1rem 0 0' }}>
-                                    <Image
-                                        src={service.image}
-                                        alt={service.alt}
-                                        fill
-                                        placeholder="blur"
-                                        loading="lazy"
-                                        className="object-cover"
-                                        style={{
-                                            transition: 'transform 0.7s cubic-bezier(0.16,1,0.3,1)',
-                                        }}
-                                        sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                                    />
-                                    {/* Overlay subtil */}
-                                    <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(8,9,12,0.45), transparent 35%)' }} />
-                                </div>
+                    {services.map((service, idx) => {
+                        /* Layout Bento : carte 0 & 1 = vedettes (7col + 5col),
+                           cartes 2-3-4-5 = grille 3+3+3+3 col */
+                        const spanClass =
+                            idx === 0
+                                ? "lg:col-span-7 lg:row-span-2"
+                                : idx === 1
+                                    ? "lg:col-span-5 lg:row-span-2"
+                                    : "lg:col-span-3";
 
-                                <div className="px-6 py-5">
-                                    <h3
-                                        id={`service-${service.slug}-title`}
-                                        className="text-base font-medium"
-                                        style={{ color: 'var(--fg-base)', fontFamily: 'var(--font-heading)', fontSize: '1.15rem' }}
-                                    >
-                                        {service.title}
-                                    </h3>
-                                    <p
-                                        id={`service-${service.slug}-desc`}
-                                        className="mt-2 text-sm"
-                                        style={{ color: 'var(--fg-subtle)', lineHeight: '1.6' }}
-                                    >
-                                        {service.description}
-                                    </p>
+                        const isFeature = idx < 2;
+                        const imageHeight = isFeature ? "h-56 lg:h-72" : "h-44";
 
-                                    <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium" style={{ color: 'var(--accent)' }}>
-                                        Découvrir
-                                        <span aria-hidden="true" className="inline-block" style={{ transition: 'transform 0.3s cubic-bezier(0.16,1,0.3,1)' }}>→</span>
-                                    </span>
-                                </div>
-
-                                {/* Hover — bordure qui s'éclaire doucement */}
-                                <div
-                                    className="absolute inset-0 pointer-events-none"
+                        return (
+                            <StaggerItem key={service.slug} as="article" className={spanClass}>
+                                <Link
+                                    href={`/services/${service.slug}`}
+                                    className="group relative overflow-hidden block h-full outline-none"
                                     style={{
-                                        border: '1px solid var(--border-hover)',
-                                        borderRadius: '1rem',
-                                        opacity: 0,
-                                        transition: 'opacity 0.4s ease',
+                                        background: 'var(--surface-1)',
+                                        border: '1px solid var(--border)',
+                                        borderRadius: '1.25rem',
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        transition: 'border-color 0.4s ease',
                                     }}
-                                />
-                            </Link>
-                        </StaggerItem>
-                    ))}
+                                    onMouseEnter={(e) => {
+                                        (e.currentTarget as HTMLElement).style.borderColor = 'var(--border-hover)';
+                                    }}
+                                    onMouseLeave={(e) => {
+                                        (e.currentTarget as HTMLElement).style.borderColor = 'var(--border)';
+                                    }}
+                                >
+                                    {/* Image — espace réservé pour éviter CLS */}
+                                    <div
+                                        className={`relative ${imageHeight} w-full overflow-hidden`}
+                                        style={{ borderRadius: '1.25rem 1.25rem 0 0' }}
+                                    >
+                                        <Image
+                                            src={service.image}
+                                            alt={service.alt}
+                                            fill
+                                            placeholder="blur"
+                                            loading="lazy"
+                                            className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]"
+                                            sizes={
+                                                isFeature
+                                                    ? "(min-width: 1024px) 58vw, (min-width: 768px) 50vw, 100vw"
+                                                    : "(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
+                                            }
+                                        />
+                                        {/* Overlay subtil */}
+                                        <div
+                                            className="absolute inset-0"
+                                            style={{
+                                                background: 'linear-gradient(to top, rgba(8,9,12,0.5), transparent 40%)',
+                                            }}
+                                        />
+                                    </div>
+
+                                    <div className={`px-6 ${isFeature ? 'py-7' : 'py-5'} flex flex-col flex-1`}>
+                                        <h3
+                                            id={`service-${service.slug}-title`}
+                                            style={{
+                                                color: 'var(--fg-base)',
+                                                fontFamily: 'var(--font-heading)',
+                                                fontSize: isFeature ? '1.35rem' : '1.15rem',
+                                                fontWeight: 500,
+                                            }}
+                                        >
+                                            {service.title}
+                                        </h3>
+                                        <p
+                                            id={`service-${service.slug}-desc`}
+                                            className="mt-2 text-sm"
+                                            style={{ color: 'var(--fg-subtle)', lineHeight: '1.65' }}
+                                        >
+                                            {service.description}
+                                        </p>
+
+                                        <span
+                                            className="mt-auto pt-4 inline-flex items-center gap-1.5 text-sm font-medium"
+                                            style={{ color: 'var(--accent)' }}
+                                        >
+                                            Découvrir
+                                            <span
+                                                aria-hidden="true"
+                                                className="inline-block transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1"
+                                            >
+                                                →
+                                            </span>
+                                        </span>
+                                    </div>
+                                </Link>
+                            </StaggerItem>
+                        );
+                    })}
                 </StaggerContainer>
             </div>
         </section>
