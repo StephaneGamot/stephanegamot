@@ -3,30 +3,39 @@ import Link from "next/link";
 import { ServicesSection } from "@/components/services/ServicesSection";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 
+/* ─────────────────────────────────────────────
+   METADATA — Mot-clé principal : "création site Next.js"
+   Secondaires : développeur React Belgique, site web performant,
+   Server Components, Core Web Vitals, site sur mesure
+   ───────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Création de site React & Next.js — Stéphane Gamot",
+  title: "Création de site Next.js & React — Stéphane Gamot",
   description:
-    "Sites React & Next.js : design premium, performance, SEO technique et parcours mobile fluide. Vitrine, e-commerce ou app web. Contactez-moi.",
+    "Développeur Next.js freelance en Belgique. Sites vitrines, e-commerce et apps web ultra-rapides, SEO-ready et pensés pour convertir. Devis gratuit.",
   metadataBase: new URL("https://www.stephanegamot.com"),
   alternates: {
     canonical: "https://www.stephanegamot.com/services/site-web-react-next",
   },
   keywords: [
-    "site Next.js",
-    "développeur Next.js Belgique",
-    "site React sur mesure",
+    "création site Next.js",
+    "développeur React Belgique",
     "site web performant",
+    "React Server Components",
     "Core Web Vitals",
-    "SEO technique",
     "site vitrine premium",
-    "application web",
+    "application web sur mesure",
+    "développeur freelance Next.js",
+    "site SEO-friendly",
+    "Tailwind CSS",
   ],
   robots: { index: true, follow: true },
-  authors: [{ name: "Stéphane Gamot", url: "https://www.stephanegamot.com/me" }],
+  authors: [
+    { name: "Stéphane Gamot", url: "https://www.stephanegamot.com/me" },
+  ],
   openGraph: {
-    title: "Site React & Next.js sur mesure – Stéphane Gamot",
+    title: "Création de site Next.js & React – Stéphane Gamot",
     description:
-      "Un site moderne, rapide et évolutif : design soigné, SEO solide, performance et expérience mobile impeccable.",
+      "Sites web modernes, rapides et évolutifs. React, Next.js, TypeScript et Tailwind CSS pour des performances Lighthouse 100/100.",
     url: "https://www.stephanegamot.com/services/site-web-react-next",
     siteName: "Stéphane Gamot",
     type: "website",
@@ -36,15 +45,15 @@ export const metadata: Metadata = {
         url: "/Images/og/office-workstation.webp",
         width: 1200,
         height: 630,
-        alt: "Création de site web sur mesure par Stéphane Gamot",
+        alt: "Création de site web Next.js performant par Stéphane Gamot",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Site React & Next.js sur mesure – Stéphane Gamot",
+    title: "Création de site Next.js & React – Stéphane Gamot",
     description:
-      "Design premium, SEO technique, performance et UX mobile pour vitrine, e-commerce ou app web.",
+      "Sites vitrines, e-commerce et apps web Next.js. Design premium, SEO technique, Lighthouse 100/100.",
     images: ["/Images/og/office-workstation.webp"],
   },
 };
@@ -52,149 +61,529 @@ export const metadata: Metadata = {
 export default function ReactNextServicePage() {
   return (
     <>
-      <Breadcrumb items={[{ label: "Services", href: "/#services" }, { label: "React & Next.js" }]} />
-      {/* HERO */}
+      <Breadcrumb
+        items={[
+          { label: "Services", href: "/#services" },
+          { label: "Site Next.js & React" },
+        ]}
+      />
+
+      {/* ════════════════════════════════════════
+          HERO — Méthode APP
+          Mot-clé "site Next.js" dans les 50 premiers mots
+          ════════════════════════════════════════ */}
       <section className="relative overflow-hidden">
-        {/* Glow de fond */}
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute -left-32 -top-40 h-72 w-72 rounded-full opacity-[0.04]" style={{ background: "var(--accent)", filter: "blur(60px)" }} />
+          <div
+            className="absolute -left-32 -top-40 h-72 w-72 rounded-full opacity-[0.04]"
+            style={{ background: "var(--accent)", filter: "blur(60px)" }}
+          />
         </div>
 
         <div className="relative mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
-          <p className="section-label">
-            Services
-          </p>
+          <p className="section-label">Développement web</p>
+
           <h1 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
-            Sites web{" "}
-            <span style={{ color: "var(--accent)" }}>
-              React & Next.js
-            </span>{" "}
-            modernes & performants.
+            Création de site{" "}
+            <span style={{ color: "var(--accent)" }}>Next.js & React</span>
+            {" "}sur mesure.
           </h1>
-          <p className="mt-4 max-w-xl text-sm sm:text-base" style={{ color: "var(--fg-muted)" }}>
-            Je crée des sites sur mesure avec React, Next.js et Tailwind CSS
-            pour offrir une expérience fluide, rapide et élégante, pensée dès
-            le départ pour le SEO et le mobile.
+
+          <p
+            className="mt-6 max-w-2xl text-sm sm:text-base"
+            style={{ color: "var(--fg-muted)", lineHeight: "1.8" }}
+          >
+            Votre site charge lentement, Google le pénalise, et vos visiteurs partent
+            avant même d&apos;avoir lu votre proposition de valeur. Le framework{" "}
+            <strong style={{ color: "var(--fg-base)" }}>Next.js</strong> résout
+            ces problèmes à la racine : rendu côté serveur (SSR), génération statique
+            (SSG), optimisation automatique des images et un score{" "}
+            <Link href="/services/seo" style={{ color: "var(--accent)" }}>
+              Core Web Vitals
+            </Link>{" "}
+            excellent dès le premier déploiement.
           </p>
-          <p className="mt-2 max-w-xl text-sm sm:text-base" style={{ color: "var(--fg-subtle)" }}>
-            Idéal pour un{" "}
-            <span className="font-semibold" style={{ color: "var(--fg-base)" }}>
-              site vitrine premium, un e-commerce
-            </span>{" "}
-            ou une app web qui doit pouvoir évoluer.
+          <p
+            className="mt-3 max-w-2xl text-sm sm:text-base"
+            style={{ color: "var(--fg-muted)", lineHeight: "1.8" }}
+          >
+            Je développe des sites React & Next.js avec TypeScript et Tailwind CSS
+            pour des entreprises qui exigent la{" "}
+            <strong style={{ color: "var(--fg-base)" }}>performance, le design et le référencement</strong>{" "}
+            au même niveau d&apos;excellence. Site vitrine premium, boutique en ligne
+            ou application web complète — chaque projet est architecturé pour durer
+            et évoluer.
           </p>
 
-          <div className="mt-6 flex flex-wrap items-center gap-3">
-            <Link
-              href="/contact"
-              className="btn btn-primary"
-            >
-              Parler de mon projet React / Next
+          <div className="mt-8 flex flex-wrap items-center gap-4">
+            <Link href="/contact" className="btn btn-primary">
+              Parler de mon projet Next.js
             </Link>
-            <span className="text-xs sm:text-sm" style={{ color: "var(--fg-subtle)" }}>
-              Un échange simple, concret, sans jargon.
-            </span>
+            <Link
+              href="/portfolio"
+              className="text-sm transition-colors duration-300"
+              style={{
+                color: "var(--fg-subtle)",
+                borderBottom: "1px solid var(--border)",
+              }}
+            >
+              Voir mes réalisations →
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* 3 BLOCS VISUELS */}
+      {/* ════════════════════════════════════════
+          H2 — Pourquoi Next.js est le meilleur choix
+          ════════════════════════════════════════ */}
       <section>
         <div className="divider" />
-        <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-14 lg:px-8">
-          <div className="grid gap-5 md:grid-cols-3">
-            <article className="rounded-2xl p-5" style={{ border: "1px solid var(--border)", background: "var(--surface-1)" }}>
-              <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-full text-lg" style={{ background: "var(--accent-muted)" }}>
-                ⚡
-              </div>
-              <h2 className="text-sm sm:text-base font-semibold">
-                Ultra rapide & optimisé
-              </h2>
-              <p className="mt-2 text-sm" style={{ color: "var(--fg-muted)" }}>
-                Rendu côté serveur, images optimisées, code moderne : un site
-                qui charge vite et qui plaît autant à vos visiteurs qu&apos;à
-                Google.
+        <div className="mx-auto max-w-5xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8">
+          <h2 className="text-xl sm:text-2xl font-semibold tracking-tight">
+            Pourquoi Next.js surpasse les solutions traditionnelles
+          </h2>
+          <p
+            className="mt-3 max-w-2xl text-sm sm:text-base"
+            style={{ color: "var(--fg-muted)", lineHeight: "1.8" }}
+          >
+            Next.js, créé par Vercel et utilisé par Netflix, TikTok, Notion et
+            Hulu, est le framework React de référence pour le web moderne.
+            Contrairement à un{" "}
+            <Link href="/services/site-internet-wordpress" style={{ color: "var(--accent)" }}>
+              site WordPress classique
+            </Link>{" "}
+            qui dépend de plugins et d&apos;un serveur PHP, Next.js génère
+            des pages HTML pré-rendues, prêtes à être servies en millisecondes
+            par un CDN mondial.
+          </p>
+
+          <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <article
+              className="rounded-2xl p-6"
+              style={{ border: "1px solid var(--border)", background: "var(--surface-1)" }}
+            >
+              <h3 className="text-sm sm:text-base font-semibold">
+                React Server Components (RSC)
+              </h3>
+              <p
+                className="mt-3 text-sm"
+                style={{ color: "var(--fg-muted)", lineHeight: "1.7" }}
+              >
+                Depuis Next.js 13+, les React Server Components permettent de
+                rendre le HTML directement sur le serveur, sans envoyer de
+                JavaScript inutile au navigateur. Résultat : un bundle client
+                minimal, un Time to Interactive (TTI) fulgurant et un meilleur
+                score INP pour Google.
               </p>
             </article>
 
-            <article className="rounded-2xl p-5" style={{ border: "1px solid var(--border)", background: "var(--surface-1)" }}>
-              <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-full text-lg" style={{ background: "var(--accent-muted)" }}>
-                🎯
-              </div>
-              <h2 className="text-sm sm:text-base font-semibold">
-                Pensé pour convertir
-              </h2>
-              <p className="mt-2 text-sm" style={{ color: "var(--fg-muted)" }}>
-                Structure claire, CTA visibles, pages clés bien travaillées :
-                l&apos;objectif est d&apos;amener vos visiteurs à vous
-                contacter ou acheter.
+            <article
+              className="rounded-2xl p-6"
+              style={{ border: "1px solid var(--border)", background: "var(--surface-1)" }}
+            >
+              <h3 className="text-sm sm:text-base font-semibold">
+                SEO natif et métadonnées dynamiques
+              </h3>
+              <p
+                className="mt-3 text-sm"
+                style={{ color: "var(--fg-muted)", lineHeight: "1.7" }}
+              >
+                L&apos;App Router de Next.js expose une API <code>metadata</code> native
+                pour générer les balises <code>title</code>,{" "}
+                <code>meta description</code>, Open Graph, JSON-LD et les
+                canoniques automatiquement. Chaque page est autonome en
+                matière de{" "}
+                <Link href="/services/seo" style={{ color: "var(--accent)" }}>
+                  référencement naturel
+                </Link>
+                , sans plugin tiers.
               </p>
             </article>
 
-            <article className="rounded-2xl p-5" style={{ border: "1px solid var(--border)", background: "var(--surface-1)" }}>
-              <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-full text-lg" style={{ background: "var(--accent-muted)" }}>
-                🧩
-              </div>
-              <h2 className="text-sm sm:text-base font-semibold">
-                Base évolutive
-              </h2>
-              <p className="mt-2 text-sm" style={{ color: "var(--fg-muted)" }}>
-                Composants réutilisables, architecture propre : on peut ajouter
-                ensuite un espace client, un blog, un e-commerce ou des
-                fonctionnalités plus avancées.
+            <article
+              className="rounded-2xl p-6"
+              style={{ border: "1px solid var(--border)", background: "var(--surface-1)" }}
+            >
+              <h3 className="text-sm sm:text-base font-semibold">
+                Images optimisées et LCP instantané
+              </h3>
+              <p
+                className="mt-3 text-sm"
+                style={{ color: "var(--fg-muted)", lineHeight: "1.7" }}
+              >
+                Le composant <code>next/image</code> convertit automatiquement
+                vos images en WebP ou AVIF, génère des variantes responsives
+                avec <code>srcset</code> et lazy-load tout ce qui est sous
+                la ligne de flottaison. Le LCP (Largest Contentful Paint)
+                passe sous les 2,5 secondes sans effort supplémentaire.
+              </p>
+            </article>
+
+            <article
+              className="rounded-2xl p-6"
+              style={{ border: "1px solid var(--border)", background: "var(--surface-1)" }}
+            >
+              <h3 className="text-sm sm:text-base font-semibold">
+                Tailwind CSS et design system scalable
+              </h3>
+              <p
+                className="mt-3 text-sm"
+                style={{ color: "var(--fg-muted)", lineHeight: "1.7" }}
+              >
+                J&apos;utilise Tailwind CSS v4 pour créer des interfaces
+                cohérentes, maintenables et responsive-first. Les variables
+                CSS personnalisées permettent de changer l&apos;identité
+                visuelle d&apos;un site en quelques lignes, sans toucher
+                aux composants.
+              </p>
+            </article>
+
+            <article
+              className="rounded-2xl p-6"
+              style={{ border: "1px solid var(--border)", background: "var(--surface-1)" }}
+            >
+              <h3 className="text-sm sm:text-base font-semibold">
+                TypeScript et fiabilité du code
+              </h3>
+              <p
+                className="mt-3 text-sm"
+                style={{ color: "var(--fg-muted)", lineHeight: "1.7" }}
+              >
+                Chaque composant est typé avec TypeScript. Les erreurs sont
+                détectées à la compilation, pas en production. Le code est
+                documenté, testable et prêt à être repris par n&apos;importe
+                quel développeur React sans courbe d&apos;apprentissage.
+              </p>
+            </article>
+
+            <article
+              className="rounded-2xl p-6"
+              style={{ border: "1px solid var(--border)", background: "var(--surface-1)" }}
+            >
+              <h3 className="text-sm sm:text-base font-semibold">
+                Déploiement Vercel et temps de disponibilité
+              </h3>
+              <p
+                className="mt-3 text-sm"
+                style={{ color: "var(--fg-muted)", lineHeight: "1.7" }}
+              >
+                Déploiement continu via Git, CDN Edge mondial, preview
+                automatique de chaque branche et analytics intégrés. Vercel
+                est la plateforme native de Next.js, garantissant un temps
+                de disponibilité de 99,99 % et un TTFB (Time to First Byte)
+                inférieur à 100ms partout dans le monde.
               </p>
             </article>
           </div>
         </div>
       </section>
 
-      {/* POUR QUI ? */}
+      {/* ════════════════════════════════════════
+          H2 — Processus de création
+          ════════════════════════════════════════ */}
       <section>
-        <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-14 lg:px-8">
-          <div className="mb-6">
-            <h2 className="text-lg sm:text-xl font-semibold tracking-tight">
-              Pour qui est ce service&nbsp;?
-            </h2>
-            <p className="mt-2 max-w-xl text-sm sm:text-base" style={{ color: "var(--fg-muted)" }}>
-              Vous avez besoin d&apos;un site moderne, sérieux, qui doit
-              rester rapide et pouvoir grandir avec votre activité.
-            </p>
-          </div>
+        <div className="divider" />
+        <div className="mx-auto max-w-5xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8">
+          <h2 className="text-xl sm:text-2xl font-semibold tracking-tight">
+            Mon processus de création en 4 étapes
+          </h2>
+          <p
+            className="mt-3 max-w-2xl text-sm sm:text-base"
+            style={{ color: "var(--fg-muted)", lineHeight: "1.8" }}
+          >
+            De la première discussion au déploiement en production, chaque étape
+            est pensée pour que vous gardiez la visibilité sur l&apos;avancement
+            et que le résultat corresponde exactement à vos attentes.
+          </p>
 
-          <div className="grid gap-4 sm:grid-cols-2">
-            <div className="rounded-xl p-4" style={{ border: "1px solid var(--border)", background: "var(--surface-1)" }}>
+          <div className="mt-10 space-y-8">
+            <div className="flex gap-5">
+              <div
+                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-sm font-bold"
+                style={{ background: "var(--accent-muted)", color: "var(--accent)" }}
+              >
+                1
+              </div>
+              <div>
+                <h3 className="text-sm sm:text-base font-semibold">
+                  Cadrage et architecture de l&apos;information
+                </h3>
+                <p
+                  className="mt-2 text-sm"
+                  style={{ color: "var(--fg-muted)", lineHeight: "1.7" }}
+                >
+                  On définit ensemble l&apos;arborescence, les parcours utilisateurs,
+                  les mots-clés cibles et l&apos;architecture technique. C&apos;est à
+                  cette étape que se joue 80 % de la performance SEO future du site.
+                  Je conçois le{" "}
+                  <Link href="/services/seo" style={{ color: "var(--accent)" }}>
+                    maillage interne
+                  </Link>{" "}
+                  et la hiérarchie des contenus avant d&apos;écrire une seule ligne de code.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex gap-5">
+              <div
+                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-sm font-bold"
+                style={{ background: "var(--accent-muted)", color: "var(--accent)" }}
+              >
+                2
+              </div>
+              <div>
+                <h3 className="text-sm sm:text-base font-semibold">
+                  Design UI/UX et prototypage
+                </h3>
+                <p
+                  className="mt-2 text-sm"
+                  style={{ color: "var(--fg-muted)", lineHeight: "1.7" }}
+                >
+                  Maquettes haute-fidélité sur Figma, mobile-first. Chaque écran
+                  respecte les principes d&apos;
+                  <Link href="/services/accessibilite" style={{ color: "var(--accent)" }}>
+                    accessibilité WCAG
+                  </Link>
+                  {" "}(contraste, zones tactiles 44px, hiérarchie visuelle) et intègre
+                  les micro-interactions qui feront la différence en termes de
+                  rétention utilisateur.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex gap-5">
+              <div
+                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-sm font-bold"
+                style={{ background: "var(--accent-muted)", color: "var(--accent)" }}
+              >
+                3
+              </div>
+              <div>
+                <h3 className="text-sm sm:text-base font-semibold">
+                  Développement Next.js et intégration
+                </h3>
+                <p
+                  className="mt-2 text-sm"
+                  style={{ color: "var(--fg-muted)", lineHeight: "1.7" }}
+                >
+                  Composants React typés, Server Components par défaut,{" "}
+                  <code>&quot;use client&quot;</code> uniquement quand l&apos;interactivité
+                  l&apos;exige. Animations Framer Motion hardware-accelerated (transform
+                  et opacity uniquement), données structurées JSON-LD et metadata
+                  API pour un score Lighthouse visé de 100/100 sur les 4 catégories.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex gap-5">
+              <div
+                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-sm font-bold"
+                style={{ background: "var(--accent-muted)", color: "var(--accent)" }}
+              >
+                4
+              </div>
+              <div>
+                <h3 className="text-sm sm:text-base font-semibold">
+                  Tests, déploiement et formation
+                </h3>
+                <p
+                  className="mt-2 text-sm"
+                  style={{ color: "var(--fg-muted)", lineHeight: "1.7" }}
+                >
+                  Tests unitaires et d&apos;intégration, audit Lighthouse complet,
+                  vérification cross-browser et mobile. Déploiement sur Vercel
+                  avec domaine personnalisé, certificat SSL et redirections.
+                  Je vous forme à la gestion du contenu si nécessaire, ou je
+                  peux assurer la{" "}
+                  <Link href="/contact" style={{ color: "var(--accent)" }}>
+                    maintenance mensuelle
+                  </Link>.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════
+          H2 — Pour qui
+          ════════════════════════════════════════ */}
+      <section>
+        <div className="divider" />
+        <div className="mx-auto max-w-5xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8">
+          <h2 className="text-xl sm:text-2xl font-semibold tracking-tight">
+            Pour quels projets choisir Next.js plutôt que WordPress
+          </h2>
+          <p
+            className="mt-3 max-w-2xl text-sm sm:text-base"
+            style={{ color: "var(--fg-muted)", lineHeight: "1.8" }}
+          >
+            Next.js n&apos;est pas la réponse à tout. Si vous avez besoin de
+            publier du contenu vous-même sans toucher au code, un{" "}
+            <Link href="/services/site-internet-wordpress" style={{ color: "var(--accent)" }}>
+              site WordPress bien optimisé
+            </Link>{" "}
+            peut être plus adapté. En revanche, Next.js s&apos;impose quand la
+            performance, la personnalisation et l&apos;évolutivité sont prioritaires.
+          </p>
+
+          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <div
+              className="rounded-xl p-5"
+              style={{ border: "1px solid var(--border)", background: "var(--surface-1)" }}
+            >
               <p className="text-sm sm:text-base font-semibold">
-                Entrepreneurs, studios, thérapeutes, restaurants…
+                Site vitrine premium et corporate
               </p>
-              <p className="mt-2 text-sm" style={{ color: "var(--fg-muted)" }}>
-                Vous souhaitez une présence en ligne premium, qui donne
-                confiance et reflète réellement la qualité de votre travail.
+              <p
+                className="mt-2 text-sm"
+                style={{ color: "var(--fg-muted)", lineHeight: "1.65" }}
+              >
+                Cabinets d&apos;avocats, agences, studios, restaurants haut de gamme :
+                un{" "}
+                <Link href="/services/site-vitrine" style={{ color: "var(--accent)" }}>
+                  site vitrine
+                </Link>{" "}
+                en Next.js charge en moins d&apos;une seconde et offre une expérience
+                utilisateur que vos concurrents sous WordPress ne peuvent pas égaler.
               </p>
             </div>
-            <div className="rounded-xl p-4" style={{ border: "1px solid var(--border)", background: "var(--surface-1)" }}>
+
+            <div
+              className="rounded-xl p-5"
+              style={{ border: "1px solid var(--border)", background: "var(--surface-1)" }}
+            >
               <p className="text-sm sm:text-base font-semibold">
-                Projets plus ambitieux (apps, plateformes)
+                E-commerce et checkout Stripe
               </p>
-              <p className="mt-2 text-sm" style={{ color: "var(--fg-muted)" }}>
-                MVP, tableau de bord, espace membre : Next.js est une excellente
-                base pour construire une application web complète.
+              <p
+                className="mt-2 text-sm"
+                style={{ color: "var(--fg-muted)", lineHeight: "1.65" }}
+              >
+                Next.js + Stripe = un tunnel d&apos;achat sans friction, un
+                panier persistant côté serveur et des pages produit pré-rendues
+                pour le{" "}
+                <Link href="/services/e-commerce" style={{ color: "var(--accent)" }}>
+                  e-commerce performant
+                </Link>
+                . Pas de plugin lourd, pas de faille de sécurité WooCommerce.
+              </p>
+            </div>
+
+            <div
+              className="rounded-xl p-5"
+              style={{ border: "1px solid var(--border)", background: "var(--surface-1)" }}
+            >
+              <p className="text-sm sm:text-base font-semibold">
+                Application web et SaaS
+              </p>
+              <p
+                className="mt-2 text-sm"
+                style={{ color: "var(--fg-muted)", lineHeight: "1.65" }}
+              >
+                MVP, tableau de bord, espace membre avec authentification,
+                API Routes : Next.js est un framework full-stack qui remplace
+                à la fois votre frontend React et votre backend Express.js
+                dans une seule base de code TypeScript.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Liens complémentaires */}
-      <aside className="mx-auto max-w-5xl px-4 pb-6 sm:px-6 lg:px-8">
-        <p className="text-xs uppercase tracking-[0.12em] mb-3" style={{ color: "var(--fg-subtle)" }}>
+      {/* ════════════════════════════════════════
+          H2 — FAQ — People Also Ask
+          ════════════════════════════════════════ */}
+      <section>
+        <div className="divider" />
+        <div className="mx-auto max-w-5xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8">
+          <h2 className="text-xl sm:text-2xl font-semibold tracking-tight">
+            Questions fréquentes sur la création de site Next.js
+          </h2>
+
+          <div className="mt-8 space-y-6">
+            <details
+              className="group rounded-xl p-5"
+              style={{ border: "1px solid var(--border)", background: "var(--surface-1)" }}
+            >
+              <summary className="cursor-pointer text-sm sm:text-base font-semibold list-none flex items-center justify-between">
+                Combien coûte un site Next.js sur mesure ?
+                <span className="ml-3 text-lg transition-transform duration-300 group-open:rotate-45" aria-hidden="true" style={{ color: "var(--accent)" }}>+</span>
+              </summary>
+              <p className="mt-3 text-sm" style={{ color: "var(--fg-muted)", lineHeight: "1.7" }}>
+                Un site vitrine Next.js démarre à partir de 2 500 € HT. Le budget
+                dépend du nombre de pages, des fonctionnalités (formulaire, blog,
+                e-commerce) et du niveau de design personnalisé. Je propose un devis
+                détaillé après un premier échange.
+              </p>
+            </details>
+
+            <details
+              className="group rounded-xl p-5"
+              style={{ border: "1px solid var(--border)", background: "var(--surface-1)" }}
+            >
+              <summary className="cursor-pointer text-sm sm:text-base font-semibold list-none flex items-center justify-between">
+                Next.js est-il meilleur que WordPress pour le SEO ?
+                <span className="ml-3 text-lg transition-transform duration-300 group-open:rotate-45" aria-hidden="true" style={{ color: "var(--accent)" }}>+</span>
+              </summary>
+              <p className="mt-3 text-sm" style={{ color: "var(--fg-muted)", lineHeight: "1.7" }}>
+                Next.js a un avantage technique natif (SSR, SSG, code splitting
+                automatique, Core Web Vitals optimisés). WordPress peut être bien
+                optimisé avec les bons plugins, mais atteint rarement un score
+                Lighthouse de 100 sans compromis. Le choix dépend de votre besoin
+                d&apos;autonomie éditoriale.
+              </p>
+            </details>
+
+            <details
+              className="group rounded-xl p-5"
+              style={{ border: "1px solid var(--border)", background: "var(--surface-1)" }}
+            >
+              <summary className="cursor-pointer text-sm sm:text-base font-semibold list-none flex items-center justify-between">
+                Puis-je modifier le contenu moi-même sans coder ?
+                <span className="ml-3 text-lg transition-transform duration-300 group-open:rotate-45" aria-hidden="true" style={{ color: "var(--accent)" }}>+</span>
+              </summary>
+              <p className="mt-3 text-sm" style={{ color: "var(--fg-muted)", lineHeight: "1.7" }}>
+                Oui, via un CMS headless (Sanity, Strapi, Contentful ou Notion
+                comme source de contenu). Vous éditez vos textes et images dans une
+                interface simple, et le site se régénère automatiquement. C&apos;est
+                le meilleur des deux mondes : puissance technique + facilité éditoriale.
+              </p>
+            </details>
+
+            <details
+              className="group rounded-xl p-5"
+              style={{ border: "1px solid var(--border)", background: "var(--surface-1)" }}
+            >
+              <summary className="cursor-pointer text-sm sm:text-base font-semibold list-none flex items-center justify-between">
+                Quel est le délai de livraison d&apos;un site Next.js ?
+                <span className="ml-3 text-lg transition-transform duration-300 group-open:rotate-45" aria-hidden="true" style={{ color: "var(--accent)" }}>+</span>
+              </summary>
+              <p className="mt-3 text-sm" style={{ color: "var(--fg-muted)", lineHeight: "1.7" }}>
+                Comptez 3 à 6 semaines pour un site vitrine, 6 à 10 semaines pour
+                un e-commerce ou une application web. Le planning dépend de la
+                complexité du design, du nombre de pages et de la rapidité des
+                retours lors des validations.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      {/* Maillage interne */}
+      <aside className="mx-auto max-w-5xl px-4 pb-8 sm:px-6 lg:px-8">
+        <p className="text-xs uppercase tracking-[0.12em] mb-4" style={{ color: "var(--fg-subtle)" }}>
           Services complémentaires
         </p>
         <div className="flex flex-wrap gap-3">
           {[
-            { href: "/services/seo", label: "Optimisation SEO" },
-            { href: "/services/e-commerce", label: "E-commerce sur mesure" },
-            { href: "/portfolio", label: "Voir le portfolio" },
-            { href: "/faq", label: "Questions fréquentes" },
+            { href: "/services/seo", label: "Audit & optimisation SEO" },
+            { href: "/services/site-internet-wordpress", label: "Site WordPress" },
+            { href: "/services/e-commerce", label: "E-commerce & Stripe" },
+            { href: "/services/accessibilite", label: "Accessibilité WCAG" },
+            { href: "/services/site-vitrine", label: "Site vitrine" },
+            { href: "/blog", label: "Blog & ressources" },
+            { href: "/me", label: "Mon parcours" },
           ].map((link) => (
             <Link
               key={link.href}
@@ -212,42 +601,102 @@ export default function ReactNextServicePage() {
       <section className="pb-16 pt-10 sm:pb-20 sm:pt-12">
         <div className="divider" />
         <div className="mx-auto max-w-3xl px-4 pt-10 text-center sm:px-6 sm:pt-12 lg:px-8">
-          <h2 className="text-lg sm:text-xl font-semibold tracking-tight">
-            On voit ensemble ce qui est le plus adapté&nbsp;?
+          <h2 className="text-xl sm:text-2xl font-semibold tracking-tight">
+            Prêt à créer un site qui performe vraiment ?
           </h2>
-          <p className="mt-3 text-sm sm:text-base" style={{ color: "var(--fg-muted)" }}>
-            Expliquez-moi en quelques lignes votre projet (site vitrine, boutique,
-            app web…) et vos objectifs. Je vous propose une approche simple,
-            réaliste et adaptée à votre budget.
+          <p
+            className="mt-3 max-w-xl mx-auto text-sm sm:text-base"
+            style={{ color: "var(--fg-muted)", lineHeight: "1.8" }}
+          >
+            Décrivez votre projet — site vitrine, e-commerce, application web — et
+            vos objectifs. Je vous propose une approche technique, un planning
+            réaliste et un devis clair, sans jargon.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
-            <Link
-              href="/contact"
-              className="btn btn-primary"
-            >
-              Me parler de mon projet React / Next
+            <Link href="/contact" className="btn btn-primary">
+              Démarrer mon projet Next.js
             </Link>
           </div>
         </div>
-                <ServicesSection />
+        <ServicesSection />
       </section>
 
+      {/* ════════════════════════════════════════
+          JSON-LD — Service + FAQPage avec @id
+          ════════════════════════════════════════ */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Service",
-            name: "Création de site React & Next.js",
-            description:
-              "Sites web sur mesure avec React et Next.js : design premium, performance, SEO technique et parcours mobile fluide.",
-            provider: {
-              "@type": "ProfessionalService",
-              name: "Stéphane Gamot",
-              url: "https://www.stephanegamot.com",
-            },
-            areaServed: { "@type": "Country", name: "Belgium" },
-            url: "https://www.stephanegamot.com/services/site-web-react-next",
+            "@graph": [
+              {
+                "@type": "Service",
+                "@id": "https://www.stephanegamot.com/services/site-web-react-next#service",
+                name: "Création de site Next.js & React",
+                description:
+                  "Développement de sites web sur mesure avec Next.js, React, TypeScript et Tailwind CSS. Sites vitrines, e-commerce et applications web performantes.",
+                provider: {
+                  "@type": "ProfessionalService",
+                  "@id": "https://www.stephanegamot.com/#business",
+                  name: "Stéphane Gamot",
+                  url: "https://www.stephanegamot.com",
+                },
+                serviceType: "Web Development",
+                areaServed: [
+                  { "@type": "Country", name: "Belgique" },
+                  { "@type": "Country", name: "France" },
+                ],
+                hasOfferCatalog: {
+                  "@type": "OfferCatalog",
+                  name: "Prestations développement Next.js",
+                  itemListElement: [
+                    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Site vitrine Next.js" } },
+                    { "@type": "Offer", itemOffered: { "@type": "Service", name: "E-commerce Next.js + Stripe" } },
+                    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Application web React" } },
+                  ],
+                },
+                url: "https://www.stephanegamot.com/services/site-web-react-next",
+              },
+              {
+                "@type": "FAQPage",
+                "@id": "https://www.stephanegamot.com/services/site-web-react-next#faq",
+                mainEntity: [
+                  {
+                    "@type": "Question",
+                    name: "Combien coûte un site Next.js sur mesure ?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Un site vitrine Next.js démarre à 2 500 € HT. Le budget dépend du nombre de pages, des fonctionnalités et du design. Devis détaillé après un premier échange.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "Next.js est-il meilleur que WordPress pour le SEO ?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Next.js a un avantage technique natif (SSR, SSG, Core Web Vitals). WordPress peut être optimisé mais atteint rarement Lighthouse 100 sans compromis.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "Puis-je modifier le contenu moi-même sans coder ?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Oui, via un CMS headless (Sanity, Strapi, Contentful). Vous éditez textes et images dans une interface simple, le site se régénère automatiquement.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "Quel est le délai de livraison d'un site Next.js ?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "3 à 6 semaines pour un site vitrine, 6 à 10 semaines pour un e-commerce ou une application web, selon la complexité.",
+                    },
+                  },
+                ],
+              },
+            ],
           }),
         }}
       />
