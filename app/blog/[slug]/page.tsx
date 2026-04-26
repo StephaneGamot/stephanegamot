@@ -45,7 +45,7 @@ const ogImageUrl = rawImageUrl.startsWith("http")
     title: `${post.title}`,
     description: post.description,
     authors: [{ name: "Stéphane Gamot", url: "https://www.stephanegamot.com/me" }],
-    keywords: post.tags ?? [],
+    keywords: [post.category.title],
     alternates: {
       canonical: canonicalUrl,
     },
