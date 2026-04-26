@@ -94,8 +94,11 @@ export default function SiteVitrineServicePage() {
             La <strong>création site vitrine</strong> est la premiere étape pour
             exister en ligne quand on est indépendant ou petite entreprise en
             Belgique. Pourtant, beaucoup se retrouvent avec un site internet
-            générique, lent, invisible sur Google et qui ne génère aucun
-            contact.
+            générique, lent, invisible sur Google et qui{" "}
+            <Link href="/blog/pourquoi-votre-site-ne-convertit-pas" style={{ color: "var(--accent)" }}>
+              ne génère aucun contact
+            </Link>
+            .
           </p>
           <p
             className="mt-2 max-w-xl text-sm sm:text-base"
@@ -435,7 +438,12 @@ export default function SiteVitrineServicePage() {
                 autour de 800&nbsp;EUR, un site vitrine complet de 4 a 6 pages
                 entre 1&nbsp;500 et 3&nbsp;000&nbsp;EUR. Nom de domaine,
                 hébergement et certificat SSL sont inclus la premiere année.{" "}
-                <Link href="/contact" className="underline" style={{ color: "var(--accent)" }}>Demandez un devis personnalisé</Link>.
+                <Link href="/contact" className="underline" style={{ color: "var(--accent)" }}>Demandez un devis personnalisé</Link>
+                {" "}ou consultez mon article{" "}
+                <Link href="/blog/combien-coute-un-site-web-en-2026-prix-pieges" className="underline" style={{ color: "var(--accent)" }}>
+                  Combien coûte un site web en 2026
+                </Link>
+                .
               </p>
             </article>
 

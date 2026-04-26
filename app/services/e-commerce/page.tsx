@@ -555,7 +555,12 @@ export default function EcommerceServicePage() {
                 <Link href="/contact" style={{ color: "var(--accent)" }}>
                   devis detaille gratuit
                 </Link>{" "}
-                apres un premier echange.
+                apres un premier echange. Pour mieux comprendre les fourchettes de prix,
+                consultez{" "}
+                <Link href="/blog/combien-coute-un-site-web-en-2026-prix-pieges" style={{ color: "var(--accent)" }}>
+                  Combien coûte un site web en 2026
+                </Link>
+                .
               </p>
             </details>
 
@@ -649,7 +654,11 @@ export default function EcommerceServicePage() {
                   site vitrine
                 </Link>{" "}
                 bien concu en amont aide aussi a preparer le terrain pour la
-                vente en ligne.
+                vente en ligne. Lisez aussi mon article{" "}
+                <Link href="/blog/pourquoi-votre-site-ne-convertit-pas" style={{ color: "var(--accent)" }}>
+                  Pourquoi votre site ne convertit pas
+                </Link>{" "}
+                pour identifier les freins les plus courants.
               </p>
             </details>
           </div>

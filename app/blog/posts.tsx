@@ -1309,7 +1309,7 @@ export const posts: BlogPost[] = [
   slug: "php-survivrait-il-sans-wordpress",
   title: "Est-ce que PHP survivrait sans WordPress ?",
   description:
-    "WordPress représente une part énorme du web… et WordPress, c’est du PHP. Mais si WordPress disparaissait demain, PHP serait-il condamné ? Voici la réponse — nuancée, factuelle et orientée réalité du marché.",
+    "WordPress, c’est du PHP. Mais si WordPress disparaissait demain, PHP serait-il condamné ? Réponse nuancée et orientée réalité du marché.",
   imageUrl: Php1,
   date: "2 mars 2026",
   datetime: "2026-03-02",

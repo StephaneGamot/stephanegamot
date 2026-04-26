@@ -165,8 +165,12 @@ export default function WordPressServicePage() {
           </h2>
           <p className="mt-3 max-w-2xl text-sm sm:text-base" style={{ color: "var(--fg-muted)" }}>
             WordPress propulse plus de 40 % des sites dans le monde. Construit en PHP et adossé
-            à une base de données MySQL, il offre une souplesse que peu de CMS peuvent égaler.
-            Voici pourquoi il reste un choix pertinent pour un{" "}
+            à une base de données MySQL, il offre une souplesse que peu de CMS peuvent égaler —
+            et{" "}
+            <Link href="/blog/php-survivrait-il-sans-wordpress" style={{ color: "var(--accent)" }}>
+              PHP reste un langage solide bien au-delà de WordPress
+            </Link>
+            . Voici pourquoi il reste un choix pertinent pour un{" "}
             <Link href="/services/site-vitrine" style={{ color: "var(--accent)" }}>
               site vitrine
             </Link>
@@ -433,7 +437,11 @@ export default function WordPressServicePage() {
                 <Link href="/faq" style={{ color: "var(--accent)" }}>
                   FAQ generale
                 </Link>{" "}
-                pour plus de details sur les tarifs.
+                pour plus de details sur les tarifs. Vous pouvez aussi lire mon article{" "}
+                <Link href="/blog/combien-coute-un-site-web-en-2026-prix-pieges" style={{ color: "var(--accent)" }}>
+                  Combien coûte un site web en 2026
+                </Link>
+                .
               </p>
             </details>
 

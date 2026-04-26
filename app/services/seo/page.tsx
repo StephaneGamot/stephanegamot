@@ -572,7 +572,12 @@ export default function SeoServicePage() {
                 Core Web Vitals, crawlabilité, HTTPS, sitemap et robots.txt.
                 Le SEO on-page porte sur le contenu visible : balises title, meta
                 description, hiérarchie H1-H6, maillage interne et richesse sémantique.
-                Les deux sont indissociables pour bien se positionner.
+                Les deux sont indissociables pour bien se positionner. Pour aller plus loin,
+                consultez mon article{" "}
+                <Link href="/blog/seo-2026-ce-qui-marche-vraiment" style={{ color: "var(--accent)" }}>
+                  SEO en 2026 : ce qui marche vraiment
+                </Link>
+                .
               </p>
             </details>
 
