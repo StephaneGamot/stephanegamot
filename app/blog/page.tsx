@@ -11,6 +11,16 @@ export const metadata: Metadata = {
   title: "Blog — Conseils en web, SEO et performance digitale",
   description:
     "Articles sur la création de sites modernes, le SEO, la performance web et l’accessibilité pour PME et indépendants. Explorez nos conseils.",
+  keywords: [
+    "blog web",
+    "conseils SEO",
+    "performance web",
+    "création site internet",
+    "accessibilité web",
+    "Next.js tutoriel",
+    "WordPress conseils",
+  ],
+  authors: [{ name: "Stéphane Gamot", url: "https://www.stephanegamot.com/me" }],
   alternates: {
     canonical: `${SITE_URL}/blog`,
   },
@@ -101,7 +111,7 @@ export default function BlogPage() {
                                         {/* ⭐ Badge lectures si ≥ 50 */}
                                         {post.views >= 50 && (
                                             <span className="inline-flex items-center gap-1 rounded-full px-3 py-1 text-[11px] font-medium" style={{ background: "var(--accent-muted)", color: "var(--accent)" }}>
-                        ⭐ {post.views} lectures
+                        <span aria-hidden="true">⭐</span> {post.views} lectures
                       </span>
                                         )}
                                     </div>
@@ -166,19 +176,30 @@ export default function BlogPage() {
             dangerouslySetInnerHTML={{
                 __html: JSON.stringify({
                     "@context": "https://schema.org",
-                    "@type": "CollectionPage",
-                    name: "Blog — Conseils en web, SEO et performance digitale",
-                    description: "Articles sur la création de sites modernes, le SEO, la performance web et l'accessibilité.",
-                    url: "https://www.stephanegamot.com/blog",
-                    mainEntity: {
-                        "@type": "ItemList",
-                        itemListElement: posts.map((post, index) => ({
+                    "@graph": [
+                      {
+                        "@type": "CollectionPage",
+                        name: "Blog — Conseils en web, SEO et performance digitale",
+                        description: "Articles sur la création de sites modernes, le SEO, la performance web et l'accessibilité.",
+                        url: "https://www.stephanegamot.com/blog",
+                        mainEntity: {
+                          "@type": "ItemList",
+                          itemListElement: posts.map((post, index) => ({
                             "@type": "ListItem",
                             position: index + 1,
                             url: `https://www.stephanegamot.com/blog/${post.slug}`,
                             name: post.title,
-                        })),
-                    },
+                          })),
+                        },
+                      },
+                      {
+                        "@type": "BreadcrumbList",
+                        itemListElement: [
+                          { "@type": "ListItem", position: 1, name: "Accueil", item: "https://www.stephanegamot.com" },
+                          { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.stephanegamot.com/blog" },
+                        ],
+                      },
+                    ],
                 }),
             }}
         />

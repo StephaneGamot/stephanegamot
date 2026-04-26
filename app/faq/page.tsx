@@ -35,6 +35,15 @@ export const metadata: Metadata = {
     alternates: {
         canonical: "https://www.stephanegamot.com/faq",
     },
+    keywords: [
+        "FAQ création site web",
+        "questions fréquentes SEO",
+        "tarif site internet",
+        "délai création site",
+        "maintenance site web",
+        "WordPress ou Next.js",
+    ],
+    authors: [{ name: "Stéphane Gamot", url: "https://www.stephanegamot.com/me" }],
     robots: {
         index: true,
         follow: true,
@@ -51,15 +60,26 @@ export default function FAQPage() {
                 dangerouslySetInnerHTML={{
                     __html: JSON.stringify({
                         "@context": "https://schema.org",
-                        "@type": "FAQPage",
-                        mainEntity: faqsData.map((faq) => ({
-                            "@type": "Question",
-                            name: faq.question,
-                            acceptedAnswer: {
-                                "@type": "Answer",
-                                text: faq.answer,
+                        "@graph": [
+                            {
+                                "@type": "FAQPage",
+                                mainEntity: faqsData.map((faq) => ({
+                                    "@type": "Question",
+                                    name: faq.question,
+                                    acceptedAnswer: {
+                                        "@type": "Answer",
+                                        text: faq.answer,
+                                    },
+                                })),
                             },
-                        })),
+                            {
+                                "@type": "BreadcrumbList",
+                                itemListElement: [
+                                    { "@type": "ListItem", position: 1, name: "Accueil", item: "https://www.stephanegamot.com" },
+                                    { "@type": "ListItem", position: 2, name: "FAQ", item: "https://www.stephanegamot.com/faq" },
+                                ],
+                            },
+                        ],
                     }),
                 }}
             />

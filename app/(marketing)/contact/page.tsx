@@ -33,6 +33,14 @@ export const metadata: Metadata = {
       "Envoyez-moi votre projet : site vitrine, e-commerce, refonte ou audit SEO. Réponse personnalisée sous 24 h.",
     images: ["https://www.stephanegamot.com/Images/og/office-workstation.webp"],
   },
+  keywords: [
+    "contact développeur web",
+    "devis site internet",
+    "devis gratuit site web",
+    "freelance web Belgique",
+    "projet web Bruxelles",
+  ],
+  authors: [{ name: "Stéphane Gamot", url: "https://www.stephanegamot.com/me" }],
   robots: {
     index: true,
     follow: true,
@@ -49,17 +57,28 @@ export default function Page() {
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "ContactPage",
-              name: "Contact — Stéphane Gamot",
-              description: "Envoyez-moi votre projet : site vitrine, e-commerce, refonte ou audit SEO.",
-              url: "https://www.stephanegamot.com/contact",
-              mainEntity: {
-                "@type": "ProfessionalService",
-                name: "Stéphane Gamot",
-                telephone: "+32 477 71 31 93",
-                email: "stephanegamot@outlook.com",
-                url: "https://www.stephanegamot.com",
-              },
+              "@graph": [
+                {
+                  "@type": "ContactPage",
+                  name: "Contact — Stéphane Gamot",
+                  description: "Envoyez-moi votre projet : site vitrine, e-commerce, refonte ou audit SEO.",
+                  url: "https://www.stephanegamot.com/contact",
+                  mainEntity: {
+                    "@type": "ProfessionalService",
+                    name: "Stéphane Gamot",
+                    telephone: "+32 477 71 31 93",
+                    email: "stephanegamot@outlook.com",
+                    url: "https://www.stephanegamot.com",
+                  },
+                },
+                {
+                  "@type": "BreadcrumbList",
+                  itemListElement: [
+                    { "@type": "ListItem", position: 1, name: "Accueil", item: "https://www.stephanegamot.com" },
+                    { "@type": "ListItem", position: 2, name: "Contact", item: "https://www.stephanegamot.com/contact" },
+                  ],
+                },
+              ],
             }),
           }}
         />

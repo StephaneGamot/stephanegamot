@@ -155,6 +155,7 @@ export default function SiteVitrineServicePage() {
               <div
                 className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-full text-lg"
                 style={{ background: "var(--accent-muted)" }}
+                aria-hidden="true"
               >
                 🧱
               </div>
@@ -186,6 +187,7 @@ export default function SiteVitrineServicePage() {
               <div
                 className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-full text-lg"
                 style={{ background: "var(--accent-muted)" }}
+                aria-hidden="true"
               >
                 🎨
               </div>
@@ -215,6 +217,7 @@ export default function SiteVitrineServicePage() {
               <div
                 className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-full text-lg"
                 style={{ background: "var(--accent-muted)" }}
+                aria-hidden="true"
               >
                 📍
               </div>
@@ -245,6 +248,7 @@ export default function SiteVitrineServicePage() {
               <div
                 className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-full text-lg"
                 style={{ background: "var(--accent-muted)" }}
+                aria-hidden="true"
               >
                 ✉️
               </div>
@@ -631,6 +635,14 @@ export default function SiteVitrineServicePage() {
                       text: "Le SEO local repose sur un site techniquement optimisé (vitesse, HTTPS, responsive), un contenu ciblé avec des mots-clés géographiques, et une fiche Google Business Profile bien renseignée avec des avis clients et une cohérence NAP.",
                     },
                   },
+                ],
+              },
+              {
+                "@type": "BreadcrumbList",
+                itemListElement: [
+                  { "@type": "ListItem", position: 1, name: "Accueil", item: "https://www.stephanegamot.com" },
+                  { "@type": "ListItem", position: 2, name: "Services", item: "https://www.stephanegamot.com/#services" },
+                  { "@type": "ListItem", position: 3, name: "Site vitrine", item: "https://www.stephanegamot.com/services/site-vitrine" },
                 ],
               },
             ],

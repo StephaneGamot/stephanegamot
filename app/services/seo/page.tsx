@@ -769,6 +769,14 @@ export default function SeoServicePage() {
                   },
                 ],
               },
+              {
+                "@type": "BreadcrumbList",
+                itemListElement: [
+                  { "@type": "ListItem", position: 1, name: "Accueil", item: "https://www.stephanegamot.com" },
+                  { "@type": "ListItem", position: 2, name: "Services", item: "https://www.stephanegamot.com/#services" },
+                  { "@type": "ListItem", position: 3, name: "SEO & Référencement", item: "https://www.stephanegamot.com/services/seo" },
+                ],
+              },
             ],
           }),
         }}

@@ -16,7 +16,7 @@ export default function AboutPage() {
                             La beaute dans ce qui est fluide, lisible, calme.
                         </h1>
                         <p className="mt-6 text-sm leading-relaxed sm:text-[15px] sm:leading-relaxed" style={{ color: "var(--fg-muted)" }}>
-                            Je suis <span className="font-semibold">Stephane Gamot</span>, developpeur full-stack.
+                            Je suis <span className="font-semibold">Stéphane Gamot</span>, développeur full-stack.
                             J'aime les interfaces qui respirent, les pages qui coulent naturellement sous les yeux,
                             les experiences ou l'on ne sent pas l'effort technique - meme s'il est bien la,
                             solide, propre, aligne.

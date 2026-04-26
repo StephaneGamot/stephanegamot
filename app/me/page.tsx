@@ -38,6 +38,14 @@ export const metadata: Metadata = {
       "Développeur web full-stack basé en Belgique, avec une approche haut de gamme, orientée design, performance et conversion.",
     images: [`${SITE_URL}/Images/og/office-workstation.webp`],
   },
+  keywords: [
+    "développeur web freelance Bruxelles",
+    "développeur full-stack Belgique",
+    "freelance Next.js",
+    "freelance WordPress",
+    "consultant SEO Belgique",
+    "Stéphane Gamot",
+  ],
   robots: {
     index: true,
     follow: true,
@@ -246,23 +254,34 @@ export default function AboutPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Person",
-            name: "Stéphane Gamot",
-            url: "https://www.stephanegamot.com/me",
-            image: "https://www.stephanegamot.com/Images/me/me.webp",
-            jobTitle: "Développeur web freelance",
-            worksFor: {
-              "@type": "Organization",
-              name: "Stéphane Gamot – Création de sites web",
-              url: "https://www.stephanegamot.com",
-            },
-            address: {
-              "@type": "PostalAddress",
-              addressLocality: "Halle",
-              addressCountry: "BE",
-            },
-            knowsAbout: ["React", "Next.js", "WordPress", "SEO", "Accessibilité web", "E-commerce"],
-            sameAs: ["https://www.stephanegamot.com"],
+            "@graph": [
+              {
+                "@type": "Person",
+                name: "Stéphane Gamot",
+                url: "https://www.stephanegamot.com/me",
+                image: "https://www.stephanegamot.com/Images/me/me.webp",
+                jobTitle: "Développeur web freelance",
+                worksFor: {
+                  "@type": "Organization",
+                  name: "Stéphane Gamot – Création de sites web",
+                  url: "https://www.stephanegamot.com",
+                },
+                address: {
+                  "@type": "PostalAddress",
+                  addressLocality: "Halle",
+                  addressCountry: "BE",
+                },
+                knowsAbout: ["React", "Next.js", "WordPress", "SEO", "Accessibilité web", "E-commerce"],
+                sameAs: ["https://www.stephanegamot.com"],
+              },
+              {
+                "@type": "BreadcrumbList",
+                itemListElement: [
+                  { "@type": "ListItem", position: 1, name: "Accueil", item: "https://www.stephanegamot.com" },
+                  { "@type": "ListItem", position: 2, name: "À propos", item: "https://www.stephanegamot.com/me" },
+                ],
+              },
+            ],
           }),
         }}
       />

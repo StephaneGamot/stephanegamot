@@ -51,6 +51,7 @@ export const metadata: Metadata = {
       "https://www.stephanegamot.com/Images/og/office-workstation.webp",
     ],
   },
+  authors: [{ name: "Stéphane Gamot", url: "https://www.stephanegamot.com/me" }],
   robots: {
     index: true,
     follow: true,
@@ -92,15 +93,26 @@ export default function Page() {
             dangerouslySetInnerHTML={{
                 __html: JSON.stringify({
                     "@context": "https://schema.org",
-                    "@type": "CollectionPage",
-                    name: "Portfolio de sites web et e-commerce",
-                    description: "Sélection de sites web, e-commerce et applications réalisés avec Next.js, React & WordPress.",
-                    url: "https://www.stephanegamot.com/portfolio",
-                    author: {
-                        "@type": "Person",
-                        name: "Stéphane Gamot",
-                        url: "https://www.stephanegamot.com/me",
-                    },
+                    "@graph": [
+                      {
+                        "@type": "CollectionPage",
+                        name: "Portfolio de sites web et e-commerce",
+                        description: "Sélection de sites web, e-commerce et applications réalisés avec Next.js, React & WordPress.",
+                        url: "https://www.stephanegamot.com/portfolio",
+                        author: {
+                          "@type": "Person",
+                          name: "Stéphane Gamot",
+                          url: "https://www.stephanegamot.com/me",
+                        },
+                      },
+                      {
+                        "@type": "BreadcrumbList",
+                        itemListElement: [
+                          { "@type": "ListItem", position: 1, name: "Accueil", item: "https://www.stephanegamot.com" },
+                          { "@type": "ListItem", position: 2, name: "Portfolio", item: "https://www.stephanegamot.com/portfolio" },
+                        ],
+                      },
+                    ],
                 }),
             }}
         />

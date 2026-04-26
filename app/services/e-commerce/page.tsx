@@ -817,6 +817,14 @@ export default function EcommerceServicePage() {
                   },
                 ],
               },
+              {
+                "@type": "BreadcrumbList",
+                itemListElement: [
+                  { "@type": "ListItem", position: 1, name: "Accueil", item: "https://www.stephanegamot.com" },
+                  { "@type": "ListItem", position: 2, name: "Services", item: "https://www.stephanegamot.com/#services" },
+                  { "@type": "ListItem", position: 3, name: "E-commerce", item: "https://www.stephanegamot.com/services/e-commerce" },
+                ],
+              },
             ],
           }),
         }}

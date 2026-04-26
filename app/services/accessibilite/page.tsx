@@ -29,13 +29,13 @@ export const metadata: Metadata = {
     "lecteur ecran",
   ],
   robots: { index: true, follow: true },
-  authors: [{ name: "Stephane Gamot", url: "https://www.stephanegamot.com/me" }],
+  authors: [{ name: "Stéphane Gamot", url: "https://www.stephanegamot.com/me" }],
   openGraph: {
-    title: "Accessibilite web WCAG 2.2 & audit EAA — Stephane Gamot",
+    title: "Accessibilite web WCAG 2.2 & audit EAA — Stéphane Gamot",
     description:
       "Audit et mise en conformite accessibilite web : WCAG 2.2, RGAA 4.1, EAA. Corrections ARIA, contrastes, navigation clavier. Freelance en Belgique.",
     url: "https://www.stephanegamot.com/services/accessibilite",
-    siteName: "Stephane Gamot",
+    siteName: "Stéphane Gamot",
     type: "website",
     locale: "fr_BE",
     images: [
@@ -43,13 +43,13 @@ export const metadata: Metadata = {
         url: "/Images/og/office-workstation.webp",
         width: 1200,
         height: 630,
-        alt: "Accessibilite web et conformite WCAG 2.2 — audit par Stephane Gamot",
+        alt: "Accessibilite web et conformite WCAG 2.2 — audit par Stéphane Gamot",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Accessibilite web WCAG 2.2 & audit EAA — Stephane Gamot",
+    title: "Accessibilite web WCAG 2.2 & audit EAA — Stéphane Gamot",
     description:
       "Audit accessibilite web WCAG 2.2, RGAA 4.1, conformite EAA. Corrections ARIA, contrastes, clavier, formulaires. Freelance Belgique.",
     images: ["/Images/og/office-workstation.webp"],
@@ -138,7 +138,7 @@ export default function AccessibiliteServicePage() {
         <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-14 lg:px-8">
           <div className="grid gap-5 md:grid-cols-3">
             <article className="rounded-2xl p-5" style={{ border: "1px solid var(--border)", background: "var(--surface-1)" }}>
-              <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-full text-lg" style={{ background: "var(--accent-muted)" }}>
+              <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-full text-lg" style={{ background: "var(--accent-muted)" }} aria-hidden="true">
                 ⚖️
               </div>
               <h2 className="text-sm sm:text-base font-semibold">
@@ -153,7 +153,7 @@ export default function AccessibiliteServicePage() {
             </article>
 
             <article className="rounded-2xl p-5" style={{ border: "1px solid var(--border)", background: "var(--surface-1)" }}>
-              <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-full text-lg" style={{ background: "var(--accent-muted)" }}>
+              <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-full text-lg" style={{ background: "var(--accent-muted)" }} aria-hidden="true">
                 💶
               </div>
               <h2 className="text-sm sm:text-base font-semibold">
@@ -171,7 +171,7 @@ export default function AccessibiliteServicePage() {
             </article>
 
             <article className="rounded-2xl p-5" style={{ border: "1px solid var(--border)", background: "var(--surface-1)" }}>
-              <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-full text-lg" style={{ background: "var(--accent-muted)" }}>
+              <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-full text-lg" style={{ background: "var(--accent-muted)" }} aria-hidden="true">
                 🤝
               </div>
               <h2 className="text-sm sm:text-base font-semibold">
@@ -593,7 +593,7 @@ export default function AccessibiliteServicePage() {
                 provider: {
                   "@type": "ProfessionalService",
                   "@id": "https://www.stephanegamot.com/#business",
-                  name: "Stephane Gamot",
+                  name: "Stéphane Gamot",
                   url: "https://www.stephanegamot.com",
                 },
                 areaServed: [
@@ -639,6 +639,14 @@ export default function AccessibiliteServicePage() {
                       text: "Les WCAG 2.2 sont le standard international du W3C. Le RGAA 4.1 est le referentiel francais qui traduit les criteres WCAG en tests concrets. En Belgique, on se base sur la norme EN 301 549 qui repose aussi sur les WCAG. Auditer selon les WCAG 2.2 AA couvre les exigences des deux cadres.",
                     },
                   },
+                ],
+              },
+              {
+                "@type": "BreadcrumbList",
+                itemListElement: [
+                  { "@type": "ListItem", position: 1, name: "Accueil", item: "https://www.stephanegamot.com" },
+                  { "@type": "ListItem", position: 2, name: "Services", item: "https://www.stephanegamot.com/#services" },
+                  { "@type": "ListItem", position: 3, name: "Accessibilité", item: "https://www.stephanegamot.com/services/accessibilite" },
                 ],
               },
             ],

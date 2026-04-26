@@ -101,6 +101,14 @@ export default function WordPressServicePage() {
           },
         ],
       },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Accueil", item: "https://www.stephanegamot.com" },
+          { "@type": "ListItem", position: 2, name: "Services", item: "https://www.stephanegamot.com/#services" },
+          { "@type": "ListItem", position: 3, name: "WordPress", item: "https://www.stephanegamot.com/services/site-internet-wordpress" },
+        ],
+      },
     ],
   };
 
@@ -247,6 +255,7 @@ export default function WordPressServicePage() {
               <div
                 className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-full text-lg"
                 style={{ background: "var(--accent-muted)" }}
+                aria-hidden="true"
               >
                 🎨
               </div>
@@ -269,6 +278,7 @@ export default function WordPressServicePage() {
               <div
                 className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-full text-lg"
                 style={{ background: "var(--accent-muted)" }}
+                aria-hidden="true"
               >
                 🔒
               </div>
@@ -287,6 +297,7 @@ export default function WordPressServicePage() {
               <div
                 className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-full text-lg"
                 style={{ background: "var(--accent-muted)" }}
+                aria-hidden="true"
               >
                 ⚡
               </div>
@@ -307,6 +318,7 @@ export default function WordPressServicePage() {
               <div
                 className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-full text-lg"
                 style={{ background: "var(--accent-muted)" }}
+                aria-hidden="true"
               >
                 🎓
               </div>

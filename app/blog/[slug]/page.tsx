@@ -44,6 +44,8 @@ const ogImageUrl = rawImageUrl.startsWith("http")
   return {
     title: `${post.title}`,
     description: post.description,
+    authors: [{ name: "Stéphane Gamot", url: "https://www.stephanegamot.com/me" }],
+    keywords: post.tags ?? [],
     alternates: {
       canonical: canonicalUrl,
     },
@@ -128,28 +130,40 @@ export default async function BlogPostPage({
 
     const articleSchema = {
         "@context": "https://schema.org",
-        "@type": "BlogPosting",
-        headline: post.title,
-        description: post.description,
-        image: fullImageUrl,
-        datePublished: post.datetime,
-        author: {
-            "@type": "Person",
-            name: post.author.name,
-            url: `${SITE_URL}${post.author.href}`,
-        },
-        publisher: {
-            "@type": "Organization",
-            name: "Stéphane Gamot",
-            url: SITE_URL,
-        },
-        mainEntityOfPage: {
-            "@type": "WebPage",
-            "@id": `${SITE_URL}/blog/${post.slug}`,
-        },
-        url: `${SITE_URL}/blog/${post.slug}`,
-        wordCount: post.readingTimeMinutes * 200,
-        inLanguage: "fr",
+        "@graph": [
+          {
+            "@type": "BlogPosting",
+            headline: post.title,
+            description: post.description,
+            image: fullImageUrl,
+            datePublished: post.datetime,
+            author: {
+                "@type": "Person",
+                name: post.author.name,
+                url: `${SITE_URL}${post.author.href}`,
+            },
+            publisher: {
+                "@type": "Organization",
+                name: "Stéphane Gamot",
+                url: SITE_URL,
+            },
+            mainEntityOfPage: {
+                "@type": "WebPage",
+                "@id": `${SITE_URL}/blog/${post.slug}`,
+            },
+            url: `${SITE_URL}/blog/${post.slug}`,
+            wordCount: post.readingTimeMinutes * 200,
+            inLanguage: "fr",
+          },
+          {
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Accueil", item: SITE_URL },
+              { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE_URL}/blog` },
+              { "@type": "ListItem", position: 3, name: post.title, item: `${SITE_URL}/blog/${post.slug}` },
+            ],
+          },
+        ],
     };
 
     return (
