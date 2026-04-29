@@ -258,10 +258,10 @@ blockquote {
     }
     .btn:active { transform: translateY(1px); }
 
-    /* Bouton primaire — fond accent or pâle */
+    /* Bouton primaire — fond accent, texte noir pur (contraste WCAG AA garanti) */
     .btn-primary {
         background: var(--accent);
-        color: #08090c;
+        color: #000;
         border: 1px solid var(--accent);
     }
     .btn-primary:hover {

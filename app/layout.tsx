@@ -79,8 +79,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Preconnect — réduit le TTFB des ressources tierces */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* dns-prefetch GTM/GA désactivés tant que GA4 n'est pas configuré
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+        */}
         <link rel="dns-prefetch" href="https://analytics.ahrefs.com" />
         <link rel="alternate" hrefLang="fr-BE" href="https://www.stephanegamot.com" />
         <link rel="alternate" hrefLang="fr-FR" href="https://www.stephanegamot.com" />
@@ -149,7 +151,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </head>
     <body className={`${garamond.variable} ${montserrat.variable}`} style={{ fontFamily: 'var(--font-body)' }}>
         <a href="#main" className="skip-to-content">Aller au contenu principal</a>
-        {/* Google Analytics 4 — remplacez G-XXXXXXXXXX par votre ID GA4 */}
+        {/* Google Analytics 4 — DÉSACTIVÉ tant que l'ID GA4 réel n'est pas configuré.
+            Remplacez G-XXXXXXXXXX par votre ID GA4 puis décommentez les 2 blocs Script.
+            Le placeholder chargeait 134 KB de JS inutile et pénalisait le score Lighthouse.
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
           strategy="afterInteractive"
@@ -162,6 +166,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             gtag('config', 'G-XXXXXXXXXX');
           `}
         </Script>
+        */}
         <Script
           src="https://analytics.ahrefs.com/analytics.js"
           data-key="GDaY2OVpE6IfdQicYtz/qQ"
