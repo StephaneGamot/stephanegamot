@@ -10,6 +10,7 @@ import Statement from "@/components/statement/Statement";
 import TrustBar from "@/components/trust/TrustBar";
 import TechStack from "@/components/trust/TechStack";
 import StickyCTA from "@/components/trust/StickyCTA";
+import LeadMagnet from "@/components/trust/LeadMagnet";
 
 export const metadata: Metadata = {
   title: "Création de sites web performants — Stéphane Gamot",
@@ -236,6 +237,7 @@ export default function Home() {
         <CardsHome />
         <Carrousel />
         <WorkProcess />
+        <LeadMagnet />
         <TestimonialsSection />
         <StickyCTA />
       </>

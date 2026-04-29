@@ -19,6 +19,9 @@ const config = {
     } else if (path === "/services/tarifs") {
       priority = 0.9;
       changefreq = "monthly";
+    } else if (path.startsWith("/creation-site-web-")) {
+      priority = 0.85;
+      changefreq = "monthly";
     } else if (path.startsWith("/blog")) {
       priority = 0.8;
       changefreq = "weekly";

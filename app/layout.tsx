@@ -75,6 +75,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="manifest" href="/manifest.json" />
+        {/* Preconnect — réduit le TTFB des ressources tierces */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+        <link rel="dns-prefetch" href="https://analytics.ahrefs.com" />
         <link rel="alternate" hrefLang="fr-BE" href="https://www.stephanegamot.com" />
         <link rel="alternate" hrefLang="fr-FR" href="https://www.stephanegamot.com" />
         <link rel="alternate" hrefLang="x-default" href="https://www.stephanegamot.com" />

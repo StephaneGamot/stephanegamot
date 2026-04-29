@@ -57,6 +57,9 @@ export default function Footer() {
                         { href: "/faq", label: "FAQ" },
                         { href: "/me", label: "À propos" },
                         { href: "/contact", label: "Contact" },
+                        { href: "/creation-site-web-bruxelles", label: "Bruxelles" },
+                        { href: "/creation-site-web-halle", label: "Halle" },
+                        { href: "/creation-site-web-brabant-wallon", label: "Brabant wallon" },
                     ].map((link) => (
                         <Link
                             key={link.href}
