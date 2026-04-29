@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     locale: "fr_BE",
     images: [
       {
-        url: "/Images/og/office-workstation.webp",
+        url: "https://www.stephanegamot.com/Images/og/office-workstation.webp",
         width: 1200,
         height: 630,
         alt: "Accessibilite web et conformite WCAG 2.2 — audit par Stéphane Gamot",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     title: "Accessibilite web WCAG 2.2 & audit EAA — Stéphane Gamot",
     description:
       "Audit accessibilite web WCAG 2.2, RGAA 4.1, conformite EAA. Corrections ARIA, contrastes, clavier, formulaires. Freelance Belgique.",
-    images: ["/Images/og/office-workstation.webp"],
+    images: ["https://www.stephanegamot.com/Images/og/office-workstation.webp"],
   },
 };
 
@@ -128,6 +128,15 @@ export default function AccessibiliteServicePage() {
             <span className="text-xs sm:text-sm" style={{ color: "var(--fg-subtle)" }}>
               Reponse sous 48 h — on fait le point sur vos obligations.
             </span>
+          </div>
+          <div className="mt-3">
+            <Link
+              href="/services/tarifs"
+              className="text-sm"
+              style={{ color: "var(--fg-subtle)", borderBottom: "1px solid var(--border)" }}
+            >
+              Voir les tarifs →
+            </Link>
           </div>
         </div>
       </section>
@@ -380,6 +389,73 @@ export default function AccessibiliteServicePage() {
         </div>
       </section>
 
+      {/* ── RESULTATS CONCRETS ── */}
+      <section>
+        <div className="divider" />
+        <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-14 lg:px-8">
+          <h2 className="text-lg sm:text-xl font-semibold tracking-tight mb-6">
+            Resultats concrets
+          </h2>
+          <div className="grid gap-5 sm:grid-cols-2 md:grid-cols-4">
+            {[
+              { value: "100 %", label: "Score Accessibilite", desc: "Lighthouse — moyenne des projets" },
+              { value: "WCAG AA", label: "Conformite", desc: "niveau minimum garanti sur chaque livrable" },
+              { value: "+22 %", label: "Audience elargie", desc: "utilisateurs en situation de handicap inclus" },
+              { value: "0", label: "Erreur axe-core", desc: "audit automatise avant livraison" },
+            ].map((stat) => (
+              <div
+                key={stat.label}
+                className="rounded-xl p-5 text-center"
+                style={{ border: "1px solid var(--border)", background: "var(--surface-1)" }}
+              >
+                <p className="text-2xl font-bold sm:text-3xl" style={{ color: "var(--accent)" }}>
+                  {stat.value}
+                </p>
+                <p className="mt-2 text-sm font-semibold" style={{ color: "var(--fg-base)" }}>
+                  {stat.label}
+                </p>
+                <p className="mt-1 text-xs" style={{ color: "var(--fg-muted)" }}>
+                  {stat.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── OUTILS D'AUDIT ── */}
+      <section>
+        <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-14 lg:px-8">
+          <h2 className="text-lg sm:text-xl font-semibold tracking-tight mb-6">
+            Outils d&apos;audit
+          </h2>
+          <div className="flex flex-wrap gap-3">
+            {[
+              "axe DevTools",
+              "WAVE",
+              "Lighthouse Accessibility",
+              "NVDA",
+              "VoiceOver",
+              "Chrome DevTools",
+              "Contrast Checker",
+              "WCAG 2.2",
+              "HTML Validator",
+              "Pa11y CI",
+              "Screen Reader Testing",
+              "Keyboard Navigation",
+            ].map((tool) => (
+              <span
+                key={tool}
+                className="rounded-lg px-4 py-2.5 text-sm font-medium"
+                style={{ border: "1px solid var(--border)", background: "var(--surface-1)", color: "var(--fg-base)" }}
+              >
+                {tool}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── MON APPROCHE : AUDIT, CORRECTIONS ET DECLARATION ── */}
       <section>
         <div className="divider" />
@@ -536,6 +612,7 @@ export default function AccessibiliteServicePage() {
             { href: "/blog", label: "Blog" },
             { href: "/faq", label: "Questions frequentes" },
             { href: "/me", label: "A propos" },
+            { href: "/services/tarifs", label: "Tarifs & formules" },
           ].map((link) => (
             <Link
               key={link.href}
@@ -572,7 +649,19 @@ export default function AccessibiliteServicePage() {
             <Link href="/contact" className="btn btn-primary">
               Lancer mon audit accessibilite web
             </Link>
+            <a
+              href="https://wa.me/32477713193?text=Bonjour%20St%C3%A9phane%2C%20je%20souhaiterais%20un%20audit%20d%27accessibilit%C3%A9%20de%20mon%20site."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn"
+              style={{ border: "1px solid var(--border)", color: "var(--fg-base)" }}
+            >
+              WhatsApp
+            </a>
           </div>
+          <p className="mt-4 text-xs" style={{ color: "var(--fg-subtle)" }}>
+            <Link href="/services/tarifs" className="underline underline-offset-2">Voir les tarifs</Link> · Reponse sous 24 h · Devis gratuit
+          </p>
         </div>
         <ServicesSection />
       </section>
@@ -602,6 +691,23 @@ export default function AccessibiliteServicePage() {
                 ],
                 serviceType: "Audit accessibilite web",
                 url: "https://www.stephanegamot.com/services/accessibilite",
+                image: "https://www.stephanegamot.com/Images/og/office-workstation.webp",
+                offers: [
+                  {
+                    "@type": "Offer",
+                    name: "Audit accessibilite web",
+                    price: "500",
+                    priceCurrency: "EUR",
+                    description: "Audit accessibilite WCAG 2.2 AA avec rapport et recommandations",
+                  },
+                  {
+                    "@type": "Offer",
+                    name: "Mise en conformite accessibilite",
+                    price: "900",
+                    priceCurrency: "EUR",
+                    description: "Corrections ARIA, contrastes, navigation clavier et declaration d'accessibilite",
+                  },
+                ],
               },
               {
                 "@type": "FAQPage",
@@ -638,6 +744,33 @@ export default function AccessibiliteServicePage() {
                       "@type": "Answer",
                       text: "Les WCAG 2.2 sont le standard international du W3C. Le RGAA 4.1 est le referentiel francais qui traduit les criteres WCAG en tests concrets. En Belgique, on se base sur la norme EN 301 549 qui repose aussi sur les WCAG. Auditer selon les WCAG 2.2 AA couvre les exigences des deux cadres.",
                     },
+                  },
+                ],
+              },
+              {
+                "@type": "HowTo",
+                "@id": "https://www.stephanegamot.com/services/accessibilite#howto",
+                name: "Comment rendre un site web accessible (WCAG 2.2 AA)",
+                description:
+                  "Les trois etapes pour auditer, corriger et documenter l'accessibilite de votre site web.",
+                step: [
+                  {
+                    "@type": "HowToStep",
+                    position: 1,
+                    name: "Audit accessibilite (etat des lieux)",
+                    text: "Analyse des pages cles selon les criteres WCAG 2.2 AA et le RGAA 4.1. Tests manuels (clavier, lecteurs d'ecran) et outils automatises (axe, Lighthouse). Rapport avec problemes critiques, impacts et priorites.",
+                  },
+                  {
+                    "@type": "HowToStep",
+                    position: 2,
+                    name: "Corrections et mise en conformite",
+                    text: "Feuille de route en plusieurs etapes : corrections rapides (contrastes, alt text, aria-label), ameliorations UX (focus-visible, skip-to-content, navigation clavier), mises a jour de code (structure semantique, ARIA, formulaires).",
+                  },
+                  {
+                    "@type": "HowToStep",
+                    position: 3,
+                    name: "Declaration d'accessibilite et suivi",
+                    text: "Redaction de la page Declaration d'accessibilite conforme (niveau atteint, contenus non conformes, plan d'amelioration, contact). Documentation et suivi dans le temps.",
                   },
                 ],
               },

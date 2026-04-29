@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     locale: "fr_BE",
     images: [
       {
-        url: "/Images/og/office-workstation.webp",
+        url: "https://www.stephanegamot.com/Images/og/office-workstation.webp",
         width: 1200,
         height: 630,
         alt: "Création de site web Next.js performant par Stéphane Gamot",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     title: "Création de site Next.js & React – Stéphane Gamot",
     description:
       "Sites vitrines, e-commerce et apps web Next.js. Design premium, SEO technique, Lighthouse 100/100.",
-    images: ["/Images/og/office-workstation.webp"],
+    images: ["https://www.stephanegamot.com/Images/og/office-workstation.webp"],
   },
 };
 
@@ -120,6 +120,16 @@ export default function ReactNextServicePage() {
               Parler de mon projet Next.js
             </Link>
             <Link
+              href="/services/tarifs"
+              className="text-sm transition-colors duration-300"
+              style={{
+                color: "var(--fg-subtle)",
+                borderBottom: "1px solid var(--border)",
+              }}
+            >
+              Voir les tarifs →
+            </Link>
+            <Link
               href="/portfolio"
               className="text-sm transition-colors duration-300"
               style={{
@@ -127,7 +137,7 @@ export default function ReactNextServicePage() {
                 borderBottom: "1px solid var(--border)",
               }}
             >
-              Voir mes réalisations →
+              Réalisations →
             </Link>
           </div>
         </div>
@@ -274,6 +284,63 @@ export default function ReactNextServicePage() {
                 inférieur à 100ms partout dans le monde.
               </p>
             </article>
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════
+          H2 — Résultats concrets
+          ════════════════════════════════════════ */}
+      <section>
+        <div className="divider" />
+        <div className="mx-auto max-w-5xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8">
+          <h2 className="text-xl sm:text-2xl font-semibold tracking-tight">
+            Des performances{" "}
+            <span style={{ color: "var(--accent)" }}>mesurables</span> dès la mise en ligne
+          </h2>
+          <p className="mt-3 max-w-2xl text-sm sm:text-base" style={{ color: "var(--fg-muted)", lineHeight: "1.8" }}>
+            Chaque site Next.js que je livre est audité avant livraison. Voici des résultats réels.
+          </p>
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { value: "98/100", label: "Score Lighthouse", detail: "moyenne sur les 5 derniers projets" },
+              { value: "0.8s", label: "Temps de chargement", detail: "First Contentful Paint moyen" },
+              { value: "+210 %", label: "Trafic organique", detail: "en 6 mois — site bien-être" },
+              { value: "100 %", label: "Mobile-friendly", detail: "responsive-first, testé iOS & Android" },
+            ].map((stat) => (
+              <div key={stat.label} className="rounded-xl p-5 text-center" style={{ border: "1px solid var(--border)", background: "var(--surface-1)" }}>
+                <p className="text-2xl font-bold sm:text-3xl" style={{ color: "var(--accent)" }}>{stat.value}</p>
+                <p className="mt-1 text-sm font-semibold" style={{ color: "var(--fg-base)" }}>{stat.label}</p>
+                <p className="mt-1 text-xs" style={{ color: "var(--fg-subtle)" }}>{stat.detail}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════
+          H2 — Stack technique
+          ════════════════════════════════════════ */}
+      <section>
+        <div className="divider" />
+        <div className="mx-auto max-w-5xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8">
+          <h2 className="text-xl sm:text-2xl font-semibold tracking-tight">
+            La stack technique de chaque projet
+          </h2>
+          <p className="mt-3 max-w-2xl text-sm sm:text-base" style={{ color: "var(--fg-muted)", lineHeight: "1.8" }}>
+            Des technologies éprouvées, maintenues par des communautés massives,
+            pour un site pérenne et évolutif.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            {[
+              "Next.js 15", "React 19", "TypeScript", "Tailwind CSS v4",
+              "Framer Motion", "Vercel", "Node.js", "Stripe",
+              "Sanity CMS", "JSON-LD / Schema.org", "Lighthouse CI", "GitHub Actions",
+            ].map((tech) => (
+              <span key={tech} className="rounded-lg px-4 py-2.5 text-sm font-medium" style={{ border: "1px solid var(--border)", background: "var(--surface-1)", color: "var(--fg-base)" }}>
+                {tech}
+              </span>
+            ))}
           </div>
         </div>
       </section>
@@ -582,8 +649,8 @@ export default function ReactNextServicePage() {
             { href: "/services/e-commerce", label: "E-commerce & Stripe" },
             { href: "/services/accessibilite", label: "Accessibilité WCAG" },
             { href: "/services/site-vitrine", label: "Site vitrine" },
+            { href: "/services/tarifs", label: "Tarifs & formules" },
             { href: "/blog", label: "Blog & ressources" },
-            { href: "/me", label: "Mon parcours" },
           ].map((link) => (
             <Link
               key={link.href}
@@ -612,11 +679,24 @@ export default function ReactNextServicePage() {
             vos objectifs. Je vous propose une approche technique, un planning
             réaliste et un devis clair, sans jargon.
           </p>
-          <div className="mt-6 flex flex-wrap justify-center gap-3">
+          <div className="mt-6 flex flex-wrap justify-center items-center gap-3">
             <Link href="/contact" className="btn btn-primary">
               Démarrer mon projet Next.js
             </Link>
+            <a
+              href="https://wa.me/32477713193?text=Bonjour%20St%C3%A9phane%2C%20je%20souhaiterais%20discuter%20d%27un%20projet%20Next.js."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-outline inline-flex items-center gap-2"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              WhatsApp
+            </a>
           </div>
+          <p className="mt-4 text-xs" style={{ color: "var(--fg-subtle)" }}>
+            <Link href="/services/tarifs" className="underline underline-offset-2 transition-colors" style={{ color: "var(--fg-subtle)" }}>Voir les tarifs</Link>{" "}
+            · Réponse sous 24 h · Devis gratuit
+          </p>
         </div>
         <ServicesSection />
       </section>
@@ -651,12 +731,13 @@ export default function ReactNextServicePage() {
                   "@type": "OfferCatalog",
                   name: "Prestations développement Next.js",
                   itemListElement: [
-                    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Site vitrine Next.js" } },
-                    { "@type": "Offer", itemOffered: { "@type": "Service", name: "E-commerce Next.js + Stripe" } },
-                    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Application web React" } },
+                    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Site vitrine Next.js" }, price: "2500", priceCurrency: "EUR" },
+                    { "@type": "Offer", itemOffered: { "@type": "Service", name: "E-commerce Next.js + Stripe" }, price: "5000", priceCurrency: "EUR" },
+                    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Application web React" }, price: "5000", priceCurrency: "EUR" },
                   ],
                 },
                 url: "https://www.stephanegamot.com/services/site-web-react-next",
+                image: "https://www.stephanegamot.com/Images/og/office-workstation.webp",
                 aggregateRating: {
                   "@type": "AggregateRating",
                   ratingValue: "4.9",
@@ -669,14 +750,29 @@ export default function ReactNextServicePage() {
                     "@type": "Review",
                     reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
                     author: { "@type": "Person", name: "Claire Delmas" },
+                    datePublished: "2025-09-12",
                     reviewBody: "Site rapide, esthétique et très propre techniquement. Impact immédiat sur nos leads et notre visibilité SEO.",
                   },
                   {
                     "@type": "Review",
                     reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
                     author: { "@type": "Person", name: "Idriss Van der Meer" },
+                    datePublished: "2025-10-28",
                     reviewBody: "Process clair, intégration Stripe sans friction, livrables carrés. On a senti un vrai accompagnement de bout en bout.",
                   },
+                ],
+              },
+              {
+                "@type": "HowTo",
+                "@id": "https://www.stephanegamot.com/services/site-web-react-next#howto",
+                name: "Comment se déroule la création d'un site Next.js",
+                description: "Les 4 étapes de création d'un site web Next.js sur mesure.",
+                totalTime: "P42D",
+                step: [
+                  { "@type": "HowToStep", position: 1, name: "Cadrage et architecture", text: "Définition de l'arborescence, parcours utilisateurs, mots-clés cibles et architecture technique." },
+                  { "@type": "HowToStep", position: 2, name: "Design UI/UX et prototypage", text: "Maquettes haute-fidélité sur Figma, mobile-first, accessibilité WCAG intégrée." },
+                  { "@type": "HowToStep", position: 3, name: "Développement Next.js", text: "Composants React typés, Server Components, animations Framer Motion, JSON-LD et metadata API." },
+                  { "@type": "HowToStep", position: 4, name: "Tests et déploiement", text: "Audit Lighthouse, tests cross-browser, déploiement Vercel avec domaine personnalisé et SSL." },
                 ],
               },
               {

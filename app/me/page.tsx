@@ -107,20 +107,20 @@ export default function AboutPage() {
           </div>
 
           {/* Visuel simple */}
-          <div className="relative w-full max-w-sm lg:ml-auto">
+          <div className="w-full max-w-sm lg:ml-auto">
             <div style={{ borderRadius: "1rem", border: "1px solid var(--border)", background: "var(--surface-1)", overflow: "hidden" }}>
               <Image
                 src={Me}
-                alt="Lumière douce dans un intérieur minimal, ambiance calme et harmonieuse."
-                className="h-full max-h-[380px] w-full object-cover"
+                alt="Photo de Stéphane Gamot, développeur web freelance."
+                className="h-full max-h-[420px] w-full object-cover"
                 sizes="(min-width: 1024px) 384px, (min-width: 640px) 50vw, 100vw"
               />
             </div>
-            <div className="pointer-events-none absolute -bottom-6 right-5 w-44 p-3 text-[11px]" style={{ borderRadius: "1rem", background: "rgba(8,9,12,0.9)", border: "1px solid var(--border)", boxShadow: "var(--shadow-soft)" }}>
+            <div className="mt-4 p-4" style={{ borderRadius: "1rem", background: "var(--surface-1)", border: "1px solid var(--border)" }}>
               <p className="text-xs font-semibold" style={{ color: "var(--fg-base)" }}>
                 Ce que j’aime créer
               </p>
-              <p className="mt-1 text-[11px] leading-snug" style={{ color: "var(--fg-subtle)" }}>
+              <p className="mt-1 text-xs leading-snug" style={{ color: "var(--fg-subtle)" }}>
                 Des interfaces calmes, structurées, où on comprend vite quoi faire
                 et où cliquer.
               </p>

@@ -4,6 +4,7 @@ import Script from "next/script";
 import { Cormorant_Garamond, Montserrat } from "next/font/google";
 import Nav from "@/components/navigation/Header/Nav";
 import Footer from "@/components/navigation/Footer/Footer";
+import WhatsAppButton from "@/components/trust/WhatsAppButton";
 // import OgImg from "@/public/Images/og/office-workstation.webp"
 
 const garamond = Cormorant_Garamond({
@@ -171,6 +172,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
         </main>
         <Footer />
+        <WhatsAppButton />
       </body>
     </html>
   );

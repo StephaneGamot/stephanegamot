@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     locale: "fr_BE",
     images: [
       {
-        url: "/Images/og/office-workstation.webp",
+        url: "https://www.stephanegamot.com/Images/og/office-workstation.webp",
         width: 1200,
         height: 630,
         alt: "Audit SEO et optimisation du référencement naturel",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     title: "Audit SEO & référencement naturel – Stéphane Gamot",
     description:
       "Audit technique + plan d'actions priorisé pour améliorer votre visibilité, votre trafic organique et vos conversions.",
-    images: ["/Images/og/office-workstation.webp"],
+    images: ["https://www.stephanegamot.com/Images/og/office-workstation.webp"],
   },
 };
 
@@ -117,6 +117,16 @@ export default function SeoServicePage() {
               Demander un audit SEO gratuit
             </Link>
             <Link
+              href="/services/tarifs"
+              className="text-sm transition-colors duration-300"
+              style={{
+                color: "var(--fg-subtle)",
+                borderBottom: "1px solid var(--border)",
+              }}
+            >
+              Voir les tarifs →
+            </Link>
+            <Link
               href="/portfolio"
               className="text-sm transition-colors duration-300"
               style={{
@@ -124,7 +134,7 @@ export default function SeoServicePage() {
                 borderBottom: "1px solid var(--border)",
               }}
             >
-              Voir des résultats concrets →
+              Résultats concrets →
             </Link>
           </div>
         </div>
@@ -301,6 +311,62 @@ export default function SeoServicePage() {
       </section>
 
       {/* ════════════════════════════════════════
+          H2 — Résultats concrets obtenus
+          Social proof avec chiffres avant/après
+          ════════════════════════════════════════ */}
+      <section>
+        <div className="divider" />
+        <div className="mx-auto max-w-5xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8">
+          <h2 className="text-xl sm:text-2xl font-semibold tracking-tight">
+            Des résultats SEO{" "}
+            <span style={{ color: "var(--accent)" }}>mesurables</span>, pas des
+            promesses
+          </h2>
+          <p
+            className="mt-3 max-w-2xl text-sm sm:text-base"
+            style={{ color: "var(--fg-muted)", lineHeight: "1.8" }}
+          >
+            Chaque audit débouche sur des actions concrètes. Voici quelques
+            résultats obtenus pour des clients ayant suivi les recommandations.
+          </p>
+
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { value: "+210 %", label: "Trafic organique", detail: "en 6 mois – site bien-être" },
+              { value: "98/100", label: "Score Lighthouse", detail: "performance après optimisation" },
+              { value: "Top 3", label: "Positions Google", detail: "sur 12 requêtes locales ciblées" },
+              { value: "−45 %", label: "Taux de rebond", detail: "grâce au maillage + vitesse" },
+            ].map((stat) => (
+              <div
+                key={stat.label}
+                className="rounded-xl p-5 text-center"
+                style={{
+                  border: "1px solid var(--border)",
+                  background: "var(--surface-1)",
+                }}
+              >
+                <p
+                  className="text-2xl font-bold sm:text-3xl"
+                  style={{ color: "var(--accent)" }}
+                >
+                  {stat.value}
+                </p>
+                <p className="mt-1 text-sm font-semibold" style={{ color: "var(--fg-base)" }}>
+                  {stat.label}
+                </p>
+                <p
+                  className="mt-1 text-xs"
+                  style={{ color: "var(--fg-subtle)" }}
+                >
+                  {stat.detail}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════
           H2 — Comment se déroule un audit SEO
           ════════════════════════════════════════ */}
       <section>
@@ -414,6 +480,62 @@ export default function SeoServicePage() {
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════
+          H2 — Outils professionnels utilisés
+          Renforce E-E-A-T (Expertise)
+          ════════════════════════════════════════ */}
+      <section>
+        <div className="divider" />
+        <div className="mx-auto max-w-5xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8">
+          <h2 className="text-xl sm:text-2xl font-semibold tracking-tight">
+            Les outils sur lesquels je m&apos;appuie
+          </h2>
+          <p
+            className="mt-3 max-w-2xl text-sm sm:text-base"
+            style={{ color: "var(--fg-muted)", lineHeight: "1.8" }}
+          >
+            Un audit SEO fiable repose sur des données, pas sur des suppositions.
+            J&apos;utilise la même stack que les agences SEO de référence, mais avec
+            une lecture artisanale orientée action.
+          </p>
+
+          <div className="mt-8 flex flex-wrap gap-3">
+            {[
+              { name: "Google Search Console", desc: "Données d'indexation & performances réelles" },
+              { name: "Ahrefs", desc: "Backlinks, mots-clés & analyse concurrentielle" },
+              { name: "Screaming Frog", desc: "Crawl technique complet du site" },
+              { name: "PageSpeed Insights", desc: "Core Web Vitals & métriques Lighthouse" },
+              { name: "Chrome DevTools", desc: "Analyse DOM, réseau & rendu" },
+              { name: "Schema Markup Validator", desc: "Validation des données structurées" },
+              { name: "Google Analytics 4", desc: "Comportement utilisateur & conversions" },
+              { name: "Rich Results Test", desc: "Éligibilité aux résultats enrichis" },
+            ].map((tool) => (
+              <div
+                key={tool.name}
+                className="group relative rounded-lg px-4 py-2.5 text-sm font-medium transition-colors duration-200"
+                style={{
+                  border: "1px solid var(--border)",
+                  background: "var(--surface-1)",
+                  color: "var(--fg-muted)",
+                }}
+              >
+                <span style={{ color: "var(--fg-base)" }}>{tool.name}</span>
+                <span
+                  className="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 -translate-x-1/2 whitespace-nowrap rounded-md px-3 py-1.5 text-xs opacity-0 transition-opacity group-hover:opacity-100"
+                  style={{
+                    background: "var(--surface-2)",
+                    border: "1px solid var(--border)",
+                    color: "var(--fg-muted)",
+                  }}
+                >
+                  {tool.desc}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -631,6 +753,98 @@ export default function SeoServicePage() {
                 de mots-clés.
               </p>
             </details>
+
+            <details
+              className="group rounded-xl p-5"
+              style={{ border: "1px solid var(--border)", background: "var(--surface-1)" }}
+            >
+              <summary className="cursor-pointer text-sm sm:text-base font-semibold list-none flex items-center justify-between">
+                Combien coûte un audit SEO professionnel ?
+                <span
+                  className="ml-3 text-lg transition-transform duration-300 group-open:rotate-45"
+                  aria-hidden="true"
+                  style={{ color: "var(--accent)" }}
+                >
+                  +
+                </span>
+              </summary>
+              <p
+                className="mt-3 text-sm"
+                style={{ color: "var(--fg-muted)", lineHeight: "1.7" }}
+              >
+                Le prix varie selon la taille du site et la profondeur de l&apos;analyse.
+                Pour un site vitrine de 5 à 20 pages, comptez entre 500 et 1 200 €.
+                Pour un e-commerce ou un site avec des centaines de pages, le tarif
+                est adapté au volume et à la complexité technique. Je propose toujours
+                un{" "}
+                <Link href="/contact" style={{ color: "var(--accent)" }}>
+                  devis gratuit et sans engagement
+                </Link>{" "}
+                après un premier échange. Consultez aussi ma{" "}
+                <Link href="/services/tarifs" style={{ color: "var(--accent)" }}>
+                  page tarifs
+                </Link>{" "}
+                pour une vue d&apos;ensemble.
+              </p>
+            </details>
+
+            <details
+              className="group rounded-xl p-5"
+              style={{ border: "1px solid var(--border)", background: "var(--surface-1)" }}
+            >
+              <summary className="cursor-pointer text-sm sm:text-base font-semibold list-none flex items-center justify-between">
+                L&apos;intelligence artificielle va-t-elle remplacer le SEO ?
+                <span
+                  className="ml-3 text-lg transition-transform duration-300 group-open:rotate-45"
+                  aria-hidden="true"
+                  style={{ color: "var(--accent)" }}
+                >
+                  +
+                </span>
+              </summary>
+              <p
+                className="mt-3 text-sm"
+                style={{ color: "var(--fg-muted)", lineHeight: "1.7" }}
+              >
+                L&apos;IA transforme la manière dont Google comprend et classe les
+                contenus (SGE, AI Overviews), mais elle ne remplace pas le SEO — elle
+                le rend plus exigeant. Les sites qui démontrent une expertise réelle,
+                une expérience de terrain et un contenu original (E-E-A-T) sont
+                justement ceux que Google met en avant face aux contenus génériques
+                générés par IA. Un audit SEO intègre désormais ces nouvelles réalités.
+              </p>
+            </details>
+
+            <details
+              className="group rounded-xl p-5"
+              style={{ border: "1px solid var(--border)", background: "var(--surface-1)" }}
+            >
+              <summary className="cursor-pointer text-sm sm:text-base font-semibold list-none flex items-center justify-between">
+                Quelle est la différence entre SEO local et SEO classique ?
+                <span
+                  className="ml-3 text-lg transition-transform duration-300 group-open:rotate-45"
+                  aria-hidden="true"
+                  style={{ color: "var(--accent)" }}
+                >
+                  +
+                </span>
+              </summary>
+              <p
+                className="mt-3 text-sm"
+                style={{ color: "var(--fg-muted)", lineHeight: "1.7" }}
+              >
+                Le SEO local cible les recherches géolocalisées (« restaurant
+                Bruxelles », « plombier Halle »). Il s&apos;appuie sur Google
+                Business Profile, les avis clients, les citations NAP (Nom, Adresse,
+                Téléphone) et des pages optimisées par zone géographique. Pour les
+                indépendants et commerces de proximité, c&apos;est souvent le levier
+                le plus rentable. J&apos;ai créé des{" "}
+                <Link href="/creation-site-web-bruxelles" style={{ color: "var(--accent)" }}>
+                  pages locales dédiées
+                </Link>{" "}
+                pour illustrer cette approche.
+              </p>
+            </details>
           </div>
         </div>
       </section>
@@ -650,6 +864,7 @@ export default function SeoServicePage() {
             { href: "/services/e-commerce", label: "E-commerce & Stripe" },
             { href: "/services/accessibilite", label: "Accessibilité WCAG" },
             { href: "/services/site-vitrine", label: "Site vitrine" },
+            { href: "/services/tarifs", label: "Tarifs & formules" },
             { href: "/blog", label: "Blog & ressources" },
             { href: "/faq", label: "Questions fréquentes" },
           ].map((link) => (
@@ -684,11 +899,32 @@ export default function SeoServicePage() {
             Je vous propose un périmètre d&apos;audit adapté et un devis clair,
             sans engagement.
           </p>
-          <div className="mt-6 flex flex-wrap justify-center gap-3">
+          <div className="mt-6 flex flex-wrap justify-center items-center gap-3">
             <Link href="/contact" className="btn btn-primary">
               Demander mon audit SEO
             </Link>
+            <a
+              href="https://wa.me/32477713193?text=Bonjour%20St%C3%A9phane%2C%20je%20souhaiterais%20un%20audit%20SEO%20de%20mon%20site."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-outline inline-flex items-center gap-2"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+              WhatsApp
+            </a>
           </div>
+          <p className="mt-4 text-xs" style={{ color: "var(--fg-subtle)" }}>
+            <Link
+              href="/services/tarifs"
+              className="underline underline-offset-2 transition-colors"
+              style={{ color: "var(--fg-subtle)" }}
+            >
+              Voir les tarifs
+            </Link>{" "}
+            · Réponse sous 24 h · Devis gratuit
+          </p>
         </div>
         <ServicesSection />
       </section>
@@ -729,12 +965,46 @@ export default function SeoServicePage() {
                   "@type": "OfferCatalog",
                   name: "Prestations SEO",
                   itemListElement: [
-                    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Audit SEO technique" } },
-                    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Optimisation SEO on-page" } },
-                    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Accompagnement SEO mensuel" } },
+                    {
+                      "@type": "Offer",
+                      itemOffered: { "@type": "Service", name: "Audit SEO technique" },
+                      price: "500",
+                      priceCurrency: "EUR",
+                      priceSpecification: {
+                        "@type": "PriceSpecification",
+                        price: "500",
+                        priceCurrency: "EUR",
+                        description: "Audit technique pour site vitrine (5-20 pages)",
+                      },
+                    },
+                    {
+                      "@type": "Offer",
+                      itemOffered: { "@type": "Service", name: "Audit SEO complet + plan d'actions" },
+                      price: "900",
+                      priceCurrency: "EUR",
+                      priceSpecification: {
+                        "@type": "PriceSpecification",
+                        price: "900",
+                        priceCurrency: "EUR",
+                        description: "Audit technique, contenu, maillage et plan priorisé",
+                      },
+                    },
+                    {
+                      "@type": "Offer",
+                      itemOffered: { "@type": "Service", name: "Accompagnement SEO mensuel" },
+                      price: "350",
+                      priceCurrency: "EUR",
+                      priceSpecification: {
+                        "@type": "PriceSpecification",
+                        price: "350",
+                        priceCurrency: "EUR",
+                        description: "Suivi mensuel : veille, contenu, monitoring des positions",
+                      },
+                    },
                   ],
                 },
                 url: "https://www.stephanegamot.com/services/seo",
+                image: "https://www.stephanegamot.com/Images/og/office-workstation.webp",
                 aggregateRating: {
                   "@type": "AggregateRating",
                   ratingValue: "4.9",
@@ -747,13 +1017,48 @@ export default function SeoServicePage() {
                     "@type": "Review",
                     reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
                     author: { "@type": "Person", name: "Claire Delmas" },
+                    datePublished: "2025-09-12",
                     reviewBody: "Site rapide, esthétique et très propre techniquement. Impact immédiat sur nos leads et notre visibilité SEO.",
                   },
                   {
                     "@type": "Review",
                     reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
                     author: { "@type": "Person", name: "Anaïs Rochette" },
+                    datePublished: "2025-11-03",
                     reviewBody: "Design soigné, performances mesurées, accessibilité intégrée. L'expérience client est nettement plus fluide.",
+                  },
+                ],
+              },
+              {
+                "@type": "HowTo",
+                "@id": "https://www.stephanegamot.com/services/seo#howto",
+                name: "Comment se déroule un audit SEO professionnel",
+                description: "Les 4 étapes d'un audit SEO complet, du cadrage initial à la mesure des résultats.",
+                totalTime: "P14D",
+                step: [
+                  {
+                    "@type": "HowToStep",
+                    position: 1,
+                    name: "Échange initial et cadrage des objectifs",
+                    text: "Appel ou échange écrit pour comprendre l'activité, les mots-clés cibles, la concurrence et les objectifs business.",
+                  },
+                  {
+                    "@type": "HowToStep",
+                    position: 2,
+                    name: "Crawl complet et analyse technique",
+                    text: "Scan du site avec Screaming Frog, Ahrefs et PageSpeed Insights : statut HTTP, balisage, liens cassés, données structurées.",
+                  },
+                  {
+                    "@type": "HowToStep",
+                    position: 3,
+                    name: "Livraison du plan d'actions priorisé",
+                    text: "Document structuré avec trois niveaux de priorité : correctifs critiques, optimisations à fort impact, améliorations long terme.",
+                  },
+                  {
+                    "@type": "HowToStep",
+                    position: 4,
+                    name: "Suivi et mesure des résultats",
+                    text: "Monitoring des positions via Google Search Console, mesure de l'impact sur le trafic organique et ajustement de la stratégie.",
                   },
                 ],
               },
@@ -791,6 +1096,30 @@ export default function SeoServicePage() {
                     acceptedAnswer: {
                       "@type": "Answer",
                       text: "L'audit est le diagnostic initial. Pour maintenir vos positions, un accompagnement SEO mensuel est recommandé : veille, contenu, monitoring.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "Combien coûte un audit SEO professionnel ?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Pour un site vitrine de 5 à 20 pages, comptez entre 500 et 1 200 €. Pour un e-commerce ou un site volumineux, le tarif est adapté au volume et à la complexité. Devis gratuit sur demande.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "L'intelligence artificielle va-t-elle remplacer le SEO ?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "L'IA transforme la manière dont Google classe les contenus, mais elle ne remplace pas le SEO. Les sites qui démontrent expertise, expérience et contenu original (E-E-A-T) sont justement ceux que Google favorise.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "Quelle est la différence entre SEO local et SEO classique ?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Le SEO local cible les recherches géolocalisées et s'appuie sur Google Business Profile, les avis clients et des pages optimisées par zone géographique. Pour les commerces de proximité, c'est le levier le plus rentable.",
                     },
                   },
                 ],

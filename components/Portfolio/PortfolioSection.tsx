@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import Image, { type StaticImageData } from "next/image";
 import PortFolioAstro from "@/public/Images/portfolio/portfolio-astro.webp"
 import PortFolioBoutique from "@/public/Images/portfolio/portfolio-boutique.webp"
@@ -99,6 +99,11 @@ const projects: Project[] = [
     techs: ["WordPress", "Elementor", "SEO", "Performance"],
     highlight:
       "Accent mis sur l'émotion, la lumière et le territoire pour donner envie de réserver.",
+    metrics: [
+      { label: "Lighthouse", value: "92/100" },
+      { label: "Réservations", value: "+35%" },
+      { label: "Taux de rebond", value: "-28%" },
+    ],
     imageSrc: PortFolioCorse,
     imageAlt:
       "Page d'accueil du site de locations saisonnières Corsica-Corse, avec paysages corses.",
@@ -113,6 +118,11 @@ const projects: Project[] = [
     techs: ["Next.js", "Tailwind", "SEO"],
     highlight:
       "Pensé pour rassurer et mettre en confiance dès la première visite sur le site.",
+    metrics: [
+      { label: "Lighthouse", value: "96/100" },
+      { label: "Temps mobile", value: "1.1s" },
+      { label: "Contacts", value: "+40%" },
+    ],
     imageSrc: PortFolioCourcelles,
     imageAlt:
       "Interface d'un site pour centre de bien-être avec ambiance relaxante.",
@@ -127,6 +137,11 @@ const projects: Project[] = [
     techs: ["Next.js", "Framer Motion", "Tailwind"],
     highlight:
       "Met en avant la personnalité du studio plutôt qu'une simple liste de prestations.",
+    metrics: [
+      { label: "Lighthouse", value: "94/100" },
+      { label: "Engagement", value: "+52%" },
+      { label: "Temps/page", value: "2m45" },
+    ],
     imageSrc: PortFolioEyes,
     imageAlt:
       "Page d'accueil d'un studio créatif avec visuel fort et design immersif.",
@@ -141,6 +156,11 @@ const projects: Project[] = [
     techs: ["Next.js", "TypeScript", "Design System", "API"],
     highlight:
       "Une expérience orientée jeu, curiosité et premières phrases pour briser la glace.",
+    metrics: [
+      { label: "Lighthouse", value: "93/100" },
+      { label: "Onboarding", value: "89%" },
+      { label: "Rétention J7", value: "62%" },
+    ],
     imageSrc: PortFolioAstro,
     imageAlt:
       "Interface cosmique de l'application de compatibilité amoureuse AstraLovers.",
@@ -155,6 +175,11 @@ const projects: Project[] = [
     techs: ["React", "Recharts", "API", "TypeScript"],
     highlight:
       "Met la data au service de la motivation avec une visualisation claire des progrès.",
+    metrics: [
+      { label: "Lighthouse", value: "91/100" },
+      { label: "Temps rendu", value: "0.9s" },
+      { label: "Satisfaction", value: "4.7/5" },
+    ],
     imageSrc: PortFolioSportSee,
     imageAlt:
       "Dashboard analytique SportSee pour le suivi des performances sportives.",
@@ -169,6 +194,11 @@ const projects: Project[] = [
     techs: ["React", "TypeScript", "API"],
     highlight:
       "Organisation des données pour que les organisateurs visualisent rapidement l'essentiel.",
+    metrics: [
+      { label: "Lighthouse", value: "90/100" },
+      { label: "Inscriptions", value: "+60%" },
+      { label: "Taux d'erreur", value: "-75%" },
+    ],
     imageSrc: PortFolioGameOn,
     imageAlt:
       "Interface de dashboard GameOn pour la gestion d'événements sportifs.",
@@ -183,6 +213,11 @@ const projects: Project[] = [
     techs: ["React", "Recharts", "API", "UX"],
     highlight:
       "Pensé pour rester lisible même avec beaucoup de données sur un seul écran.",
+    metrics: [
+      { label: "Lighthouse", value: "89/100" },
+      { label: "Données/écran", value: "+120%" },
+      { label: "Temps accès", value: "-40%" },
+    ],
     imageSrc: PortFolioOlympique,
     imageAlt:
       "Dashboard inspiré d'un comité olympique pour le suivi des performances.",
@@ -197,6 +232,11 @@ const projects: Project[] = [
     techs: ["React", "Tailwind", "UX", "Responsive"],
     highlight:
       "Pensée pour mettre en avant quelques produits phares plutôt qu'un catalogue interminable.",
+    metrics: [
+      { label: "Lighthouse", value: "94/100" },
+      { label: "Ajouts panier", value: "+38%" },
+      { label: "Taux rebond", value: "-22%" },
+    ],
     imageSrc: PortFolioBoutique,
     imageAlt:
       "Page d'accueil d'une boutique en ligne tendance pour mode et accessoires.",
@@ -211,6 +251,11 @@ const projects: Project[] = [
     techs: ["JavaScript", "API", "Responsive"],
     highlight:
       "Travail particulier sur la fiche produit et la mise en avant des visuels.",
+    metrics: [
+      { label: "Lighthouse", value: "88/100" },
+      { label: "Fiche produit", value: "+55%" },
+      { label: "Temps charg.", value: "1.3s" },
+    ],
     imageSrc: PortFolioKanap,
     imageAlt: "Page produit d'un site e-commerce dédié aux canapés.",
   },
@@ -224,6 +269,11 @@ const projects: Project[] = [
     techs: ["React", "API", "UX"],
     highlight:
       "Organisation de l'information pour rendre la recherche de biens simple et agréable.",
+    metrics: [
+      { label: "Lighthouse", value: "91/100" },
+      { label: "Recherches", value: "+68%" },
+      { label: "Taux rebond", value: "-31%" },
+    ],
     imageSrc: PortFolioKaza,
     imageAlt:
       "Page d'accueil d'un portail immobilier moderne avec listing de biens.",
@@ -238,6 +288,11 @@ const projects: Project[] = [
     techs: ["React", "Tailwind", "UX"],
     highlight:
       "Centré sur l'ambiance et les visuels pour donner faim dès la première visite.",
+    metrics: [
+      { label: "Lighthouse", value: "93/100" },
+      { label: "Réservations", value: "+42%" },
+      { label: "Temps/page", value: "1m50" },
+    ],
     imageSrc: PortFolioJaponais,
     imageAlt:
       "Interface d'un site de restaurant japonais mettant en avant les plats.",
@@ -252,6 +307,11 @@ const projects: Project[] = [
     techs: ["Next.js", "TypeScript", "Tailwind"],
     highlight:
       "Pensé pour évoluer vers une plateforme multi-enseignes avec logique de menu et de commande.",
+    metrics: [
+      { label: "Lighthouse", value: "90/100" },
+      { label: "Commandes", value: "+48%" },
+      { label: "Panier moyen", value: "+25%" },
+    ],
     imageSrc: PortFolioRestaurants,
     imageAlt:
       "Interface d'un portail multi-restaurants avec plusieurs cartes disponibles.",
@@ -402,35 +462,11 @@ export default function PortfolioShowcase() {
         </motion.div>
 
               {/* Grid des projets */}
-        <div className="mt-10 grid gap-6 sm:mt-12 sm:grid-cols-2 lg:grid-cols-3 items-stretch">
-          <AnimatePresence mode="wait">
+        <div className="mt-10 grid gap-8 sm:mt-12 sm:grid-cols-2 lg:grid-cols-3">
             {filteredProjects.map((project) => (
-              <motion.article
+              <article
                 key={project.id}
-                initial={{ opacity: 0, y: 30, scale: 0.96 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                exit={{ opacity: 0, y: -20, scale: 0.96 }}
-                transition={{ type: "spring", damping: 30, stiffness: 200, mass: 0.7 }}
-                whileHover={
-                  !isTouch
-                    ? {
-                        y: -6,
-                        rotateX: 2,
-                        rotateY: -2,
-                        transition: { type: "spring", damping: 25, stiffness: 300, mass: 0.6 },
-                      }
-                    : undefined
-                }
-                whileTap={
-                  isTouch
-                    ? {
-                        scale: 0.97,
-                        y: -2,
-                        transition: { type: "spring", damping: 20, stiffness: 400, mass: 0.5 },
-                      }
-                    : undefined
-                }
-                className="group portfolio-card relative flex h-full flex-col justify-between rounded-2xl border p-4 sm:p-5 backdrop-blur-md transition-colors duration-300"
+                className="group portfolio-card relative flex flex-col overflow-hidden rounded-2xl border p-4 sm:p-5 transition-colors duration-300"
                 style={{
                   borderColor: "var(--border)",
                   background: "var(--surface-1)",
@@ -496,24 +532,21 @@ export default function PortfolioShowcase() {
 
                   {project.metrics && project.metrics.length > 0 && (
                     <div
-                      className="mt-3 grid grid-cols-3 gap-2 rounded-lg p-3"
+                      className="mt-3 flex flex-wrap gap-x-4 gap-y-1 rounded-lg px-3 py-2.5"
                       style={{ background: "var(--surface-2)" }}
                     >
-                      {project.metrics.map((metric) => (
-                        <div key={metric.label} className="text-center">
-                          <p
-                            className="text-sm font-semibold"
-                            style={{ color: "var(--accent)" }}
-                          >
+                      {project.metrics.map((metric, i) => (
+                        <span key={metric.label} className="inline-flex items-baseline gap-1.5 text-xs whitespace-nowrap">
+                          <span className="font-semibold" style={{ color: "var(--accent)" }}>
                             {metric.value}
-                          </p>
-                          <p
-                            className="text-[10px] uppercase tracking-wide"
-                            style={{ color: "var(--fg-subtle)" }}
-                          >
+                          </span>
+                          <span style={{ color: "var(--fg-subtle)" }}>
                             {metric.label}
-                          </p>
-                        </div>
+                          </span>
+                          {i < project.metrics!.length - 1 && (
+                            <span className="ml-1.5" style={{ color: "var(--border)" }} aria-hidden="true">·</span>
+                          )}
+                        </span>
                       ))}
                     </div>
                   )}
@@ -550,9 +583,8 @@ export default function PortfolioShowcase() {
                     </span>
                   </a>
                 )}
-              </motion.article>
+              </article>
             ))}
-          </AnimatePresence>
         </div>
 
       </div>

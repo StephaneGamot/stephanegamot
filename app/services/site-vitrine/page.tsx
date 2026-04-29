@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     locale: "fr_BE",
     images: [
       {
-        url: "/Images/og/office-workstation.webp",
+        url: "https://www.stephanegamot.com/Images/og/office-workstation.webp",
         width: 1200,
         height: 630,
         alt: "Création de site vitrine professionnel par Stéphane Gamot, freelance en Belgique",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     title: "Création site vitrine premium — Stéphane Gamot",
     description:
       "Site vitrine sur mesure : design élégant, SEO local, mobile-first et certificat SSL. Demandez votre devis gratuit.",
-    images: ["/Images/og/office-workstation.webp"],
+    images: ["https://www.stephanegamot.com/Images/og/office-workstation.webp"],
   },
 };
 
@@ -126,6 +126,16 @@ export default function SiteVitrineServicePage() {
             >
               Réponse sous 24&nbsp;h, sans engagement.
             </span>
+            <Link
+              href="/services/tarifs"
+              className="text-sm"
+              style={{
+                color: "var(--fg-subtle)",
+                borderBottom: "1px solid var(--border)",
+              }}
+            >
+              Voir les tarifs &rarr;
+            </Link>
           </div>
         </div>
       </section>
@@ -342,6 +352,99 @@ export default function SiteVitrineServicePage() {
         </div>
       </section>
 
+      {/* ── RÉSULTATS CONCRETS ── */}
+      <section>
+        <div className="divider" />
+        <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-14 lg:px-8">
+          <h2 className="text-lg sm:text-xl font-semibold tracking-tight">
+            Résultats concrets
+          </h2>
+          <p
+            className="mt-2 max-w-2xl text-sm sm:text-base"
+            style={{ color: "var(--fg-muted)" }}
+          >
+            Des chiffres mesurés sur les sites vitrines livrés ces 12 derniers mois.
+          </p>
+
+          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { value: "96/100", label: "Score Lighthouse", detail: "performance moyenne des sites vitrines" },
+              { value: "+150 %", label: "Demandes de contact", detail: "en 3 mois — cabinet d’architecte" },
+              { value: "1.1s", label: "Temps de chargement", detail: "First Contentful Paint moyen" },
+              { value: "−38 %", label: "Taux de rebond", detail: "grâce au design et à la clarté" },
+            ].map((stat) => (
+              <div
+                key={stat.label}
+                className="rounded-xl p-5 text-center"
+                style={{
+                  border: "1px solid var(--border)",
+                  background: "var(--surface-1)",
+                }}
+              >
+                <span
+                  className="text-2xl font-bold sm:text-3xl"
+                  style={{ color: "var(--accent)" }}
+                >
+                  {stat.value}
+                </span>
+                <p className="mt-2 text-sm font-semibold">{stat.label}</p>
+                <p
+                  className="mt-1 text-xs"
+                  style={{ color: "var(--fg-muted)" }}
+                >
+                  {stat.detail}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── STACK TECHNIQUE ── */}
+      <section>
+        <div className="divider" />
+        <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-14 lg:px-8">
+          <h2 className="text-lg sm:text-xl font-semibold tracking-tight">
+            Stack technique
+          </h2>
+          <p
+            className="mt-2 max-w-2xl text-sm sm:text-base"
+            style={{ color: "var(--fg-muted)" }}
+          >
+            Les outils et standards que j&apos;utilise pour chaque site vitrine.
+          </p>
+
+          <div className="mt-6 flex flex-wrap gap-3">
+            {[
+              "Next.js",
+              "React",
+              "TypeScript",
+              "Tailwind CSS",
+              "Framer Motion",
+              "Vercel",
+              "Figma",
+              "Sanity CMS",
+              "Google Fonts",
+              "Schema.org",
+              "Core Web Vitals",
+              "WCAG AA",
+            ].map((tool) => (
+              <span
+                key={tool}
+                className="rounded-lg px-4 py-2.5 text-sm font-medium"
+                style={{
+                  border: "1px solid var(--border)",
+                  background: "var(--surface-1)",
+                  color: "var(--fg-base)",
+                }}
+              >
+                {tool}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── MON PROCESSUS DE CRÉATION ── */}
       <section>
         <div className="divider" />
@@ -536,6 +639,7 @@ export default function SiteVitrineServicePage() {
             { href: "/services/accessibilite", label: "Accessibilité web" },
             { href: "/portfolio", label: "Voir le portfolio" },
             { href: "/me", label: "A propos de moi" },
+            { href: "/services/tarifs", label: "Tarifs & formules" },
             { href: "/faq", label: "Questions fréquentes" },
           ].map((link) => (
             <Link
@@ -572,7 +676,23 @@ export default function SiteVitrineServicePage() {
             <Link href="/contact" className="btn btn-primary">
               Lancer mon projet de site vitrine
             </Link>
+            <a
+              href="https://wa.me/32477713193?text=Bonjour%20St%C3%A9phane%2C%20je%20souhaiterais%20un%20site%20vitrine%20professionnel."
+              className="btn btn-primary"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                background: "var(--surface-1)",
+                color: "var(--fg-base)",
+                border: "1px solid var(--border)",
+              }}
+            >
+              WhatsApp
+            </a>
           </div>
+          <p className="mt-4 text-xs" style={{ color: "var(--fg-subtle)" }}>
+            <Link href="/services/tarifs" className="underline underline-offset-2">Voir les tarifs</Link> · Réponse sous 24 h · Devis gratuit
+          </p>
         </div>
 
         <ServicesSection />
@@ -592,6 +712,7 @@ export default function SiteVitrineServicePage() {
                 name: "Création de site vitrine professionnel",
                 description:
                   "Création de site vitrine sur mesure en Belgique : design premium, SEO local, mobile-first, HTTPS et formulaire de contact optimisé pour convertir.",
+                image: "https://www.stephanegamot.com/Images/og/office-workstation.webp",
                 provider: {
                   "@type": "ProfessionalService",
                   "@id":
@@ -605,6 +726,22 @@ export default function SiteVitrineServicePage() {
                 },
                 serviceType: "Création de site vitrine",
                 url: "https://www.stephanegamot.com/services/site-vitrine",
+                offers: [
+                  {
+                    "@type": "Offer",
+                    name: "Site vitrine Essentiel",
+                    price: "1500",
+                    priceCurrency: "EUR",
+                    url: "https://www.stephanegamot.com/services/tarifs",
+                  },
+                  {
+                    "@type": "Offer",
+                    name: "Site vitrine Pro",
+                    price: "3500",
+                    priceCurrency: "EUR",
+                    url: "https://www.stephanegamot.com/services/tarifs",
+                  },
+                ],
                 aggregateRating: {
                   "@type": "AggregateRating",
                   ratingValue: "4.9",
@@ -615,6 +752,7 @@ export default function SiteVitrineServicePage() {
                 review: [
                   {
                     "@type": "Review",
+                    datePublished: "2025-11-12",
                     reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
                     author: { "@type": "Person", name: "Anaïs Rochette" },
                     reviewBody: "Design soigné, performances mesurées, accessibilité intégrée. L'expérience client est nettement plus fluide.",
@@ -657,6 +795,40 @@ export default function SiteVitrineServicePage() {
                       "@type": "Answer",
                       text: "Le SEO local repose sur un site techniquement optimisé (vitesse, HTTPS, responsive), un contenu ciblé avec des mots-clés géographiques, et une fiche Google Business Profile bien renseignée avec des avis clients et une cohérence NAP.",
                     },
+                  },
+                ],
+              },
+              {
+                "@type": "HowTo",
+                "@id":
+                  "https://www.stephanegamot.com/services/site-vitrine/#howto",
+                name: "Comment créer un site vitrine professionnel",
+                description:
+                  "Quatre étapes claires pour passer de l'idée à un site vitrine professionnel en ligne et visible sur Google.",
+                step: [
+                  {
+                    "@type": "HowToStep",
+                    position: 1,
+                    name: "Échange & brief",
+                    text: "On discute de votre activité, vos objectifs et votre cible. Je définis la structure, les pages essentielles et la stratégie SEO local adaptée à votre zone.",
+                  },
+                  {
+                    "@type": "HowToStep",
+                    position: 2,
+                    name: "Maquette & design",
+                    text: "Je crée un design sur mesure (mobile-first, responsive) avec votre identité visuelle. Vous validez avant le développement.",
+                  },
+                  {
+                    "@type": "HowToStep",
+                    position: 3,
+                    name: "Développement & contenu",
+                    text: "Intégration du site vitrine (WordPress ou Next.js), rédaction des textes optimisés, mise en place du formulaire de contact, HTTPS et hébergement.",
+                  },
+                  {
+                    "@type": "HowToStep",
+                    position: 4,
+                    name: "Lancement & référencement",
+                    text: "Mise en ligne, soumission aux moteurs de recherche, liaison Google Business Profile, vérification NAP et suivi des performances.",
                   },
                 ],
               },

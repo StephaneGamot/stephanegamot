@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     locale: "fr_BE",
     images: [
       {
-        url: "/Images/og/office-workstation.webp",
+        url: "https://www.stephanegamot.com/Images/og/office-workstation.webp",
         width: 1200,
         height: 630,
         alt: "Création site WordPress professionnel par Stéphane Gamot",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     title: "Création site WordPress sur mesure — Stéphane Gamot",
     description:
       "Site WordPress rapide, sécurisé et facile à gérer. Développeur freelance en Belgique. Devis gratuit sous 48 h.",
-    images: ["/Images/og/office-workstation.webp"],
+    images: ["https://www.stephanegamot.com/Images/og/office-workstation.webp"],
   },
 };
 
@@ -56,12 +56,51 @@ export default function WordPressServicePage() {
         name: "Création site WordPress",
         description:
           "Création de sites WordPress sur mesure : vitrine, blog ou boutique WooCommerce. Rapide, sécurisé, optimisé SEO et facile à gérer.",
+        image: "https://www.stephanegamot.com/Images/og/office-workstation.webp",
         provider: {
           "@id": "https://www.stephanegamot.com/#business",
         },
         areaServed: { "@type": "Country", name: "Belgium" },
         url: "https://www.stephanegamot.com/services/site-internet-wordpress",
         serviceType: "Création de site WordPress",
+        offers: [
+          {
+            "@type": "Offer",
+            name: "Site vitrine WordPress",
+            price: "1500",
+            priceCurrency: "EUR",
+            priceSpecification: {
+              "@type": "UnitPriceSpecification",
+              price: "1500",
+              priceCurrency: "EUR",
+              unitText: "projet",
+            },
+          },
+          {
+            "@type": "Offer",
+            name: "Site WordPress pro",
+            price: "3500",
+            priceCurrency: "EUR",
+            priceSpecification: {
+              "@type": "UnitPriceSpecification",
+              price: "3500",
+              priceCurrency: "EUR",
+              unitText: "projet",
+            },
+          },
+          {
+            "@type": "Offer",
+            name: "Site e-commerce WordPress",
+            price: "5000",
+            priceCurrency: "EUR",
+            priceSpecification: {
+              "@type": "UnitPriceSpecification",
+              price: "5000",
+              priceCurrency: "EUR",
+              unitText: "projet",
+            },
+          },
+        ],
         aggregateRating: {
           "@type": "AggregateRating",
           ratingValue: "4.9",
@@ -74,6 +113,7 @@ export default function WordPressServicePage() {
             "@type": "Review",
             reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
             author: { "@type": "Person", name: "Claire Delmas" },
+            datePublished: "2025-03-15",
             reviewBody: "Site rapide, esthétique et très propre techniquement. Impact immédiat sur nos leads et notre visibilité SEO.",
           },
         ],
@@ -124,6 +164,39 @@ export default function WordPressServicePage() {
           { "@type": "ListItem", position: 3, name: "WordPress", item: "https://www.stephanegamot.com/services/site-internet-wordpress" },
         ],
       },
+      {
+        "@type": "HowTo",
+        "@id": "https://www.stephanegamot.com/services/site-internet-wordpress/#howto",
+        name: "Comment je crée votre site WordPress sur mesure",
+        description:
+          "Les 4 étapes de mon processus de création de site WordPress professionnel.",
+        step: [
+          {
+            "@type": "HowToStep",
+            position: 1,
+            name: "Thème WordPress sur mesure",
+            text: "Développement d'un thème WordPress adapté à votre identité visuelle, avec un code propre, léger et conforme aux standards d'accessibilité.",
+          },
+          {
+            "@type": "HowToStep",
+            position: 2,
+            name: "Sécurité et sauvegardes",
+            text: "Mise en place du certificat SSL/HTTPS, protection brute-force, pare-feu applicatif et sauvegardes automatiques quotidiennes.",
+          },
+          {
+            "@type": "HowToStep",
+            position: 3,
+            name: "Optimisation vitesse et performance",
+            text: "Mise en cache, compression d'images, CDN Cloudflare, lazy loading pour un site WordPress rapide et bien classé sur Google.",
+          },
+          {
+            "@type": "HowToStep",
+            position: 4,
+            name: "Formation à la prise en main",
+            text: "Session de formation personnalisée pour maîtriser l'ajout de contenu, la gestion des menus et les bonnes pratiques de publication.",
+          },
+        ],
+      },
     ],
   };
 
@@ -167,6 +240,15 @@ export default function WordPressServicePage() {
             <span className="text-xs sm:text-sm" style={{ color: "var(--fg-subtle)" }}>
               Réponse sous 48 h, devis gratuit.
             </span>
+          </div>
+          <div className="mt-3">
+            <Link
+              href="/services/tarifs"
+              className="text-sm font-medium underline underline-offset-2 transition-colors"
+              style={{ color: "var(--accent)" }}
+            >
+              Voir les tarifs →
+            </Link>
           </div>
         </div>
       </section>
@@ -250,6 +332,84 @@ export default function WordPressServicePage() {
                 produits, panier, paiement securise, gestion des stocks et des commandes.
               </p>
             </article>
+          </div>
+        </div>
+      </section>
+
+      {/* RESULTATS CONCRETS */}
+      <section>
+        <div className="divider" />
+        <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-14 lg:px-8">
+          <h2 className="text-lg sm:text-xl font-semibold tracking-tight">
+            Résultats concrets
+          </h2>
+          <p className="mt-3 max-w-2xl text-sm sm:text-base" style={{ color: "var(--fg-muted)" }}>
+            Quelques chiffres issus de projets WordPress récents.
+          </p>
+
+          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { value: "94/100", label: "Score Lighthouse", detail: "après optimisation WordPress" },
+              { value: "+180 %", label: "Trafic organique", detail: "en 4 mois — site thérapeute" },
+              { value: "1.2s", label: "Temps de chargement", detail: "sans plugins superflus" },
+              { value: "Top 5", label: "Positions Google", detail: "sur 8 requêtes locales ciblées" },
+            ].map((stat) => (
+              <div
+                key={stat.label}
+                className="rounded-xl p-5 text-center"
+                style={{ border: "1px solid var(--border)", background: "var(--surface-1)" }}
+              >
+                <p className="text-2xl font-bold sm:text-3xl" style={{ color: "var(--accent)" }}>
+                  {stat.value}
+                </p>
+                <p className="mt-1 text-sm font-semibold">{stat.label}</p>
+                <p className="mt-1 text-xs" style={{ color: "var(--fg-muted)" }}>
+                  {stat.detail}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* STACK & OUTILS */}
+      <section>
+        <div className="divider" />
+        <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-14 lg:px-8">
+          <h2 className="text-lg sm:text-xl font-semibold tracking-tight">
+            Stack &amp; outils
+          </h2>
+          <p className="mt-3 max-w-2xl text-sm sm:text-base" style={{ color: "var(--fg-muted)" }}>
+            Les technologies et extensions que j&rsquo;utilise au quotidien pour livrer des sites WordPress performants.
+          </p>
+
+          <div className="mt-6 flex flex-wrap gap-2">
+            {[
+              "WordPress 6.x",
+              "Elementor Pro",
+              "WooCommerce",
+              "Yoast SEO",
+              "WP Rocket",
+              "Imagify",
+              "ACF Pro",
+              "WPML",
+              "Stripe",
+              "Google Search Console",
+              "Lighthouse CI",
+              "FileZilla/SFTP",
+            ].map((tool) => (
+              <span
+                key={tool}
+                className="rounded-lg px-4 py-2.5 text-sm font-medium"
+                style={{
+                  border: "1px solid var(--border)",
+                  background: "var(--surface-1)",
+                  color: "var(--fg-base)",
+                }}
+              >
+                {tool}
+              </span>
+            ))}
           </div>
         </div>
       </section>
@@ -527,6 +687,7 @@ export default function WordPressServicePage() {
             { href: "/services/site-web-react-next", label: "Site React / Next.js" },
             { href: "/services/e-commerce", label: "E-commerce" },
             { href: "/services/accessibilite", label: "Accessibilite web" },
+            { href: "/services/tarifs", label: "Tarifs & formules" },
             { href: "/portfolio", label: "Voir le portfolio" },
             { href: "/blog", label: "Lire le blog" },
           ].map((link) => (
@@ -559,11 +720,23 @@ export default function WordPressServicePage() {
             claire, un planning realiste et un tarif adapte a votre budget. Pas de jargon, pas
             d&rsquo;engagement.
           </p>
-          <div className="mt-6 flex flex-wrap justify-center gap-3">
+          <div className="mt-6 flex flex-wrap justify-center items-center gap-3">
             <Link href="/contact" className="btn btn-primary">
               Lancer mon projet WordPress
             </Link>
+            <a
+              href="https://wa.me/32477713193?text=Bonjour%20St%C3%A9phane%2C%20je%20souhaiterais%20discuter%20d%27un%20site%20WordPress."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-outline inline-flex items-center gap-2"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              WhatsApp
+            </a>
           </div>
+          <p className="mt-4 text-xs" style={{ color: "var(--fg-subtle)" }}>
+            <Link href="/services/tarifs" className="underline underline-offset-2 transition-colors" style={{ color: "var(--fg-subtle)" }}>Voir les tarifs</Link>{" "}· Réponse sous 24 h · Devis gratuit
+          </p>
         </div>
         <ServicesSection />
       </section>

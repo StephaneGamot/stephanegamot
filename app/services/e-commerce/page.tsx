@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     locale: "fr_BE",
     images: [
       {
-        url: "/Images/og/office-workstation.webp",
+        url: "https://www.stephanegamot.com/Images/og/office-workstation.webp",
         width: 1200,
         height: 630,
         alt: "Création de site e-commerce performant par Stéphane Gamot",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     title: "Création site e-commerce sur mesure – Stéphane Gamot",
     description:
       "Boutique en ligne Stripe, tunnel d'achat optimisé, mobile-first et SEO : un e-commerce pensé pour convertir. Devis gratuit.",
-    images: ["/Images/og/office-workstation.webp"],
+    images: ["https://www.stephanegamot.com/Images/og/office-workstation.webp"],
   },
 };
 
@@ -131,6 +131,13 @@ export default function EcommerceServicePage() {
             >
               Devis gratuit sous 48 h, sans engagement.
             </span>
+            <Link
+              href="/services/tarifs"
+              className="text-sm"
+              style={{ color: "var(--fg-subtle)", borderBottom: "1px solid var(--border)" }}
+            >
+              Voir les tarifs →
+            </Link>
           </div>
         </div>
       </section>
@@ -339,6 +346,83 @@ export default function EcommerceServicePage() {
             les projets headless, on peut aussi coupler un back-office Shopify
             avec un front Next.js pour le meilleur des deux mondes.
           </p>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════
+          H2 — Resultats concrets
+          ════════════════════════════════════════ */}
+      <section>
+        <div className="divider" />
+        <div className="mx-auto max-w-5xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8">
+          <h2 className="text-xl sm:text-2xl font-semibold tracking-tight">
+            Resultats concrets
+          </h2>
+          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { value: "+45 %", label: "Taux de conversion", detail: "apres refonte du tunnel d’achat" },
+              { value: "+18 %", label: "Panier moyen", detail: "grace a l’upsell intelligent" },
+              { value: "0.9s", label: "Temps de chargement", detail: "pages produit pre-rendues" },
+              { value: "95/100", label: "Score Lighthouse", detail: "performance e-commerce" },
+            ].map((stat) => (
+              <div
+                key={stat.label}
+                className="rounded-xl p-5 text-center"
+                style={{
+                  border: "1px solid var(--border)",
+                  background: "var(--surface-1)",
+                }}
+              >
+                <p className="text-2xl font-bold sm:text-3xl" style={{ color: "var(--accent)" }}>
+                  {stat.value}
+                </p>
+                <p className="mt-2 text-sm font-semibold">{stat.label}</p>
+                <p className="mt-1 text-xs" style={{ color: "var(--fg-muted)" }}>
+                  {stat.detail}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════
+          H2 — Stack technique
+          ════════════════════════════════════════ */}
+      <section>
+        <div className="divider" />
+        <div className="mx-auto max-w-5xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8">
+          <h2 className="text-xl sm:text-2xl font-semibold tracking-tight">
+            Stack technique
+          </h2>
+          <div className="mt-6 flex flex-wrap gap-3">
+            {[
+              "Next.js",
+              "Stripe Checkout",
+              "Stripe Connect",
+              "React",
+              "TypeScript",
+              "Tailwind CSS",
+              "WooCommerce",
+              "Snipcart",
+              "Sanity CMS",
+              "Vercel",
+              "Google Analytics 4",
+              "Schema.org Product",
+            ].map((tool) => (
+              <span
+                key={tool}
+                className="rounded-lg px-4 py-2.5 text-sm font-medium"
+                style={{
+                  border: "1px solid var(--border)",
+                  background: "var(--surface-1)",
+                  color: "var(--fg-base)",
+                }}
+              >
+                {tool}
+              </span>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -682,6 +766,7 @@ export default function EcommerceServicePage() {
             { href: "/services/seo", label: "Audit & SEO e-commerce" },
             { href: "/services/accessibilite", label: "Accessibilite WCAG" },
             { href: "/services/site-vitrine", label: "Site vitrine" },
+            { href: "/services/tarifs", label: "Tarifs & formules" },
             { href: "/portfolio", label: "Voir le portfolio" },
             { href: "/me", label: "Mon parcours" },
           ].map((link) => (
@@ -726,7 +811,22 @@ export default function EcommerceServicePage() {
             <Link href="/contact" className="btn btn-primary">
               Demarrer mon projet e-commerce
             </Link>
+            <a
+              href="https://wa.me/32477713193?text=Bonjour%20St%C3%A9phane%2C%20je%20souhaiterais%20discuter%20d%27un%20projet%20e-commerce."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn"
+              style={{
+                border: "1px solid var(--border)",
+                color: "var(--fg-base)",
+              }}
+            >
+              WhatsApp
+            </a>
           </div>
+          <p className="mt-4 text-xs" style={{ color: "var(--fg-subtle)" }}>
+            <Link href="/services/tarifs" className="underline underline-offset-2">Voir les tarifs</Link> · Reponse sous 24 h · Devis gratuit
+          </p>
         </div>
         <ServicesSection />
       </section>
@@ -768,6 +868,8 @@ export default function EcommerceServicePage() {
                         "@type": "Service",
                         name: "E-commerce Next.js + Stripe",
                       },
+                      price: "3500",
+                      priceCurrency: "EUR",
                     },
                     {
                       "@type": "Offer",
@@ -775,6 +877,8 @@ export default function EcommerceServicePage() {
                         "@type": "Service",
                         name: "Boutique WooCommerce",
                       },
+                      price: "5000",
+                      priceCurrency: "EUR",
                     },
                     {
                       "@type": "Offer",
@@ -786,6 +890,7 @@ export default function EcommerceServicePage() {
                   ],
                 },
                 url: "https://www.stephanegamot.com/services/e-commerce",
+                image: "https://www.stephanegamot.com/Images/og/office-workstation.webp",
                 aggregateRating: {
                   "@type": "AggregateRating",
                   ratingValue: "4.9",
@@ -798,6 +903,7 @@ export default function EcommerceServicePage() {
                     "@type": "Review",
                     reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
                     author: { "@type": "Person", name: "Idriss Van der Meer" },
+                    datePublished: "2025-11-15",
                     reviewBody: "Process clair, intégration Stripe sans friction, livrables carrés. On a senti un vrai accompagnement de bout en bout.",
                   },
                 ],
@@ -838,6 +944,43 @@ export default function EcommerceServicePage() {
                       "@type": "Answer",
                       text: "Audit du tunnel d'achat, simplification du checkout, ajout de moyens de paiement, amélioration de la vitesse et optimisation des fiches produits.",
                     },
+                  },
+                ],
+              },
+              {
+                "@type": "HowTo",
+                "@id": "https://www.stephanegamot.com/services/e-commerce#howto",
+                name: "Création d'un site e-commerce sur mesure en 5 étapes",
+                step: [
+                  {
+                    "@type": "HowToStep",
+                    position: 1,
+                    name: "Audit et stratégie e-commerce",
+                    text: "Analyse du catalogue, des concurrents, des mots-clés cibles et de la clientèle. Choix de la stack (Next.js, WooCommerce, Shopify headless), définition de l'arborescence et du plan SEO.",
+                  },
+                  {
+                    "@type": "HowToStep",
+                    position: 2,
+                    name: "UX design et prototypage du tunnel d'achat",
+                    text: "Maquettes Figma mobile-first : page d'accueil, listing produits, fiche produit, panier, checkout et page de confirmation. Chaque écran respecte les normes d'accessibilité WCAG.",
+                  },
+                  {
+                    "@type": "HowToStep",
+                    position: 3,
+                    name: "Développement et intégration Stripe",
+                    text: "Composants React typés, Server Components, pages produits pré-rendues pour le SEO, intégration Stripe Checkout ou Stripe Elements, webhooks de confirmation et emails transactionnels.",
+                  },
+                  {
+                    "@type": "HowToStep",
+                    position: 4,
+                    name: "Tests, lancement et formation",
+                    text: "Tests de paiement en mode sandbox, audit Lighthouse, vérification cross-browser et mobile. Mise en production avec SSL, redirections et sitemap. Formation à la gestion du catalogue.",
+                  },
+                  {
+                    "@type": "HowToStep",
+                    position: 5,
+                    name: "Optimisation continue et croissance",
+                    text: "Analyse du taux de conversion et du taux d'abandon de panier via Google Analytics. A/B tests sur le checkout, amélioration des fiches produits et connexion à Google Shopping.",
                   },
                 ],
               },
