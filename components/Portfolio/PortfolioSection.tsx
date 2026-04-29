@@ -497,7 +497,7 @@ export default function PortfolioShowcase() {
             <div className="flex flex-col gap-1.5">
   {/* Pill catégorie en premier */}
   <span
-    className="self-end shrink-0 rounded-full border px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide whitespace-nowrap"
+    className="self-end shrink-0 rounded-full border px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wide whitespace-nowrap"
     style={{
       borderColor: "var(--border)",
       background: "var(--surface-1)",
@@ -555,7 +555,7 @@ export default function PortfolioShowcase() {
                     {project.techs.map((tech) => (
                       <span
                         key={tech}
-                        className="rounded-full border px-2.5 py-0.5 text-[11px] uppercase tracking-wide"
+                        className="rounded-full border px-2.5 py-0.5 text-xs uppercase tracking-wide"
                         style={{
                           borderColor: "var(--border)",
                           background: "var(--surface-1)",

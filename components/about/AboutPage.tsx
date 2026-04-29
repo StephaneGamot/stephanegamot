@@ -60,13 +60,13 @@ export default function AboutPage() {
                         </div>
                         {/* petit badge flottant */}
                         <div
-                            className="pointer-events-none absolute -bottom-6 right-4 w-40 rounded-2xl p-3 text-[11px]"
+                            className="pointer-events-none absolute -bottom-6 right-4 w-40 rounded-2xl p-3 text-xs"
                             style={{ background: "var(--surface-2)", border: "1px solid var(--border)" }}
                         >
                             <p className="font-heading text-xs font-semibold" style={{ color: "var(--fg-base)" }}>
                                 Fluidite & details
                             </p>
-                            <p className="mt-1 text-[11px] leading-snug" style={{ color: "var(--fg-subtle)" }}>
+                            <p className="mt-1 text-xs leading-snug" style={{ color: "var(--fg-subtle)" }}>
                                 Animations legeres, typographie soignee, micro-interactions qui disparaissent presque.
                             </p>
                         </div>

@@ -271,7 +271,7 @@ export default function Carrousel() {
 
                 <div className="px-5 py-4" style={{ borderTop: '1px solid var(--border)' }}>
                   <span
-                    className="text-[11px] font-medium tracking-[0.12em] uppercase"
+                    className="text-xs font-medium tracking-[0.12em] uppercase"
                     style={{ color: 'var(--accent)' }}
                   >
                     {p.label}

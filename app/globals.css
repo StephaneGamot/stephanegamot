@@ -477,6 +477,13 @@ blockquote {
     background: transparent !important;
     color: var(--accent) !important;
 }
+/* Contraste WCAG AA — force la couleur sur le span interne */
+.btn-primary > span {
+    color: #000;
+}
+.btn-primary.is-hovered > span {
+    color: var(--accent);
+}
 
 /* Fill pour btn-outline : fond accent au hover */
 .btn-outline .magnetic-btn-fill {

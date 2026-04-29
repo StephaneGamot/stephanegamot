@@ -127,7 +127,7 @@ export default function LeadMagnet() {
                     </p>
                   )}
                   <p
-                    className="text-[10px]"
+                    className="text-xs"
                     style={{ color: "var(--fg-subtle)" }}
                   >
                     Aucun spam, aucun partage. Vous recevez la checklist et

@@ -98,19 +98,19 @@ export default function BlogPage() {
                                 <div className="relative">
                                     <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs" style={{ color: "var(--fg-subtle)" }}>
                                         <time dateTime={post.datetime}>{post.date}</time>
-                                        <span className="inline-flex items-center rounded-full px-3 py-1 text-[11px] font-medium" style={{ background: "var(--surface-2)", color: "var(--fg-muted)" }}>
+                                        <span className="inline-flex items-center rounded-full px-3 py-1 text-xs font-medium" style={{ background: "var(--surface-2)", color: "var(--fg-muted)" }}>
                       {post.category.title}
                     </span>
 
                                         {/* ⏱️ Temps de lecture */}
-                                        <span className="inline-flex items-center gap-1 rounded-full px-3 py-1 text-[11px] font-medium" style={{ background: "var(--surface-2)", color: "var(--fg-muted)" }}>
+                                        <span className="inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-medium" style={{ background: "var(--surface-2)", color: "var(--fg-muted)" }}>
                       <span aria-hidden>⏱️</span>
                                             {post.readingTimeMinutes} min
                     </span>
 
                                         {/* ⭐ Badge lectures si ≥ 50 */}
                                         {post.views >= 50 && (
-                                            <span className="inline-flex items-center gap-1 rounded-full px-3 py-1 text-[11px] font-medium" style={{ background: "var(--accent-muted)", color: "var(--accent)" }}>
+                                            <span className="inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-medium" style={{ background: "var(--accent-muted)", color: "var(--accent)" }}>
                         <span aria-hidden="true">⭐</span> {post.views} lectures
                       </span>
                                         )}

@@ -113,7 +113,7 @@ export function ServicesSection() {
                     </div>
                     <div className="flex flex-col">
                       <span
-                        className="text-[11px] font-semibold uppercase tracking-[0.2em]"
+                        className="text-xs font-semibold uppercase tracking-[0.2em]"
                         style={{ color: "var(--accent)" }}
                       >
                         {service.label}

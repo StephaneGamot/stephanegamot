@@ -200,7 +200,7 @@ export default async function BlogPostPage({
                         {post.views >= 50 && (
                             <>
                                 <span className="h-1 w-1 rounded-full" style={{ background: "var(--border)" }} />
-                                <span className="inline-flex items-center rounded-full px-2.5 py-1 text-[11px] font-medium" style={{ background: "var(--accent-muted)", color: "var(--accent)" }}>
+                                <span className="inline-flex items-center rounded-full px-2.5 py-1 text-xs font-medium" style={{ background: "var(--accent-muted)", color: "var(--accent)" }}>
                   {post.views.toLocaleString("fr-BE")} lectures
                 </span>
                             </>

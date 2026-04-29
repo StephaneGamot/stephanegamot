@@ -28,7 +28,7 @@ export const metadata: Metadata = {
         template: "%s | Stéphane Gamot",
     },
     description:
-        "Je conçois des sites web élégants, rapides et pensés pour convertir. Ingénieur & Développeur full-stack basé en Belgique, j’accompagne les entrepreneurs et indépendants qui veulent un site professionnel réellement efficace.",
+        "Développeur web freelance en Belgique. Sites élégants, rapides et optimisés SEO pour entrepreneurs et indépendants. Devis gratuit.",
     openGraph: {
         type: "website",
         url: "https://www.stephanegamot.com",
@@ -76,9 +76,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="manifest" href="/manifest.json" />
-        {/* Preconnect — réduit le TTFB des ressources tierces */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* Preconnect — next/font/google inline les polices au build,
+            donc preconnect Google Fonts est inutile et pénalise Lighthouse */}
         {/* dns-prefetch GTM/GA désactivés tant que GA4 n'est pas configuré
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
