@@ -70,6 +70,7 @@ const services = [
 ]
 
 const navLinks = [
+    { href: '/services/tarifs', label: 'Tarifs' },
     { href: '/portfolio', label: 'Portfolio' },
     { href: '/blog', label: 'Blog' },
     { href: '/faq', label: 'FAQ' },
@@ -77,6 +78,7 @@ const navLinks = [
 ]
 
 const mobileLinks = [
+    { href: '/services/tarifs', label: 'Tarifs' },
     { href: '/portfolio', label: 'Portfolio' },
     { href: '/blog', label: 'Blog' },
     { href: '/faq', label: 'FAQ' },

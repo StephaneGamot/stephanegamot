@@ -657,6 +657,27 @@ export default function ReactNextServicePage() {
                   ],
                 },
                 url: "https://www.stephanegamot.com/services/site-web-react-next",
+                aggregateRating: {
+                  "@type": "AggregateRating",
+                  ratingValue: "4.9",
+                  reviewCount: "32",
+                  bestRating: "5",
+                  worstRating: "1",
+                },
+                review: [
+                  {
+                    "@type": "Review",
+                    reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+                    author: { "@type": "Person", name: "Claire Delmas" },
+                    reviewBody: "Site rapide, esthétique et très propre techniquement. Impact immédiat sur nos leads et notre visibilité SEO.",
+                  },
+                  {
+                    "@type": "Review",
+                    reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+                    author: { "@type": "Person", name: "Idriss Van der Meer" },
+                    reviewBody: "Process clair, intégration Stripe sans friction, livrables carrés. On a senti un vrai accompagnement de bout en bout.",
+                  },
+                ],
               },
               {
                 "@type": "FAQPage",

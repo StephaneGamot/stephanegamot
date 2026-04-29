@@ -271,8 +271,14 @@ export default function AboutPage() {
                   addressLocality: "Halle",
                   addressCountry: "BE",
                 },
-                knowsAbout: ["React", "Next.js", "WordPress", "SEO", "Accessibilité web", "E-commerce"],
-                sameAs: ["https://www.stephanegamot.com"],
+                knowsAbout: ["React", "Next.js", "WordPress", "SEO", "Accessibilité web", "E-commerce", "TypeScript", "Tailwind CSS", "Core Web Vitals"],
+                knowsLanguage: ["fr", "en", "nl"],
+                nationality: { "@type": "Country", name: "Belgique" },
+                sameAs: [
+                  "https://www.stephanegamot.com",
+                  "https://github.com/StephaneGamot",
+                  "https://www.facebook.com/profile.php?id=61560283102227",
+                ],
               },
               {
                 "@type": "BreadcrumbList",

@@ -23,6 +23,11 @@ import PortFolioTraiteur from "@/public/Images/portfolio/portfolio-traiteur.webp
 
 type CategoryId = "all" | "wellness" | "ecommerce" | "saas" | "branding";
 
+type ProjectMetric = {
+  label: string;
+  value: string;
+};
+
 type Project = {
   id: number;
   title: string;
@@ -32,7 +37,8 @@ type Project = {
   techs: string[];
   link?: string;
   highlight?: string;
-    imageSrc: StaticImageData;
+  metrics?: ProjectMetric[];
+  imageSrc: StaticImageData;
   imageAlt: string;
 };
 
@@ -56,6 +62,11 @@ const projects: Project[] = [
     link: "https://lavoiedubienetre.be",
     highlight:
       "Présence locale renforcée à Halle & Bruxelles grâce à un contenu optimisé et une structure claire.",
+    metrics: [
+      { label: "Lighthouse", value: "98/100" },
+      { label: "Chargement", value: "0.8s" },
+      { label: "Trafic organique", value: "+210%" },
+    ],
     imageSrc: PortFolioLvbde,
     imageAlt:
       "Interface du site La Voie du Bien-Être, cabinet de shiatsu et massages à Halle.",
@@ -70,6 +81,11 @@ const projects: Project[] = [
     techs: ["Next.js", "Stripe", "React", "Node.js"],
     highlight:
       "Permet de passer une commande complète en quelques écrans, depuis un smartphone.",
+    metrics: [
+      { label: "Lighthouse", value: "95/100" },
+      { label: "Conversion", value: "+45%" },
+      { label: "Panier moyen", value: "+18%" },
+    ],
     imageSrc: PortFolioMinao,
     imageAlt: "Maquette du site de commande en ligne Minao Asian Food.",
   },
@@ -476,6 +492,30 @@ export default function PortfolioShowcase() {
                     <p className="mt-2 text-xs" style={{ color: "var(--fg-muted)" }}>
                       {project.highlight}
                     </p>
+                  )}
+
+                  {project.metrics && project.metrics.length > 0 && (
+                    <div
+                      className="mt-3 grid grid-cols-3 gap-2 rounded-lg p-3"
+                      style={{ background: "var(--surface-2)" }}
+                    >
+                      {project.metrics.map((metric) => (
+                        <div key={metric.label} className="text-center">
+                          <p
+                            className="text-sm font-semibold"
+                            style={{ color: "var(--accent)" }}
+                          >
+                            {metric.value}
+                          </p>
+                          <p
+                            className="text-[10px] uppercase tracking-wide"
+                            style={{ color: "var(--fg-subtle)" }}
+                          >
+                            {metric.label}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
                   )}
 
                   <div className="mt-3 flex flex-wrap gap-1.5">

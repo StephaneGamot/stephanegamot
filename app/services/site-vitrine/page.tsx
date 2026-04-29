@@ -605,6 +605,21 @@ export default function SiteVitrineServicePage() {
                 },
                 serviceType: "Création de site vitrine",
                 url: "https://www.stephanegamot.com/services/site-vitrine",
+                aggregateRating: {
+                  "@type": "AggregateRating",
+                  ratingValue: "4.9",
+                  reviewCount: "32",
+                  bestRating: "5",
+                  worstRating: "1",
+                },
+                review: [
+                  {
+                    "@type": "Review",
+                    reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+                    author: { "@type": "Person", name: "Anaïs Rochette" },
+                    reviewBody: "Design soigné, performances mesurées, accessibilité intégrée. L'expérience client est nettement plus fluide.",
+                  },
+                ],
               },
               {
                 "@type": "FAQPage",

@@ -11,6 +11,14 @@ type ParamsPromise = Promise<{ slug: string }>;
 
 const SITE_URL = "https://www.stephanegamot.com";
 
+/* ─── SSG : pré-rend chaque article au build ─── */
+export async function generateStaticParams() {
+  return posts.map((post) => ({ slug: post.slug }));
+}
+
+/* ─── ISR : revalide en arrière-plan toutes les heures ─── */
+export const revalidate = 3600;
+
 export async function generateMetadata(
   { params }: { params: ParamsPromise }
 ): Promise<Metadata> {

@@ -51,6 +51,7 @@ export default function Footer() {
                         { href: "/services/site-internet-wordpress", label: "Site WordPress" },
                         { href: "/services/seo", label: "SEO" },
                         { href: "/services/e-commerce", label: "E-commerce" },
+                        { href: "/services/tarifs", label: "Tarifs" },
                         { href: "/portfolio", label: "Portfolio" },
                         { href: "/blog", label: "Blog" },
                         { href: "/faq", label: "FAQ" },

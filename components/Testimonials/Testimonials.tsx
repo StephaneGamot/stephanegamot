@@ -1,8 +1,6 @@
 "use client";
 
 import { StarIcon, ShieldCheckIcon } from "@heroicons/react/20/solid";
-import Script from "next/script";
-import Image from "next/image";
 import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/animations/ScrollReveal";
 
 type Review = {
@@ -12,7 +10,7 @@ type Review = {
     company?: string;
     rating: 1 | 2 | 3 | 4 | 5;
     quote: string;
-    avatar: string;
+    initials: string;
 };
 
 const reviews: Review[] = [
@@ -24,8 +22,7 @@ const reviews: Review[] = [
         rating: 5,
         quote:
             "Site rapide, esthétique et très propre techniquement. Impact immédiat sur nos leads et notre visibilité SEO.",
-        avatar:
-            "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=256&h=256&fit=facearea&facepad=8&auto=format",
+        initials: "CD",
     },
     {
         id: 2,
@@ -35,8 +32,7 @@ const reviews: Review[] = [
         rating: 5,
         quote:
             "Process clair, intégration Stripe sans friction, livrables carrés. On a senti un vrai accompagnement de bout en bout.",
-        avatar:
-            "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=256&h=256&fit=facearea&facepad=8&auto=format",
+        initials: "IV",
     },
     {
         id: 3,
@@ -46,8 +42,7 @@ const reviews: Review[] = [
         rating: 5,
         quote:
             "Design soigné, performances mesurées, accessibilité intégrée. L'expérience client est nettement plus fluide.",
-        avatar:
-            "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=256&h=256&fit=facearea&facepad=8&auto=format",
+        initials: "AR",
     },
 ];
 
@@ -62,26 +57,6 @@ const histogram = [
 ];
 
 export default function TestimonialsSection() {
-    const schema = {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        name: "Stéphane Gamot",
-        url: "https://www.stephanegamot.com/",
-        aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: `${average}`,
-            reviewCount: `${totalCount}`,
-            bestRating: "5",
-            worstRating: "1",
-        },
-        review: reviews.map((r) => ({
-            "@type": "Review",
-            reviewRating: { "@type": "Rating", ratingValue: `${r.rating}`, bestRating: "5" },
-            author: { "@type": "Person", name: r.name },
-            reviewBody: r.quote,
-        })),
-    };
-
     return (
         <section id="avis" className="relative section overflow-x-hidden">
             {/* Séparateur */}
@@ -178,15 +153,17 @@ export default function TestimonialsSection() {
                         >
                             <div className="flex items-start justify-between gap-4">
                                 <div className="flex items-center gap-3">
-                                    <Image
-                                        src={r.avatar}
-                                        alt={`Avatar de ${r.name}`}
-                                        width={44}
-                                        height={44}
-                                        loading="lazy"
-                                        className="size-11 rounded-full object-cover"
-                                        style={{ border: '1px solid var(--border)' }}
-                                    />
+                                    <div
+                                        className="size-11 rounded-full flex items-center justify-center text-sm font-semibold shrink-0"
+                                        style={{
+                                            background: 'var(--accent-muted)',
+                                            color: 'var(--accent)',
+                                            border: '1px solid var(--border)',
+                                        }}
+                                        aria-hidden="true"
+                                    >
+                                        {r.initials}
+                                    </div>
                                     <div>
                                         <h3 id={`review-${r.id}`} className="text-sm font-medium" style={{ color: 'var(--fg-base)' }}>
                                             {r.name}
@@ -230,7 +207,7 @@ export default function TestimonialsSection() {
             </div>
 
             {/* SEO */}
-            <Script id="reviews-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+            {/* AggregateRating + Reviews sont désormais dans le ProfessionalService JSON-LD de la homepage */}
         </section>
     );
 }

@@ -1,0 +1,17 @@
+{
+  "name": "Stéphane Gamot — Création de sites web",
+  "short_name": "Stéphane Gamot",
+  "description": "Développeur web freelance en Belgique. Sites Next.js, WordPress et e-commerce optimisés SEO.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0b0f",
+  "theme_color": "#c8a55a",
+  "lang": "fr",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ]
+}

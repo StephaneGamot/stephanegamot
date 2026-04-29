@@ -735,6 +735,27 @@ export default function SeoServicePage() {
                   ],
                 },
                 url: "https://www.stephanegamot.com/services/seo",
+                aggregateRating: {
+                  "@type": "AggregateRating",
+                  ratingValue: "4.9",
+                  reviewCount: "32",
+                  bestRating: "5",
+                  worstRating: "1",
+                },
+                review: [
+                  {
+                    "@type": "Review",
+                    reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+                    author: { "@type": "Person", name: "Claire Delmas" },
+                    reviewBody: "Site rapide, esthétique et très propre techniquement. Impact immédiat sur nos leads et notre visibilité SEO.",
+                  },
+                  {
+                    "@type": "Review",
+                    reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+                    author: { "@type": "Person", name: "Anaïs Rochette" },
+                    reviewBody: "Design soigné, performances mesurées, accessibilité intégrée. L'expérience client est nettement plus fluide.",
+                  },
+                ],
               },
               {
                 "@type": "FAQPage",

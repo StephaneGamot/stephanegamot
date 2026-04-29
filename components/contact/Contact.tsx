@@ -433,6 +433,64 @@ export default function Contact() {
             </div>
           </div>
         </form>
+
+        {/* ── Signaux de confiance ── */}
+        <div
+          className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-3"
+          aria-label="Engagements"
+        >
+          {[
+            {
+              title: "Réponse sous 24 h",
+              desc: "Je reviens vers vous en moins d'un jour ouvré, avec des pistes concrètes.",
+              icon: (
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent)" }}>
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg>
+              ),
+            },
+            {
+              title: "Devis gratuit, sans engagement",
+              desc: "Aucune obligation : on échange, je vous propose un plan clair et un prix fixe.",
+              icon: (
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent)" }}>
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+              ),
+            },
+            {
+              title: "30 jours de support inclus",
+              desc: "Après livraison, je reste disponible pour les ajustements et corrections.",
+              icon: (
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent)" }}>
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+              ),
+            },
+          ].map((item) => (
+            <div
+              key={item.title}
+              className="flex items-start gap-3 p-4"
+              style={{
+                borderRadius: "1rem",
+                border: "1px solid var(--border)",
+                background: "var(--surface-1)",
+              }}
+            >
+              <div className="mt-0.5 shrink-0">{item.icon}</div>
+              <div>
+                <p className="text-sm font-semibold" style={{ color: "var(--fg-base)" }}>
+                  {item.title}
+                </p>
+                <p className="mt-1 text-xs" style={{ color: "var(--fg-subtle)" }}>
+                  {item.desc}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </main>
   );

@@ -63,6 +63,7 @@ export default function FAQPage() {
                         "@graph": [
                             {
                                 "@type": "FAQPage",
+                                inLanguage: "fr",
                                 mainEntity: faqsData.map((faq) => ({
                                     "@type": "Question",
                                     name: faq.question,

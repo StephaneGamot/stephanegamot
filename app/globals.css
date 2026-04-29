@@ -339,18 +339,6 @@ blockquote {
 
 
 
-@media (max-width: 480px) {
-    .eyebrow {
-        font-size: 11px;
-    }
-
-}
-@media (max-width: 390px) {
-    .eyebrow {
-        font-size: 10px;
-
-    }
-}
 /* ──────────────────────────────────────────────────────────────
    Animations légères
    ────────────────────────────────────────────────────────────── */

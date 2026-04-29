@@ -25,6 +25,36 @@ export default function HeroHomePage() {
             />
 
             <div className="mx-auto max-w-6xl px-8 lg:px-12">
+                {/* Indicateur de disponibilité */}
+                <div
+                    className="mb-6 inline-flex items-center gap-2.5 px-4 py-2"
+                    style={{
+                        borderRadius: "9999px",
+                        border: "1px solid var(--border)",
+                        background: "var(--surface-1)",
+                    }}
+                >
+                    <span
+                        className="relative flex h-2 w-2"
+                        aria-hidden="true"
+                    >
+                        <span
+                            className="absolute inline-flex h-full w-full animate-ping rounded-full opacity-75"
+                            style={{ background: "#4ade80" }}
+                        />
+                        <span
+                            className="relative inline-flex h-2 w-2 rounded-full"
+                            style={{ background: "#4ade80" }}
+                        />
+                    </span>
+                    <span
+                        className="text-xs font-medium tracking-wide"
+                        style={{ color: "var(--fg-muted)", fontFamily: "var(--font-body)" }}
+                    >
+                        Disponible pour un nouveau projet
+                    </span>
+                </div>
+
                 {/* Label de section */}
                 <p
                     className="section-label mb-8"
@@ -118,6 +148,15 @@ export default function HeroHomePage() {
                                 Voir mes réalisations
                             </MagneticButton>
                         </div>
+
+                        {/* Signal de rareté */}
+                        <p
+                            className="mt-6 text-xs"
+                            style={{ color: "var(--fg-subtle)" }}
+                        >
+                            J&apos;accepte 3 nouveaux projets par mois pour garantir
+                            un accompagnement de qualité.
+                        </p>
                     </div>
 
                     {/* Colonne mockup — occupe 5/12, traité comme une oeuvre en galerie */}

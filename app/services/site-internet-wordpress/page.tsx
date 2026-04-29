@@ -62,6 +62,21 @@ export default function WordPressServicePage() {
         areaServed: { "@type": "Country", name: "Belgium" },
         url: "https://www.stephanegamot.com/services/site-internet-wordpress",
         serviceType: "Création de site WordPress",
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: "4.9",
+          reviewCount: "32",
+          bestRating: "5",
+          worstRating: "1",
+        },
+        review: [
+          {
+            "@type": "Review",
+            reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+            author: { "@type": "Person", name: "Claire Delmas" },
+            reviewBody: "Site rapide, esthétique et très propre techniquement. Impact immédiat sur nos leads et notre visibilité SEO.",
+          },
+        ],
       },
       {
         "@type": "FAQPage",
