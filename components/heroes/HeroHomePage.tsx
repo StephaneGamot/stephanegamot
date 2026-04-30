@@ -192,7 +192,7 @@ export default function HeroHomePage() {
                                         alt="Aperçu d'un site web Next.js optimisé SEO conçu par Stéphane Gamot"
                                         fill
                                         className="object-cover"
-                                        sizes="(min-width: 1024px) 320px, (min-width: 640px) 280px, 260px"
+                                        sizes="(min-width: 1024px) 280px, (min-width: 640px) 240px, 200px"
                                         priority
                                     />
                                 </div>

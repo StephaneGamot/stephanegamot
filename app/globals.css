@@ -477,10 +477,16 @@ blockquote {
     background: transparent !important;
     color: var(--accent) !important;
 }
-/* Contraste WCAG AA — force la couleur sur le span interne */
+/* Contraste WCAG AA — force la couleur hors @layer pour battre a{color:inherit} */
+a.btn-primary,
+button.btn-primary,
+.btn-primary,
 .btn-primary > span {
     color: #000;
 }
+a.btn-primary:hover,
+button.btn-primary:hover,
+.btn-primary:hover,
 .btn-primary.is-hovered > span {
     color: var(--accent);
 }
