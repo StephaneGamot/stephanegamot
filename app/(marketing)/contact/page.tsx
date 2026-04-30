@@ -4,14 +4,19 @@ import Contact from "@/components/contact/Contact"
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 
 export const metadata: Metadata = {
-  title: "Contact — Parlons de votre projet web — Stéphane Gamot",
+  title: "Contact — Parlons de votre projet web",
   description:
     "Envoyez-moi votre projet : site vitrine, e-commerce, refonte ou audit SEO. Décrivez vos besoins et recevez une réponse personnalisée sous 24 h.",
   alternates: {
     canonical: "https://www.stephanegamot.com/contact",
+    languages: {
+      "fr-BE": "https://www.stephanegamot.com/contact",
+      "fr-FR": "https://www.stephanegamot.com/contact",
+      "x-default": "https://www.stephanegamot.com/contact",
+    },
   },
   openGraph: {
-    title: "Contact — Parlons de votre projet web — Stéphane Gamot",
+    title: "Contact — Parlons de votre projet web",
     description:
       "Envoyez-moi votre projet : site vitrine, e-commerce, refonte ou audit SEO. Décrivez vos besoins et recevez une réponse personnalisée sous 24 h.",
     type: "website",
@@ -28,7 +33,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contact — Parlons de votre projet web — Stéphane Gamot",
+    title: "Contact — Parlons de votre projet web",
     description:
       "Envoyez-moi votre projet : site vitrine, e-commerce, refonte ou audit SEO. Réponse personnalisée sous 24 h.",
     images: ["https://www.stephanegamot.com/Images/og/office-workstation.webp"],

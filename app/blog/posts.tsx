@@ -42,7 +42,7 @@ export const posts: BlogPost[] = [
   {
   id: 1,
   slug: "wordpress-vs-nextjs-quel-choisir",
-  title: "WordPress vs Next.js : quel est le meilleur choix pour votre site ?",
+  title: "WordPress vs Next.js : lequel choisir ?",
   description:
     "WordPress ou Next.js ? Découvrez les forces et limites de chaque solution pour choisir la meilleure technologie pour votre site en 2025.",
   imageUrl: NextFuture,
@@ -324,7 +324,7 @@ export const posts: BlogPost[] = [
 {
   id: 2,
   slug: "avantages-inconvenients-wordpress",
-  title: "WordPress : avantages et inconvénients — ce que personne ne vous dit",
+  title: "WordPress : avantages, limites et verdict",
   description:
     "WordPress est le CMS le plus utilisé au monde… mais est-ce vraiment le bon choix pour votre projet ? Voici un avis honnête, clair et orienté business.",
   imageUrl: WordPress2,
@@ -524,7 +524,7 @@ export const posts: BlogPost[] = [
  {
   id: 3,
   slug: "pourquoi-nextjs-est-le-meilleur-investissement",
-  title: "Next.js  c’est l’un des meilleurs investissements pour votre site web",
+  title: "Next.js : le meilleur investissement web",
   description:
     "Next.js est plus cher à la création qu’un site classique… mais sur le long terme, c’est l’une des meilleures décisions qu’un entrepreneur puisse prendre",
   imageUrl: Next1,
@@ -718,7 +718,7 @@ export const posts: BlogPost[] = [
 {
   id: 4,
   slug: "pourquoi-votre-site-ne-convertit-pas",
-  title: "Pourquoi votre site ne convertit pas — 7 erreurs fréquentes",
+  title: "Site sans clients ? 7 erreurs à corriger",
   description:
     "Vous avez un site joli mais peu de demandes ? Voici 7 erreurs qui bloquent la conversion… et comment les corriger simplement pour obtenir plus de clients.",
   imageUrl: Chance,
@@ -904,7 +904,7 @@ export const posts: BlogPost[] = [
 },{
   id: 5,
   slug: "seo-2026-ce-qui-marche-vraiment",
-  title: "SEO 2026 : ce qui marche vraiment (et ce qui ne sert plus à rien)",
+  title: "SEO 2026 : ce qui marche vraiment",
   description:
     "En 2026, le SEO a changé : Google veut des sites rapides, utiles et crédibles. Voici ce qui fonctionne vraiment aujourd’hui pour gagner des clients.",
   imageUrl: Seo,
@@ -1100,7 +1100,7 @@ export const posts: BlogPost[] = [
 {
   id: 6,
   slug: "combien-coute-un-site-web-en-2026-prix-pieges",
-  title: "Combien coûte vraiment un site web en 2026 ? prix, pièges, que choisir",
+  title: "Prix d'un site web en 2026 : guide honnête",
   description:
     "Entre 500 € et 15 000 € Pourquoi autant d’écart ? Voici les vrais prix d’un site en 2026, les pièges à éviter et comment choisir sans se faire avoir",
   imageUrl: WebsitePrice,

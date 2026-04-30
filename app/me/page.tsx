@@ -12,6 +12,11 @@ export const metadata: Metadata = {
     "Développeur web freelance à Bruxelles : sites élégants, rapides et optimisés SEO. Design soigné, performance et conversion. Parlons de votre projet.",
   alternates: {
     canonical: `${SITE_URL}/me`,
+    languages: {
+      "fr-BE": `${SITE_URL}/me`,
+      "fr-FR": `${SITE_URL}/me`,
+      "x-default": `${SITE_URL}/me`,
+    },
   },
   openGraph: {
     type: "profile",

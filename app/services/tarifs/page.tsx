@@ -14,7 +14,14 @@ export const metadata: Metadata = {
   description:
     "Tarifs clairs pour la création de votre site web : site vitrine dès 1 500 €, site professionnel dès 3 500 €, e-commerce dès 5 000 €. Devis gratuit sous 48h.",
   metadataBase: new URL("https://www.stephanegamot.com"),
-  alternates: { canonical: "https://www.stephanegamot.com/services/tarifs" },
+  alternates: {
+    canonical: "https://www.stephanegamot.com/services/tarifs",
+    languages: {
+      "fr-BE": "https://www.stephanegamot.com/services/tarifs",
+      "fr-FR": "https://www.stephanegamot.com/services/tarifs",
+      "x-default": "https://www.stephanegamot.com/services/tarifs",
+    },
+  },
   keywords: [
     "prix site web",
     "tarif création site internet",

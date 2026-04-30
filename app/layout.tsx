@@ -83,9 +83,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
         */}
         <link rel="dns-prefetch" href="https://analytics.ahrefs.com" />
-        <link rel="alternate" hrefLang="fr-BE" href="https://www.stephanegamot.com" />
-        <link rel="alternate" hrefLang="fr-FR" href="https://www.stephanegamot.com" />
-        <link rel="alternate" hrefLang="x-default" href="https://www.stephanegamot.com" />
 
         {/* Schema.org — WebSite (sitelinks searchbox) + Organization */}
         <script

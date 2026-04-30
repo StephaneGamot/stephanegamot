@@ -5,10 +5,17 @@ import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 const SITE = "https://www.stephanegamot.com";
 
 export const metadata: Metadata = {
-  title: "Création de site web à Bruxelles — Développeur freelance",
+  title: "Création site web Bruxelles — Freelance",
   description:
     "Développeur web freelance à Bruxelles. Sites vitrines, e-commerce et applications Next.js ou WordPress. Design premium, SEO local et performances Lighthouse 97+.",
-  alternates: { canonical: `${SITE}/creation-site-web-bruxelles` },
+  alternates: {
+    canonical: `${SITE}/creation-site-web-bruxelles`,
+    languages: {
+      "fr-BE": `${SITE}/creation-site-web-bruxelles`,
+      "fr-FR": `${SITE}/creation-site-web-bruxelles`,
+      "x-default": `${SITE}/creation-site-web-bruxelles`,
+    },
+  },
   openGraph: {
     title: "Création de site web à Bruxelles — Stéphane Gamot",
     description:

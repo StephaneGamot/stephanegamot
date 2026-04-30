@@ -33,6 +33,11 @@ export async function generateMetadata(
       description: "Article introuvable sur le blog de Stéphane Gamot.",
       alternates: {
         canonical: canonicalUrl,
+        languages: {
+          "fr-BE": canonicalUrl,
+          "fr-FR": canonicalUrl,
+          "x-default": canonicalUrl,
+        },
       },
       robots: {
         index: false,
@@ -56,6 +61,11 @@ const ogImageUrl = rawImageUrl.startsWith("http")
     keywords: [post.category.title],
     alternates: {
       canonical: canonicalUrl,
+      languages: {
+        "fr-BE": canonicalUrl,
+        "fr-FR": canonicalUrl,
+        "x-default": canonicalUrl,
+      },
     },
     openGraph: {
       type: "article",

@@ -5,10 +5,17 @@ import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 const SITE = "https://www.stephanegamot.com";
 
 export const metadata: Metadata = {
-  title: "Création de site web en Brabant wallon — Développeur freelance",
+  title: "Site web Brabant wallon — Dev freelance",
   description:
     "Développeur web freelance pour le Brabant wallon. Sites vitrines, e-commerce et SEO pour Wavre, Ottignies, Nivelles, Waterloo et toute la province.",
-  alternates: { canonical: `${SITE}/creation-site-web-brabant-wallon` },
+  alternates: {
+    canonical: `${SITE}/creation-site-web-brabant-wallon`,
+    languages: {
+      "fr-BE": `${SITE}/creation-site-web-brabant-wallon`,
+      "fr-FR": `${SITE}/creation-site-web-brabant-wallon`,
+      "x-default": `${SITE}/creation-site-web-brabant-wallon`,
+    },
+  },
   openGraph: {
     title: "Création de site web en Brabant wallon — Stéphane Gamot",
     description:

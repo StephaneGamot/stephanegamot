@@ -15,6 +15,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.stephanegamot.com"),
   alternates: {
     canonical: "https://www.stephanegamot.com/services/e-commerce",
+    languages: {
+      "fr-BE": "https://www.stephanegamot.com/services/e-commerce",
+      "fr-FR": "https://www.stephanegamot.com/services/e-commerce",
+      "x-default": "https://www.stephanegamot.com/services/e-commerce",
+    },
   },
   keywords: [
     "création site e-commerce",

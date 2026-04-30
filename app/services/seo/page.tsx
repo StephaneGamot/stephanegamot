@@ -13,7 +13,14 @@ export const metadata: Metadata = {
   description:
     "Audit SEO complet : technique, contenu, maillage et Core Web Vitals. Plan d'actions priorisé pour gagner en visibilité sur Google. Devis gratuit.",
   metadataBase: new URL("https://www.stephanegamot.com"),
-  alternates: { canonical: "https://www.stephanegamot.com/services/seo" },
+  alternates: {
+    canonical: "https://www.stephanegamot.com/services/seo",
+    languages: {
+      "fr-BE": "https://www.stephanegamot.com/services/seo",
+      "fr-FR": "https://www.stephanegamot.com/services/seo",
+      "x-default": "https://www.stephanegamot.com/services/seo",
+    },
+  },
   keywords: [
     "audit SEO",
     "SEO technique",

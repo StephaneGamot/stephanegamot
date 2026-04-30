@@ -22,6 +22,11 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: "https://www.stephanegamot.com/portfolio",
+    languages: {
+      "fr-BE": "https://www.stephanegamot.com/portfolio",
+      "fr-FR": "https://www.stephanegamot.com/portfolio",
+      "x-default": "https://www.stephanegamot.com/portfolio",
+    },
   },
   openGraph: {
     type: "website",

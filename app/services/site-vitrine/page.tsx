@@ -15,6 +15,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.stephanegamot.com"),
   alternates: {
     canonical: "https://www.stephanegamot.com/services/site-vitrine",
+    languages: {
+      "fr-BE": "https://www.stephanegamot.com/services/site-vitrine",
+      "fr-FR": "https://www.stephanegamot.com/services/site-vitrine",
+      "x-default": "https://www.stephanegamot.com/services/site-vitrine",
+    },
   },
   keywords: [
     "création site vitrine",

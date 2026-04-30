@@ -34,6 +34,11 @@ export const metadata: Metadata = {
     },
     alternates: {
         canonical: "https://www.stephanegamot.com/faq",
+        languages: {
+            "fr-BE": "https://www.stephanegamot.com/faq",
+            "fr-FR": "https://www.stephanegamot.com/faq",
+            "x-default": "https://www.stephanegamot.com/faq",
+        },
     },
     keywords: [
         "FAQ création site web",

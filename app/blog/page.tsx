@@ -23,6 +23,11 @@ export const metadata: Metadata = {
   authors: [{ name: "Stéphane Gamot", url: "https://www.stephanegamot.com/me" }],
   alternates: {
     canonical: `${SITE_URL}/blog`,
+    languages: {
+      "fr-BE": `${SITE_URL}/blog`,
+      "fr-FR": `${SITE_URL}/blog`,
+      "x-default": `${SITE_URL}/blog`,
+    },
   },
   openGraph: {
     type: "website",

@@ -5,10 +5,17 @@ import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 const SITE = "https://www.stephanegamot.com";
 
 export const metadata: Metadata = {
-  title: "Création de site web à Halle — Développeur freelance local",
+  title: "Création site web Halle — Freelance local",
   description:
     "Développeur web basé à Halle. Sites vitrines, e-commerce et SEO local pour les commerces et indépendants du Pajottenland et de la périphérie bruxelloise.",
-  alternates: { canonical: `${SITE}/creation-site-web-halle` },
+  alternates: {
+    canonical: `${SITE}/creation-site-web-halle`,
+    languages: {
+      "fr-BE": `${SITE}/creation-site-web-halle`,
+      "fr-FR": `${SITE}/creation-site-web-halle`,
+      "x-default": `${SITE}/creation-site-web-halle`,
+    },
+  },
   openGraph: {
     title: "Création de site web à Halle — Stéphane Gamot",
     description:

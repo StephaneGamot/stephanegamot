@@ -19,6 +19,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.stephanegamot.com"),
   alternates: {
     canonical: "https://www.stephanegamot.com",
+    languages: {
+      "fr-BE": "https://www.stephanegamot.com",
+      "fr-FR": "https://www.stephanegamot.com",
+      "x-default": "https://www.stephanegamot.com",
+    },
   },
   keywords: [
     "création de site web Bruxelles",

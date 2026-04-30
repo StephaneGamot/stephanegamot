@@ -8,7 +8,14 @@ export const metadata: Metadata = {
   description:
     "Création site WordPress rapide, sécurisé et optimisé SEO par un développeur freelance en Belgique. Devis gratuit sous 48 h, contactez-moi.",
   metadataBase: new URL("https://www.stephanegamot.com"),
-  alternates: { canonical: "https://www.stephanegamot.com/services/site-internet-wordpress" },
+  alternates: {
+    canonical: "https://www.stephanegamot.com/services/site-internet-wordpress",
+    languages: {
+      "fr-BE": "https://www.stephanegamot.com/services/site-internet-wordpress",
+      "fr-FR": "https://www.stephanegamot.com/services/site-internet-wordpress",
+      "x-default": "https://www.stephanegamot.com/services/site-internet-wordpress",
+    },
+  },
   keywords: [
     "création site WordPress",
     "WordPress sur mesure",

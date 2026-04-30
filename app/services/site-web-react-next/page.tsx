@@ -15,6 +15,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.stephanegamot.com"),
   alternates: {
     canonical: "https://www.stephanegamot.com/services/site-web-react-next",
+    languages: {
+      "fr-BE": "https://www.stephanegamot.com/services/site-web-react-next",
+      "fr-FR": "https://www.stephanegamot.com/services/site-web-react-next",
+      "x-default": "https://www.stephanegamot.com/services/site-web-react-next",
+    },
   },
   keywords: [
     "création site Next.js",
