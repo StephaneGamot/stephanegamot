@@ -3,6 +3,11 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Image, { type StaticImageData } from "next/image";
+import PortFolioAstroCours from "@/public/Images/portfolio/portfolio-astrocours.webp"
+import PortFolioPB from "@/public/Images/portfolio/portfolio-pb.webp"
+import PortFolioTarotNova from "@/public/Images/portfolio/portfolio-tarotnova.webp"
+import PortFolioShiatsu from "@/public/Images/portfolio/portfolio-shiatsu.webp"
+import PortFolioSpa from "@/public/Images/portfolio/portfolio-spa-saint-jean-de-luz.webp"
 import PortFolioAstro from "@/public/Images/portfolio/portfolio-astro.webp"
 import PortFolioBoutique from "@/public/Images/portfolio/portfolio-boutique.webp"
 import PortFolioCorse from "@/public/Images/portfolio/portfolio-corse.webp"
@@ -53,6 +58,101 @@ const categories: { id: CategoryId; label: string }[] = [
 const projects: Project[] = [
   {
     id: 1,
+    title: "Astro-Cours",
+    client: "Plateforme de cours d'astrologie",
+    description:
+      "Site complet pour apprendre l'astrologie en ligne : cours structurés par niveau, thèmes natals interactifs et espace membre personnalisé.",
+    category: "saas",
+    techs: ["Next.js", "TypeScript", "Tailwind", "API", "Auth"],
+    highlight:
+      "Parcours pédagogique progressif avec navigation intuitive entre les modules et les niveaux.",
+    metrics: [
+      { label: "Lighthouse", value: "96/100" },
+      { label: "Inscriptions", value: "+85%" },
+      { label: "Rétention", value: "74%" },
+    ],
+    imageSrc: PortFolioAstroCours,
+    imageAlt:
+      "Interface de la plateforme Astro-Cours pour l'apprentissage de l'astrologie en ligne.",
+  },
+  {
+    id: 2,
+    title: "Pays Basque Découverte",
+    client: "Guide touristique du Pays Basque",
+    description:
+      "Site vitrine immersif pour découvrir le Pays Basque : villages, gastronomie, randonnées et hébergements, avec photos plein écran et SEO local.",
+    category: "branding",
+    techs: ["Next.js", "Tailwind", "SEO local", "Responsive"],
+    highlight:
+      "Contenu éditorial riche et visuels plein écran pour donner envie de partir immédiatement.",
+    metrics: [
+      { label: "Lighthouse", value: "95/100" },
+      { label: "Trafic organique", value: "+160%" },
+      { label: "Temps/page", value: "3m10" },
+    ],
+    imageSrc: PortFolioPB,
+    imageAlt:
+      "Page d'accueil du site Pays Basque Découverte avec paysages et villages basques.",
+  },
+  {
+    id: 3,
+    title: "TarotNova",
+    client: "Praticienne en tarot & guidance spirituelle",
+    description:
+      "Site élégant et mystique pour une praticienne en tarot : présentations des tirages, prise de rendez-vous en ligne et blog de guidance.",
+    category: "wellness",
+    techs: ["Next.js", "Tailwind", "SEO", "Calendly"],
+    highlight:
+      "Univers visuel soigné qui inspire confiance et sérénité, sans tomber dans le cliché ésotérique.",
+    metrics: [
+      { label: "Lighthouse", value: "97/100" },
+      { label: "Rendez-vous", value: "+120%" },
+      { label: "Taux rebond", value: "-35%" },
+    ],
+    imageSrc: PortFolioTarotNova,
+    imageAlt:
+      "Interface du site TarotNova pour la guidance par le tarot et le développement personnel.",
+  },
+  {
+    id: 4,
+    title: "Shiatsu & Harmonie",
+    client: "Cabinet de shiatsu & soins énergétiques",
+    description:
+      "Site apaisant pour un cabinet de shiatsu : présentation des soins, bienfaits, tarifs et réservation en ligne avec un parcours fluide.",
+    category: "wellness",
+    techs: ["Next.js", "TypeScript", "Tailwind", "SEO local"],
+    highlight:
+      "Design minimaliste et chaleureux qui reflète la philosophie du soin et met en confiance dès la première visite.",
+    metrics: [
+      { label: "Lighthouse", value: "98/100" },
+      { label: "Réservations", value: "+95%" },
+      { label: "Chargement", value: "0.9s" },
+    ],
+    imageSrc: PortFolioShiatsu,
+    imageAlt:
+      "Page d'accueil du site Shiatsu & Harmonie avec ambiance zen et soins énergétiques.",
+  },
+  {
+    id: 5,
+    title: "Spa Saint-Jean-de-Luz",
+    client: "Spa & centre de bien-être",
+    description:
+      "Site premium pour un spa haut de gamme : carte des soins, ambiance immersive, galerie photo et réservation avec choix de créneaux.",
+    category: "wellness",
+    techs: ["Next.js", "Tailwind", "Stripe", "SEO local"],
+    highlight:
+      "Expérience visuelle luxueuse avec des tons naturels et une navigation pensée pour la détente dès l'écran.",
+    metrics: [
+      { label: "Lighthouse", value: "96/100" },
+      { label: "Réservations", value: "+78%" },
+      { label: "Panier moyen", value: "+32%" },
+    ],
+    imageSrc: PortFolioSpa,
+    imageAlt:
+      "Interface du site Spa Saint-Jean-de-Luz avec ambiance luxueuse et soins bien-être.",
+  },
+  {
+    id: 6,
     title: "La Voie du Bien-Être",
     client: "Cabinet de shiatsu & massages",
     description:
@@ -72,7 +172,7 @@ const projects: Project[] = [
       "Interface du site La Voie du Bien-Être, cabinet de shiatsu et massages à Halle.",
   },
   {
-    id: 2,
+    id: 7,
     title: "Minao Asian Food",
     client: "Restaurant asiatique / take-away",
     description:
@@ -90,7 +190,7 @@ const projects: Project[] = [
     imageAlt: "Maquette du site de commande en ligne Minao Asian Food.",
   },
   {
-    id: 3,
+    id: 8,
     title: "Corsica-Corse – Locations",
     client: "Gîtes & locations saisonnières en Corse",
     description:
@@ -109,7 +209,7 @@ const projects: Project[] = [
       "Page d'accueil du site de locations saisonnières Corsica-Corse, avec paysages corses.",
   },
   {
-    id: 4,
+    id: 9,
     title: "Centre bien-être & massages",
     client: "Espace bien-être à Courcelles",
     description:
@@ -128,7 +228,7 @@ const projects: Project[] = [
       "Interface d'un site pour centre de bien-être avec ambiance relaxante.",
   },
   {
-    id: 5,
+    id: 10,
     title: "Studio créatif & identité",
     client: "Studio digital & design",
     description:
@@ -147,7 +247,7 @@ const projects: Project[] = [
       "Page d'accueil d'un studio créatif avec visuel fort et design immersif.",
   },
   {
-    id: 6,
+    id: 11,
     title: "AstraLovers / Synastria",
     client: "Concept d'app de compatibilité amoureuse",
     description:
@@ -166,7 +266,7 @@ const projects: Project[] = [
       "Interface cosmique de l'application de compatibilité amoureuse AstraLovers.",
   },
   {
-    id: 7,
+    id: 12,
     title: "Dashboard sportif – SportSee",
     client: "Suivi de performances sportives",
     description:
@@ -185,7 +285,7 @@ const projects: Project[] = [
       "Dashboard analytique SportSee pour le suivi des performances sportives.",
   },
   {
-    id: 8,
+    id: 13,
     title: "GameOn Analytics",
     client: "Plateforme d'événements sportifs",
     description:
@@ -204,7 +304,7 @@ const projects: Project[] = [
       "Interface de dashboard GameOn pour la gestion d'événements sportifs.",
   },
   {
-    id: 9,
+    id: 14,
     title: "Comité Olympique – Dashboard",
     client: "Fédération / comité sport",
     description:
@@ -223,7 +323,7 @@ const projects: Project[] = [
       "Dashboard inspiré d'un comité olympique pour le suivi des performances.",
   },
   {
-    id: 10,
+    id: 15,
     title: "Boutique tendance",
     client: "Boutique de mode & accessoires",
     description:
@@ -242,7 +342,7 @@ const projects: Project[] = [
       "Page d'accueil d'une boutique en ligne tendance pour mode et accessoires.",
   },
   {
-    id: 11,
+    id: 16,
     title: "Kanap – E-commerce mobilier",
     client: "Vente de canapés & mobilier",
     description:
@@ -260,7 +360,7 @@ const projects: Project[] = [
     imageAlt: "Page produit d'un site e-commerce dédié aux canapés.",
   },
   {
-    id: 12,
+    id: 17,
     title: "Kaza – Immobilier",
     client: "Plateforme immobilière",
     description:
@@ -279,7 +379,7 @@ const projects: Project[] = [
       "Page d'accueil d'un portail immobilier moderne avec listing de biens.",
   },
   {
-    id: 13,
+    id: 18,
     title: "Restaurant japonais",
     client: "Restaurant / sushi bar",
     description:
@@ -298,7 +398,7 @@ const projects: Project[] = [
       "Interface d'un site de restaurant japonais mettant en avant les plats.",
   },
   {
-    id: 14,
+    id: 19,
     title: "Plateforme multi-restaurants",
     client: "Portail de restauration",
     description:
@@ -317,7 +417,7 @@ const projects: Project[] = [
       "Interface d'un portail multi-restaurants avec plusieurs cartes disponibles.",
   },
   {
-    id: 15,
+    id: 20,
     title: "Site de tarot & guidance",
     client: "Praticienne en tarot & développement personnel",
     description:
@@ -331,7 +431,7 @@ const projects: Project[] = [
       "Page d'accueil d'un site de tarot et de développement personnel.",
   },
   {
-    id: 16,
+    id: 21,
     title: "Traiteur & événementiel",
     client: "Service traiteur haut de gamme",
     description:
@@ -344,7 +444,7 @@ const projects: Project[] = [
     imageAlt: "Site vitrine d'un traiteur haut de gamme pour événements.",
   },
 {
-  id: 17,
+  id: 22,
   title: "Club de karaté – Site vitrine",
   client: "Association sportive",
   description:

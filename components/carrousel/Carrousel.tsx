@@ -3,7 +3,12 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 
-// Images (4:3)
+// Images carrousel
+import AstroCours from "@/public/Images/carrousel/astrocours-lg.webp";
+import PaysBasque from "@/public/Images/carrousel/pb43.webp";
+import TarotNova from "@/public/Images/carrousel/tarotnova43.webp";
+import ShiatsuLg from "@/public/Images/carrousel/shiatsu-lg.webp";
+import SpaLg from "@/public/Images/carrousel/spa-saint-jean-de-luz.webp";
 import lvbdeLg from "@/public/Images/carrousel/lvde43.jpg";
 import CerisaieLg from "@/public/Images/carrousel/traiteur43.jpg";
 import MinaoLg from "@/public/Images/carrousel/minao43.jpg";
@@ -19,6 +24,46 @@ type Project = {
 };
 
 const baseProjects: Project[] = [
+  {
+    title: "Astro-Cours",
+    alt: "Plateforme de cours d'astrologie avec thèmes natals et modules progressifs",
+    description: `Cours d'astrologie en ligne
+         Next.js / TypeScript / Auth`,
+    label: "Application web",
+    image: AstroCours,
+  },
+  {
+    title: "Pays Basque Découverte",
+    alt: "Site touristique avec paysages et villages du Pays Basque",
+    description: `Guide touristique immersif
+         Next.js / SEO local / Responsive`,
+    label: "Site vitrine",
+    image: PaysBasque,
+  },
+  {
+    title: "TarotNova",
+    alt: "Site de guidance par le tarot avec prise de rendez-vous",
+    description: `Tarot & guidance spirituelle
+         Next.js / Tailwind / Calendly`,
+    label: "Site internet",
+    image: TarotNova,
+  },
+  {
+    title: "Shiatsu & Harmonie",
+    alt: "Site apaisant pour cabinet de shiatsu et soins énergétiques",
+    description: `Cabinet de shiatsu
+         Next.js / TypeScript / SEO local`,
+    label: "Site internet",
+    image: ShiatsuLg,
+  },
+  {
+    title: "Spa Saint-Jean-de-Luz",
+    alt: "Site premium pour un spa haut de gamme avec réservation en ligne",
+    description: `Spa & bien-être haut de gamme
+         Next.js / Stripe / SEO local`,
+    label: "E-commerce",
+    image: SpaLg,
+  },
   {
     title: "Le Traiteur",
     alt: "interface qui permet de rentrer dans l'application web",
