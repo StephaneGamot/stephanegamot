@@ -435,44 +435,7 @@ export default function Contact() {
                     </div>
                   </div>
 
-                  {/* Piece jointe UI seulement */}
-                  <div className="col-span-full">
-                    <p className="block text-sm font-medium" style={{ color: "var(--fg-base)" }}>
-                      Piece jointe (optionnel)
-                    </p>
-
-                    <div
-                      className="mt-2 flex justify-center rounded-lg border border-dashed px-6 py-8"
-                      style={{ borderColor: "var(--border)" }}
-                    >
-                      <div className="text-center">
-                        <PhotoIcon
-                          aria-hidden="true"
-                          className="mx-auto size-10"
-                          style={{ color: "var(--fg-subtle)" }}
-                        />
-                        <div className="mt-3 flex text-sm" style={{ color: "var(--fg-muted)" }}>
-                          <label
-                            htmlFor="file-upload"
-                            className="relative cursor-pointer rounded-md px-2 font-semibold"
-                            style={{ color: "var(--accent)" }}
-                          >
-                            <span>Importer un fichier</span>
-                            <input
-                              id="file-upload"
-                              name="file-upload"
-                              type="file"
-                              className="sr-only"
-                            />
-                          </label>
-                          <p className="pl-1">ou glisser-deposer</p>
-                        </div>
-                        <p className="text-xs" style={{ color: "var(--fg-muted)" }}>
-                          PDF, PNG, JPG, jusqu'a 10&nbsp;Mo
-                        </p>
-                      </div>
-                    </div>
-                  </div>
+                 
 
                   <div className="col-span-full">
                     <div className="flex items-start gap-3">
