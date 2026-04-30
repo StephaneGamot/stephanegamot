@@ -11,14 +11,14 @@ const garamond = Cormorant_Garamond({
     subsets: ["latin"],
     variable: "--font-garamond",
     weight: ["400", "500", "600", "700"],
-    display: "swap",
+    display: "optional",
 });
 
 const montserrat = Montserrat({
     subsets: ["latin"],
     variable: "--font-montserrat",
     weight: ["400", "500", "600"],
-    display: "swap",
+    display: "optional",
 });
 
 export const metadata: Metadata = {
