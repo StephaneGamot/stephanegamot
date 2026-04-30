@@ -20,7 +20,7 @@ export default function Contact() {
     const data = new FormData(form);
 
     // Anti-spam honeypot : si rempli, c'est un bot
-    const honeypot = data.get("website")?.toString() || "";
+    const honeypot = data.get("fax_number")?.toString() || "";
     if (honeypot) {
       // Fake success pour ne pas alerter le bot
       setStatus("success");
@@ -178,13 +178,13 @@ export default function Contact() {
         >
           {/* Honeypot anti-spam — invisible pour les humains */}
           <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", top: "-9999px" }}>
-            <label htmlFor="website">Ne pas remplir</label>
+            <label htmlFor="fax_number">Ne pas remplir</label>
             <input
               type="text"
-              id="website"
-              name="website"
+              id="fax_number"
+              name="fax_number"
               tabIndex={-1}
-              autoComplete="off"
+              autoComplete="nope"
             />
           </div>
 
