@@ -1,27 +1,39 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useInView, animate } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useRef, useEffect, useState } from "react";
+import { useInView } from "@/components/animations/ScrollReveal";
 
 /* ─────────────────────────────────────────────
    AnimatedCounter — compteur qui s'anime au scroll
+   Version CSS pure (requestAnimationFrame)
    ───────────────────────────────────────────── */
 function AnimatedCounter({ target, suffix = "", duration = 2 }: { target: number; suffix?: string; duration?: number }) {
   const [count, setCount] = useState(0);
   const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true, amount: 0.5 });
+  const isInView = useInView(ref, { once: true, threshold: 0.5 });
 
   useEffect(() => {
     if (!isInView) return;
 
-    const controls = animate(0, target, {
-      duration,
-      ease: "easeOut",
-      onUpdate: (v) => setCount(Math.round(v * 10) / 10),
-    });
+    const start = performance.now();
+    const durationMs = duration * 1000;
+    let raf: number;
 
-    return () => controls.stop();
+    const step = (now: number) => {
+      const elapsed = now - start;
+      const progress = Math.min(1, elapsed / durationMs);
+      // easeOut curve
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = eased * target;
+      setCount(Math.round(current * 10) / 10);
+
+      if (progress < 1) {
+        raf = requestAnimationFrame(step);
+      }
+    };
+
+    raf = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(raf);
   }, [isInView, target, duration]);
 
   return (
@@ -47,7 +59,7 @@ const stats = [
    ───────────────────────────────────────────── */
 export default function TrustBar() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(containerRef, { once: true, amount: 0.3 });
+  const isInView = useInView(containerRef, { once: true, threshold: 0.3 });
 
   return (
     <section
@@ -55,31 +67,28 @@ export default function TrustBar() {
       aria-label="Chiffres clés"
     >
       <div className="mx-auto max-w-5xl px-8 lg:px-12">
-        <motion.div
+        <div
           ref={containerRef}
-          initial={{ opacity: 0, y: 24 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ type: "spring", damping: 40, stiffness: 120, mass: 1 }}
           className="grid grid-cols-2 gap-6 md:grid-cols-4 md:gap-8"
           style={{
             padding: "2.5rem 2rem",
             borderRadius: "1.25rem",
             border: "1px solid var(--border)",
             background: "var(--surface-1)",
+            opacity: isInView ? 1 : 0,
+            transform: isInView ? "translateY(0)" : "translateY(24px)",
+            transition: "opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1)",
           }}
         >
           {stats.map((stat, i) => (
-            <motion.div
+            <div
               key={stat.label}
-              initial={{ opacity: 0, y: 16 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{
-                type: "spring",
-                damping: 40,
-                stiffness: 120,
-                delay: i * 0.1,
-              }}
               className="text-center"
+              style={{
+                opacity: isInView ? 1 : 0,
+                transform: isInView ? "translateY(0)" : "translateY(16px)",
+                transition: `opacity 0.7s cubic-bezier(0.16,1,0.3,1) ${i * 0.1}s, transform 0.7s cubic-bezier(0.16,1,0.3,1) ${i * 0.1}s`,
+              }}
             >
               <p className="text-2xl font-semibold tracking-tight sm:text-3xl" style={{ fontFamily: "var(--font-heading)" }}>
                 <AnimatedCounter target={stat.value} suffix={stat.suffix} />
@@ -87,9 +96,9 @@ export default function TrustBar() {
               <p className="mt-1 text-xs sm:text-sm" style={{ color: "var(--fg-subtle)", fontFamily: "var(--font-body)" }}>
                 {stat.label}
               </p>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

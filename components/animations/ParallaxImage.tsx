@@ -1,32 +1,21 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import { useRef, useEffect, useState } from "react";
 import Image, { type StaticImageData } from "next/image";
 
 /* ─────────────────────────────────────────────
    ParallaxImage — micro-parallaxe GPU-only
-   L'image translate en Y à l'intérieur de son
-   conteneur masqué. Effet galerie d'art subtil.
-   N'anime QUE transform (zéro layout thrashing).
+   Version CSS pure (sans framer-motion)
    ───────────────────────────────────────────── */
-
-const PARALLAX_SPRING = { damping: 50, stiffness: 100, mass: 0.8 };
 
 type ParallaxImageProps = {
     src: StaticImageData | string;
     alt: string;
-    /** Intensité du parallaxe en px (défaut: 40) */
     offset?: number;
-    /** Classes pour le conteneur externe */
     className?: string;
-    /** Style pour le conteneur externe */
     style?: React.CSSProperties;
-    /** Attribut sizes pour le responsive */
     sizes?: string;
-    /** Priority loading */
     priority?: boolean;
-    /** Placeholder blur */
     placeholder?: "blur" | "empty";
 };
 
@@ -41,15 +30,38 @@ export function ParallaxImage({
     placeholder = "blur",
 }: ParallaxImageProps) {
     const containerRef = useRef<HTMLDivElement>(null);
+    const [translateY, setTranslateY] = useState(offset);
 
-    const { scrollYProgress } = useScroll({
-        target: containerRef,
-        offset: ["start end", "end start"],
-    });
+    useEffect(() => {
+        const el = containerRef.current;
+        if (!el) return;
 
-    /* Translate de +offset à -offset au fil du scroll */
-    const rawY = useTransform(scrollYProgress, [0, 1], [offset, -offset]);
-    const y = useSpring(rawY, PARALLAX_SPRING);
+        // Respect prefers-reduced-motion
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            setTranslateY(0);
+            return;
+        }
+
+        let raf: number;
+        const onScroll = () => {
+            if (raf) cancelAnimationFrame(raf);
+            raf = requestAnimationFrame(() => {
+                const rect = el.getBoundingClientRect();
+                const vh = window.innerHeight;
+                // 0 quand l'élément entre en bas, 1 quand il sort en haut
+                const progress = Math.min(1, Math.max(0, (vh - rect.top) / (vh + rect.height)));
+                const y = offset - progress * offset * 2;
+                setTranslateY(y);
+            });
+        };
+
+        window.addEventListener("scroll", onScroll, { passive: true });
+        onScroll(); // initial
+        return () => {
+            window.removeEventListener("scroll", onScroll);
+            if (raf) cancelAnimationFrame(raf);
+        };
+    }, [offset]);
 
     return (
         <div
@@ -57,15 +69,14 @@ export function ParallaxImage({
             className={`overflow-hidden ${className}`}
             style={{ position: "relative", ...style }}
         >
-            <motion.div
+            <div
                 style={{
-                    y,
                     position: "relative",
                     width: "100%",
-                    /* L'image est légèrement plus haute que le conteneur
-                       pour avoir de la matière à déplacer */
                     height: `calc(100% + ${offset * 2}px)`,
                     top: `-${offset}px`,
+                    transform: `translateY(${translateY}px)`,
+                    transition: "transform 0.1s linear",
                     willChange: "transform",
                 }}
             >
@@ -78,7 +89,7 @@ export function ParallaxImage({
                     priority={priority}
                     placeholder={typeof src === "string" ? "empty" : placeholder}
                 />
-            </motion.div>
+            </div>
         </div>
     );
 }

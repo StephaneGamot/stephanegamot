@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { useInView } from "@/components/animations/ScrollReveal";
 
 /* ─────────────────────────────────────────────
    LeadMagnet — bannière de capture email
@@ -12,7 +12,7 @@ export default function LeadMagnet() {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, amount: 0.3 });
+  const isInView = useInView(ref, { once: true, threshold: 0.3 });
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -40,12 +40,14 @@ export default function LeadMagnet() {
 
   return (
     <section className="section-tight" aria-label="Checklist gratuite">
-      <motion.div
+      <div
         ref={ref}
-        initial={{ opacity: 0, y: 24 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ type: "spring", damping: 40, stiffness: 120 }}
         className="mx-auto max-w-4xl px-8 lg:px-12"
+        style={{
+          opacity: isInView ? 1 : 0,
+          transform: isInView ? "translateY(0)" : "translateY(24px)",
+          transition: "opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1)",
+        }}
       >
         <div
           className="relative overflow-hidden p-8 sm:p-10"
@@ -138,7 +140,7 @@ export default function LeadMagnet() {
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }

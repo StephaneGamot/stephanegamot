@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { useInView } from "@/components/animations/ScrollReveal";
 
 /* ─────────────────────────────────────────────
    Technologies maîtrisées — texte uniquement
@@ -24,7 +24,7 @@ const techs = [
 
 export default function TechStack() {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, amount: 0.3 });
+  const isInView = useInView(ref, { once: true, threshold: 0.3 });
 
   return (
     <section className="section-tight" aria-label="Technologies maîtrisées">
@@ -35,27 +35,22 @@ export default function TechStack() {
           Technologies & outils
         </p>
 
-        <motion.div
+        <div
           ref={ref}
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.6, ease: "easeOut" }}
           className="flex flex-wrap items-center justify-center gap-3"
+          style={{
+            opacity: isInView ? 1 : 0,
+            transition: "opacity 0.6s ease-out",
+          }}
         >
           {techs.map((tech, i) => (
-            <motion.span
+            <span
               key={tech}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={isInView ? { opacity: 1, scale: 1 } : {}}
-              transition={{
-                type: "spring",
-                damping: 30,
-                stiffness: 200,
-                delay: i * 0.04,
-              }}
               className="pill"
               style={{
-                transition: "border-color 0.3s ease, color 0.3s ease",
+                opacity: isInView ? 1 : 0,
+                transform: isInView ? "scale(1)" : "scale(0.9)",
+                transition: `opacity 0.5s cubic-bezier(0.16,1,0.3,1) ${i * 0.04}s, transform 0.5s cubic-bezier(0.16,1,0.3,1) ${i * 0.04}s, border-color 0.3s ease, color 0.3s ease`,
               }}
               onMouseEnter={(e) => {
                 (e.currentTarget as HTMLElement).style.borderColor = "var(--accent)";
@@ -67,9 +62,9 @@ export default function TechStack() {
               }}
             >
               {tech}
-            </motion.span>
+            </span>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

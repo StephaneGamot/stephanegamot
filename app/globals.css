@@ -466,6 +466,11 @@ blockquote {
     will-change: transform;
 }
 
+@keyframes magnetic-ripple {
+    from { transform: scale(0); opacity: 0.35; }
+    to   { transform: scale(4); opacity: 0; }
+}
+
 /* Fill pour btn-primary : inverse au hover */
 .btn-primary .magnetic-btn-fill {
     background: transparent;
