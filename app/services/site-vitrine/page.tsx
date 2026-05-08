@@ -686,6 +686,7 @@ export default function SiteVitrineServicePage() {
               className="btn btn-primary"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Discuter sur WhatsApp (s'ouvre dans une nouvelle fenêtre)"
               style={{
                 background: "var(--surface-1)",
                 color: "var(--fg-base)",

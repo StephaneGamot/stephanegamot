@@ -99,8 +99,23 @@ th, td {
     outline: none;
 }
 :focus-visible {
-    outline: 1px solid var(--accent);
+    outline: 2px solid var(--accent);
     outline-offset: 3px;
+    border-radius: 4px;
+}
+
+/* Accessibilité : sélection lisible */
+::selection {
+    background: var(--accent);
+    color: var(--bg-base);
+}
+
+/* Accessibilité : indicateur open/close pour details/summary natif */
+details summary {
+    list-style: none;
+}
+details summary::-webkit-details-marker {
+    display: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -128,6 +143,19 @@ th, td {
 }
 .skip-to-content:focus-visible {
     transform: translateY(0);
+}
+
+/* Utilitaire screen-reader only */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
 }
 
 /* ──────────────────────────────────────────────────────────────

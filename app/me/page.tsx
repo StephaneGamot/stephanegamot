@@ -254,6 +254,54 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      {/* Maillage interne — services et ressources */}
+      <section className="section">
+        <div className="divider mx-auto max-w-6xl" />
+        <div
+          className="mx-auto max-w-5xl px-8 lg:px-12"
+          style={{ paddingTop: "var(--section-gap)" }}
+        >
+          <h2 className="text-lg sm:text-xl font-semibold tracking-tight">
+            Découvrir mes services
+          </h2>
+          <p
+            className="mt-2 text-sm sm:text-base"
+            style={{ color: "var(--fg-muted)" }}
+          >
+            Chaque projet est différent. Voici ce que je peux faire pour vous.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            {[
+              { href: "/services/site-vitrine", label: "Site vitrine" },
+              { href: "/services/site-web-react-next", label: "Site Next.js & React" },
+              { href: "/services/site-internet-wordpress", label: "Site WordPress" },
+              { href: "/services/e-commerce", label: "E-commerce" },
+              { href: "/services/seo", label: "Audit SEO" },
+              { href: "/services/accessibilite", label: "Accessibilité" },
+              { href: "/services/tarifs", label: "Tarifs" },
+              { href: "/blog/seo-2026-ce-qui-marche-vraiment", label: "SEO 2026 : ce qui marche" },
+              { href: "/blog/wordpress-vs-nextjs-quel-choisir", label: "WordPress vs Next.js" },
+              { href: "/creation-site-web-bruxelles", label: "Bruxelles" },
+              { href: "/creation-site-web-halle", label: "Halle" },
+            ].map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-sm px-4 py-2 transition-colors duration-300 hover:!border-[var(--accent)] hover:!text-[var(--accent)]"
+                style={{
+                  border: "1px solid var(--border)",
+                  borderRadius: "0.5rem",
+                  color: "var(--fg-muted)",
+                }}
+              >
+                {link.label} →
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

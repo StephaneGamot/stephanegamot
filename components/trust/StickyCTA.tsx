@@ -20,7 +20,8 @@ export default function StickyCTA() {
   }, []);
 
   return (
-    <div
+    <aside
+      aria-label="Demander un devis"
       className="fixed bottom-0 left-0 right-0 z-40 lg:hidden"
       style={{
         transform: visible ? "translateY(0)" : "translateY(100%)",
@@ -46,6 +47,6 @@ export default function StickyCTA() {
           Devis gratuit
         </Link>
       </div>
-    </div>
+    </aside>
   );
 }

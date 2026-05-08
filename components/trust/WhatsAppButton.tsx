@@ -25,7 +25,7 @@ export default function WhatsAppButton() {
       href="https://wa.me/32477713193?text=Bonjour%20St%C3%A9phane%2C%20je%20souhaiterais%20discuter%20d%27un%20projet%20web."
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Discuter sur WhatsApp"
+      aria-label="Discuter sur WhatsApp (s'ouvre dans une nouvelle fenêtre)"
       className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full shadow-lg transition-transform hover:scale-110 lg:bottom-8 lg:right-8"
       style={{
         background: "#25D366",

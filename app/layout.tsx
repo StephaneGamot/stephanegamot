@@ -75,7 +75,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
     <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="apple-touch-icon" href="/Images/logo-stephanegamot-200.webp" />
         <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#c8a55a" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-title" content="Stéphane Gamot" />
         {/* Preconnect — next/font/google inline les polices au build,
             donc preconnect Google Fonts est inutile et pénalise Lighthouse */}
         {/* dns-prefetch GTM/GA désactivés tant que GA4 n'est pas configuré

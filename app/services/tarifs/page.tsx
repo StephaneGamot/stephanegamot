@@ -427,6 +427,9 @@ export default function TarifsPage() {
             { href: "/services/seo", label: "Audit SEO" },
             { href: "/services/accessibilite", label: "Accessibilité WCAG" },
             { href: "/portfolio", label: "Réalisations" },
+            { href: "/blog/combien-coute-un-site-web-en-2026-prix-pieges", label: "Prix d'un site web en 2026" },
+            { href: "/blog/wordpress-vs-nextjs-quel-choisir", label: "WordPress vs Next.js" },
+            { href: "/blog/pourquoi-votre-site-ne-convertit-pas", label: "7 erreurs de conversion" },
           ].map((link) => (
             <Link
               key={link.href}

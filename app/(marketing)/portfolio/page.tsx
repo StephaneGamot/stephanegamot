@@ -1,6 +1,7 @@
 
 import type { Metadata } from "next";
 import { Suspense } from "react";
+import Link from "next/link";
 import PortfolioSection from "@/components/Portfolio/PortfolioSection";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { SkeletonPortfolioCard } from "@/components/animations/SkeletonLoader";
@@ -92,6 +93,44 @@ export default function Page() {
             <Suspense fallback={<PortfolioSkeleton />}>
               <PortfolioSection />
             </Suspense>
+
+            {/* Maillage interne */}
+            <section className="mt-12 pt-8" style={{ borderTop: "1px solid var(--border)" }}>
+              <h2 className="text-lg sm:text-xl font-semibold tracking-tight">
+                Envie d'un résultat similaire ?
+              </h2>
+              <p
+                className="mt-2 text-sm sm:text-base"
+                style={{ color: "var(--fg-muted)" }}
+              >
+                Découvrez mes services et trouvez la formule adaptée à votre projet.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-3">
+                {[
+                  { href: "/services/site-vitrine", label: "Site vitrine" },
+                  { href: "/services/site-web-react-next", label: "Site Next.js & React" },
+                  { href: "/services/site-internet-wordpress", label: "Site WordPress" },
+                  { href: "/services/e-commerce", label: "E-commerce" },
+                  { href: "/services/seo", label: "Audit SEO" },
+                  { href: "/services/tarifs", label: "Tarifs & formules" },
+                  { href: "/blog/pourquoi-votre-site-ne-convertit-pas", label: "7 erreurs de conversion" },
+                  { href: "/contact", label: "Lancer mon projet" },
+                ].map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="text-sm px-4 py-2 transition-colors duration-300 hover:!border-[var(--accent)] hover:!text-[var(--accent)]"
+                    style={{
+                      border: "1px solid var(--border)",
+                      borderRadius: "0.5rem",
+                      color: "var(--fg-muted)",
+                    }}
+                  >
+                    {link.label} →
+                  </Link>
+                ))}
+              </div>
+            </section>
         </div>
         <script
             type="application/ld+json"

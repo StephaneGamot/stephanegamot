@@ -3,10 +3,15 @@
   "short_name": "Stéphane Gamot",
   "description": "Développeur web freelance en Belgique. Sites Next.js, WordPress et e-commerce optimisés SEO.",
   "start_url": "/",
+  "scope": "/",
+  "id": "/",
   "display": "standalone",
+  "orientation": "portrait-primary",
   "background_color": "#0a0b0f",
   "theme_color": "#c8a55a",
   "lang": "fr",
+  "dir": "ltr",
+  "categories": ["business", "web"],
   "icons": [
     {
       "src": "/favicon.ico",
@@ -14,10 +19,38 @@
       "type": "image/x-icon"
     },
     {
+      "src": "/Images/logo-stephanegamot114.webp",
+      "sizes": "114x114",
+      "type": "image/webp",
+      "purpose": "any"
+    },
+    {
       "src": "/Images/logo-stephanegamot-200.webp",
       "sizes": "200x200",
       "type": "image/webp",
       "purpose": "any"
+    },
+    {
+      "src": "/Images/logo-stephanegamot-200.webp",
+      "sizes": "200x200",
+      "type": "image/webp",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Me contacter",
+      "short_name": "Contact",
+      "description": "Demander un devis gratuit",
+      "url": "/contact",
+      "icons": [{ "src": "/favicon.ico", "sizes": "48x48" }]
+    },
+    {
+      "name": "Voir les tarifs",
+      "short_name": "Tarifs",
+      "description": "Consulter les formules et prix",
+      "url": "/services/tarifs",
+      "icons": [{ "src": "/favicon.ico", "sizes": "48x48" }]
     }
   ]
 }

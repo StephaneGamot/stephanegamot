@@ -47,10 +47,12 @@ export default function Footer() {
                 {/* Navigation interne */}
                 <nav aria-label="Liens du pied de page" className="mb-8 flex flex-wrap justify-center gap-x-8 gap-y-3">
                     {[
+                        { href: "/services/site-vitrine", label: "Site vitrine" },
                         { href: "/services/site-web-react-next", label: "Site React & Next.js" },
                         { href: "/services/site-internet-wordpress", label: "Site WordPress" },
-                        { href: "/services/seo", label: "SEO" },
                         { href: "/services/e-commerce", label: "E-commerce" },
+                        { href: "/services/seo", label: "SEO" },
+                        { href: "/services/accessibilite", label: "Accessibilité" },
                         { href: "/services/tarifs", label: "Tarifs" },
                         { href: "/portfolio", label: "Portfolio" },
                         { href: "/blog", label: "Blog" },
@@ -89,9 +91,9 @@ export default function Footer() {
                                 href={item.href}
                                 className="transition-colors duration-300"
                                 style={{ color: 'var(--fg-subtle)' }}
-                                aria-label={item.name}
+                                aria-label={`${item.name} (s'ouvre dans une nouvelle fenêtre)`}
                                 target="_blank"
-                                rel="noreferrer"
+                                rel="noopener noreferrer"
                             >
                                 <span className="sr-only">{item.name}</span>
                                 <item.icon aria-hidden="true" className="size-4" />

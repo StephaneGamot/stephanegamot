@@ -942,6 +942,7 @@ export default function SeoServicePage() {
               href="https://wa.me/32477713193?text=Bonjour%20St%C3%A9phane%2C%20je%20souhaiterais%20un%20audit%20SEO%20de%20mon%20site."
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Discuter sur WhatsApp (s'ouvre dans une nouvelle fenêtre)"
               className="btn btn-outline inline-flex items-center gap-2"
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366">
