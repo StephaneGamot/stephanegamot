@@ -6,6 +6,18 @@ const nextConfig: NextConfig = {
         remotePatterns: [],
     },
 
+    // Redirige les URL avec query param ?q= vers la homepage (anti-duplication)
+    async redirects() {
+        return [
+            {
+                source: "/",
+                has: [{ type: "query", key: "q" }],
+                destination: "/",
+                permanent: true,
+            },
+        ];
+    },
+
     async headers() {
         return [
             {

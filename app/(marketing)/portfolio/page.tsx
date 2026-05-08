@@ -7,7 +7,7 @@ import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { SkeletonPortfolioCard } from "@/components/animations/SkeletonLoader";
 
 export const metadata: Metadata = {
-  title: "Portfolio de sites web et e-commerce — Stéphane Gamot",
+  title: "Portfolio — Sites Web & E-commerce Réalisés",
   description:
     "Sélection de sites web, e-commerce et applications réalisés avec Next.js, React & WordPress. Performance, SEO & UX au service de vos projets.",
   keywords: [

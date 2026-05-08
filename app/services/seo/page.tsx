@@ -9,7 +9,7 @@ import { Breadcrumb } from "@/components/navigation/Breadcrumb";
    optimisation Google, Core Web Vitals, consultant SEO
    ───────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Audit SEO & référencement naturel — Stéphane Gamot",
+  title: "Audit SEO & Référencement Naturel Belgique",
   description:
     "Audit SEO complet : technique, contenu, maillage et Core Web Vitals. Plan d'actions priorisé pour gagner en visibilité sur Google. Devis gratuit.",
   metadataBase: new URL("https://www.stephanegamot.com"),

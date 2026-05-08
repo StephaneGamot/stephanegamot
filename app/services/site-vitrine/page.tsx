@@ -9,7 +9,7 @@ import { Breadcrumb } from "@/components/navigation/Breadcrumb";
    SEO local, site internet indépendant, site one-page, landing page
    ───────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Création site vitrine professionnel — Stéphane Gamot",
+  title: "Création Site Vitrine Professionnel — Prix & Devis",
   description:
     "Création de site vitrine sur mesure en Belgique : design premium, SEO local, mobile-first et HTTPS. Devis gratuit, contactez-moi.",
   metadataBase: new URL("https://www.stephanegamot.com"),

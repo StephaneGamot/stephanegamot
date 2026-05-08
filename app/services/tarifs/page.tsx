@@ -10,7 +10,7 @@ import { Breadcrumb } from "@/components/navigation/Breadcrumb";
    prix développeur web freelance
    ───────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Tarifs création de site web — Stéphane Gamot",
+  title: "Tarifs Création Site Web — Prix Transparent",
   description:
     "Tarifs clairs pour la création de votre site web : site vitrine dès 1 500 €, site professionnel dès 3 500 €, e-commerce dès 5 000 €. Devis gratuit sous 48h.",
   metadataBase: new URL("https://www.stephanegamot.com"),

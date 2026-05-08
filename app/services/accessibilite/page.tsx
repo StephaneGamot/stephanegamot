@@ -11,7 +11,7 @@ import { Breadcrumb } from "@/components/navigation/Breadcrumb";
    handicap numerique, ARIA
    ───────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Accessibilite web WCAG 2.2 & audit — S. Gamot",
+  title: "Accessibilité Web WCAG 2.2 & Audit EAA",
   description:
     "Audit accessibilite web WCAG 2.2, RGAA 4.1 et conformite EAA. Corrections ARIA, contrastes, clavier. Freelance Belgique. Demandez votre audit gratuit.",
   metadataBase: new URL("https://www.stephanegamot.com"),

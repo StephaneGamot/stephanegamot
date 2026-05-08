@@ -9,7 +9,7 @@ import { Breadcrumb } from "@/components/navigation/Breadcrumb";
    tunnel d'achat, taux de conversion, e-commerce Next.js, WooCommerce
    ───────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Création site e-commerce sur mesure — Stéphane Gamot",
+  title: "Création Site E-commerce Sur Mesure — Belgique",
   description:
     "Création de site e-commerce performant : tunnel d'achat optimisé, paiement Stripe, mobile-first et SEO. Boostez vos ventes en ligne. Devis gratuit.",
   metadataBase: new URL("https://www.stephanegamot.com"),

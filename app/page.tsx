@@ -13,9 +13,9 @@ import StickyCTA from "@/components/trust/StickyCTA";
 import LeadMagnet from "@/components/trust/LeadMagnet";
 
 export const metadata: Metadata = {
-  title: "Création de sites web performants — Stéphane Gamot",
+  title: "Création de Site Web Bruxelles — Développeur Freelance",
   description:
-    "Découvrez mes services de création web : sites rapides, élégants et optimisés SEO. Contactez-moi pour un devis gratuit en Belgique.",
+    "Développeur web freelance à Bruxelles. Création de sites vitrines, e-commerce et Next.js : rapides, élégants et optimisés SEO. Devis gratuit.",
   metadataBase: new URL("https://www.stephanegamot.com"),
   alternates: {
     canonical: "https://www.stephanegamot.com",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     },
   ],
   openGraph: {
-    title: "Création de sites web performants — Stéphane Gamot",
+    title: "Création de Site Web Bruxelles — Développeur Freelance | Stéphane Gamot",
     description:
       "Développeur web freelance à Bruxelles. Sites Next.js, WordPress et e-commerce Stripe, pensés pour la performance, le référencement et la conversion.",
     url: "https://www.stephanegamot.com",
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Création de sites web performants — Stéphane Gamot",
+    title: "Création de Site Web Bruxelles — Développeur Freelance | Stéphane Gamot",
     description:
       "Sites Next.js, WordPress et e-commerce optimisés SEO. Performance, design et stratégie digitale pour entrepreneurs exigeants.",
     images: ["https://www.stephanegamot.com/Images/og/office-workstation.webp"],

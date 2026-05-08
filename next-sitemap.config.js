@@ -20,12 +20,24 @@ const config = {
     } else if (path === "/services/tarifs") {
       priority = 0.9;
       changefreq = "monthly";
+    } else if (path.startsWith("/services/")) {
+      priority = 0.85;
+      changefreq = "monthly";
     } else if (path.startsWith("/creation-site-web-")) {
       priority = 0.85;
       changefreq = "monthly";
-    } else if (path.startsWith("/blog")) {
+    } else if (path === "/faq") {
+      priority = 0.8;
+      changefreq = "monthly";
+    } else if (path.startsWith("/blog/") && path !== "/blog") {
       priority = 0.8;
       changefreq = "weekly";
+    } else if (path === "/blog") {
+      priority = 0.75;
+      changefreq = "weekly";
+    } else if (path === "/me") {
+      priority = 0.6;
+      changefreq = "monthly";
     } else if (path.startsWith("/portfolio")) {
       priority = 0.7;
       changefreq = "monthly";

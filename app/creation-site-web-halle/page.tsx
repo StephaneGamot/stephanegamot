@@ -5,7 +5,7 @@ import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 const SITE = "https://www.stephanegamot.com";
 
 export const metadata: Metadata = {
-  title: "Création site web Halle — Freelance local",
+  title: "Création Site Web Halle — Freelance",
   description:
     "Développeur web basé à Halle. Sites vitrines, e-commerce et SEO local pour les commerces et indépendants du Pajottenland et de la périphérie bruxelloise.",
   alternates: {

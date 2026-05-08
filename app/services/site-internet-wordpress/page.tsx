@@ -4,7 +4,7 @@ import { ServicesSection } from "@/components/services/ServicesSection";
 import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 
 export const metadata: Metadata = {
-  title: "Création site WordPress sur mesure — Stéphane Gamot",
+  title: "Création Site WordPress Sur Mesure — Belgique",
   description:
     "Création site WordPress rapide, sécurisé et optimisé SEO par un développeur freelance en Belgique. Devis gratuit sous 48 h, contactez-moi.",
   metadataBase: new URL("https://www.stephanegamot.com"),

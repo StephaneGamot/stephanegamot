@@ -5,7 +5,7 @@ import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 const SITE = "https://www.stephanegamot.com";
 
 export const metadata: Metadata = {
-  title: "Création site web Bruxelles — Freelance",
+  title: "Création Site Web Bruxelles — Freelance & Devis",
   description:
     "Développeur web freelance à Bruxelles. Sites vitrines, e-commerce et applications Next.js ou WordPress. Design premium, SEO local et performances Lighthouse 97+.",
   alternates: {

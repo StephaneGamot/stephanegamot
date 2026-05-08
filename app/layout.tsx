@@ -58,7 +58,11 @@ export const metadata: Metadata = {
             "max-video-preview": -1,
             "max-image-preview": "large",
             "max-snippet": -1,
+            noimageindex: false,
         },
+    },
+    other: {
+        "google-site-verification": "REMPLACER_PAR_VOTRE_CODE_VERIFICATION",
     },
 };
 

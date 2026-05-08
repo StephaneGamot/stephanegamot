@@ -9,7 +9,7 @@ import { Breadcrumb } from "@/components/navigation/Breadcrumb";
    Server Components, Core Web Vitals, site sur mesure
    ───────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "Création de site Next.js & React — Stéphane Gamot",
+  title: "Création Site Next.js & React — Performance Web",
   description:
     "Développeur Next.js freelance en Belgique. Sites vitrines, e-commerce et apps web ultra-rapides, SEO-ready et pensés pour convertir. Devis gratuit.",
   metadataBase: new URL("https://www.stephanegamot.com"),

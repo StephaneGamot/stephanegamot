@@ -5,7 +5,7 @@ import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 const SITE = "https://www.stephanegamot.com";
 
 export const metadata: Metadata = {
-  title: "Site web Brabant wallon — Dev freelance",
+  title: "Création Site Web Brabant Wallon — Freelance",
   description:
     "Développeur web freelance pour le Brabant wallon. Sites vitrines, e-commerce et SEO pour Wavre, Ottignies, Nivelles, Waterloo et toute la province.",
   alternates: {
