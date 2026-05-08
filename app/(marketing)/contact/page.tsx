@@ -76,13 +76,6 @@ export default function Page() {
                     url: "https://www.stephanegamot.com",
                   },
                 },
-                {
-                  "@type": "BreadcrumbList",
-                  itemListElement: [
-                    { "@type": "ListItem", position: 1, name: "Accueil", item: "https://www.stephanegamot.com" },
-                    { "@type": "ListItem", position: 2, name: "Contact", item: "https://www.stephanegamot.com/contact" },
-                  ],
-                },
               ],
             }),
           }}

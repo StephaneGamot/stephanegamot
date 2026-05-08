@@ -837,14 +837,6 @@ export default function SiteVitrineServicePage() {
                   },
                 ],
               },
-              {
-                "@type": "BreadcrumbList",
-                itemListElement: [
-                  { "@type": "ListItem", position: 1, name: "Accueil", item: "https://www.stephanegamot.com" },
-                  { "@type": "ListItem", position: 2, name: "Services", item: "https://www.stephanegamot.com/#services" },
-                  { "@type": "ListItem", position: 3, name: "Site vitrine", item: "https://www.stephanegamot.com/services/site-vitrine" },
-                ],
-              },
             ],
           }),
         }}

@@ -26,6 +26,7 @@ export type BlogPost = {
     imageUrl: StaticImageData;
     date: string;
     datetime: string;
+    updatedAt?: string;
     readingTimeMinutes: number;
     views: number;
     category: { title: string; href: string };
@@ -48,6 +49,7 @@ export const posts: BlogPost[] = [
   imageUrl: NextFuture,
   date: "1 décembre 2025",
   datetime: "2025-12-01",
+  updatedAt: "2026-04-15",
   readingTimeMinutes: 5,
   views: 0,
   category: { title: "Technologies web", href: "#" },
@@ -317,6 +319,13 @@ export const posts: BlogPost[] = [
         orienter gratuitement vers la solution la plus pertinente pour votre
         activité.
       </p>
+
+      <p className="mt-6 text-sm" style={{ color: "var(--fg-muted)" }}>
+        En savoir plus :{" "}
+        <a href="/services/site-web-react-next" style={{ color: "var(--accent)" }}>création de site Next.js</a>,{" "}
+        <a href="/services/site-internet-wordpress" style={{ color: "var(--accent)" }}>site WordPress professionnel</a>,{" "}
+        <a href="/services/tarifs" style={{ color: "var(--accent)" }}>tarifs et formules</a>.
+      </p>
     </>
   ),
 },
@@ -330,6 +339,7 @@ export const posts: BlogPost[] = [
   imageUrl: WordPress2,
   date: "12 décembre 2025",
   datetime: "2025-12-12",
+  updatedAt: "2026-04-15",
   readingTimeMinutes: 5,
   views: 0,
   category: { title: "CMS & Web", href: "#" },
@@ -530,6 +540,7 @@ export const posts: BlogPost[] = [
   imageUrl: Next1,
   date: "30 décembre 2025",
   datetime: "2025-12-30",
+  updatedAt: "2026-04-15",
   readingTimeMinutes: 5,
   views: 0,
   category: { title: "Technologies Web", href: "#" },
@@ -724,6 +735,7 @@ export const posts: BlogPost[] = [
   imageUrl: Chance,
   date: "4 janvier 2026",
   datetime: "2026-01-04",
+  updatedAt: "2026-04-20",
   readingTimeMinutes: 6,
   views: 0,
   category: { title: "Conversion & Business", href: "#" },
@@ -899,6 +911,14 @@ export const posts: BlogPost[] = [
         Je peux analyser rapidement votre site et vous dire{" "}
         <strong>ce qui bloque</strong> (et quoi faire en priorité pour convertir).
       </p>
+
+      <p className="mt-6 text-sm" style={{ color: "var(--fg-muted)" }}>
+        Besoin d'un site qui convertit ?{" "}
+        <a href="/services/site-vitrine" style={{ color: "var(--accent)" }}>Site vitrine professionnel</a>,{" "}
+        <a href="/services/e-commerce" style={{ color: "var(--accent)" }}>e-commerce performant</a> ou{" "}
+        <a href="/services/seo" style={{ color: "var(--accent)" }}>audit SEO complet</a> — je peux vous aider
+        à <a href="/creation-site-web-bruxelles" style={{ color: "var(--accent)" }}>Bruxelles</a> et dans toute la Belgique.
+      </p>
     </>
   ),
 },{
@@ -910,6 +930,7 @@ export const posts: BlogPost[] = [
   imageUrl: Seo,
   date: "7 janvier 2026",
   datetime: "2026-01-07",
+  updatedAt: "2026-05-01",
   readingTimeMinutes: 7,
   views: 0,
   category: { title: "SEO & Visibilité", href: "#" },
@@ -1094,18 +1115,27 @@ export const posts: BlogPost[] = [
         mini-audit SEO rapide : vitesse, structure, pages rentables, et actions
         prioritaires pour remonter sur Google.
       </p>
+
+      <p className="mt-6 text-sm" style={{ color: "var(--fg-muted)" }}>
+        Découvrez aussi mes services de{" "}
+        <a href="/services/seo" style={{ color: "var(--accent)" }}>référencement naturel et audit SEO</a>,
+        la <a href="/creation-site-web-bruxelles" style={{ color: "var(--accent)" }}>création de site web à Bruxelles</a>,
+        ou comment un <a href="/services/site-web-react-next" style={{ color: "var(--accent)" }}>site Next.js</a> peut
+        booster vos performances Google.
+      </p>
     </>
   ),
 },
 {
   id: 6,
   slug: "combien-coute-un-site-web-en-2026-prix-pieges",
-  title: "Prix d'un site web en 2026 : guide honnête",
+  title: "Prix d’un site web en 2026 : guide honnête",
   description:
     "Entre 500 € et 15 000 € Pourquoi autant d’écart ? Voici les vrais prix d’un site en 2026, les pièges à éviter et comment choisir sans se faire avoir",
   imageUrl: WebsitePrice,
   date: "11 janvier 2026",
   datetime: "2026-01-11",
+  updatedAt: "2026-05-01",
   readingTimeMinutes: 8,
   views: 0,
   category: { title: "Budget & Stratégie", href: "#" },
@@ -1301,6 +1331,17 @@ export const posts: BlogPost[] = [
         <strong>fourchette de budget cohérente</strong> (sans blabla),
         avec les priorités à financer en premier.
       </p>
+
+      <p className="mt-6 text-sm" style={{ color: "var(--fg-muted)" }}>
+        Consultez mes <a href="/services/tarifs" style={{ color: "var(--accent)" }}>tarifs détaillés</a> pour
+        un aperçu concret, ou découvrez mes services :{" "}
+        <a href="/services/site-vitrine" style={{ color: "var(--accent)" }}>site vitrine</a>,{" "}
+        <a href="/services/site-web-react-next" style={{ color: "var(--accent)" }}>site Next.js premium</a>,{" "}
+        <a href="/services/e-commerce" style={{ color: "var(--accent)" }}>e-commerce</a>.
+        Basé à <a href="/creation-site-web-halle" style={{ color: "var(--accent)" }}>Halle</a>, je travaille
+        aussi à <a href="/creation-site-web-bruxelles" style={{ color: "var(--accent)" }}>Bruxelles</a> et
+        en <a href="/creation-site-web-brabant-wallon" style={{ color: "var(--accent)" }}>Brabant wallon</a>.
+      </p>
     </>
   ),
 },
@@ -1313,6 +1354,7 @@ export const posts: BlogPost[] = [
   imageUrl: Php1,
   date: "2 mars 2026",
   datetime: "2026-03-02",
+  updatedAt: "2026-05-01",
   readingTimeMinutes: 6,
   views: 0,
   category: { title: "Technologies Web", href: "#" },

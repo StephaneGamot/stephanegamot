@@ -83,9 +83,8 @@ const ogImageUrl = rawImageUrl.startsWith("http")
         },
       ],
       authors: [post.author.name],
-      publishedTime: post.datetime, // format AAAA-MM-JJ
-      // éventuellement :
-      // modifiedTime: post.updatedAt,
+      publishedTime: post.datetime,
+      ...(post.updatedAt ? { modifiedTime: post.updatedAt } : {}),
     },
     twitter: {
       card: "summary_large_image",
@@ -155,6 +154,7 @@ export default async function BlogPostPage({
             description: post.description,
             image: fullImageUrl,
             datePublished: post.datetime,
+            ...(post.updatedAt ? { dateModified: post.updatedAt } : {}),
             author: {
                 "@type": "Person",
                 name: post.author.name,
@@ -172,14 +172,6 @@ export default async function BlogPostPage({
             url: `${SITE_URL}/blog/${post.slug}`,
             wordCount: post.readingTimeMinutes * 200,
             inLanguage: "fr",
-          },
-          {
-            "@type": "BreadcrumbList",
-            itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Accueil", item: SITE_URL },
-              { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE_URL}/blog` },
-              { "@type": "ListItem", position: 3, name: post.title, item: `${SITE_URL}/blog/${post.slug}` },
-            ],
           },
         ],
     };

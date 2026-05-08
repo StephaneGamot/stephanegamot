@@ -197,13 +197,6 @@ export default function BlogPage() {
                           })),
                         },
                       },
-                      {
-                        "@type": "BreadcrumbList",
-                        itemListElement: [
-                          { "@type": "ListItem", position: 1, name: "Accueil", item: "https://www.stephanegamot.com" },
-                          { "@type": "ListItem", position: 2, name: "Blog", item: "https://www.stephanegamot.com/blog" },
-                        ],
-                      },
                     ],
                 }),
             }}

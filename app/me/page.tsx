@@ -285,13 +285,6 @@ export default function AboutPage() {
                   "https://www.facebook.com/profile.php?id=61560283102227",
                 ],
               },
-              {
-                "@type": "BreadcrumbList",
-                itemListElement: [
-                  { "@type": "ListItem", position: 1, name: "Accueil", item: "https://www.stephanegamot.com" },
-                  { "@type": "ListItem", position: 2, name: "À propos", item: "https://www.stephanegamot.com/me" },
-                ],
-              },
             ],
           }),
         }}

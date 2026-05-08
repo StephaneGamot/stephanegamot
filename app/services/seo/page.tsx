@@ -856,8 +856,35 @@ export default function SeoServicePage() {
         </div>
       </section>
 
-      {/* Maillage interne — services complémentaires */}
+      {/* Maillage interne — articles de blog liés */}
       <aside className="mx-auto max-w-5xl px-4 pb-8 sm:px-6 lg:px-8">
+        <p
+          className="text-xs uppercase tracking-[0.12em] mb-4"
+          style={{ color: "var(--fg-subtle)" }}
+        >
+          Articles liés
+        </p>
+        <div className="flex flex-wrap gap-3 mb-8">
+          {[
+            { href: "/blog/seo-2026-ce-qui-marche-vraiment", label: "SEO 2026 : ce qui marche vraiment" },
+            { href: "/blog/pourquoi-votre-site-ne-convertit-pas", label: "7 erreurs qui bloquent la conversion" },
+            { href: "/blog/pourquoi-nextjs-est-le-meilleur-investissement", label: "Next.js : le meilleur investissement web" },
+          ].map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="text-sm px-4 py-2 transition-colors duration-300 hover:!border-[var(--accent)] hover:!text-[var(--accent)]"
+              style={{
+                border: "1px solid var(--border)",
+                borderRadius: "0.5rem",
+                color: "var(--fg-muted)",
+              }}
+            >
+              {link.label} →
+            </Link>
+          ))}
+        </div>
+
         <p
           className="text-xs uppercase tracking-[0.12em] mb-4"
           style={{ color: "var(--fg-subtle)" }}
@@ -872,7 +899,8 @@ export default function SeoServicePage() {
             { href: "/services/accessibilite", label: "Accessibilité WCAG" },
             { href: "/services/site-vitrine", label: "Site vitrine" },
             { href: "/services/tarifs", label: "Tarifs & formules" },
-            { href: "/blog", label: "Blog & ressources" },
+            { href: "/creation-site-web-bruxelles", label: "Création site web Bruxelles" },
+            { href: "/creation-site-web-halle", label: "Création site web Halle" },
             { href: "/faq", label: "Questions fréquentes" },
           ].map((link) => (
             <Link
@@ -1129,14 +1157,6 @@ export default function SeoServicePage() {
                       text: "Le SEO local cible les recherches géolocalisées et s'appuie sur Google Business Profile, les avis clients et des pages optimisées par zone géographique. Pour les commerces de proximité, c'est le levier le plus rentable.",
                     },
                   },
-                ],
-              },
-              {
-                "@type": "BreadcrumbList",
-                itemListElement: [
-                  { "@type": "ListItem", position: 1, name: "Accueil", item: "https://www.stephanegamot.com" },
-                  { "@type": "ListItem", position: 2, name: "Services", item: "https://www.stephanegamot.com/#services" },
-                  { "@type": "ListItem", position: 3, name: "SEO & Référencement", item: "https://www.stephanegamot.com/services/seo" },
                 ],
               },
             ],

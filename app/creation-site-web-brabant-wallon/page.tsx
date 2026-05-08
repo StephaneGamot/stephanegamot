@@ -274,13 +274,6 @@ export default function CreationSiteWebBrabantWallon() {
                   acceptedAnswer: { "@type": "Answer", text: f.a },
                 })),
               },
-              {
-                "@type": "BreadcrumbList",
-                itemListElement: [
-                  { "@type": "ListItem", position: 1, name: "Accueil", item: SITE },
-                  { "@type": "ListItem", position: 2, name: "Création site web Brabant wallon", item: `${SITE}/creation-site-web-brabant-wallon` },
-                ],
-              },
             ],
           }),
         }}

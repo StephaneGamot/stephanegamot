@@ -164,14 +164,6 @@ export default function WordPressServicePage() {
         ],
       },
       {
-        "@type": "BreadcrumbList",
-        itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Accueil", item: "https://www.stephanegamot.com" },
-          { "@type": "ListItem", position: 2, name: "Services", item: "https://www.stephanegamot.com/#services" },
-          { "@type": "ListItem", position: 3, name: "WordPress", item: "https://www.stephanegamot.com/services/site-internet-wordpress" },
-        ],
-      },
-      {
         "@type": "HowTo",
         "@id": "https://www.stephanegamot.com/services/site-internet-wordpress/#howto",
         name: "Comment je crée votre site WordPress sur mesure",

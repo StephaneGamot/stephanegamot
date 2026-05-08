@@ -99,14 +99,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   description: "Création de sites web performants, élégants et optimisés SEO.",
                   publisher: { "@id": "https://www.stephanegamot.com/#organization" },
                   inLanguage: "fr",
-                  potentialAction: {
-                    "@type": "SearchAction",
-                    target: {
-                      "@type": "EntryPoint",
-                      urlTemplate: "https://www.stephanegamot.com/blog?q={search_term_string}",
-                    },
-                    "query-input": "required name=search_term_string",
-                  },
                 },
                 {
                   "@type": "Organization",
@@ -138,6 +130,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   sameAs: [
                     "https://github.com/StephaneGamot",
                     "https://www.facebook.com/profile.php?id=61560283102227",
+                    "https://www.linkedin.com/in/stephanegamot/",
                   ],
                 },
               ],

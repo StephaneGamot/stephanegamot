@@ -4,7 +4,8 @@ const siteUrl = "https://www.stephanegamot.com";
 
 const config = {
   siteUrl,
-  generateRobotsTxt: true,
+  generateRobotsTxt: false,
+  exclude: ["/robots.txt", "/api/*"],
 
   transform: async (config, path) => {
     let priority = 0.7;
@@ -36,16 +37,6 @@ const config = {
       priority,
       lastmod: new Date().toISOString(),
     };
-  },
-
-  robotsTxtOptions: {
-    policies: [
-      {
-        userAgent: "*",
-        allow: "/",
-      },
-    ],
-    // ❌ plus de additionalSitemaps ici
   },
 };
 

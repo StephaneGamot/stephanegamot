@@ -583,29 +583,6 @@ export default function TarifsPage() {
                   },
                 ],
               },
-              {
-                "@type": "BreadcrumbList",
-                itemListElement: [
-                  {
-                    "@type": "ListItem",
-                    position: 1,
-                    name: "Accueil",
-                    item: "https://www.stephanegamot.com",
-                  },
-                  {
-                    "@type": "ListItem",
-                    position: 2,
-                    name: "Services",
-                    item: "https://www.stephanegamot.com/#services",
-                  },
-                  {
-                    "@type": "ListItem",
-                    position: 3,
-                    name: "Tarifs",
-                    item: "https://www.stephanegamot.com/services/tarifs",
-                  },
-                ],
-              },
             ],
           }),
         }}

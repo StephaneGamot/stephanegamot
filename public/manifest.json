@@ -12,6 +12,12 @@
       "src": "/favicon.ico",
       "sizes": "48x48",
       "type": "image/x-icon"
+    },
+    {
+      "src": "/Images/logo-stephanegamot-200.webp",
+      "sizes": "200x200",
+      "type": "image/webp",
+      "purpose": "any"
     }
   ]
 }

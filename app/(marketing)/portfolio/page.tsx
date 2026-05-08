@@ -110,13 +110,6 @@ export default function Page() {
                           url: "https://www.stephanegamot.com/me",
                         },
                       },
-                      {
-                        "@type": "BreadcrumbList",
-                        itemListElement: [
-                          { "@type": "ListItem", position: 1, name: "Accueil", item: "https://www.stephanegamot.com" },
-                          { "@type": "ListItem", position: 2, name: "Portfolio", item: "https://www.stephanegamot.com/portfolio" },
-                        ],
-                      },
                     ],
                 }),
             }}

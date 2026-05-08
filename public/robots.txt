@@ -1,9 +1,17 @@
-# *
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /_next/static/
+Disallow: /_next/image/
 
-# Host
-Host: https://www.stephanegamot.com
+User-agent: AhrefsBot
+Crawl-delay: 5
 
-# Sitemaps
+User-agent: SemrushBot
+Crawl-delay: 5
+
+# Sitemap
 Sitemap: https://www.stephanegamot.com/sitemap.xml
+
+# Host canonique
+Host: https://www.stephanegamot.com

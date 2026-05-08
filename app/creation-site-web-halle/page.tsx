@@ -273,13 +273,6 @@ export default function CreationSiteWebHalle() {
                   acceptedAnswer: { "@type": "Answer", text: f.a },
                 })),
               },
-              {
-                "@type": "BreadcrumbList",
-                itemListElement: [
-                  { "@type": "ListItem", position: 1, name: "Accueil", item: SITE },
-                  { "@type": "ListItem", position: 2, name: "Création site web Halle", item: `${SITE}/creation-site-web-halle` },
-                ],
-              },
             ],
           }),
         }}

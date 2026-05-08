@@ -337,6 +337,38 @@ export default function CreationSiteWebBruxelles() {
         </div>
       </section>
 
+      {/* Articles liés */}
+      <section className="section">
+        <div className="divider mx-auto max-w-6xl" />
+        <div
+          className="mx-auto max-w-5xl px-8 lg:px-12"
+          style={{ paddingTop: "var(--section-gap)" }}
+        >
+          <h2>Ressources utiles pour votre projet web</h2>
+          <div className="mt-6 flex flex-wrap gap-3">
+            {[
+              { href: "/blog/combien-coute-un-site-web-en-2026-prix-pieges", label: "Prix d'un site web en 2026" },
+              { href: "/blog/seo-2026-ce-qui-marche-vraiment", label: "SEO 2026 : ce qui marche vraiment" },
+              { href: "/blog/pourquoi-votre-site-ne-convertit-pas", label: "7 erreurs qui bloquent la conversion" },
+              { href: "/blog/wordpress-vs-nextjs-quel-choisir", label: "WordPress vs Next.js" },
+            ].map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-sm px-4 py-2 transition-colors duration-300 hover:!border-[var(--accent)] hover:!text-[var(--accent)]"
+                style={{
+                  border: "1px solid var(--border)",
+                  borderRadius: "0.5rem",
+                  color: "var(--fg-muted)",
+                }}
+              >
+                {link.label} →
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="section">
         <div className="mx-auto max-w-3xl px-8 text-center">
@@ -407,23 +439,6 @@ export default function CreationSiteWebBruxelles() {
                   name: f.q,
                   acceptedAnswer: { "@type": "Answer", text: f.a },
                 })),
-              },
-              {
-                "@type": "BreadcrumbList",
-                itemListElement: [
-                  {
-                    "@type": "ListItem",
-                    position: 1,
-                    name: "Accueil",
-                    item: SITE,
-                  },
-                  {
-                    "@type": "ListItem",
-                    position: 2,
-                    name: "Création site web Bruxelles",
-                    item: `${SITE}/creation-site-web-bruxelles`,
-                  },
-                ],
               },
             ],
           }),
