@@ -726,7 +726,7 @@ export default function WordPressServicePage() {
             <a
               href="https://wa.me/32477713193?text=Bonjour%20St%C3%A9phane%2C%20je%20souhaiterais%20discuter%20d%27un%20site%20WordPress."
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener noreferrer nofollow"
               aria-label="Discuter sur WhatsApp (s'ouvre dans une nouvelle fenêtre)"
               className="btn btn-outline inline-flex items-center gap-2"
             >

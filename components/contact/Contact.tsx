@@ -137,7 +137,7 @@ export default function Contact() {
           <a
             href="https://wa.me/32477713193?text=Bonjour%20St%C3%A9phane%2C%20je%20souhaiterais%20discuter%20d%27un%20projet%20web."
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener noreferrer nofollow"
             className="btn shrink-0 inline-flex items-center gap-2"
             style={{
               background: "#25D366",

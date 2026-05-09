@@ -659,7 +659,7 @@ export default function AccessibiliteServicePage() {
             <a
               href="https://wa.me/32477713193?text=Bonjour%20St%C3%A9phane%2C%20je%20souhaiterais%20un%20audit%20d%27accessibilit%C3%A9%20de%20mon%20site."
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener noreferrer nofollow"
               aria-label="Discuter sur WhatsApp (s'ouvre dans une nouvelle fenêtre)"
               className="btn"
               style={{ border: "1px solid var(--border)", color: "var(--fg-base)" }}

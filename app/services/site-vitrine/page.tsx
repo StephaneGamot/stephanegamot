@@ -685,7 +685,7 @@ export default function SiteVitrineServicePage() {
               href="https://wa.me/32477713193?text=Bonjour%20St%C3%A9phane%2C%20je%20souhaiterais%20un%20site%20vitrine%20professionnel."
               className="btn btn-primary"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener noreferrer nofollow"
               aria-label="Discuter sur WhatsApp (s'ouvre dans une nouvelle fenêtre)"
               style={{
                 background: "var(--surface-1)",

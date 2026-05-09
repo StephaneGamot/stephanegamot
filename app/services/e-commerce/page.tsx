@@ -819,7 +819,7 @@ export default function EcommerceServicePage() {
             <a
               href="https://wa.me/32477713193?text=Bonjour%20St%C3%A9phane%2C%20je%20souhaiterais%20discuter%20d%27un%20projet%20e-commerce."
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener noreferrer nofollow"
               aria-label="Discuter sur WhatsApp (s'ouvre dans une nouvelle fenêtre)"
               className="btn"
               style={{
