@@ -66,14 +66,14 @@ export const metadata: Metadata = {
 
 function PortfolioSkeleton() {
   return (
-    <div className="py-16 sm:py-20 lg:py-24">
+    <section aria-busy="true" aria-label="Chargement du portfolio" className="py-16 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Header skeleton */}
-        <div className="mx-auto max-w-3xl text-center mb-12">
+        <header className="mx-auto max-w-3xl text-center mb-12">
           <div className="skeleton-shimmer mx-auto h-3 w-24 rounded-full mb-4" style={{ background: "var(--surface-2)" }} />
           <div className="skeleton-shimmer mx-auto h-8 w-3/4 rounded-lg mb-3" style={{ background: "var(--surface-2)" }} />
           <div className="skeleton-shimmer mx-auto h-4 w-2/3 rounded-full" style={{ background: "var(--surface-2)" }} />
-        </div>
+        </header>
         {/* Grid skeleton */}
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {Array.from({ length: 6 }).map((_, i) => (
@@ -81,21 +81,21 @@ function PortfolioSkeleton() {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
 export default function Page() {
     return (
         <>
-        <div className="mx-auto max-w-7xl px-6 py-12">
+        <main className="mx-auto max-w-7xl px-6 py-12">
             <Breadcrumb items={[{ label: "Portfolio" }]} />
             <Suspense fallback={<PortfolioSkeleton />}>
               <PortfolioSection />
             </Suspense>
 
             {/* Maillage interne */}
-            <section className="mt-12 pt-8" style={{ borderTop: "1px solid var(--border)" }}>
+            <aside className="mt-12 pt-8" style={{ borderTop: "1px solid var(--border)" }}>
               <h2 className="text-lg sm:text-xl font-semibold tracking-tight">
                 Envie d'un résultat similaire ?
               </h2>
@@ -105,7 +105,7 @@ export default function Page() {
               >
                 Découvrez mes services et trouvez la formule adaptée à votre projet.
               </p>
-              <div className="mt-6 flex flex-wrap gap-3">
+              <nav aria-label="Liens vers les services" className="mt-6 flex flex-wrap gap-3">
                 {[
                   { href: "/services/site-vitrine", label: "Site vitrine" },
                   { href: "/services/site-web-react-next", label: "Site Next.js & React" },
@@ -129,9 +129,9 @@ export default function Page() {
                     {link.label} →
                   </Link>
                 ))}
-              </div>
-            </section>
-        </div>
+              </nav>
+            </aside>
+        </main>
         <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{

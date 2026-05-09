@@ -495,7 +495,7 @@ export default function PortfolioShowcase() {
     <section className="relative overflow-hidden py-16 sm:py-20 lg:py-24">
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <motion.div
+        <motion.header
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ type: "spring", damping: 35, stiffness: 120, mass: 1 }}
@@ -509,19 +509,20 @@ export default function PortfolioShowcase() {
           </p>
           <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl" style={{ color: "var(--fg-base)" }}>
             Un portfolio centré sur{" "}
-            <span style={{ color: "var(--accent)" }}>
+            <em style={{ color: "var(--accent)", fontStyle: "normal" }}>
               l'expérience
-            </span>{" "}
+            </em>{" "}
             et les résultats.
           </h2>
           <p className="mt-4 text-sm sm:text-base" style={{ color: "var(--fg-muted)" }}>
             Des sites bien-être, e-commerce et projets plus créatifs, tous
             pensés pour être élégants, rapides et orientés conversion.
           </p>
-        </motion.div>
+        </motion.header>
 
         {/* Filtres */}
-        <motion.div
+        <motion.nav
+          aria-label="Filtrer les projets par catégorie"
           className="mt-10 flex flex-wrap justify-center gap-2 sm:gap-3"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -559,7 +560,7 @@ export default function PortfolioShowcase() {
               );
             })}
           </motion.div>
-        </motion.div>
+        </motion.nav>
 
               {/* Grid des projets */}
         <div className="mt-10 grid gap-8 sm:mt-12 sm:grid-cols-2 lg:grid-cols-3">
@@ -573,7 +574,7 @@ export default function PortfolioShowcase() {
                 }}
               >
                 {/* Image */}
-                <div
+                <figure
                   className="mb-3 overflow-hidden rounded-xl border"
                   style={{ borderColor: "var(--border)", background: "var(--surface-1)" }}
                 >
@@ -590,7 +591,7 @@ export default function PortfolioShowcase() {
                       style={{ background: "linear-gradient(to top, rgba(8,9,12,0.5), transparent 40%)" }}
                     />
                   </div>
-                </div>
+                </figure>
 
                 {/* Texte */}
                 <div className="flex flex-1 flex-col">
@@ -631,29 +632,29 @@ export default function PortfolioShowcase() {
                   )}
 
                   {project.metrics && project.metrics.length > 0 && (
-                    <div
+                    <dl
                       className="mt-3 flex flex-wrap gap-x-4 gap-y-1 rounded-lg px-3 py-2.5"
                       style={{ background: "var(--surface-2)" }}
                     >
                       {project.metrics.map((metric, i) => (
-                        <span key={metric.label} className="inline-flex items-baseline gap-1.5 text-xs whitespace-nowrap">
-                          <span className="font-semibold" style={{ color: "var(--accent)" }}>
+                        <div key={metric.label} className="inline-flex items-baseline gap-1.5 text-xs whitespace-nowrap">
+                          <dd className="font-semibold m-0" style={{ color: "var(--accent)" }}>
                             {metric.value}
-                          </span>
-                          <span style={{ color: "var(--fg-subtle)" }}>
+                          </dd>
+                          <dt style={{ color: "var(--fg-subtle)" }}>
                             {metric.label}
-                          </span>
+                          </dt>
                           {i < project.metrics!.length - 1 && (
                             <span className="ml-1.5" style={{ color: "var(--border)" }} aria-hidden="true">·</span>
                           )}
-                        </span>
+                        </div>
                       ))}
-                    </div>
+                    </dl>
                   )}
 
-                  <div className="mt-3 flex flex-wrap gap-1.5">
+                  <ul className="mt-3 flex flex-wrap gap-1.5 list-none p-0 m-0">
                     {project.techs.map((tech) => (
-                      <span
+                      <li
                         key={tech}
                         className="rounded-full border px-2.5 py-0.5 text-xs uppercase tracking-wide"
                         style={{
@@ -663,9 +664,9 @@ export default function PortfolioShowcase() {
                         }}
                       >
                         {tech}
-                      </span>
+                      </li>
                     ))}
-                  </div>
+                  </ul>
                 </div>
 
                 {/* Bouton en option */}
