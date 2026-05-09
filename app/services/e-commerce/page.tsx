@@ -854,8 +854,8 @@ export default function EcommerceServicePage() {
                 description:
                   "Boutique en ligne performante : tunnel d'achat optimisé, paiement Stripe sécurisé, mobile-first, SEO e-commerce et rich snippets Product pour maximiser le taux de conversion.",
                 provider: {
-                  "@type": "ProfessionalService",
-                  "@id": "https://www.stephanegamot.com/#business",
+                  "@type": "Organization",
+                  "@id": "https://www.stephanegamot.com/#organization",
                   name: "Stéphane Gamot",
                   url: "https://www.stephanegamot.com",
                 },

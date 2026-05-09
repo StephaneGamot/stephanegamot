@@ -720,9 +720,9 @@ export default function SiteVitrineServicePage() {
                   "Création de site vitrine sur mesure en Belgique : design premium, SEO local, mobile-first, HTTPS et formulaire de contact optimisé pour convertir.",
                 image: "https://www.stephanegamot.com/Images/og/office-workstation.webp",
                 provider: {
-                  "@type": "ProfessionalService",
+                  "@type": "Organization",
                   "@id":
-                    "https://www.stephanegamot.com/#business",
+                    "https://www.stephanegamot.com/#organization",
                   name: "Stéphane Gamot",
                   url: "https://www.stephanegamot.com",
                 },

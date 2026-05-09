@@ -723,8 +723,8 @@ export default function ReactNextServicePage() {
                 description:
                   "Développement de sites web sur mesure avec Next.js, React, TypeScript et Tailwind CSS. Sites vitrines, e-commerce et applications web performantes.",
                 provider: {
-                  "@type": "ProfessionalService",
-                  "@id": "https://www.stephanegamot.com/#business",
+                  "@type": "Organization",
+                  "@id": "https://www.stephanegamot.com/#organization",
                   name: "Stéphane Gamot",
                   url: "https://www.stephanegamot.com",
                 },

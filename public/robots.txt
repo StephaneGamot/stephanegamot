@@ -2,22 +2,16 @@
 User-agent: Googlebot
 Allow: /
 Disallow: /api/
-Disallow: /_next/static/
-Disallow: /_next/image/
 
 # Bingbot
 User-agent: Bingbot
 Allow: /
 Disallow: /api/
-Disallow: /_next/static/
-Disallow: /_next/image/
 
 # Tous les autres bots
 User-agent: *
 Allow: /
 Disallow: /api/
-Disallow: /_next/static/
-Disallow: /_next/image/
 
 # Crawl-delay pour les crawlers gourmands
 User-agent: AhrefsBot

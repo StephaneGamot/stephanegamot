@@ -688,8 +688,8 @@ export default function AccessibiliteServicePage() {
                 description:
                   "Audit et mise en conformite accessibilite web : WCAG 2.2, RGAA 4.1, European Accessibility Act. Corrections ARIA, contrastes, navigation clavier, formulaires, declaration d'accessibilite.",
                 provider: {
-                  "@type": "ProfessionalService",
-                  "@id": "https://www.stephanegamot.com/#business",
+                  "@type": "Organization",
+                  "@id": "https://www.stephanegamot.com/#organization",
                   name: "Stéphane Gamot",
                   url: "https://www.stephanegamot.com",
                 },

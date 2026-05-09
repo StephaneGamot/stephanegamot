@@ -492,8 +492,8 @@ export default function TarifsPage() {
                 description:
                   "Tarifs transparents pour la création de sites web professionnels : site vitrine, site professionnel Next.js/WordPress et e-commerce.",
                 provider: {
-                  "@type": "ProfessionalService",
-                  "@id": "https://www.stephanegamot.com/#business",
+                  "@type": "Organization",
+                  "@id": "https://www.stephanegamot.com/#organization",
                   name: "Stéphane Gamot",
                   url: "https://www.stephanegamot.com",
                 },
