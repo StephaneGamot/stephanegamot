@@ -93,7 +93,7 @@ export default function Footer() {
                                 style={{ color: 'var(--fg-subtle)' }}
                                 aria-label={`${item.name} (s'ouvre dans une nouvelle fenêtre)`}
                                 target="_blank"
-                                rel="noopener noreferrer"
+                                rel="noopener noreferrer nofollow"
                             >
                                 <span className="sr-only">{item.name}</span>
                                 <item.icon aria-hidden="true" className="size-4" />
