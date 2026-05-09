@@ -47,6 +47,7 @@ export default function Footer() {
                 {/* Navigation interne */}
                 <nav aria-label="Liens du pied de page" className="mb-8 flex flex-wrap justify-center gap-x-8 gap-y-3">
                     {[
+                        { href: "/", label: "Accueil" },
                         { href: "/services/site-vitrine", label: "Site vitrine" },
                         { href: "/services/site-web-react-next", label: "Site React & Next.js" },
                         { href: "/services/site-internet-wordpress", label: "Site WordPress" },

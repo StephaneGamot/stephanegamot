@@ -1,0 +1,43 @@
+# Stéphane Gamot — Développeur Web Freelance à Bruxelles
+
+> Stéphane Gamot est développeur web freelance basé à Bruxelles, spécialisé dans la création de sites vitrines, e-commerce et applications Next.js/React. Il propose également des audits SEO et des mises en conformité d'accessibilité (WCAG 2.2 / EAA). Site en français, clientèle belge et francophone.
+
+- Technologies : Next.js, React, TypeScript, WordPress, Tailwind CSS, Stripe
+- Zone géographique : Bruxelles, Brabant wallon, Halle, Belgique francophone
+- Contact : stephanegamot@outlook.com | +32 477 71 31 93
+
+## Services
+
+- [Site vitrine](https://www.stephanegamot.com/services/site-vitrine): Création de sites vitrines professionnels, rapides et optimisés SEO
+- [Site Next.js & React](https://www.stephanegamot.com/services/site-web-react-next): Applications web performantes avec Next.js, React et TypeScript
+- [Site WordPress](https://www.stephanegamot.com/services/site-internet-wordpress): Sites WordPress sur mesure, sécurisés et maintenus
+- [E-commerce](https://www.stephanegamot.com/services/e-commerce): Boutiques en ligne avec Stripe, gestion produits et paiements sécurisés
+- [Audit SEO](https://www.stephanegamot.com/services/seo): Référencement naturel, audit technique et optimisation de contenu
+- [Accessibilité web](https://www.stephanegamot.com/services/accessibilite): Audit et mise en conformité WCAG 2.2, European Accessibility Act
+- [Tarifs](https://www.stephanegamot.com/services/tarifs): Grille tarifaire transparente pour tous les services
+
+## À propos
+
+- [À propos](https://www.stephanegamot.com/me): Parcours, compétences et approche de Stéphane Gamot
+- [Portfolio](https://www.stephanegamot.com/portfolio): Réalisations clients — sites vitrines, e-commerce et applications web
+- [Contact](https://www.stephanegamot.com/contact): Formulaire de contact et devis gratuit
+
+## Blog
+
+- [SEO 2026 : ce qui marche vraiment](https://www.stephanegamot.com/blog/seo-2026-ce-qui-marche-vraiment): Guide des stratégies SEO efficaces en 2026
+- [Prix d'un site web en 2026](https://www.stephanegamot.com/blog/combien-coute-un-site-web-en-2026-prix-pieges): Guide honnête des coûts de création de site web
+- [WordPress vs Next.js](https://www.stephanegamot.com/blog/wordpress-vs-nextjs-quel-choisir): Comparatif pour choisir la bonne technologie
+- [Pourquoi Next.js est le meilleur investissement](https://www.stephanegamot.com/blog/pourquoi-nextjs-est-le-meilleur-investissement): Avantages de Next.js pour un site professionnel
+- [WordPress : avantages et limites](https://www.stephanegamot.com/blog/avantages-inconvenients-wordpress): Analyse objective de WordPress en 2026
+- [Site sans clients ? 7 erreurs](https://www.stephanegamot.com/blog/pourquoi-votre-site-ne-convertit-pas): Les erreurs de conversion les plus courantes
+- [PHP survivrait-il sans WordPress ?](https://www.stephanegamot.com/blog/php-survivrait-il-sans-wordpress): Réflexion sur l'écosystème PHP
+
+## Pages locales
+
+- [Création site web Bruxelles](https://www.stephanegamot.com/creation-site-web-bruxelles): Services de développement web à Bruxelles
+- [Création site web Halle](https://www.stephanegamot.com/creation-site-web-halle): Services de développement web à Halle
+- [Création site web Brabant wallon](https://www.stephanegamot.com/creation-site-web-brabant-wallon): Services de développement web en Brabant wallon
+
+## Optional
+
+- [FAQ](https://www.stephanegamot.com/faq): Questions fréquentes sur la création de sites web et le SEO
