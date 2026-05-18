@@ -9,11 +9,6 @@ export default function FAQ() {
     return (
         <section className="font-body">
             <div className="mx-auto max-w-5xl px-6 py-20 sm:py-24 lg:py-28">
-                {/* H1 pour SEO / accessibilite (cache visuellement), en heading */}
-                <h1 className="sr-only font-heading">
-                    Questions frequentes - Foire aux questions sur la creation de site internet
-                </h1>
-
                 {/* Header */}
                 <div className="text-center max-w-3xl mx-auto">
                     <div className="section-label inline-flex items-center gap-2">
@@ -21,10 +16,18 @@ export default function FAQ() {
                         FAQ - Questions frequentes
                     </div>
 
-                    {/* Titre visible en h2 + Garamond */}
-                    <h2
+                    {/* H1 visible — cible le mot-clé SEO principal */}
+                    <h1
                         className="mt-4 text-balance text-4xl font-heading font-semibold tracking-tight sm:text-5xl"
                         style={{ color: "var(--fg-base)" }}
+                    >
+                        Questions fréquentes sur la création de sites web et le SEO
+                    </h1>
+
+                    {/* Sous-titre stylé en h2 */}
+                    <h2
+                        className="mt-4 text-balance text-2xl font-heading tracking-tight sm:text-3xl"
+                        style={{ color: "var(--fg-muted)" }}
                     >
                         Tout ce que vous devez savoir
                     </h2>

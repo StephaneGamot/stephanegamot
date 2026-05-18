@@ -501,13 +501,14 @@ export default function PortfolioShowcase() {
           transition={{ type: "spring", damping: 35, stiffness: 120, mass: 1 }}
           className="mx-auto max-w-3xl text-center"
         >
-          <h1 className="sr-only">
-            Portfolio – Réalisations de sites web, e-commerce et applications
-          </h1>
           <p className="section-label">
             Réalisations
           </p>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl" style={{ color: "var(--fg-base)" }}>
+          {/* H1 visible — cible le mot-clé SEO principal */}
+          <h1 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl" style={{ color: "var(--fg-base)" }}>
+            Portfolio — sites web, e-commerce et applications créés en Belgique
+          </h1>
+          <h2 className="mt-4 text-xl sm:text-2xl tracking-tight" style={{ color: "var(--fg-muted)" }}>
             Un portfolio centré sur{" "}
             <em style={{ color: "var(--accent)", fontStyle: "normal" }}>
               l'expérience

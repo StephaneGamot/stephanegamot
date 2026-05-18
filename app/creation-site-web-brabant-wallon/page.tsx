@@ -291,12 +291,8 @@ export default function CreationSiteWebBrabantWallon() {
                   name: "Brabant wallon",
                 },
                 priceRange: "€€",
-                aggregateRating: {
-                  "@type": "AggregateRating",
-                  ratingValue: "4.9",
-                  reviewCount: "32",
-                  bestRating: "5",
-                },
+                // aggregateRating retiré : conservé uniquement sur la home
+                // pour éviter le risque "structured data trompeuse" (Google Search Essentials).
               },
               {
                 "@type": "FAQPage",

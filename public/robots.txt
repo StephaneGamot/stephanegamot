@@ -2,16 +2,23 @@
 User-agent: Googlebot
 Allow: /
 Disallow: /api/
+Disallow: /author/
+Disallow: /wp-admin/
+Disallow: /wp-content/
+Disallow: /wp-includes/
 
 # Bingbot
 User-agent: Bingbot
 Allow: /
 Disallow: /api/
+Disallow: /author/
 
 # Tous les autres bots
 User-agent: *
 Allow: /
 Disallow: /api/
+Disallow: /author/
+Disallow: /wp-admin/
 
 # Crawl-delay pour les crawlers gourmands
 User-agent: AhrefsBot

@@ -424,13 +424,8 @@ export default function CreationSiteWebBruxelles() {
                   name: "Bruxelles",
                 },
                 priceRange: "€€",
-                aggregateRating: {
-                  "@type": "AggregateRating",
-                  ratingValue: "4.9",
-                  reviewCount: "32",
-                  bestRating: "5",
-                  worstRating: "1",
-                },
+                // aggregateRating retiré : conservé uniquement sur la home
+                // pour éviter le risque "structured data trompeuse" (Google Search Essentials).
               },
               {
                 "@type": "FAQPage",

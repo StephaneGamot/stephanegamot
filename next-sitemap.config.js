@@ -5,7 +5,10 @@ const siteUrl = "https://www.stephanegamot.com";
 const config = {
   siteUrl,
   generateRobotsTxt: false,
-  exclude: ["/robots.txt", "/api/*"],
+  // /robots.txt n'est pas une page et ne doit pas être indexée.
+  // /author/* sont des vestiges WordPress redirigés en 301.
+  // /services renvoie en 301 vers / (pas de hub à indexer).
+  exclude: ["/robots.txt", "/api/*", "/author/*", "/services", "/services/"],
 
   transform: async (config, path) => {
     let priority = 0.7;

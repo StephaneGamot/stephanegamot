@@ -61,9 +61,15 @@ export const metadata: Metadata = {
             noimageindex: false,
         },
     },
-    other: {
-        "google-site-verification": "REMPLACER_PAR_VOTRE_CODE_VERIFICATION",
-    },
+    // ⚠️ google-site-verification désactivé : la balise placeholder envoyait
+    // un code invalide à Google. Pour réactiver la validation par balise meta :
+    //   1. Search Console → Paramètres → Validation → Balise HTML
+    //   2. Copier le content="..." fourni par Google
+    //   3. Décommenter ci-dessous et remplacer la valeur
+    // (Alternative : valider via DNS ou via Google Analytics — pas besoin de cette balise)
+    // other: {
+    //     "google-site-verification": "VOTRE_CODE_ICI",
+    // },
 };
 
 

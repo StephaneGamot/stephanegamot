@@ -108,22 +108,8 @@ export default function WordPressServicePage() {
             },
           },
         ],
-        aggregateRating: {
-          "@type": "AggregateRating",
-          ratingValue: "4.9",
-          reviewCount: "32",
-          bestRating: "5",
-          worstRating: "1",
-        },
-        review: [
-          {
-            "@type": "Review",
-            reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-            author: { "@type": "Person", name: "Claire Delmas" },
-            datePublished: "2025-03-15",
-            reviewBody: "Site rapide, esthétique et très propre techniquement. Impact immédiat sur nos leads et notre visibilité SEO.",
-          },
-        ],
+        // aggregateRating + review retirés : conservés uniquement sur la home
+        // pour éviter le risque "structured data trompeuse" (Google Search Essentials).
       },
       {
         "@type": "FAQPage",

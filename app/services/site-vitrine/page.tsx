@@ -748,22 +748,8 @@ export default function SiteVitrineServicePage() {
                     url: "https://www.stephanegamot.com/services/tarifs",
                   },
                 ],
-                aggregateRating: {
-                  "@type": "AggregateRating",
-                  ratingValue: "4.9",
-                  reviewCount: "32",
-                  bestRating: "5",
-                  worstRating: "1",
-                },
-                review: [
-                  {
-                    "@type": "Review",
-                    datePublished: "2025-11-12",
-                    reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-                    author: { "@type": "Person", name: "Anaïs Rochette" },
-                    reviewBody: "Design soigné, performances mesurées, accessibilité intégrée. L'expérience client est nettement plus fluide.",
-                  },
-                ],
+                // aggregateRating + review retirés : conservés uniquement sur la home
+                // pour éviter le risque "structured data trompeuse" (Google Search Essentials).
               },
               {
                 "@type": "FAQPage",

@@ -290,12 +290,8 @@ export default function CreationSiteWebHalle() {
                 geo: { "@type": "GeoCoordinates", latitude: 50.7464661, longitude: 4.1889277 },
                 areaServed: { "@type": "City", name: "Halle" },
                 priceRange: "€€",
-                aggregateRating: {
-                  "@type": "AggregateRating",
-                  ratingValue: "4.9",
-                  reviewCount: "32",
-                  bestRating: "5",
-                },
+                // aggregateRating retiré : conservé uniquement sur la home
+                // pour éviter le risque "structured data trompeuse" (Google Search Essentials).
               },
               {
                 "@type": "FAQPage",

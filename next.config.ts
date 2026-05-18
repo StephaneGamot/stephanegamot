@@ -6,13 +6,43 @@ const nextConfig: NextConfig = {
         remotePatterns: [],
     },
 
-    // Redirige les URL avec query param ?q= vers la homepage (anti-duplication)
+    // Redirections 301 — préserve l'autorité SEO des anciennes URL
     async redirects() {
         return [
+            // Anti-duplication : URLs avec query param ?q= vers la homepage
             {
                 source: "/",
                 has: [{ type: "query", key: "q" }],
                 destination: "/",
+                permanent: true,
+            },
+            // Page /services (404 dans Search Console) → homepage
+            // Le hub services n'existe pas, seules les sous-pages existent
+            {
+                source: "/services",
+                destination: "/",
+                permanent: true,
+            },
+            {
+                source: "/services/",
+                destination: "/",
+                permanent: true,
+            },
+            // Vestiges WordPress — author archive → page personnelle
+            {
+                source: "/author/admin",
+                destination: "/me",
+                permanent: true,
+            },
+            {
+                source: "/author/admin/",
+                destination: "/me",
+                permanent: true,
+            },
+            // Catch-all pour toute URL /author/* WordPress legacy
+            {
+                source: "/author/:slug*",
+                destination: "/me",
                 permanent: true,
             },
         ];
@@ -39,10 +69,8 @@ const nextConfig: NextConfig = {
                         key: "X-Frame-Options",
                         value: "SAMEORIGIN",
                     },
-                    {
-                        key: "X-XSS-Protection",
-                        value: "1; mode=block",
-                    },
+                    // X-XSS-Protection retiré : obsolète, ignoré par les navigateurs modernes.
+                    // La CSP ci-dessous protège mieux contre les XSS.
                     {
                         key: "Referrer-Policy",
                         value: "strict-origin-when-cross-origin",
