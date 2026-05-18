@@ -63,7 +63,43 @@ const services = [
 ];
 
 
-export function ServicesSection() {
+type ServicesSectionProps = {
+  /**
+   * Slug de la page actuelle. Si fourni, exclut cette page de la grille
+   * et limite l'affichage aux 3 services les plus pertinents (services connexes).
+   * Sert à réduire le boilerplate dupliqué entre pages services
+   * (problème "Crawled, currently not indexed" dans Search Console).
+   */
+  currentSlug?: string;
+  /**
+   * Titre optionnel pour personnaliser le bloc selon le contexte.
+   */
+  heading?: string;
+  /**
+   * Sous-titre optionnel.
+   */
+  subheading?: string;
+};
+
+export function ServicesSection({
+  currentSlug,
+  heading,
+  subheading,
+}: ServicesSectionProps = {}) {
+  // Si on est sur une page service, on filtre cette page et on limite à 3 cartes
+  // pour réduire le contenu dupliqué entre pages.
+  const displayedServices = currentSlug
+    ? services.filter((s) => s.slug !== currentSlug && s.slug !== `/services/${currentSlug}`).slice(0, 3)
+    : services;
+
+  const sectionHeading = heading ?? (currentSlug
+    ? "Voir aussi mes autres services"
+    : "Des sites pensés pour la performance et la conversion");
+
+  const sectionSubheading = subheading ?? (currentSlug
+    ? "Quelques expertises complémentaires qui pourraient vous intéresser."
+    : "Du site vitrine à l'application web sur-mesure, en passant par l'e-commerce, chaque projet est conçu pour être rapide, lisible et efficace, sur mobile comme sur ordinateur.");
+
   return (
     <section
       id="services"
@@ -74,21 +110,19 @@ export function ServicesSection() {
         {/* En-tête — scroll reveal */}
         <ScrollReveal className="mx-auto max-w-3xl text-center">
           <p className="section-label">
-            Mes domaines d&apos;intervention
+            {currentSlug ? "Pour aller plus loin" : "Mes domaines d'intervention"}
           </p>
           <h2 className="mt-3 text-3xl sm:text-4xl font-semibold" style={{ color: "var(--fg-base)" }}>
-            Des sites pensés pour la performance et la conversion
+            {sectionHeading}
           </h2>
           <p className="mt-4 text-sm sm:text-base" style={{ color: "var(--fg-muted)" }}>
-            Du site vitrine à l&apos;application web sur-mesure, en passant par
-            l&apos;e-commerce, chaque projet est conçu pour être rapide, lisible et
-            efficace, sur mobile comme sur ordinateur.
+            {sectionSubheading}
           </p>
         </ScrollReveal>
 
         {/* Grille de cartes — stagger */}
         <StaggerContainer className="mt-12 grid gap-6 sm:gap-7 md:grid-cols-2 lg:grid-cols-3" staggerDelay={0.08}>
-          {services.map((service) => {
+          {displayedServices.map((service) => {
             const Icon = service.icon;
             return (
               <StaggerItem key={service.slug}>

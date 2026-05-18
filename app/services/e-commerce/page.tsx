@@ -834,7 +834,7 @@ export default function EcommerceServicePage() {
             <Link href="/services/tarifs" className="underline underline-offset-2">Voir les tarifs</Link> · Reponse sous 24 h · Devis gratuit
           </p>
         </div>
-        <ServicesSection />
+        <ServicesSection currentSlug="/services/e-commerce" />
       </section>
 
       {/* ════════════════════════════════════════

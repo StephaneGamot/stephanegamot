@@ -704,7 +704,7 @@ export default function ReactNextServicePage() {
             · Réponse sous 24 h · Devis gratuit
           </p>
         </div>
-        <ServicesSection />
+        <ServicesSection currentSlug="/services/site-web-react-next" />
       </section>
 
       {/* ════════════════════════════════════════

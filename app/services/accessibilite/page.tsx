@@ -671,7 +671,7 @@ export default function AccessibiliteServicePage() {
             <Link href="/services/tarifs" className="underline underline-offset-2">Voir les tarifs</Link> · Reponse sous 24 h · Devis gratuit
           </p>
         </div>
-        <ServicesSection />
+        <ServicesSection currentSlug="/services/accessibilite" />
       </section>
 
       {/* ── JSON-LD : @graph avec Service + FAQPage ── */}

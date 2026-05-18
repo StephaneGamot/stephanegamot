@@ -701,7 +701,7 @@ export default function SiteVitrineServicePage() {
           </p>
         </div>
 
-        <ServicesSection />
+        <ServicesSection currentSlug="/services/site-vitrine" />
       </section>
 
       {/* ── JSON-LD : @graph Service + FAQPage ── */}

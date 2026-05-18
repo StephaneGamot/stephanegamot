@@ -475,7 +475,7 @@ export default function TarifsPage() {
             </Link>
           </div>
         </div>
-        <ServicesSection />
+        <ServicesSection currentSlug="/services/tarifs" />
       </section>
 
       {/* JSON-LD */}

@@ -962,7 +962,7 @@ export default function SeoServicePage() {
             · Réponse sous 24 h · Devis gratuit
           </p>
         </div>
-        <ServicesSection />
+        <ServicesSection currentSlug="/services/seo" />
       </section>
 
       {/* ════════════════════════════════════════

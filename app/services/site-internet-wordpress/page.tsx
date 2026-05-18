@@ -724,7 +724,7 @@ export default function WordPressServicePage() {
             <Link href="/services/tarifs" className="underline underline-offset-2 transition-colors" style={{ color: "var(--fg-subtle)" }}>Voir les tarifs</Link>{" "}· Réponse sous 24 h · Devis gratuit
           </p>
         </div>
-        <ServicesSection />
+        <ServicesSection currentSlug="/services/site-internet-wordpress" />
       </section>
 
       <script

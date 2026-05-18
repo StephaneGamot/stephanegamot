@@ -50,6 +50,21 @@ const nextConfig: NextConfig = {
 
     async headers() {
         return [
+            // X-Robots-Tag: noindex pour les fichiers techniques que Google ne doit pas
+            // tenter d'indexer (favicons, manifest, etc.). Nettoie le rapport Search Console
+            // "Explorée, actuellement non indexée" sur ces URL.
+            {
+                source: "/:path*\\.ico",
+                headers: [
+                    { key: "X-Robots-Tag", value: "noindex" },
+                ],
+            },
+            {
+                source: "/manifest.json",
+                headers: [
+                    { key: "X-Robots-Tag", value: "noindex" },
+                ],
+            },
             {
                 source: "/(.*)",
                 headers: [
