@@ -6,44 +6,24 @@ const nextConfig: NextConfig = {
         remotePatterns: [],
     },
 
-    // Redirections 301 — préserve l'autorité SEO des anciennes URL
+    // ─────────────────────────────────────────────────────────────
+    // MIGRATION DE DOMAINE — 301 définitif vers le nouveau site
+    // Toutes les URL de ce site sont redirigées de façon permanente
+    // (statusCode 301, pas 308) vers la home /fr du nouveau domaine.
+    // Exceptions : robots.txt et sitemap(s), laissés accessibles pour
+    // que Google puisse continuer à crawler et découvrir les 301.
+    // ─────────────────────────────────────────────────────────────
     async redirects() {
         return [
-            // Anti-duplication : URLs avec query param ?q= vers la homepage
             {
                 source: "/",
-                has: [{ type: "query", key: "q" }],
-                destination: "/",
-                permanent: true,
-            },
-            // Page /services (404 dans Search Console) → homepage
-            // Le hub services n'existe pas, seules les sous-pages existent
-            {
-                source: "/services",
-                destination: "/",
-                permanent: true,
+                destination: "https://www.creation-site-internet-pays-basque.com/fr",
+                statusCode: 301,
             },
             {
-                source: "/services/",
-                destination: "/",
-                permanent: true,
-            },
-            // Vestiges WordPress — author archive → page personnelle
-            {
-                source: "/author/admin",
-                destination: "/me",
-                permanent: true,
-            },
-            {
-                source: "/author/admin/",
-                destination: "/me",
-                permanent: true,
-            },
-            // Catch-all pour toute URL /author/* WordPress legacy
-            {
-                source: "/author/:slug*",
-                destination: "/me",
-                permanent: true,
+                source: "/:path((?!robots\\.txt|sitemap\\.xml|sitemap-0\\.xml|llms\\.txt|.*\\.txt|google.*\\.html).*)",
+                destination: "https://www.creation-site-internet-pays-basque.com/fr",
+                statusCode: 301,
             },
         ];
     },
