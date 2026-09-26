@@ -15,16 +15,17 @@ const nextConfig: NextConfig = {
     // ─────────────────────────────────────────────────────────────
     async redirects() {
         return [
-            {
+               {
                 source: "/",
-                destination: "https://www.creation-site-internet-pays-basque.com/fr",
+                destination: "https://www.eztebe.com/fr",
                 statusCode: 301,
             },
             {
                 source: "/:path((?!robots\\.txt|sitemap\\.xml|sitemap-0\\.xml|llms\\.txt|.*\\.txt|google.*\\.html).*)",
-                destination: "https://www.creation-site-internet-pays-basque.com/fr",
+                destination: "https://www.eztebe.com/fr",
                 statusCode: 301,
             },
+          
         ];
     },
 
