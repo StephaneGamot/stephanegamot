@@ -15,7 +15,19 @@ const nextConfig: NextConfig = {
     // ─────────────────────────────────────────────────────────────
     async redirects() {
         return [
-               {
+            // Redirections page par page vers les contenus équivalents sur eztebe.com
+            // (toujours AVANT le catch-all).
+            {
+                source: "/blog/combien-coute-un-site-web-en-2026-prix-pieges",
+                destination: "https://www.eztebe.com/fr/blog/combien-coute-un-site-vitrine-2026",
+                statusCode: 301,
+            },
+            {
+                source: "/blog/:slug(wordpress-vs-nextjs-quel-choisir|pourquoi-nextjs-est-le-meilleur-investissement|avantages-inconvenients-wordpress)",
+                destination: "https://www.eztebe.com/fr/blog/pourquoi-nextjs-vercel-site-rapide-bien-reference",
+                statusCode: 301,
+            },
+            {
                 source: "/",
                 destination: "https://www.eztebe.com/fr",
                 statusCode: 301,
